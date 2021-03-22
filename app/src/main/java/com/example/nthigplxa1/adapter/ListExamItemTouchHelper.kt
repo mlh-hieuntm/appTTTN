@@ -1,4 +1,4 @@
-package com.example.nthigplxa1
+package com.example.nthigplxa1.adapter
 
 import android.graphics.Canvas
 import android.view.View

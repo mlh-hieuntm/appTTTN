@@ -9,9 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ÔnThiGPLXA1">
-        <activity android:name=".DoExamActivity"></activity>
-        <activity android:name=".ListExamActivity" />
-        <activity android:name=".SplashActivity">
+        <activity android:name=".view.DoExamActivity"></activity>
+        <activity android:name=".view.ListExamActivity" />
+        <activity android:name=".view.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

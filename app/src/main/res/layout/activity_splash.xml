@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:id="@+id/cl_splash"
     android:background="@drawable/gradient_bg_splash_activity"
-    tools:context=".SplashActivity">
+    tools:context=".view.SplashActivity">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/gl_leftOfLogo"

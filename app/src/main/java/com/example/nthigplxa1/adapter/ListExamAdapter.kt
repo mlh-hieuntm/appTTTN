@@ -1,4 +1,4 @@
-package com.example.nthigplxa1
+package com.example.nthigplxa1.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -7,8 +7,9 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
+import com.example.nthigplxa1.R
 
-class ListExamAdapter(var mContext: Context) :
+class ListExamAdapter(var mContext: Context, var mListener: ItemListener) :
     RecyclerView.Adapter<ListExamAdapter.ViewHolder>() {
 
     private var mArrayListAbilities = ArrayList<Int>()
@@ -41,6 +42,9 @@ class ListExamAdapter(var mContext: Context) :
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.mItem = mArrayListAbilities[position]
         holder.tvNameOfExam.text = "Đề số ${mArrayListAbilities[position]}"
+        holder.tvDo.setOnClickListener {
+            mListener.onItemClick(position, holder.mItem)
+        }
         when (position % 8) {
             0 -> holder.clBg.setBackgroundResource(R.drawable.background_custom_four_corner_red)
             1 -> holder.clBg.setBackgroundResource(R.drawable.background_custom_four_corner_indigo)
@@ -53,4 +57,8 @@ class ListExamAdapter(var mContext: Context) :
         }
     }
 
+}
+
+interface ItemListener {
+    fun onItemClick(position: Int, mItem: Int)
 }

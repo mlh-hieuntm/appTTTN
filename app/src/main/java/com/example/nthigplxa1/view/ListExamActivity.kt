@@ -1,6 +1,6 @@
-package com.example.nthigplxa1
+package com.example.nthigplxa1.view
 
-import android.graphics.Color
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
@@ -10,11 +10,15 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.afollestad.materialdialogs.MaterialDialog
 import com.afollestad.materialdialogs.customview.customView
+import com.example.nthigplxa1.adapter.ItemListener
+import com.example.nthigplxa1.adapter.ListExamAdapter
+import com.example.nthigplxa1.adapter.ListExamItemTouchHelper
+import com.example.nthigplxa1.R
 import kotlinx.android.synthetic.main.activity_list_exam.*
 import kotlinx.android.synthetic.main.dialog_confirm_delete.*
 
 class ListExamActivity : AppCompatActivity(),
-    ListExamItemTouchHelper.RecyclerItemTouchHelperListener, View.OnClickListener {
+    ListExamItemTouchHelper.RecyclerItemTouchHelperListener, View.OnClickListener, ItemListener {
     private var mListExamAdapter: ListExamAdapter? = null
     private lateinit var mDialog: MaterialDialog
     private var helper: ItemTouchHelper? = null
@@ -28,7 +32,7 @@ class ListExamActivity : AppCompatActivity(),
     }
 
     private fun initRecycleView() {
-        mListExamAdapter = ListExamAdapter(this)
+        mListExamAdapter = ListExamAdapter(this, this)
         rv_listExam.layoutManager = LinearLayoutManager(this)
         rv_listExam.adapter = mListExamAdapter
         val itemTouchHelperCallback: ItemTouchHelper.SimpleCallback = ListExamItemTouchHelper(
@@ -111,5 +115,27 @@ class ListExamActivity : AppCompatActivity(),
                 mDialog.show()
             }
         }
+    }
+
+    override fun onItemClick(position: Int, mItem: Int) {
+        mDialog = MaterialDialog(this)
+            .noAutoDismiss()
+            .customView(R.layout.dialog_confirm_delete)
+        mDialog.window?.setDimAmount(0F)
+        mDialog.setCancelable(false)
+        mDialog.tv_TitleOfCustomDialogConfirm.text = "Bạn có chắc chắn muốn vào thi ?"
+        mDialog.btn_AcceptDiaLogConFirm.setOnClickListener() {
+            val intent = Intent(this, DoExamActivity::class.java)
+            startActivity(intent)
+            mDialog.dismiss()
+            cl_list_exam_activity.alpha = 1F
+        }
+        mDialog.btn_CancelDialogConfirm.setOnClickListener {
+            cl_list_exam_activity.alpha = 1F
+            mDialog.dismiss()
+        }
+        cl_list_exam_activity.alpha = 0.2F
+        mDialog.show()
+
     }
 }
