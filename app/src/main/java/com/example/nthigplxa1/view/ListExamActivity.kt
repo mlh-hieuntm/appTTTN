@@ -52,6 +52,10 @@ class ListExamActivity : AppCompatActivity(),
         if (!isFirstOpenApp!!) {
             Thread {
                 insertDB()
+                runOnUiThread {
+                    rv_listExam.visibility = View.VISIBLE
+                    cl_progressbar.visibility = View.GONE
+                }
             }.start()
             editor?.putBoolean(FIRST_TIME_OPEN_APP, true)
             editor?.commit()
@@ -61,11 +65,11 @@ class ListExamActivity : AppCompatActivity(),
     }
 
     private fun insertDB() {
-        var ans1: Answer? = null
-        var ans2: Answer? = null
-        var ans3: Answer? = null
-        var ans4: Answer? = null
-        var question: Question? = null
+        var ans1: Answer?
+        var ans2: Answer?
+        var ans3: Answer?
+        var ans4: Answer?
+        var question: Question?
         // cau 1
         ans1 = Answer(1, "Diễn ra trên đường phố không có người qua lại.", 1)
         ans2 = Answer(2, "Được người dân ủng hộ.", 1)
@@ -1108,22 +1112,22 @@ class ListExamActivity : AppCompatActivity(),
         questionDatabase?.questionDao()?.saveData(question!!)
         // cau 47
         ans1 = Answer(
-            143,
+            147,
             "Xe con (A), mô tô, xe con (B), xe đạp.",
             47
         )
-        ans2 = Answer(144, "Xe con (B), xe đạp, mô tô, xe con (A).", 47)
+        ans2 = Answer(148, "Xe con (B), xe đạp, mô tô, xe con (A).", 47)
         ans3 = Answer(
-            145,
+            149,
             "Xe con (A), xe con (B), mô tô + xe đạp.",
             47
         )
-        ans4 = Answer(146, "Mô tô + xe đạp, xe con (A), xe con (B).", 47)
+        ans4 = Answer(150, "Mô tô + xe đạp, xe con (A), xe con (B).", 47)
         question = Question(
             47,
             typeQuestionSituations,
             false,
-            146,
+            150,
             "Thứ tự các xe đi như thế nào là đúng quy tắc giao thông?",
             R.drawable.cau47,
             ""
@@ -1135,22 +1139,22 @@ class ListExamActivity : AppCompatActivity(),
         questionDatabase?.questionDao()?.saveData(question!!)
         // cau 48
         ans1 = Answer(
-            147,
+            151,
             "Xe tải, xe con, mô tô.",
             48
         )
-        ans2 = Answer(148, "Xe con, xe tải, mô tô.", 48)
+        ans2 = Answer(152, "Xe con, xe tải, mô tô.", 48)
         ans3 = Answer(
-            149,
+            153,
             "Mô tô, xe con, xe tải.",
             48
         )
-        ans4 = Answer(150, "Xe con, mô tô, xe tải.", 48)
+        ans4 = Answer(154, "Xe con, mô tô, xe tải.", 48)
         question = Question(
             48,
             typeQuestionSituations,
             false,
-            149,
+            153,
             "Thứ tự các xe đi như thế nào là đúng quy tắc giao thông?",
             R.drawable.cau48,
             ""
@@ -1162,22 +1166,22 @@ class ListExamActivity : AppCompatActivity(),
         questionDatabase?.questionDao()?.saveData(question!!)
         // cau 49
         ans1 = Answer(
-            151,
+            155,
             "Chỉ mô tô.",
             49
         )
-        ans2 = Answer(152, "Chỉ xe tải.", 49)
+        ans2 = Answer(156, "Chỉ xe tải.", 49)
         ans3 = Answer(
-            153,
+            157,
             "Cả 3 xe.",
             49
         )
-        ans4 = Answer(154, "Chỉ mô tô và xe tải.", 49)
+        ans4 = Answer(158, "Chỉ mô tô và xe tải.", 49)
         question = Question(
             49,
             typeQuestionSituations,
             false,
-            153,
+            157,
             "Xe nào đỗ vi phạm quy tắc giao thông?",
             R.drawable.cau49,
             ""
@@ -1189,22 +1193,22 @@ class ListExamActivity : AppCompatActivity(),
         questionDatabase?.questionDao()?.saveData(question!!)
         // cau 50
         ans1 = Answer(
-            155,
+            159,
             "Cả hai xe",
             50
         )
-        ans2 = Answer(156, "Không xe nào vi phạm.", 50)
+        ans2 = Answer(160, "Không xe nào vi phạm.", 50)
         ans3 = Answer(
-            157,
+            161,
             "Chỉ xe mô tô vi phạm.",
             50
         )
-        ans4 = Answer(158, "Chỉ xe tải vi phạm.", 50)
+        ans4 = Answer(162, "Chỉ xe tải vi phạm.", 50)
         question = Question(
             50,
             typeQuestionSituations,
             false,
-            155,
+            159,
             "Xe nào đỗ vi phạm quy tắc giao thông?",
             R.drawable.cau50,
             ""
@@ -1216,22 +1220,22 @@ class ListExamActivity : AppCompatActivity(),
         questionDatabase?.questionDao()?.saveData(question)
         // cau 51
         ans1 = Answer(
-            159,
+            163,
             "Xe tải.",
             51
         )
-        ans2 = Answer(160, "Xe con và mô tô.", 51)
+        ans2 = Answer(164, "Xe con và mô tô.", 51)
         ans3 = Answer(
-            161,
+            165,
             "Cả ba xe.",
             51
         )
-        ans4 = Answer(162, "Xe con và xe tải.", 51)
+        ans4 = Answer(166, "Xe con và xe tải.", 51)
         question = Question(
             51,
             typeQuestionSituations,
             false,
-            159,
+            163,
             "Trong trường hợp này xe nào đỗ vi phạm quy tắc giao thông?",
             R.drawable.cau51,
             ""
@@ -1241,6 +1245,925 @@ class ListExamActivity : AppCompatActivity(),
         answerDatabase?.answerDao()?.saveData(ans3)
         answerDatabase?.answerDao()?.saveData(ans4)
         questionDatabase?.questionDao()?.saveData(question)
+
+        //cau 52
+        ans1 = Answer(229, "Phải đảm bảo phụ tùng do đúng nhà sản xuất đó cung cấp.", 52)
+        ans2 = Answer(230, "Phải được chấp thuận của cơ quan có thẩm quyền.", 52)
+        ans3 =
+            Answer(231, "Phải là xe đăng ký và hoạt động tại các khu vực có địa hình phức tạp.", 52)
+        question = Question(
+            52,
+            typeQuestionLaw,
+            false,
+            230,
+            " Trong trường hợp đặc biệt, để được lắp đặt, sử dụng còi, đèn không đúng với thiết kế của nhà sản xuất đối với từng loại xe cơ giới bạn phải đảm bảo yêu cầu nào dưới đây?",
+            -1,
+            ""
+        )
+        answerDatabase?.answerDao()?.saveData(ans1)
+        answerDatabase?.answerDao()?.saveData(ans2)
+        answerDatabase?.answerDao()?.saveData(ans3)
+        questionDatabase?.questionDao()?.saveData(question)
+        //cau 53
+        ans1 = Answer(232, "Không được vượt.", 53)
+        ans2 = Answer(233, "Được vượt khi đang đi trên cầu.", 53)
+        ans3 = Answer(
+            234,
+            "Được phép vượt khi qua nơi giao nhau có ít phương tiện cùng tham gia giao thông.",
+            53
+        )
+        ans4 = Answer(235, "Được vượt khi đảm bảo an toàn.", 53)
+        question = Question(
+            53,
+            typeQuestionLaw,
+            false,
+            235,
+            " Bạn đang lái xe phía trước có một xe cảnh sát giao thông không phát tín hiệu ưu tiên bạn có được phép vượt hay không?",
+            -1,
+            ""
+        )
+        answerDatabase?.answerDao()?.saveData(ans1)
+        answerDatabase?.answerDao()?.saveData(ans2)
+        answerDatabase?.answerDao()?.saveData(ans3)
+        answerDatabase?.answerDao()?.saveData(ans4)
+        questionDatabase?.questionDao()?.saveData(question)
+
+        // 54
+        ans1 = Answer(236, "Xe mô tô 2 bánh có dung tích xi-lanh từ 50 cm3 trở lên.", 54)
+        ans2 = Answer(237, " Xe gắn máy có dung tích xi-lanh dưới 50cm3.", 54)
+        ans3 = Answer(238, " Xe ô tô tải dưới 3.5 tấn; xe chở người đến 9 chỗ ngồi.", 54)
+        ans4 = Answer(239, " Tất cả các ý nêu trên.", 54)
+
+        question = Question(
+            54,
+            typeQuestionLaw,
+            false,
+            237,
+            " Người đủ 16 tuổi được điều khiển các loại xe nào dưới đây?",
+            -1,
+            ""
+        )
+
+        answerDatabase?.answerDao()?.saveData(ans1)
+        answerDatabase?.answerDao()?.saveData(ans2)
+        answerDatabase?.answerDao()?.saveData(ans3)
+        answerDatabase?.answerDao()?.saveData(ans4)
+        questionDatabase?.questionDao()?.saveData(question)
+        //55
+        ans1 = Answer(240, "16 Tuổi.", 55)
+        ans2 = Answer(241, "18 Tuổi.", 55)
+        ans3 = Answer(242, "17 Tuổi.", 55)
+        question = Question(
+            55,
+            typeQuestionLaw,
+            false,
+            241,
+            " Người đủ bao nhiêu tuổi trở lên thì được điều khiển xe mô tô hai bánh, xe mô tô ba bánh có dung tích xi lanh từ 50 cm3 trở lên và các loại xe có kết cấu tương tự; xe ô tô tải, máy kéo có trọng tải dưới 3500kg; xe ô tô chở người đến 9 chỗ ngồi?",
+            -1,
+            ""
+        )
+        answerDatabase?.answerDao()?.saveData(ans1)
+        answerDatabase?.answerDao()?.saveData(ans2)
+        answerDatabase?.answerDao()?.saveData(ans3)
+        questionDatabase?.questionDao()?.saveData(question)
+        //56
+        ans1 = Answer(243, "Xe mô tô có dung tích xi-lanh 125 cm3.", 56)
+        ans2 = Answer(244, "Xe mô tô có dung tích xi-lanh từ 175 cm3 trở lên.", 56)
+        ans3 = Answer(245, "Xe mô tô có dung tích xi-lanh 100 cm3.", 56)
+        question = Question(
+            56,
+            typeQuestionLaw,
+            false,
+            244,
+            "Người có giấy phép lái xe mô tô hạng A1 không được phép điều khiển loại xe nào dưới đây?",
+            -1,
+            ""
+        )
+        answerDatabase?.answerDao()?.saveData(ans1)
+        answerDatabase?.answerDao()?.saveData(ans2)
+        answerDatabase?.answerDao()?.saveData(ans3)
+        questionDatabase?.questionDao()?.saveData(question)
+        //57
+        ans1 = Answer(246, "Xe mô tô hai bánh có dung tích xi-lanh từ 50 cm3 đến dưới 175 cm3.", 57)
+        ans2 = Answer(247, "Xe mô tô ba bánh dùng cho người khuyết tật.", 57)
+        ans3 = Answer(248, "Cả ý 1 và ý 2.", 57)
+        question = Question(
+            57,
+            typeQuestionLaw,
+            false,
+            248,
+            " Người có giấy phép lái xe mô tô hạng A1 được phép điều khiển các loại xe nào dưới đây? ",
+            -1,
+            ""
+        )
+        answerDatabase?.answerDao()?.saveData(ans1)
+        answerDatabase?.answerDao()?.saveData(ans2)
+        answerDatabase?.answerDao()?.saveData(ans3)
+        questionDatabase?.questionDao()?.saveData(question)
+        //58
+        ans1 = Answer(249, "Người tham gia giao thông ở các hướng phải dừng lại..", 58)
+        ans2 = Answer(
+            250,
+            "Người tham gia giao thông ở các hướng được đi theo chiều gậy chỉ của cảnh sát giao thông.",
+            58
+        )
+        ans3 = Answer(
+            251,
+            "Người tham gia giao thông ở phía trước và phía sau người điều khiển được đi tất cả các hướng, người tham gia giao thông ở phía bên phải và phía bên trái người điều khiển phải dừng lại.",
+            58
+        )
+        ans4 = Answer(
+            252,
+            "Người tham gia giao thông ở phía trước và phía sau người điều khiển phải dừng lại; người tham gia giao thông ở phía bên phải và bên trái người điều khiển được đi tất cả các hướng.",
+            58
+        )
+        question = Question(
+            58,
+            typeQuestionSituations,
+            false,
+            252,
+            " Khi gặp hiệu lệnh như dưới đây của cảnh sát giao thông thì người tham gia giao thông phải đi như thế nào là đúng quy tắc giao thông? ",
+            R.drawable.cau58,
+            ""
+        )
+        answerDatabase?.answerDao()?.saveData(ans1)
+        answerDatabase?.answerDao()?.saveData(ans2)
+        answerDatabase?.answerDao()?.saveData(ans3)
+        answerDatabase?.answerDao()?.saveData(ans4)
+        questionDatabase?.questionDao()?.saveData(question)
+        //59
+        ans1 = Answer(
+            253,
+            "Người tham gia giao thông ở hướng đối diện cảnh sát giao thông được đi, các hướng khác cần phải dừng lại.",
+            59
+        )
+        ans2 = Answer(
+            254,
+            "Người tham gia giao thông được rẽ phải theo chiều mũi tên màu xanh ở bục cảnh sát giao thông.",
+            59
+        )
+        ans3 = Answer(
+            255,
+            "Người tham gia giao thông ở các hướng đều phải dừng lại trừ các xe đã ở trong khu vực giao nhau.",
+            59
+        )
+        ans4 = Answer(
+            256,
+            "Người ở hướng đối diện cảnh sát giao thông phải dừng lại, các hướng khác được đi trong đó có bạn.",
+            59
+        )
+        question = Question(
+            59,
+            typeQuestionSituations,
+            false,
+            255,
+            "Khi gặp hiệu lệnh như dưới đây của cảnh sát giao thông thì người tham gia giao thông phải đi như thế nào là đúng quy tắc giao thông?",
+            R.drawable.cau59,
+            ""
+        )
+        answerDatabase?.answerDao()?.saveData(ans1)
+        answerDatabase?.answerDao()?.saveData(ans2)
+        answerDatabase?.answerDao()?.saveData(ans3)
+        answerDatabase?.answerDao()?.saveData(ans4)
+        questionDatabase?.questionDao()?.saveData(question)
+        //60
+        ans1 = Answer(257, "Đỏ – Vàng – Xanh.", 60)
+        ans2 = Answer(258, "Cam – Vàng – Xanh.", 60)
+        ans3 = Answer(259, "Vàng – Xanh dương – Xanh lá.", 60)
+        ans4 = Answer(260, "Đỏ – Cam – Xanh.", 60)
+        question = Question(
+            60,
+            typeQuestionLaw,
+            false,
+            257,
+            " Theo luật giao thông đường bộ, tín hiệu đèn giao thông gồm 3 màu nào dưới đây? ",
+            -1,
+            ""
+        )
+        answerDatabase?.answerDao()?.saveData(ans1)
+        answerDatabase?.answerDao()?.saveData(ans2)
+        answerDatabase?.answerDao()?.saveData(ans3)
+        answerDatabase?.answerDao()?.saveData(ans4)
+        questionDatabase?.questionDao()?.saveData(question)
+        //61
+        ans1 = Answer(261, "Biển báo nguy hiểm.", 61)
+        ans2 = Answer(262, "Biển báo cấm.", 61)
+        ans3 = Answer(263, "Biển báo hiệu lệnh.", 61)
+        ans4 = Answer(264, "Biển báo chỉ dẫn.", 61)
+        question = Question(
+            61,
+            typeQuestionNoticeBoard,
+            false,
+            262,
+            " Biển báo hiệu có dạng hình tròn, viền đỏ, nền trắng, trên nền có hình vẽ hoặc chữ số, chữ viết màu đen là loại biển gì dưới đây?",
+            R.drawable.cau61,
+            ""
+        )
+
+        answerDatabase?.answerDao()?.saveData(ans1)
+        answerDatabase?.answerDao()?.saveData(ans2)
+        answerDatabase?.answerDao()?.saveData(ans3)
+        answerDatabase?.answerDao()?.saveData(ans4)
+        questionDatabase?.questionDao()?.saveData(question)
+        //62
+        ans1 = Answer(265, " Biển báo nguy hiểm.", 62)
+        ans2 = Answer(266, "Biển báo cấm.", 62)
+        ans3 = Answer(267, "Biển báo hiệu lệnh.", 62)
+        ans4 = Answer(268, "Biển báo chỉ dẫn.", 62)
+        question = Question(
+            62,
+            typeQuestionNoticeBoard,
+            false,
+            265,
+            " Biển báo hiệu có dạng hình tam giác đều, viền đỏ, nền màu vàng, trên có hình vẽ màu đen là loại biển gì dưới đây?",
+            R.drawable.cau62,
+            ""
+        )
+        answerDatabase?.answerDao()?.saveData(ans1)
+        answerDatabase?.answerDao()?.saveData(ans2)
+        answerDatabase?.answerDao()?.saveData(ans3)
+        answerDatabase?.answerDao()?.saveData(ans4)
+        questionDatabase?.questionDao()?.saveData(question)
+        //63
+        ans1 = Answer(269, "Biển báo nguy hiểm.", 63)
+        ans2 = Answer(270, "Biển báo cấm.", 63)
+        ans3 = Answer(271, "Biển báo hiệu lệnh phải thi hành.", 63)
+        ans4 = Answer(272, "Biển báo chỉ dẫn.", 63)
+        question = Question(
+            63,
+            typeQuestionNoticeBoard,
+            false,
+            271,
+            " Biển báo hiệu hình tròn có nền xanh lam có hình vẽ màu trắng là loại gì dưới đây?",
+            R.drawable.cau63,
+            ""
+        )
+        answerDatabase?.answerDao()?.saveData(ans1)
+        answerDatabase?.answerDao()?.saveData(ans2)
+        answerDatabase?.answerDao()?.saveData(ans3)
+        answerDatabase?.answerDao()?.saveData(ans4)
+        questionDatabase?.questionDao()?.saveData(question)
+        //64
+        ans1 = Answer(273, "Biển báo nguy hiểm.", 64)
+        ans2 = Answer(274, "Biển báo cấm.", 64)
+        ans3 = Answer(275, "Biển báo hiệu lệnh phải thi hành.", 64)
+        ans4 = Answer(276, "Biển báo chỉ dẫn.", 64)
+        question = Question(
+            64,
+            typeQuestionNoticeBoard,
+            false,
+            276,
+            " Biển báo hiệu hình chữ nhật hoặc hình vuông hoặc hình mũi tên nền xanh lam là loại biển gì dưới đây?",
+            R.drawable.cau64,
+            ""
+        )
+        answerDatabase?.answerDao()?.saveData(ans1)
+        answerDatabase?.answerDao()?.saveData(ans2)
+        answerDatabase?.answerDao()?.saveData(ans3)
+        answerDatabase?.answerDao()?.saveData(ans4)
+        questionDatabase?.questionDao()?.saveData(question)
+        //65
+        ans1 = Answer(277, "Biển báo hiệu cố định.", 65)
+        ans2 = Answer(278, "Báo hiệu tạm thời.", 65)
+        question = Question(
+            65,
+            typeQuestionLaw,
+            false,
+            278,
+            "Tại nơi có biển báo hiệu cố định lại có báo hiệu tạm thời thì người tham gia giao thông phải chấp hành hiệu lệnh của báo hiệu nào? ",
+            -1,
+            ""
+        )
+        answerDatabase?.answerDao()?.saveData(ans1)
+        answerDatabase?.answerDao()?.saveData(ans2)
+        questionDatabase?.questionDao()?.saveData(question)
+        //66
+        ans1 = Answer(279, "02 Năm.", 66)
+        ans2 = Answer(280, "03 Năm.", 66)
+        ans3 = Answer(281, "04 Năm.", 66)
+        ans4 = Answer(282, "05 Năm.", 66)
+        question = Question(
+            66,
+            typeQuestionLaw,
+            false,
+            281,
+            " Khi sử dụng giấy phép lái xe đã khai báo mất để điều khiển phương tiện cơ giới đường bộ, ngoài việc bị thu hồi giấy phép lái xe, chịu trách nhiệm trước pháp luật, người lái xe không được cấp giấy phép lái xe trong thời gian bao nhiêu năm?",
+            -1,
+            ""
+        )
+        answerDatabase?.answerDao()?.saveData(ans1)
+        answerDatabase?.answerDao()?.saveData(ans2)
+        answerDatabase?.answerDao()?.saveData(ans3)
+        answerDatabase?.answerDao()?.saveData(ans4)
+        questionDatabase?.questionDao()?.saveData(question)
+        //67
+        ans1 = Answer(
+            283,
+            "Cho xe đi trên bất kỳ làn đường nào hoặc giữa 02 làn đường nếu không có xe phía trước; khi cần thiết phải chuyển làn đường, người lái xe phải quan sát xe phía trước để đảm bảo an toàn.",
+            67
+        )
+        ans2 = Answer(
+            284,
+            "Phải cho xe đi trong một làn đường và chỉ được chuyển làn đường ở những nơi cho phép; khi chuyển làn phải có tín hiệu báo trước và phải bảo đảm an toàn.",
+            67
+        )
+        ans3 = Answer(
+            285,
+            "Phải cho xe đi trong một làn đường và chỉ được chuyển làn đường ở những nơi cho phép; khi chuyển làn phải có tín hiệu báo trước và phải bảo đảm an toàn.",
+            67
+        )
+
+        question = Question(
+            67,
+            typeQuestionLaw,
+            false,
+            284,
+            "Trên đường có nhiều làn đường cho xe đi cùng chiều được phân biệt bằng vạch kẻ phân làn đường, người điều khiển phương tiện phải cho xe đi như thế nào?",
+            -1,
+            ""
+        )
+        answerDatabase?.answerDao()?.saveData(ans1)
+        answerDatabase?.answerDao()?.saveData(ans2)
+        answerDatabase?.answerDao()?.saveData(ans3)
+        questionDatabase?.questionDao()?.saveData(question)
+        //68
+        ans1 = Answer(
+            28311,
+            "Cho xe đi trên bất kỳ làn đường nào hoặc giữa 02 làn đường nếu không có xe phía trước; khi cần thiết phải chuyển làn đường, người lái xe phải quan sát xe phía trước để đảm bảo an toàn.",
+            68
+        )
+        ans2 = Answer(
+            28411,
+            "Phải cho xe đi trong một làn đường và chỉ được chuyển làn đường ở những nơi cho phép; khi chuyển làn phải có tín hiệu báo trước và phải bảo đảm an toàn.",
+            68
+        )
+        ans3 = Answer(
+            28511,
+            "Phải cho xe đi trong một làn đường và chỉ được chuyển làn đường ở những nơi cho phép; khi chuyển làn phải có tín hiệu báo trước và phải bảo đảm an toàn.",
+            68
+        )
+
+        question = Question(
+            68,
+            typeQuestionLaw,
+            false,
+            28411,
+            "Trên đường có nhiều làn đường cho xe đi cùng chiều được phân biệt bằng vạch kẻ phân làn đường, người điều khiển phương tiện phải cho xe đi như thế nào?",
+            -1,
+            ""
+        )
+
+        answerDatabase?.answerDao()?.saveData(ans1)
+        answerDatabase?.answerDao()?.saveData(ans2)
+        answerDatabase?.answerDao()?.saveData(ans3)
+        questionDatabase?.questionDao()?.saveData(question)
+        //69
+        ans1 = Answer(
+            286,
+            " Xe thô sơ phải đi trên làn đường bên trái ngoài cùng, xe cơ giới, xe máy chuyên dùng đi trên làn đường bên phải.",
+            69
+        )
+        ans2 = Answer(
+            287,
+            " Xe thô sơ phải đi trên làn đường bên phải trong cùng; xe cơ giới, xe máy chuyên dùng đi trên làn đường bên trái.",
+            69
+        )
+        ans3 = Answer(
+            288,
+            " Xe thô sơ đi trên làn đường phù hợp không gây cản trở giao thông, xe cơ giới, xe máy chuyên dùng đi trên làn đường bên phải.",
+            69
+        )
+        question = Question(
+            69,
+            typeQuestionLaw,
+            false,
+            287,
+            " Trên đường một chiều có vạch kẻ phân làn đường xe thô sơ và xe cơ giới phải đi như thế nào là đúng quy tắc giao thông?",
+            -1,
+            ""
+        )
+        answerDatabase?.answerDao()?.saveData(ans1)
+        answerDatabase?.answerDao()?.saveData(ans2)
+        answerDatabase?.answerDao()?.saveData(ans3)
+        questionDatabase?.questionDao()?.saveData(question)
+        //70
+        ans1 = Answer(289, "Phải báo hiệu bằng đèn hoặc còi.", 70)
+        ans2 = Answer(290, "Chỉ được báo hiệu bằng còi.", 70)
+        ans3 = Answer(291, "Phải báo hiệu bằng cả còi và đèn.", 70)
+        ans4 = Answer(292, "Chỉ được báo hiệu bằng đèn.", 70)
+        question = Question(
+            70,
+            typeQuestionLaw,
+            false,
+            292,
+            " Bạn đang lái xe trong khu vực đô thị từ 22 giờ đến 5 giờ sáng hôm sau và cần vượt một xe khác, bạn cần báo hiệu như thế nào để đảm bảo an toàn giao thông?",
+            -1,
+            ""
+        )
+
+        answerDatabase?.answerDao()?.saveData(ans1)
+        answerDatabase?.answerDao()?.saveData(ans2)
+        answerDatabase?.answerDao()?.saveData(ans3)
+        answerDatabase?.answerDao()?.saveData(ans4)
+        questionDatabase?.questionDao()?.saveData(question)
+        //71
+        ans1 = Answer(
+            293,
+            "Tăng tốc độ và ra hiệu cho xe sau vượt, không được gây trở ngại cho xe sau vượt.",
+            71
+        )
+        ans2 = Answer(
+            294,
+            "Người điều khiển phương tiện phía trước phải giảm tốc độ, đi sát về bên phải của phần đường xe chạy, cho đến khi xe sau đã vượt qua, không được gây trở ngại cho xe sau vượt.",
+            71
+        )
+        ans3 = Answer(
+            295,
+            "Cho xe tránh về bên trái mình và ra hiệu cho xe sau vượt; nếu có chướng ngại vật phía trước hoặc thiếu điều kiện an toàn chưa cho vượt được phải ra hiệu cho xe sau biết; cấm gây trở ngại cho xe xin vượt.",
+            71
+        )
+        question = Question(
+            71,
+            typeQuestionLaw,
+            false,
+            294,
+            " Khi điều khiển xe chạy trên đường biết có xe sau xin vượt nếu đủ điều kiện an toàn người lái xe phải làm gì?",
+            -1,
+            ""
+        )
+        answerDatabase?.answerDao()?.saveData(ans1)
+        answerDatabase?.answerDao()?.saveData(ans2)
+        answerDatabase?.answerDao()?.saveData(ans3)
+        questionDatabase?.questionDao()?.saveData(question)
+        //72
+        ans1 = Answer(296, "Quan sát gương, ra tín hiệu, quan sát an toàn và chuyển hướng.", 72)
+        ans2 = Answer(
+            297,
+            "Quan sát gương, giảm tốc độ, ra tín hiệu chuyển hướng, quan sát an toàn và chuyển hướng.",
+            72
+        )
+        ans3 = Answer(298, " Quan sát gương, tăng tốc độ, ra tín hiệu và chuyển hướng.", 72)
+        question = Question(
+            72,
+            typeQuestionLaw,
+            false,
+            297,
+            " Khi muốn chuyển hướng, người lái xe phải thực hiện như thế nào để đảm bảo an toàn giao thông? ",
+            -1,
+            ""
+        )
+        answerDatabase?.answerDao()?.saveData(ans1)
+        answerDatabase?.answerDao()?.saveData(ans2)
+        answerDatabase?.answerDao()?.saveData(ans3)
+        questionDatabase?.questionDao()?.saveData(question)
+        //73
+        ans1 = Answer(
+            299,
+            " Nơi đường hẹp chỉ đủ cho một xe chạy và có chỗ tránh xe thì xe nào ở gần chỗ tránh hơn phải vào vị trí tránh, nhường đường cho xe kia đi.",
+            73
+        )
+        ans2 = Answer(
+            300,
+            " Xe xuống dốc phải nhường đường cho xe đang lên dốc; xe nào có chướng ngại vật phía trước phải nhường đường cho xe không có chướng ngại vật đi trước.",
+            73
+        )
+        ans3 = Answer(
+            301,
+            " Xe lên dốc phải nhường đường cho xe xuống dốc; xe nào không có chướng ngại vật phía trước phải nhường đường cho xe có chướng ngại vật đi trước.",
+            73
+        )
+        ans4 = Answer(302, " Cả ý 1 và ý 2.", 73)
+        question = Question(
+            73,
+            typeQuestionLaw,
+            false,
+            302,
+            " Khi tránh xe đi ngược chiều, các xe phải nhường đường như thế nào là đúng quy tắc giao thông?",
+            -1,
+            ""
+        )
+        answerDatabase?.answerDao()?.saveData(ans1)
+        answerDatabase?.answerDao()?.saveData(ans2)
+        answerDatabase?.answerDao()?.saveData(ans3)
+        answerDatabase?.answerDao()?.saveData(ans4)
+        questionDatabase?.questionDao()?.saveData(question)
+        //74
+        ans1 = Answer(304, "Tiếp tục đi và xe lên dốc phải nhường đường cho mình.", 74)
+        ans2 = Answer(305, "Nhường đường cho xe lên dốc.", 74)
+        ans3 = Answer(306, "Chỉ nhường đường khi xe lên dốc nháy đèn.", 74)
+        question = Question(
+            74,
+            typeQuestionLaw,
+            false,
+            305,
+            " Bạn đang lái xe trên đường hẹp, xuống dốc và gặp một xe đang đi lên dốc, bạn cần làm gì?",
+            -1,
+            ""
+        )
+        answerDatabase?.answerDao()?.saveData(ans1)
+        answerDatabase?.answerDao()?.saveData(ans2)
+        answerDatabase?.answerDao()?.saveData(ans3)
+        questionDatabase?.questionDao()?.saveData(question)
+        //75
+        ans1 = Answer(307, "Nhường đường cho xe đi ở bên phải mình tới.", 75)
+        ans2 = Answer(308, "Nhường đường cho xe đi ở bên trái mình tới.", 75)
+        ans3 = Answer(
+            309,
+            "Nhường đường cho xe đi trên đường ưu tiên hoặc đường chính từ bất kỳ hướng nào tới.",
+            75
+        )
+        question = Question(
+            75,
+            typeQuestionLaw,
+            false,
+            309,
+            " Tại nơi đường giao nhau, người lái xe đang đi trên đường không ưu tiên phải nhường đường như thế nào là đúng quy tắc giao thông?",
+            -1,
+            ""
+        )
+        answerDatabase?.answerDao()?.saveData(ans1)
+        answerDatabase?.answerDao()?.saveData(ans2)
+        answerDatabase?.answerDao()?.saveData(ans3)
+        questionDatabase?.questionDao()?.saveData(question)
+        //76
+        ans1 = Answer(310, " Phải nhường đường cho xe đi đến từ bên phải.", 76)
+        ans2 = Answer(311, " Xe báo hiệu xin đường trước xe đó được đi trước.", 76)
+        ans3 = Answer(312, " Phải nhường đường cho xe đi đến từ bên trái.", 76)
+        question = Question(
+            76,
+            typeQuestionLaw,
+            false,
+            310,
+            " Tại nơi đường giao nhau không có báo hiệu đi theo vòng xuyến, người điều khiển phương tiện phải nhường đường như thế nào là đúng quy tắc giao thông?",
+            -1,
+            ""
+        )
+        answerDatabase?.answerDao()?.saveData(ans1)
+        answerDatabase?.answerDao()?.saveData(ans2)
+        answerDatabase?.answerDao()?.saveData(ans3)
+        questionDatabase?.questionDao()?.saveData(question)
+        //77
+        ans1 = Answer(313, "Chở người bệnh đi cấp cứu; trẻ em dưới 14 tuổi.", 77)
+        ans2 = Answer(314, "Áp giải người có hành vi vi phạm pháp luật.", 77)
+        ans3 = Answer(315, "Cả ý 1 và ý 2.", 77)
+        question = Question(
+            77,
+            typeQuestionLaw,
+            false,
+            315,
+            "Người điều khiển xe mô tô hai bánh, xe gắn máy được phép chở tối đa 2 người trong những trường hợp nào?",
+            -1,
+            ""
+        )
+        answerDatabase?.answerDao()?.saveData(ans1)
+        answerDatabase?.answerDao()?.saveData(ans2)
+        answerDatabase?.answerDao()?.saveData(ans3)
+        questionDatabase?.questionDao()?.saveData(question)
+        //78
+        ans1 = Answer(
+            316,
+            " Đi vào phần đường dành cho người đi bộ và phương tiện khác; sử dụng ô, điện thoại di động, thiết bị âm thanh (trừ thiết bị trợ thính), đi xe dàn hàng ngang.",
+            78
+        )
+        ans2 = Answer(
+            317,
+            " Chở 02 người; trong đó, có người bệnh đi cấp cứu hoặc trẻ em dưới 14 tuổi hoặc áp giải người có hành vi vi phạm pháp luật.",
+            78
+        )
+        ans3 = Answer(
+            318,
+            " Điều khiển phương tiện tham gia giao thông trên đường tỉnh lộ hoặc quốc lộ.",
+            78
+        )
+        question = Question(
+            78,
+            typeQuestionLaw,
+            false,
+            316,
+            " Người điều khiển xe mô tô hai bánh, xe gắn máy không được thực hiện những hành vi nào dưới dây?",
+            -1,
+            ""
+        )
+        answerDatabase?.answerDao()?.saveData(ans1)
+        answerDatabase?.answerDao()?.saveData(ans2)
+        answerDatabase?.answerDao()?.saveData(ans3)
+        questionDatabase?.questionDao()?.saveData(question)
+        //79
+        ans1 = Answer(
+            319,
+            "Khi có báo hiệu cảnh báo nguy hiểm hoặc có chướng ngại vật trên đường; khi chuyển hướng xe chạy hoặc tầm nhìn bị hạn chế; khi qua nơi đường giao nhau, nơi đường bộ giao nhau với đường sắt; đường vòng; đường có địa hình quanh co, đèo dốc.",
+            79
+        )
+        ans2 = Answer(
+            320,
+            "Khi qua cầu, cống hẹp; khi lên gần đỉnh dốc, khi xuống dốc, khi qua trường học, khu đông dân cư, khu vực đang thi công trên đường bộ; hiện trường xảy ra tai nạn giao thông.",
+            79
+        )
+        ans3 = Answer(321, "Khi điều khiển xe vượt xe khác trên đường quốc lộ, đường cao tốc.", 79)
+        ans4 = Answer(322, "Cả ý 1 và ý 2.", 79)
+        question = Question(
+            79,
+            typeQuestionLaw,
+            false,
+            322,
+            " Người lái xe phải giảm tốc độ thấp hơn tốc độ tối đa cho phép (có thể dừng lại một cách an toàn) trong trường hợp nào dưới đây?",
+            -1,
+            ""
+        )
+        answerDatabase?.answerDao()?.saveData(ans1)
+        answerDatabase?.answerDao()?.saveData(ans2)
+        answerDatabase?.answerDao()?.saveData(ans3)
+        answerDatabase?.answerDao()?.saveData(ans4)
+        questionDatabase?.questionDao()?.saveData(question)
+        //80
+        ans1 = Answer(323, "Khi cho xe chạy thẳng.", 80)
+        ans2 = Answer(324, "Trước khi thay đổi làn đường.", 80)
+        ans3 = Answer(325, "Sau khi thay đổi làn đường.", 80)
+        question = Question(
+            80,
+            typeQuestionLaw,
+            false,
+            324,
+            " Khi điều khiển xe cơ giới, người lái xe phải bật đèn tín hiệu báo rẽ trong các trường hợp nào sau đây?",
+            -1,
+            ""
+        )
+        answerDatabase?.answerDao()?.saveData(ans1)
+        answerDatabase?.answerDao()?.saveData(ans2)
+        answerDatabase?.answerDao()?.saveData(ans3)
+        questionDatabase?.questionDao()?.saveData(question)
+        //81
+        ans1 = Answer(326, "Xe bị vượt bất ngờ tăng tốc độ và cố tình không nhường đường.", 81)
+        ans2 = Answer(327, "Xe bị vượt giảm tốc độ và nhường đường.", 81)
+        ans3 = Answer(328, "Phát hiện có xe đi ngược chiều.", 81)
+        ans4 = Answer(329, "Cả ý 1 và ý 2.", 81)
+        question = Question(
+            81,
+            typeQuestionLaw,
+            false,
+            329,
+            " Trên đoạn đường hai chiều không có giải phân cách giữa, người lái xe không được vượt xe khác trong các trường hợp nào dưới đây?",
+            -1,
+            ""
+        )
+        answerDatabase?.answerDao()?.saveData(ans1)
+        answerDatabase?.answerDao()?.saveData(ans2)
+        answerDatabase?.answerDao()?.saveData(ans3)
+        answerDatabase?.answerDao()?.saveData(ans4)
+        questionDatabase?.questionDao()?.saveData(question)
+        //82
+        ans1 = Answer(
+            330,
+            "Nhường đường cho người đi bộ đang đi trên phần đường dành cho người đi bộ sang đường; nhường đường cho xe đi trên đường ưu tiên, đường chính từ bất kì hướng nào tới; nhường đường cho xe ưu tiên, xe đi từ bên phải đến.",
+            82
+        )
+        ans2 = Answer(
+            331,
+            "Nhường đường cho người đi bộ đang đứng chờ đi qua phần đường dành cho người đi bộ sang đường; nhường đường cho xe đi trên đường ngược chiều, đường nhánh từ bất kỳ hướng nào tới; nhường đường cho xe đi từ bên trái đến.",
+            82
+        )
+        ans3 = Answer(332, "Không phải nhường đường.", 82)
+        question = Question(
+            82,
+            typeQuestionLaw,
+            false,
+            330,
+            "Tại ngã ba hoặc ngã tư không có đảm bảo an toàn, người lái xe phải nhường đường như thế nào là đúng trong các trường hợp dưới đây?",
+            -1,
+            ""
+        )
+        answerDatabase?.answerDao()?.saveData(ans1)
+        answerDatabase?.answerDao()?.saveData(ans2)
+        answerDatabase?.answerDao()?.saveData(ans3)
+        questionDatabase?.questionDao()?.saveData(question)
+        //83
+        ans1 = Answer(
+            333,
+            " Nếu đủ điều khiện an toàn, người lái xe phải giảm tốc độ, đi sát về bên phải của phần đường xe chạy cho đến khi xe sau đã vượt qua, không được gây trở ngại đối với xe xin vượt.",
+            83
+        )
+        ans2 = Answer(
+            334,
+            " Lái xe vào lề đường bên trái và giảm tốc độ để xe phía sau vượt qua, không được gây trở ngại đối với xe xin vượt.",
+            83
+        )
+        ans3 = Answer(
+            335,
+            " Nếu đủ điều kiện an toàn, người lái xe phải tăng tốc độ, đi sát về bên phải của phần đường xe chạy cho đến khi xe sau đã vượt qua.",
+            83
+        )
+        question = Question(
+            83,
+            typeQuestionLaw,
+            false,
+            333,
+            " Người lái xe mô tô xử lý như thế nào khi cho xe mô tô phía sau vượt? ",
+            -1,
+            ""
+        )
+        answerDatabase?.answerDao()?.saveData(ans1)
+        answerDatabase?.answerDao()?.saveData(ans2)
+        answerDatabase?.answerDao()?.saveData(ans3)
+        questionDatabase?.questionDao()?.saveData(question)
+        //84
+        ans1 = Answer(
+            336,
+            "Phải đội mũ bảo hiểm đạt chuẩn, có cài quai đúng quy cách, mặc quần áo gọn gàng; không sử dụng ô, điện thoại di động, thiết bị âm thanh (trừ thiết bị trợ thính).",
+            84
+        )
+        ans2 = Answer(
+            337,
+            "Phải đội mũ bảo hiểm khi trời mưa gió hoặc trời quá nắng; có thể sử dụng ô, điện thoại di động thiết bị âm thanh nhưng đảm bảo an toàn.",
+            84
+        )
+        ans3 = Answer(
+            338,
+            "Phải đội mũ bảo hiểm khi cảm thấy mất an toàn giao thông hoặc khi chuẩn bị di chuyển quãng đường xa.",
+            84
+        )
+        question = Question(
+            84,
+            typeQuestionLaw,
+            false,
+            336,
+            "Trong các trường hợp dưới đây, để đảo bảo an toàn khi tham gia giao thông, người lái xe mô tô cần thực hiện như thế nào?",
+            -1,
+            ""
+        )
+        answerDatabase?.answerDao()?.saveData(ans1)
+        answerDatabase?.answerDao()?.saveData(ans2)
+        answerDatabase?.answerDao()?.saveData(ans3)
+        questionDatabase?.questionDao()?.saveData(question)
+        //85
+        ans1 = Answer(
+            339,
+            "Là đoạn đường nằm trong khu công nghiệp có đông người và phương tiện tham gia giao thông và được xác định cụ thể bằng biển chỉ dẫn địa giới.",
+            85
+        )
+        ans2 = Answer(
+            340,
+            "Là đoạn đường bộ nằm trong khu vực nội thành phố, nội thị xã, nội thị trấn và những đoạn đường có đông dân cư sinh sống sát dọc theo đường, có các hoạt động có thể ảnh hưởng đến an toàn giao thông; được xác định bằng biển báo hiệu là đường khu đông dân cư.",
+            85
+        )
+        ans3 = Answer(
+            341,
+            "Là đoạn đường nằm ngoài khu vực nội thành phố, nội thị xã có đông người và phương tiện tham gia giao thông và được xác định cụ thể bằng biển chỉ dẫn địa giới.",
+            85
+        )
+        question = Question(
+            85,
+            typeQuestionLaw,
+            false,
+            340,
+            "Đường bộ trong khu vực đông dân cư gồm những đoạn đường nào dưới đây? ",
+            -1,
+            ""
+        )
+        answerDatabase?.answerDao()?.saveData(ans1)
+        answerDatabase?.answerDao()?.saveData(ans2)
+        answerDatabase?.answerDao()?.saveData(ans3)
+        questionDatabase?.questionDao()?.saveData(question)
+        //86
+        ans1 = Answer(342, "50 km/h.", 86)
+        ans2 = Answer(343, "40 km/h.", 86)
+        ans3 = Answer(344, "60 km/h.", 86)
+        question = Question(
+            86,
+            typeQuestionLaw,
+            false,
+            343,
+            " Tốc độ tối đa cho phép đối với xe máy chuyên dùng, xe gắn máy (kể cả xe máy điện) và các loại xe tương tự trên đường bộ (trừ đường cao tốc) không được vượt quá bao nhiêu km/h?",
+            -1,
+            ""
+        )
+        answerDatabase?.answerDao()?.saveData(ans1)
+        answerDatabase?.answerDao()?.saveData(ans2)
+        answerDatabase?.answerDao()?.saveData(ans3)
+        questionDatabase?.questionDao()?.saveData(question)
+        //87
+        ans1 = Answer(345, "60 km/h.", 87)
+        ans2 = Answer(346, "50 km/h.", 87)
+        ans3 = Answer(347, "40 km/h.", 87)
+        question = Question(
+            87,
+            typeQuestionLaw,
+            false,
+            345,
+            " Trên đường bộ (trừ đường cao tốc) trong khu vực đông dân cư, đường đôi có dải phân cách giữa, xe mô tô hai bánh, ô tô chở người đến 30 chỗ tham gia giao thông với tốc độ tối đa cho phép là bao nhiêu?",
+            -1,
+            ""
+        )
+        answerDatabase?.answerDao()?.saveData(ans1)
+        answerDatabase?.answerDao()?.saveData(ans2)
+        answerDatabase?.answerDao()?.saveData(ans3)
+        questionDatabase?.questionDao()?.saveData(question)
+        //88
+        ans1 = Answer(348, "60 km/h.", 88)
+        ans2 = Answer(349, "50 km/h.", 88)
+        ans3 = Answer(350, "40 km/h.", 88)
+        question = Question(
+            88,
+            typeQuestionLaw,
+            false,
+            349,
+            " Trên đường bộ (trừ đường cao tốc) trong khu vực đông dân cư, đường hai chiều không có dải phân cách giữa, xe mô tô hai bánh, ô tô chở người đến 30 chỗ tham gia giao thông với tốc độ tối đa cho phép là bao nhiêu?",
+            -1,
+            ""
+        )
+        answerDatabase?.answerDao()?.saveData(ans1)
+        answerDatabase?.answerDao()?.saveData(ans2)
+        answerDatabase?.answerDao()?.saveData(ans3)
+        questionDatabase?.questionDao()?.saveData(question)
+        //89
+        ans1 = Answer(351, "Ô tô con, ô tô tải, ô tô chở người trên 30 chỗ.", 89)
+        ans2 = Answer(352, "Xe gắn máy, xe máy chuyên dung.", 89)
+        ans3 = Answer(353, "Cả ý 1 và ý 2.", 89)
+        question = Question(
+            89,
+            typeQuestionLaw,
+            false,
+            351,
+            " Trên đường bộ (trừ đường cao tốc) trong khu vực đông dân cư, đường hai chiều hoặc đường một chiều có một làn xe cơ giới, loại xe nào dưới đây được tham gia giao thông với tốc độ tối đa cho phép là 50 km/h?",
+            -1,
+            ""
+        )
+        answerDatabase?.answerDao()?.saveData(ans1)
+        answerDatabase?.answerDao()?.saveData(ans2)
+        answerDatabase?.answerDao()?.saveData(ans3)
+        questionDatabase?.questionDao()?.saveData(question)
+        //90
+        ans1 = Answer(
+            354,
+            "Chủ động giữ khoảng cách an toàn phù hợp với xe chạy liền trước xe của mình.",
+            90
+        )
+        ans2 = Answer(
+            355,
+            "Đảm bảo khoảng cách an toàn theo mật độ phương tiện, tình hình giao thông thực tế.",
+            90
+        )
+        ans3 = Answer(356, "Cả ý 1 và ý 2.", 90)
+        question = Question(
+            90,
+            typeQuestionLaw,
+            false,
+            356,
+            " Khi điều khiển xe chạy với tốc độ dưới 60km/h, để đảm bảo khoảng cách an toàn giữa hai xe, người lái xe phải điều khiển xe như thế nào?",
+            -1,
+            ""
+        )
+        answerDatabase?.answerDao()?.saveData(ans1)
+        answerDatabase?.answerDao()?.saveData(ans2)
+        answerDatabase?.answerDao()?.saveData(ans3)
+        questionDatabase?.questionDao()?.saveData(question)
+        //91
+        ans1 = Answer(
+            3541,
+            "Biển 1.",
+            91
+        )
+        ans2 = Answer(
+            3552,
+            "Biển 2.",
+            91
+        )
+        question = Question(
+            91,
+            typeQuestionNoticeBoard,
+            false,
+            3541,
+            "Biển báo nào báo hiệu bắt đầu đoạn đường vào phạm vi khu dân cư, các phương tiện tham gia giao thông phải tuân thủ các quy định đi đường được áp dụng ở khu đông dân cư?",
+            R.drawable.cau91,
+            ""
+        )
+        answerDatabase?.answerDao()?.saveData(ans1)
+        answerDatabase?.answerDao()?.saveData(ans2)
+        questionDatabase?.questionDao()?.saveData(question)
+        //92
+
+        ans1 = Answer(
+            35411,
+            "Biển 1.",
+            92
+        )
+        ans2 = Answer(
+            35522,
+            "Biển 2.",
+            92
+        )
+        question = Question(
+            92,
+            typeQuestionNoticeBoard,
+            false,
+            35411,
+            "Biển nào báo hiệu”Hướng đi thẳng phải theo” ?",
+            R.drawable.cau92,
+            ""
+        )
+        answerDatabase?.answerDao()?.saveData(ans1)
+        answerDatabase?.answerDao()?.saveData(ans2)
+        questionDatabase?.questionDao()?.saveData(question)
+
 
     }
 

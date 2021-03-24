@@ -30,6 +30,7 @@ class Question {
     @ColumnInfo(name = "Ques_Explain")
     var mExplain: String = ""
 
+    constructor()
     constructor(
         id: Int,
         typeQues: String,

@@ -15,7 +15,7 @@ class Answer {
 
     @ColumnInfo(name = "Ans_QuesID")
     var mQuestionID: Int = -1
-
+    constructor()
     constructor(ansId: Int, content: String, quesId: Int) {
         this.mID = ansId
         this.mContent = content

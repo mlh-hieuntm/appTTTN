@@ -16,7 +16,7 @@ class Exam {
 
     @ColumnInfo(name = "Exam_Time_Remaining")
     var mTimeRemaining: Int = 1140
-
+    constructor()
     constructor(id: Int, isFinish: Boolean, timeRemaining: Int) {
         this.mID = id
         this.mIsFinished = isFinish
