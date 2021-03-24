@@ -1,0 +1,33 @@
+package com.example.nthigplxa1
+
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity
+class Question {
+//câu hỏi: mã câu hỏi, mã đề, loại câu hỏi, liệt hay không, đáp án đã chọn, mã câu trả lời đúng, nội dung câu hỏi
+
+    @PrimaryKey(autoGenerate = true)
+    @ColumnInfo(name = "Ques_Id")
+    var mID: Int = 0
+
+    @ColumnInfo(name = "Exam_Id")
+    var mExamId: Int = 0
+
+    @ColumnInfo(name = "Ques_Type")
+    var mTypeQuestion: String = ""
+
+    @ColumnInfo(name = "Ques_IsParalysisPoint")
+    var mIsParalysisPoint: Boolean = true
+
+    @ColumnInfo(name = "Ques_AnsSelectedId")
+    var mAnsSelectedId: Int = -1
+
+    @ColumnInfo(name = "Ques_AnsIdCorrect")
+    var mAnsIdCorrect: Int = -1
+
+    @ColumnInfo(name = "Ques_Content")
+    var mContent: String = ""
+
+}
