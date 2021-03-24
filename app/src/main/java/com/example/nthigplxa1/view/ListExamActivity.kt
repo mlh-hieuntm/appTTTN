@@ -2296,75 +2296,7 @@ class ListExamActivity : AppCompatActivity(),
                 mDialog.setCancelable(false)
                 mDialog.tv_TitleOfCustomDialogConfirm.text = "Bạn có muốn tạo một đề thi mới ?"
                 mDialog.btn_AcceptDiaLogConFirm.setOnClickListener() {
-                    // random 15 ques law
-                    var arrLaw = ArrayList<Question>()
-                    for (i in 1..15) {
-                        var pos = (0 until this.mArrayListQuesLaw.size).random()
-                        var ques = mArrayListQuesLaw[pos]
-                        while (arrLaw.contains(ques)) {
-                            pos = (0 until this.mArrayListQuesLaw.size).random()
-                            ques = mArrayListQuesLaw[pos]
-                        }
-                        arrLaw.add(ques)
-                    }
-                    // random 5 ques NoticeBoard
-                    var arrNoticeBoard = ArrayList<Question>()
-                    for (i in 1..5) {
-                        var pos = (0 until this.mArrayListQuesNoticeBoard.size).random()
-                        var ques = mArrayListQuesNoticeBoard[pos]
-                        while (arrNoticeBoard.contains(ques)) {
-                            pos = (0 until this.mArrayListQuesNoticeBoard.size).random()
-                            ques = mArrayListQuesNoticeBoard[pos]
-                        }
-                        arrNoticeBoard.add(ques)
-                    }
-                    // random 5 ques law
-                    var arrSituations = ArrayList<Question>()
-                    for (i in 1..5) {
-                        var pos = (0 until this.mArrayListQuesSituations.size).random()
-                        var ques = mArrayListQuesSituations[pos]
-                        while (arrSituations.contains(ques)) {
-                            pos = (0 until this.mArrayListQuesSituations.size).random()
-                            ques = mArrayListQuesSituations[pos]
-                        }
-                        arrSituations.add(ques)
-                    }
-                    Thread {
-                        var exam = Exam(mArrayListExam.size + 1, false, 19)
-                        appDatabase?.appDao()?.saveDataExam(exam)
-                        var id = (mArrayListExamWithQues.size + 1) * 10
-                        var eExamWithQuestion: ExamWithQuestion?
-                        arrLaw.forEach {
-                            eExamWithQuestion = ExamWithQuestion(id++, -1, it.mID, exam.mID)
-                            mArrayListExamWithQues.add(eExamWithQuestion!!)
-                            appDatabase?.appDao()
-                                ?.saveDataEwQ(eExamWithQuestion!!)
-                        }
-                        arrNoticeBoard.forEach {
-                            eExamWithQuestion = ExamWithQuestion(id++, -1, it.mID, exam.mID)
-                            appDatabase?.appDao()
-                                ?.saveDataEwQ(eExamWithQuestion!!)
-                            mArrayListExamWithQues.add(eExamWithQuestion!!)
-                        }
-                        arrSituations.forEach {
-                            eExamWithQuestion = ExamWithQuestion(id++, -1, it.mID, exam.mID)
-                            appDatabase?.appDao()
-                                ?.saveDataEwQ(eExamWithQuestion!!)
-                            mArrayListExamWithQues.add(eExamWithQuestion!!)
-                        }
-                        runOnUiThread {
-                            mArrayListExam.add(exam)
-                            mListExamAdapter?.setList(mArrayListExam)
-                            if (mArrayListExam.size == 1) {
-                                rv_listExam.visibility = View.VISIBLE
-                                tv_Suggest.visibility = View.GONE
-                            }
-                            mDialog.dismiss()
-                            cl_list_exam_activity.alpha = 1F
-                            Toast.makeText(this, "Thêm thành công!", Toast.LENGTH_SHORT).show()
-                        }
-                    }.start()
-
+                    createExam()
                 }
                 mDialog.btn_CancelDialogConfirm.setOnClickListener {
                     cl_list_exam_activity.alpha = 1F
@@ -2374,6 +2306,78 @@ class ListExamActivity : AppCompatActivity(),
                 mDialog.show()
             }
         }
+    }
+
+    private fun createExam() {
+        // random 15 ques law
+        var arrLaw = ArrayList<Question>()
+        for (i in 1..15) {
+            var pos = (0 until this.mArrayListQuesLaw.size).random()
+            var ques = mArrayListQuesLaw[pos]
+            while (arrLaw.contains(ques)) {
+                pos = (0 until this.mArrayListQuesLaw.size).random()
+                ques = mArrayListQuesLaw[pos]
+            }
+            arrLaw.add(ques)
+        }
+        // random 5 ques NoticeBoard
+        var arrNoticeBoard = ArrayList<Question>()
+        for (i in 1..5) {
+            var pos = (0 until this.mArrayListQuesNoticeBoard.size).random()
+            var ques = mArrayListQuesNoticeBoard[pos]
+            while (arrNoticeBoard.contains(ques)) {
+                pos = (0 until this.mArrayListQuesNoticeBoard.size).random()
+                ques = mArrayListQuesNoticeBoard[pos]
+            }
+            arrNoticeBoard.add(ques)
+        }
+        // random 5 ques law
+        var arrSituations = ArrayList<Question>()
+        for (i in 1..5) {
+            var pos = (0 until this.mArrayListQuesSituations.size).random()
+            var ques = mArrayListQuesSituations[pos]
+            while (arrSituations.contains(ques)) {
+                pos = (0 until this.mArrayListQuesSituations.size).random()
+                ques = mArrayListQuesSituations[pos]
+            }
+            arrSituations.add(ques)
+        }
+        Thread {
+            var exam = Exam(mArrayListExam.size + 1, false, 19)
+            appDatabase?.appDao()?.saveDataExam(exam)
+            var id = (mArrayListExamWithQues.size + 1) * 10
+            var eExamWithQuestion: ExamWithQuestion?
+            arrLaw.forEach {
+                eExamWithQuestion = ExamWithQuestion(id++, -1, it.mID, exam.mID)
+                mArrayListExamWithQues.add(eExamWithQuestion!!)
+                appDatabase?.appDao()
+                    ?.saveDataEwQ(eExamWithQuestion!!)
+            }
+            arrNoticeBoard.forEach {
+                eExamWithQuestion = ExamWithQuestion(id++, -1, it.mID, exam.mID)
+                appDatabase?.appDao()
+                    ?.saveDataEwQ(eExamWithQuestion!!)
+                mArrayListExamWithQues.add(eExamWithQuestion!!)
+            }
+            arrSituations.forEach {
+                eExamWithQuestion = ExamWithQuestion(id++, -1, it.mID, exam.mID)
+                appDatabase?.appDao()
+                    ?.saveDataEwQ(eExamWithQuestion!!)
+                mArrayListExamWithQues.add(eExamWithQuestion!!)
+            }
+            runOnUiThread {
+                mArrayListExam.add(exam)
+                mListExamAdapter?.setList(mArrayListExam)
+                if (mArrayListExam.size == 1) {
+                    rv_listExam.visibility = View.VISIBLE
+                    tv_Suggest.visibility = View.GONE
+                }
+                mDialog.dismiss()
+                cl_list_exam_activity.alpha = 1F
+                Toast.makeText(this, "Thêm thành công!", Toast.LENGTH_SHORT).show()
+            }
+        }.start()
+
     }
 
     override fun onItemClick(position: Int, mItem: Exam) {

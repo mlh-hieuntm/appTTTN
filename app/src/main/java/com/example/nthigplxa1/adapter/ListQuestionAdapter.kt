@@ -16,6 +16,7 @@ import com.example.nthigplxa1.model.Question
 class ListQuestionAdapter(var mContext: Context) :
     RecyclerView.Adapter<ListQuestionAdapter.ViewHolder>() {
 
+    private var mIsShowExplain = false
     private var mArrayListQuestion = ArrayList<Question>()
     private var mArrayListAnswer = ArrayList<Answer>()
     private var mArrayListEWQ = ArrayList<ExamWithQuestion>()
@@ -33,6 +34,7 @@ class ListQuestionAdapter(var mContext: Context) :
         val view2 = itemView.findViewById<View>(R.id.underLine2)
         val view3 = itemView.findViewById<View>(R.id.underLine3)
         val view4 = itemView.findViewById<View>(R.id.underLine4)
+        val tvExplain = itemView.findViewById<TextView>(R.id.tv_explain)
         val tvW = itemView.findViewById<TextView>(R.id.tv_Warning)
     }
 
@@ -44,6 +46,11 @@ class ListQuestionAdapter(var mContext: Context) :
             this.mArrayAnsSelect.add(-1)
             this.mArrayCorrectAns.add(-2)
         }
+        notifyDataSetChanged()
+    }
+
+    fun showExplain() {
+        mIsShowExplain = true
         notifyDataSetChanged()
     }
 
@@ -83,6 +90,8 @@ class ListQuestionAdapter(var mContext: Context) :
         holder.view2.visibility = View.GONE
         holder.view3.visibility = View.GONE
         holder.view4.visibility = View.GONE
+        holder.tvExplain.visibility = View.GONE
+
         if (mArrayListQuestion[position].mIsParalysisPoint) {
             holder.tvW.visibility = View.VISIBLE
         } else {
@@ -155,34 +164,47 @@ class ListQuestionAdapter(var mContext: Context) :
             }
         }
 
+        if (mIsShowExplain) {
+            holder.tvExplain.visibility = View.VISIBLE
+            holder.tvExplain.text = "Giải thích: ${mArrayListQuestion[position].mExplain}"
+        }
+
         holder.tvAns1.setOnClickListener {
-            holder.tvAns1.setTextColor(ContextCompat.getColor(mContext, R.color.green))
-            holder.tvAns2.setTextColor(ContextCompat.getColor(mContext, R.color.black))
-            holder.tvAns3.setTextColor(ContextCompat.getColor(mContext, R.color.black))
-            holder.tvAns4.setTextColor(ContextCompat.getColor(mContext, R.color.black))
-            mArrayAnsSelect[position] = 1
+            if (!mIsShowExplain) {
+                holder.tvAns1.setTextColor(ContextCompat.getColor(mContext, R.color.green))
+                holder.tvAns2.setTextColor(ContextCompat.getColor(mContext, R.color.black))
+                holder.tvAns3.setTextColor(ContextCompat.getColor(mContext, R.color.black))
+                holder.tvAns4.setTextColor(ContextCompat.getColor(mContext, R.color.black))
+                mArrayAnsSelect[position] = 1
+            }
 
         }
         holder.tvAns2.setOnClickListener {
-            holder.tvAns1.setTextColor(ContextCompat.getColor(mContext, R.color.black))
-            holder.tvAns2.setTextColor(ContextCompat.getColor(mContext, R.color.green))
-            holder.tvAns3.setTextColor(ContextCompat.getColor(mContext, R.color.black))
-            holder.tvAns4.setTextColor(ContextCompat.getColor(mContext, R.color.black))
-            mArrayAnsSelect[position] = 2
+           if (!mIsShowExplain) {
+               holder.tvAns1.setTextColor(ContextCompat.getColor(mContext, R.color.black))
+               holder.tvAns2.setTextColor(ContextCompat.getColor(mContext, R.color.green))
+               holder.tvAns3.setTextColor(ContextCompat.getColor(mContext, R.color.black))
+               holder.tvAns4.setTextColor(ContextCompat.getColor(mContext, R.color.black))
+               mArrayAnsSelect[position] = 2
+           }
         }
         holder.tvAns3.setOnClickListener {
-            holder.tvAns1.setTextColor(ContextCompat.getColor(mContext, R.color.black))
-            holder.tvAns2.setTextColor(ContextCompat.getColor(mContext, R.color.black))
-            holder.tvAns3.setTextColor(ContextCompat.getColor(mContext, R.color.green))
-            holder.tvAns4.setTextColor(ContextCompat.getColor(mContext, R.color.black))
-            mArrayAnsSelect[position] = 3
+            if (!mIsShowExplain) {
+                holder.tvAns1.setTextColor(ContextCompat.getColor(mContext, R.color.black))
+                holder.tvAns2.setTextColor(ContextCompat.getColor(mContext, R.color.black))
+                holder.tvAns3.setTextColor(ContextCompat.getColor(mContext, R.color.green))
+                holder.tvAns4.setTextColor(ContextCompat.getColor(mContext, R.color.black))
+                mArrayAnsSelect[position] = 3
+            }
         }
         holder.tvAns4.setOnClickListener {
-            holder.tvAns1.setTextColor(ContextCompat.getColor(mContext, R.color.black))
-            holder.tvAns2.setTextColor(ContextCompat.getColor(mContext, R.color.black))
-            holder.tvAns3.setTextColor(ContextCompat.getColor(mContext, R.color.black))
-            holder.tvAns4.setTextColor(ContextCompat.getColor(mContext, R.color.green))
-            mArrayAnsSelect[position] = 4
+           if (!mIsShowExplain) {
+               holder.tvAns1.setTextColor(ContextCompat.getColor(mContext, R.color.black))
+               holder.tvAns2.setTextColor(ContextCompat.getColor(mContext, R.color.black))
+               holder.tvAns3.setTextColor(ContextCompat.getColor(mContext, R.color.black))
+               holder.tvAns4.setTextColor(ContextCompat.getColor(mContext, R.color.green))
+               mArrayAnsSelect[position] = 4
+           }
         }
 
     }

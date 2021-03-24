@@ -93,14 +93,21 @@ class DoExamActivity : AppCompatActivity(), View.OnClickListener {
                 mDialog.tv_TitleOfCustomDialogConfirm.text = "Bạn có chắc chắn muốn nộp bài?"
                 mDialog.btn_AcceptDiaLogConFirm.setOnClickListener() {
                     mDialog.dismiss()
-
                     var mDialog = MaterialDialog(this)
                         .noAutoDismiss()
                         .customView(R.layout.dialog_confirm_delete)
                     mDialog.window?.setDimAmount(0F)
                     mDialog.setCancelable(false)
-                    mDialog.tv_TitleOfCustomDialogConfirm.text =
-                        "Số điểm của bạn là ${mListQuestionAdapter?.getMark()}"
+                    val mark = mListQuestionAdapter?.getMark()
+                    if (mark!! >= 21) {
+                        mDialog.tv_TitleOfCustomDialogConfirm.text =
+                            "Số điểm của bạn là ${mark}, bạn đã đỗ!"
+                    } else {
+                        mDialog.tv_TitleOfCustomDialogConfirm.text =
+                            "Số điểm của bạn là ${mark}, bạn đã trượt!"
+                    }
+                    countDownTimer?.cancel()
+                    mListQuestionAdapter?.showExplain()
                     mDialog.btn_AcceptDiaLogConFirm.setOnClickListener {
                         cl_doExam.alpha = 1F
                         mDialog.dismiss()

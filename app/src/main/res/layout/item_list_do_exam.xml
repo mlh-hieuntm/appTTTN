@@ -8,132 +8,151 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="8dp">
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/gl_child"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tv_orderExam"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Câu 1:"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="@id/tv_contentQuestion"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_Warning"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="(Câu điểm liệt)"
+                android:textColor="#EA8E05"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toRightOf="@id/tv_orderExam"
+                app:layout_constraintTop_toTopOf="@id/tv_orderExam" />
+
+            <TextView
+                android:id="@+id/tv_contentQuestion"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp"
+                android:text="Trong các khái niệm dưới đây, dải phân cách được hiểu như thế nào là đúng?"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_orderExam"></TextView>
+
+            <ImageView
+                android:id="@+id/img_contentQues"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:maxHeight="100dp"
+                app:layout_constraintTop_toBottomOf="@id/tv_contentQuestion"></ImageView>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.2dp"
+                android:layout_margin="6dp"
+                android:background="#9A7A7A"
+                app:layout_constraintTop_toBottomOf="@id/img_contentQues" />
+
+            <TextView
+                android:id="@+id/tv_ans1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="3dp"
+                android:text=""
+                android:textColor="@color/black"
+                app:layout_constraintTop_toBottomOf="@id/img_contentQues"></TextView>
+
+            <View
+                android:id="@+id/underLine1"
+                android:layout_width="match_parent"
+                android:layout_height="0.2dp"
+                android:layout_margin="6dp"
+                android:background="#9A7A7A"
+                app:layout_constraintTop_toBottomOf="@id/tv_ans1" />
+
+            <TextView
+                android:id="@+id/tv_ans2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="3dp"
+                android:text=""
+                android:textColor="@color/black"
+                app:layout_constraintTop_toBottomOf="@id/tv_ans1"></TextView>
+
+            <View
+                android:id="@+id/underLine2"
+                android:layout_width="match_parent"
+                android:layout_height="0.2dp"
+                android:layout_margin="6dp"
+                android:background="#9A7A7A"
+                app:layout_constraintTop_toBottomOf="@id/tv_ans2" />
+
+            <TextView
+                android:id="@+id/tv_ans3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="3dp"
+                android:text=""
+                android:textColor="@color/black"
+                app:layout_constraintTop_toBottomOf="@id/tv_ans2"></TextView>
+
+            <View
+                android:id="@+id/underLine3"
+                android:layout_width="match_parent"
+                android:layout_height="0.2dp"
+                android:layout_margin="6dp"
+                android:background="#9A7A7A"
+                app:layout_constraintTop_toBottomOf="@id/tv_ans3" />
+
+            <TextView
+                android:id="@+id/tv_ans4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="3dp"
+                android:text=""
+                android:textColor="@color/black"
+                app:layout_constraintTop_toBottomOf="@id/tv_ans3"></TextView>
+
+            <View
+                android:id="@+id/underLine4"
+                android:layout_width="match_parent"
+                android:layout_height="0.2dp"
+                android:layout_margin="6dp"
+                android:background="#9A7A7A"
+                app:layout_constraintTop_toBottomOf="@id/tv_ans4" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <TextView
-            android:id="@+id/tv_orderExam"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Câu 1:"
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            app:layout_constraintLeft_toLeftOf="@id/tv_contentQuestion"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/tv_Warning"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:text="(Câu điểm liệt)"
-            android:textColor="#EA8E05"
-            android:textStyle="bold"
-            app:layout_constraintLeft_toRightOf="@id/tv_orderExam"
-            app:layout_constraintTop_toTopOf="@id/tv_orderExam" />
-
-        <TextView
-            android:id="@+id/tv_contentQuestion"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="3dp"
-            android:layout_marginRight="3dp"
-            android:text="Trong các khái niệm dưới đây, dải phân cách được hiểu như thế nào là đúng?"
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_orderExam"></TextView>
-
-        <ImageView
-            android:layout_marginTop="6dp"
-            android:id="@+id/img_contentQues"
+            android:id="@+id/tv_explain"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:maxHeight="100dp"
-            app:layout_constraintTop_toBottomOf="@id/tv_contentQuestion"></ImageView>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="0.2dp"
-            android:layout_margin="6dp"
-            android:background="#9A7A7A"
-            app:layout_constraintTop_toBottomOf="@id/img_contentQues" />
-
-        <TextView
-            android:id="@+id/tv_ans1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="3dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginRight="3dp"
-            android:text="1, Là bộ phận của đường để ngăn cách không cho các loại xe vào những nơi không được phép"
-            android:textColor="@color/black"
-            app:layout_constraintTop_toBottomOf="@id/img_contentQues"></TextView>
-
-        <View
-            android:id="@+id/underLine1"
-            android:layout_width="match_parent"
-            android:layout_height="0.2dp"
-            android:layout_margin="6dp"
-            android:background="#9A7A7A"
-            app:layout_constraintTop_toBottomOf="@id/tv_ans1" />
-
-        <TextView
-            android:id="@+id/tv_ans2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="3dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginRight="3dp"
-            android:text="2, Là bộ phận của đường để ngăn cách không cho các loại xe vào những nơi không được phép"
-            android:textColor="@color/black"
-            app:layout_constraintTop_toBottomOf="@id/tv_ans1"></TextView>
-
-        <View
-            android:id="@+id/underLine2"
-            android:layout_width="match_parent"
-            android:layout_height="0.2dp"
-            android:layout_margin="6dp"
-            android:background="#9A7A7A"
-            app:layout_constraintTop_toBottomOf="@id/tv_ans2" />
-
-        <TextView
-            android:id="@+id/tv_ans3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="3dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginRight="3dp"
-            android:text="3, Là bộ phận của đường để ngăn cách không cho các loại xe vào những nơi không được phép"
-            android:textColor="@color/black"
-            app:layout_constraintTop_toBottomOf="@id/tv_ans2"></TextView>
-
-        <View
-            android:id="@+id/underLine3"
-            android:layout_width="match_parent"
-            android:layout_height="0.2dp"
-            android:layout_margin="6dp"
-            android:background="#9A7A7A"
-            app:layout_constraintTop_toBottomOf="@id/tv_ans3" />
-
-        <TextView
-            android:id="@+id/tv_ans4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="3dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginRight="3dp"
-            android:text="4, Là bộ phận của đường để ngăn cách không cho các loại xe vào những nơi không được phép"
-            android:textColor="@color/black"
-            app:layout_constraintTop_toBottomOf="@id/tv_ans3"></TextView>
-
-        <View
-            android:id="@+id/underLine4"
-            android:layout_width="match_parent"
-            android:layout_height="0.2dp"
-            android:layout_margin="6dp"
-            android:background="#9A7A7A"
-            app:layout_constraintTop_toBottomOf="@id/tv_ans4" />
+            android:background="@color/green"
+            android:textColor="@color/white"
+            app:layout_constraintTop_toBottomOf="@+id/gl_child"
+            android:padding="6dp"
+            android:gravity="center"
+            ></TextView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>
