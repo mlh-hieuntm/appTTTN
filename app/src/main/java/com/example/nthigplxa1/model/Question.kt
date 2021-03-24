@@ -5,47 +5,29 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity
-class Question {
+data class Question (
 //câu hỏi: mã câu hỏi, mã đề, loại câu hỏi, liệt hay không, đáp án đã chọn, mã câu trả lời đúng, nội dung câu hỏi
 
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "Ques_Id")
-    var mID: Int = 0
+    var mID: Int = 0,
 
     @ColumnInfo(name = "Ques_Type")
-    var mTypeQuestion: String = ""
+    var mTypeQuestion: String = "",
 
     @ColumnInfo(name = "Ques_IsParalysisPoint")
-    var mIsParalysisPoint: Boolean = true
+    var mIsParalysisPoint: Boolean = true,
 
     @ColumnInfo(name = "Ques_AnsIdCorrect")
-    var mAnsIdCorrect: Int = -1
+    var mAnsIdCorrect: Int = -1,
 
     @ColumnInfo(name = "Ques_Content")
-    var mContent: String = ""
+    var mContent: String = "",
 
     @ColumnInfo(name = "Ques_Content_Img")
-    var mContentImg: Int = -1
+    var mContentImg: Int = -1,
 
     @ColumnInfo(name = "Ques_Explain")
     var mExplain: String = ""
 
-    constructor()
-    constructor(
-        id: Int,
-        typeQues: String,
-        isParalysisPoint: Boolean,
-        ansIdCorrect: Int,
-        content: String,
-        contentImg: Int,
-        explain: String
-    ) {
-        this.mID = id
-        this.mTypeQuestion = typeQues
-        this.mIsParalysisPoint = isParalysisPoint
-        this.mAnsIdCorrect = ansIdCorrect
-        this.mContent = content
-        this.mContentImg = contentImg
-        this.mExplain = explain
-    }
-}
+)

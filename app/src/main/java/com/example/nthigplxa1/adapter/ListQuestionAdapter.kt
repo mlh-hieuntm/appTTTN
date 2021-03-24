@@ -4,34 +4,47 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.nthigplxa1.R
+import com.example.nthigplxa1.model.Answer
+import com.example.nthigplxa1.model.ExamWithQuestion
+import com.example.nthigplxa1.model.Question
 
 class ListQuestionAdapter(var mContext: Context) :
     RecyclerView.Adapter<ListQuestionAdapter.ViewHolder>() {
 
-    private var mArrayListQuestion = ArrayList<Int>()
-    private var mCurrentSelect: TextView? = null
-
+    private var mArrayListQuestion = ArrayList<Question>()
+    private var mArrayListAnswer = ArrayList<Answer>()
+    private var mArrayListEWQ = ArrayList<ExamWithQuestion>()
+    private var mArrayAnsSelect = ArrayList<Int>()
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val orderQues: TextView = itemView.findViewById(R.id.tv_orderExam)
+        val imgContent: ImageView = itemView.findViewById(R.id.img_contentQues)
+        val tvContent: TextView = itemView.findViewById(R.id.tv_contentQuestion)
         val tvAns1 = itemView.findViewById<TextView>(R.id.tv_ans1)
         val tvAns2 = itemView.findViewById<TextView>(R.id.tv_ans2)
         val tvAns3 = itemView.findViewById<TextView>(R.id.tv_ans3)
         val tvAns4 = itemView.findViewById<TextView>(R.id.tv_ans4)
+        val view1 = itemView.findViewById<View>(R.id.underLine1)
+        val view2 = itemView.findViewById<View>(R.id.underLine2)
+        val view3 = itemView.findViewById<View>(R.id.underLine3)
+        val view4 = itemView.findViewById<View>(R.id.underLine4)
+        val tvW = itemView.findViewById<TextView>(R.id.tv_Warning)
     }
 
-    fun setList(list: ArrayList<Int>) {
+    fun setList(list: ArrayList<Question>, listAns: ArrayList<Answer>, listExamWithQuestion: ArrayList<ExamWithQuestion>) {
         this.mArrayListQuestion = list
+        this.mArrayListAnswer = listAns
+        this.mArrayListEWQ = listExamWithQuestion
         notifyDataSetChanged()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val layoutInflater = LayoutInflater.from(mContext)
         val homeView: View = layoutInflater.inflate(R.layout.item_list_do_exam, parent, false)
-
         return ViewHolder(homeView)
 
     }
@@ -42,8 +55,25 @@ class ListQuestionAdapter(var mContext: Context) :
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.setIsRecyclable(false)
-        holder.orderQues.text = "Câu $position"
-
+        holder.orderQues.text = "Câu ${position + 1}"
+        if (mArrayListQuestion[position].mContentImg != -1) {
+            holder.imgContent.setImageResource(mArrayListQuestion[position].mContentImg)
+        }
+        holder.tvContent.text = mArrayListQuestion[position].mContent
+        var countText = 1
+        holder.tvAns1.visibility = View.GONE
+        holder.tvAns2.visibility = View.GONE
+        holder.tvAns3.visibility = View.GONE
+        holder.tvAns4.visibility = View.GONE
+        holder.view1.visibility = View.GONE
+        holder.view2.visibility = View.GONE
+        holder.view3.visibility = View.GONE
+        holder.view4.visibility = View.GONE
+        if (mArrayListQuestion[position].mIsParalysisPoint) {
+            holder.tvW.visibility = View.VISIBLE
+        } else {
+            holder.tvW.visibility = View.INVISIBLE
+        }
         when (position) {
             1 -> {
                 holder.tvAns1.setTextColor(ContextCompat.getColor(mContext, R.color.green))
@@ -70,12 +100,41 @@ class ListQuestionAdapter(var mContext: Context) :
                 holder.tvAns4.setTextColor(ContextCompat.getColor(mContext, R.color.green))
             }
         }
+        mArrayListAnswer.forEach {
+            if (it.mQuestionID == mArrayListQuestion[position].mID) {
+                when (countText) {
+                    1 -> {
+                        holder.tvAns1.text = "1, ${it.mContent.trim()}"
+                        holder.tvAns1.visibility = View.VISIBLE
+                        holder.view1.visibility = View.VISIBLE
+                    }
+                    2 -> {
+                        holder.tvAns2.text = "2, ${it.mContent.trim()}"
+                        holder.tvAns2.visibility = View.VISIBLE
+                        holder.view2.visibility = View.VISIBLE
+                    }
+                    3 -> {
+                        holder.tvAns3.text = "3, ${it.mContent.trim()}"
+                        holder.tvAns3.visibility = View.VISIBLE
+                        holder.tvAns3.visibility = View.VISIBLE
+                        holder.view3.visibility = View.VISIBLE
+                    }
+                    4 -> {
+                        holder.tvAns4.text = "4, ${it.mContent.trim()}"
+                        holder.tvAns4.visibility = View.VISIBLE
+                        holder.view4.visibility = View.VISIBLE
+                    }
+                }
+                countText++
+            }
+        }
 
         holder.tvAns1.setOnClickListener {
             holder.tvAns1.setTextColor(ContextCompat.getColor(mContext, R.color.green))
             holder.tvAns2.setTextColor(ContextCompat.getColor(mContext, R.color.black))
             holder.tvAns3.setTextColor(ContextCompat.getColor(mContext, R.color.black))
             holder.tvAns4.setTextColor(ContextCompat.getColor(mContext, R.color.black))
+
         }
         holder.tvAns2.setOnClickListener {
             holder.tvAns1.setTextColor(ContextCompat.getColor(mContext, R.color.black))

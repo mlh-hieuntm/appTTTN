@@ -10,6 +10,10 @@ import com.afollestad.materialdialogs.MaterialDialog
 import com.afollestad.materialdialogs.customview.customView
 import com.example.nthigplxa1.adapter.ListQuestionAdapter
 import com.example.nthigplxa1.R
+import com.example.nthigplxa1.db.AppDatabase
+import com.example.nthigplxa1.model.Answer
+import com.example.nthigplxa1.model.ExamWithQuestion
+import com.example.nthigplxa1.model.Question
 import kotlinx.android.synthetic.main.activity_do_exam.*
 import kotlinx.android.synthetic.main.dialog_confirm_delete.*
 
@@ -18,6 +22,9 @@ class DoExamActivity : AppCompatActivity(), View.OnClickListener {
     private var mListQuestionAdapter: ListQuestionAdapter? = null
     private lateinit var mDialog: MaterialDialog
     private var countDownTimer: CountDownTimer? = null
+    private var mArraylistEWQ: ArrayList<ExamWithQuestion> = ArrayList()
+    private var mArrayListQues: ArrayList<Question> = ArrayList()
+    private var mArrayListAns: ArrayList<Answer> = ArrayList()
     val arr = ArrayList<Int>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,17 +32,31 @@ class DoExamActivity : AppCompatActivity(), View.OnClickListener {
         initRecycleView()
         initCountDownTimer()
         btn_submit.setOnClickListener(this)
+        val intent = intent
+        val bundle = intent.extras
+        if (bundle != null) {
+            for (i in 0..24) {
+                mArraylistEWQ.add( bundle.getSerializable("CAU_${i}") as ExamWithQuestion)
+            }
+        }
+
+        val appDatabase = AppDatabase.getDatabase(this)
+        Thread {
+            mArraylistEWQ.forEach {
+                mArrayListQues.add(appDatabase.appDao().readDataWithIDQuestion(it.mQuesId))
+                mArrayListAns.addAll(appDatabase.appDao().readDataWithIDQues(it.mQuesId))
+            }
+            runOnUiThread {
+                initRecycleView()
+            }
+        }.start()
     }
 
     private fun initRecycleView() {
         mListQuestionAdapter = ListQuestionAdapter(this)
         rv_doExam.layoutManager = LinearLayoutManager(this)
         rv_doExam.adapter = mListQuestionAdapter
-
-        for (i in 0..25) {
-            arr.add(i)
-        }
-        mListQuestionAdapter?.setList(arr)
+        mListQuestionAdapter?.setList(mArrayListQues, mArrayListAns, mArraylistEWQ)
     }
 
     private fun changeTimeFromIntToString(time: Long): String {

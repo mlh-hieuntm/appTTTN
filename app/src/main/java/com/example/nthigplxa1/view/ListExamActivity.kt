@@ -13,14 +13,11 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.room.Room
 import com.afollestad.materialdialogs.MaterialDialog
 import com.afollestad.materialdialogs.customview.customView
-import com.example.nthigplxa1.db.AnswerDatabase
-import com.example.nthigplxa1.db.ExamDatabase
-import com.example.nthigplxa1.db.QuestionDatabase
 import com.example.nthigplxa1.adapter.ItemListener
 import com.example.nthigplxa1.adapter.ListExamAdapter
 import com.example.nthigplxa1.adapter.ListExamItemTouchHelper
 import com.example.nthigplxa1.R
-import com.example.nthigplxa1.db.ExamWithQuestionDatabase
+import com.example.nthigplxa1.db.*
 import com.example.nthigplxa1.model.Answer
 import com.example.nthigplxa1.model.Exam
 import com.example.nthigplxa1.model.ExamWithQuestion
@@ -38,10 +35,7 @@ class ListExamActivity : AppCompatActivity(),
     private lateinit var mDialog: MaterialDialog
     private var helper: ItemTouchHelper? = null
     private var sharedPreferences: SharedPreferences? = null
-    private var examDatabase: ExamDatabase? = null
-    private var questionDatabase: QuestionDatabase? = null
-    private var answerDatabase: AnswerDatabase? = null
-    private var examWithQuestionDatabase: ExamWithQuestionDatabase? = null
+    private var appDatabase: AppDatabase? = null
     private var mArrayListAns: ArrayList<Answer> = ArrayList()
     private var mArrayListQues: ArrayList<Question> = ArrayList()
     private var mArrayListExam: ArrayList<Exam> = ArrayList()
@@ -64,21 +58,18 @@ class ListExamActivity : AppCompatActivity(),
     }
 
     private fun getAllDB() {
-        answerDatabase?.answerDao()?.readAllData()?.let {
+        appDatabase?.appDao()?.readAllDataAnswer()?.let {
             mArrayListAns = it as ArrayList<Answer>
         }
-        questionDatabase?.questionDao()?.readAllData()?.let {
+        appDatabase?.appDao()?.readAllDataQuestion()?.let {
             mArrayListQues = it as ArrayList<Question>
         }
-        examDatabase?.examDao()?.readAllData()?.let {
+        appDatabase?.appDao()?.readAllDataExam()?.let {
             mArrayListExam = it as ArrayList<Exam>
         }
-        examDatabase?.examDao()?.readAllData()?.let {
-            mArrayListExam = it as ArrayList<Exam>
+        appDatabase?.appDao()?.readAllData()?.let {
+            mArrayListExamWithQues = it as ArrayList<ExamWithQuestion>
         }
-//        examWithQuestionDatabase?.examWithQuestionDao()?.readAllData()?.let {
-//            mArrayListExamWithQues = it as ArrayList<ExamWithQuestion>
-//        }
     }
 
     private fun checkDbInApp() {
@@ -106,9 +97,15 @@ class ListExamActivity : AppCompatActivity(),
     }
 
     private fun setUpFirstState() {
-        mListExamAdapter?.setList(mArrayListExam)
-        rv_listExam.visibility = View.VISIBLE
-        cl_progressbar.visibility = View.GONE
+        if (mArrayListExam.isEmpty()) {
+            tv_Suggest.visibility = View.VISIBLE
+            rv_listExam.visibility = View.INVISIBLE
+        } else {
+            mListExamAdapter?.setList(mArrayListExam)
+            rv_listExam.visibility = View.VISIBLE
+        }
+
+        pg.visibility = View.GONE
         mArrayListQues.forEach {
             when (it.mTypeQuestion) {
                 typeQuestionNoticeBoard -> mArrayListQuesNoticeBoard.add(it)
@@ -137,10 +134,10 @@ class ListExamActivity : AppCompatActivity(),
             -1,
             "Hành vi đua xe chưa được cơ quan có thẩm quyền cấp phép là sai quy định của pháp luật."
         )
-        answerDatabase?.answerDao()?.saveData(ans1!!)
-        answerDatabase?.answerDao()?.saveData(ans2!!)
-        answerDatabase?.answerDao()?.saveData(ans3!!)
-        questionDatabase?.questionDao()?.saveData(question!!)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataAnswer(ans3)
+        appDatabase?.appDao()?.saveDataQuestion(question)
         // cau 2
         ans1 = Answer(4, "Bị nghiêm cấm.", 2)
         ans2 = Answer(5, "Được người dân ủng hộ.", 2)
@@ -154,10 +151,10 @@ class ListExamActivity : AppCompatActivity(),
             -1,
             "Ma túy là chất kích thích bị nghiêm cấm đối với người điều khiển phương tiện giao thông đường bộ."
         )
-        answerDatabase?.answerDao()?.saveData(ans1!!)
-        answerDatabase?.answerDao()?.saveData(ans2!!)
-        answerDatabase?.answerDao()?.saveData(ans3!!)
-        questionDatabase?.questionDao()?.saveData(question!!)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataAnswer(ans3)
+        appDatabase?.appDao()?.saveDataQuestion(question)
         // cau 3
         ans1 = Answer(7, "Chỉ bị nhắc nhở.", 3)
         ans2 = Answer(
@@ -175,10 +172,10 @@ class ListExamActivity : AppCompatActivity(),
             -1,
             "Người điều khiển phương tiện giao thông đường bộ không được dùng rượu, bia khi lái xe."
         )
-        answerDatabase?.answerDao()?.saveData(ans1!!)
-        answerDatabase?.answerDao()?.saveData(ans2!!)
-        answerDatabase?.answerDao()?.saveData(ans3!!)
-        questionDatabase?.questionDao()?.saveData(question!!)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataAnswer(ans3)
+        appDatabase?.appDao()?.saveDataQuestion(question)
         // cau 4
         ans1 = Answer(10, "DNgười điều khiển: Xe ô tô, xe mô tô, xe đạp, xe gắn máy.", 4)
         ans2 = Answer(11, "Người ngồi phía sau người điều khiển xe cơ giới.", 4)
@@ -193,11 +190,11 @@ class ListExamActivity : AppCompatActivity(),
             -1,
             "Những người trực tiếp điều khiển ôtô, môtô, xe đạp và xe gắn máy bị cấm sử dụng rượu, bia."
         )
-        answerDatabase?.answerDao()?.saveData(ans1!!)
-        answerDatabase?.answerDao()?.saveData(ans2!!)
-        answerDatabase?.answerDao()?.saveData(ans3!!)
-        answerDatabase?.answerDao()?.saveData(ans4!!)
-        questionDatabase?.questionDao()?.saveData(question!!)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataAnswer(ans3)
+        appDatabase?.appDao()?.saveDataAnswer(ans4)
+        appDatabase?.appDao()?.saveDataQuestion(question)
         // cau 5
         ans1 = Answer(14, "Bị nghiêm cấm tuỳ từng trường hợp.", 5)
         ans2 = Answer(15, "Không bị nghiêm cấm.", 5)
@@ -211,10 +208,10 @@ class ListExamActivity : AppCompatActivity(),
             -1,
             "Nếu vi phạm những lỗi trên, người điều khiển phương tiện phải chịu trách nhiệm theo quy định của pháp luật."
         )
-        answerDatabase?.answerDao()?.saveData(ans1!!)
-        answerDatabase?.answerDao()?.saveData(ans2!!)
-        answerDatabase?.answerDao()?.saveData(ans3!!)
-        questionDatabase?.questionDao()?.saveData(question!!)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataAnswer(ans3)
+        appDatabase?.appDao()?.saveDataQuestion(question)
         // cau 6
         ans1 = Answer(17, "Được phép.", 6)
         ans2 = Answer(18, "Không được phép.", 6)
@@ -228,10 +225,10 @@ class ListExamActivity : AppCompatActivity(),
             -1,
             "Hành vi quay đầu tại những nơi không được phép tăng nguy cơ xảy ra tai nạn giao thông."
         )
-        answerDatabase?.answerDao()?.saveData(ans1!!)
-        answerDatabase?.answerDao()?.saveData(ans2!!)
-        answerDatabase?.answerDao()?.saveData(ans3!!)
-        questionDatabase?.questionDao()?.saveData(question!!)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataAnswer(ans3)
+        appDatabase?.appDao()?.saveDataQuestion(question)
         // cau 7
         ans1 = Answer(20, "Được phép.", 7)
         ans2 = Answer(
@@ -250,11 +247,11 @@ class ListExamActivity : AppCompatActivity(),
             -1,
             "Xe môtô hai bánh, ba bánh, xe gắn máy không được phép sử dụng xe để kéo hoặc đẩy các phương tiện khác ở bất kỳ trường hợp nào."
         )
-        answerDatabase?.answerDao()?.saveData(ans1!!)
-        answerDatabase?.answerDao()?.saveData(ans2!!)
-        answerDatabase?.answerDao()?.saveData(ans3!!)
-        answerDatabase?.answerDao()?.saveData(ans4!!)
-        questionDatabase?.questionDao()?.saveData(question!!)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataAnswer(ans3)
+        appDatabase?.appDao()?.saveDataAnswer(ans4)
+        appDatabase?.appDao()?.saveDataQuestion(question)
         // cau 8
         ans1 = Answer(24, "Được phép.", 8)
         ans2 = Answer(25, "Tuỳ trường hợp.", 8)
@@ -268,10 +265,10 @@ class ListExamActivity : AppCompatActivity(),
             -1,
             "Người điều khiển phương tiện vi phạm những hành vi trên có thể bị xử lý theo quy định của pháp luật."
         )
-        answerDatabase?.answerDao()?.saveData(ans1!!)
-        answerDatabase?.answerDao()?.saveData(ans2!!)
-        answerDatabase?.answerDao()?.saveData(ans3!!)
-        questionDatabase?.questionDao()?.saveData(question!!)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataAnswer(ans3)
+        appDatabase?.appDao()?.saveDataQuestion(question)
         // cau 9
         ans1 = Answer(
             27,
@@ -298,11 +295,11 @@ class ListExamActivity : AppCompatActivity(),
             -1,
             "Những hành vi trên không được phép thực hiện vì gây nguy hiểm cho người điều khiển phương tiện và những người xung quanh."
         )
-        answerDatabase?.answerDao()?.saveData(ans1!!)
-        answerDatabase?.answerDao()?.saveData(ans2!!)
-        answerDatabase?.answerDao()?.saveData(ans3!!)
-        answerDatabase?.answerDao()?.saveData(ans4!!)
-        questionDatabase?.questionDao()?.saveData(question!!)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataAnswer(ans3)
+        appDatabase?.appDao()?.saveDataAnswer(ans4)
+        appDatabase?.appDao()?.saveDataQuestion(question)
         // cau 10
         ans1 = Answer(31, "Được mang, vác tuỳ trường hợp cụ thể.", 10)
         ans2 = Answer(32, "Không được mang, vác.", 10)
@@ -316,10 +313,10 @@ class ListExamActivity : AppCompatActivity(),
             -1,
             "Mang, vác vật cồng kềnh khi ngồi trên xe môtô hai bánh, ba bánh, xe gắn máy tiềm ẩn nhiều nguy cơ xảy ra tai nạn giao thông."
         )
-        answerDatabase?.answerDao()?.saveData(ans1!!)
-        answerDatabase?.answerDao()?.saveData(ans2!!)
-        answerDatabase?.answerDao()?.saveData(ans3!!)
-        questionDatabase?.questionDao()?.saveData(question!!)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataAnswer(ans3)
+        appDatabase?.appDao()?.saveDataQuestion(question)
         // cau 11
         ans1 = Answer(34, "Được phép.", 11)
         ans2 = Answer(35, "Được bám trong trường hợp phương tiện của mình bị hỏng.", 11)
@@ -334,11 +331,11 @@ class ListExamActivity : AppCompatActivity(),
             -1,
             "Hành vi bám, kéo hoặc đẩy các phương tiện khác khi ngồi trên xe môtô hai bánh, ba bánh, xe gắn máy là vi phạm pháp luật."
         )
-        answerDatabase?.answerDao()?.saveData(ans1!!)
-        answerDatabase?.answerDao()?.saveData(ans2!!)
-        answerDatabase?.answerDao()?.saveData(ans3!!)
-        answerDatabase?.answerDao()?.saveData(ans4!!)
-        questionDatabase?.questionDao()?.saveData(question!!)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataAnswer(ans3)
+        appDatabase?.appDao()?.saveDataAnswer(ans4)
+        appDatabase?.appDao()?.saveDataQuestion(question)
         // cau 12
         ans1 = Answer(38, "Được sử dụng.", 12)
         ans2 = Answer(39, "Chỉ người ngồi sau được sử dụng.", 12)
@@ -353,11 +350,11 @@ class ListExamActivity : AppCompatActivity(),
             -1,
             "Sử dụng ô (dù) khi ngồi trên xe môtô hai bánh, ba bánh, xe gắn máy dễ khiến phương tiện mất lái."
         )
-        answerDatabase?.answerDao()?.saveData(ans1!!)
-        answerDatabase?.answerDao()?.saveData(ans2!!)
-        answerDatabase?.answerDao()?.saveData(ans3!!)
-        answerDatabase?.answerDao()?.saveData(ans4!!)
-        questionDatabase?.questionDao()?.saveData(question!!)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataAnswer(ans3)
+        appDatabase?.appDao()?.saveDataAnswer(ans4)
+        appDatabase?.appDao()?.saveDataQuestion(question)
         // cau 13
         ans1 = Answer(42, "Chỉ được phép nếu cả hai đội mũ bảo hiểm.", 13)
         ans2 = Answer(43, "Không được phép.", 13)
@@ -372,11 +369,11 @@ class ListExamActivity : AppCompatActivity(),
             -1,
             "Nghiêm cấm xe môtô kéo theo người đang điều khiển xe đạp leo dốc."
         )
-        answerDatabase?.answerDao()?.saveData(ans1!!)
-        answerDatabase?.answerDao()?.saveData(ans2!!)
-        answerDatabase?.answerDao()?.saveData(ans3!!)
-        answerDatabase?.answerDao()?.saveData(ans4!!)
-        questionDatabase?.questionDao()?.saveData(question!!)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataAnswer(ans3)
+        appDatabase?.appDao()?.saveDataAnswer(ans4)
+        appDatabase?.appDao()?.saveDataQuestion(question)
         // cau 14
         ans1 = Answer(46, "Chỉ được kéo nếu đã nhìn thấy trạm xăng.", 14)
         ans2 = Answer(
@@ -394,10 +391,10 @@ class ListExamActivity : AppCompatActivity(),
             -1,
             "Hành vi dùng xe môtô để kéo, đẩy xe môtô khác bị cấm."
         )
-        answerDatabase?.answerDao()?.saveData(ans1!!)
-        answerDatabase?.answerDao()?.saveData(ans2!!)
-        answerDatabase?.answerDao()?.saveData(ans3!!)
-        questionDatabase?.questionDao()?.saveData(question!!)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataAnswer(ans3)
+        appDatabase?.appDao()?.saveDataQuestion(question)
         // cau 15
         ans1 = Answer(49, "Không được vận chuyển.", 15)
         ans2 = Answer(50, "Chỉ được vận chuyển khi đã chằng buộc cẩn thận.", 15)
@@ -415,10 +412,10 @@ class ListExamActivity : AppCompatActivity(),
             -1,
             "Quy định tại Việt Nam và nhiều quốc gia không cho phép vận chuyển đồ vật cồng kềnh bằng xe môtô, xe gắn máy."
         )
-        answerDatabase?.answerDao()?.saveData(ans1!!)
-        answerDatabase?.answerDao()?.saveData(ans2!!)
-        answerDatabase?.answerDao()?.saveData(ans3!!)
-        questionDatabase?.questionDao()?.saveData(question!!)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataAnswer(ans3)
+        appDatabase?.appDao()?.saveDataQuestion(question)
         // cau 16
         ans1 = Answer(52, "Khi tham gia giao thông đường bộ.", 16)
         ans2 = Answer(53, "Chỉ khi đi trên đường chuyên dùng; đường cao tốc.", 16)
@@ -431,9 +428,9 @@ class ListExamActivity : AppCompatActivity(),
             -1,
             "Phạt tiền 200.000-300.000 đồng đối với người điều khiển, người ngồi trên xe không đội mũ bảo hiểm hoặc đội mũ bảo hiểm không cài quai đúng quy cách khi tham gia giao thông trên đường bộ."
         )
-        answerDatabase?.answerDao()?.saveData(ans1!!)
-        answerDatabase?.answerDao()?.saveData(ans2!!)
-        questionDatabase?.questionDao()?.saveData(question!!)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataQuestion(question)
         // cau 17
         ans1 = Answer(54, "Được phép nhưng phải đảm bảo an toàn.", 17)
         ans2 = Answer(55, "Không được phép.", 17)
@@ -447,10 +444,10 @@ class ListExamActivity : AppCompatActivity(),
             -1,
             "Hành vi dùng điện thoại di động và các thiết bị âm thanh khi điều khiển xe môtô bị phạt từ 600.000 đồng đến 1 triệu đồng."
         )
-        answerDatabase?.answerDao()?.saveData(ans1!!)
-        answerDatabase?.answerDao()?.saveData(ans2!!)
-        answerDatabase?.answerDao()?.saveData(ans3!!)
-        questionDatabase?.questionDao()?.saveData(question!!)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataAnswer(ans3)
+        appDatabase?.appDao()?.saveDataQuestion(question)
         // cau 18
         ans1 = Answer(57, "Giảm tốc độ, đi từ từ để vượt qua trước người đi bộ.", 18)
         ans2 = Answer(
@@ -468,10 +465,10 @@ class ListExamActivity : AppCompatActivity(),
             -1,
             "Phải giảm tốc độ, phải dừng lại trước vạch dừng chờ người đi bộ đi qua rồi mới tiếp tục di chuyển."
         )
-        answerDatabase?.answerDao()?.saveData(ans1!!)
-        answerDatabase?.answerDao()?.saveData(ans2!!)
-        answerDatabase?.answerDao()?.saveData(ans3!!)
-        questionDatabase?.questionDao()?.saveData(question!!)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataAnswer(ans3)
+        appDatabase?.appDao()?.saveDataQuestion(question)
         // cau 19
         ans1 = Answer(
             60,
@@ -497,10 +494,10 @@ class ListExamActivity : AppCompatActivity(),
             -1,
             "Người lái xe phải giữ tay ga ở mức độ phù hợp, sử dụng phanh trước và phanh sau để giảm tốc độ là đáp án phù hợp nhất."
         )
-        answerDatabase?.answerDao()?.saveData(ans1!!)
-        answerDatabase?.answerDao()?.saveData(ans2!!)
-        answerDatabase?.answerDao()?.saveData(ans3!!)
-        questionDatabase?.questionDao()?.saveData(question!!)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataAnswer(ans3)
+        appDatabase?.appDao()?.saveDataQuestion(question)
         // cau 20
         ans1 = Answer(
             63,
@@ -526,10 +523,10 @@ class ListExamActivity : AppCompatActivity(),
             -1,
             "Tuyệt đối không được sử dụng điện thoại khi điều khiển phương tiện tham gia giao thông đường bộ"
         )
-        answerDatabase?.answerDao()?.saveData(ans1!!)
-        answerDatabase?.answerDao()?.saveData(ans2!!)
-        answerDatabase?.answerDao()?.saveData(ans3!!)
-        questionDatabase?.questionDao()?.saveData(question!!)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataAnswer(ans3)
+        appDatabase?.appDao()?.saveDataQuestion(question)
         // cau 21
         ans1 = Answer(
             66,
@@ -550,9 +547,9 @@ class ListExamActivity : AppCompatActivity(),
             -1,
             ""
         )
-        answerDatabase?.answerDao()?.saveData(ans1!!)
-        answerDatabase?.answerDao()?.saveData(ans2!!)
-        questionDatabase?.questionDao()?.saveData(question!!)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataQuestion(question)
         // cau 22
         ans1 = Answer(
             68,
@@ -578,10 +575,10 @@ class ListExamActivity : AppCompatActivity(),
             -1,
             ""
         )
-        answerDatabase?.answerDao()?.saveData(ans1!!)
-        answerDatabase?.answerDao()?.saveData(ans2!!)
-        answerDatabase?.answerDao()?.saveData(ans3!!)
-        questionDatabase?.questionDao()?.saveData(question!!)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataAnswer(ans3)
+        appDatabase?.appDao()?.saveDataQuestion(question)
         // cau 23
         ans1 = Answer(71, "Phương tiện giao thông cơ giới đường bộ.", 23)
         ans2 =
@@ -596,10 +593,10 @@ class ListExamActivity : AppCompatActivity(),
             -1,
             ""
         )
-        answerDatabase?.answerDao()?.saveData(ans1!!)
-        answerDatabase?.answerDao()?.saveData(ans2!!)
-        answerDatabase?.answerDao()?.saveData(ans3!!)
-        questionDatabase?.questionDao()?.saveData(question!!)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataAnswer(ans3)
+        appDatabase?.appDao()?.saveDataQuestion(question)
         // cau 24
         ans1 = Answer(74, "Người điều khiển xe cơ giới, người điều khiển xe thô sơ.", 24)
         ans2 = Answer(
@@ -617,10 +614,10 @@ class ListExamActivity : AppCompatActivity(),
             -1,
             ""
         )
-        answerDatabase?.answerDao()?.saveData(ans1!!)
-        answerDatabase?.answerDao()?.saveData(ans2!!)
-        answerDatabase?.answerDao()?.saveData(ans3!!)
-        questionDatabase?.questionDao()?.saveData(question!!)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataAnswer(ans3)
+        appDatabase?.appDao()?.saveDataQuestion(question)
         // cau 25
         ans1 = Answer(
             77,
@@ -646,10 +643,10 @@ class ListExamActivity : AppCompatActivity(),
             -1,
             ""
         )
-        answerDatabase?.answerDao()?.saveData(ans1!!)
-        answerDatabase?.answerDao()?.saveData(ans2!!)
-        answerDatabase?.answerDao()?.saveData(ans3!!)
-        questionDatabase?.questionDao()?.saveData(question!!)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataAnswer(ans3)
+        appDatabase?.appDao()?.saveDataQuestion(question)
         // cau 26
         ans1 = Answer(
             80,
@@ -668,10 +665,10 @@ class ListExamActivity : AppCompatActivity(),
             -1,
             ""
         )
-        answerDatabase?.answerDao()?.saveData(ans1!!)
-        answerDatabase?.answerDao()?.saveData(ans2!!)
-        answerDatabase?.answerDao()?.saveData(ans3!!)
-        questionDatabase?.questionDao()?.saveData(question!!)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataAnswer(ans3)
+        appDatabase?.appDao()?.saveDataQuestion(question)
         // cau 27
         ans1 = Answer(
             83,
@@ -692,9 +689,9 @@ class ListExamActivity : AppCompatActivity(),
             -1,
             ""
         )
-        answerDatabase?.answerDao()?.saveData(ans1!!)
-        answerDatabase?.answerDao()?.saveData(ans2!!)
-        questionDatabase?.questionDao()?.saveData(question!!)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataQuestion(question)
         // cau 28
         ans1 = Answer(
             85,
@@ -720,10 +717,10 @@ class ListExamActivity : AppCompatActivity(),
             -1,
             ""
         )
-        answerDatabase?.answerDao()?.saveData(ans1!!)
-        answerDatabase?.answerDao()?.saveData(ans2!!)
-        answerDatabase?.answerDao()?.saveData(ans3!!)
-        questionDatabase?.questionDao()?.saveData(question!!)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataAnswer(ans3)
+        appDatabase?.appDao()?.saveDataQuestion(question)
         // cau 29
         ans1 = Answer(88, " Bất cứ đèn nào miễn là mắt nhìn rõ phía trước.", 29)
         ans2 = Answer(89, " Chỉ bật đèn chiếu xa (đèn pha) khi không nhìn rõ đường.", 29)
@@ -742,11 +739,11 @@ class ListExamActivity : AppCompatActivity(),
             -1,
             ""
         )
-        answerDatabase?.answerDao()?.saveData(ans1!!)
-        answerDatabase?.answerDao()?.saveData(ans2!!)
-        answerDatabase?.answerDao()?.saveData(ans3!!)
-        answerDatabase?.answerDao()?.saveData(ans4!!)
-        questionDatabase?.questionDao()?.saveData(question!!)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataAnswer(ans3)
+        appDatabase?.appDao()?.saveDataAnswer(ans4)
+        appDatabase?.appDao()?.saveDataQuestion(question)
         // cau 30
         ans1 = Answer(92, "Từ 22 giờ đêm đến 5 giờ sáng.", 30)
         ans2 = Answer(93, "Từ 5 giờ sáng đến 22 giờ tối.", 30)
@@ -760,10 +757,10 @@ class ListExamActivity : AppCompatActivity(),
             -1,
             ""
         )
-        answerDatabase?.answerDao()?.saveData(ans1!!)
-        answerDatabase?.answerDao()?.saveData(ans2!!)
-        answerDatabase?.answerDao()?.saveData(ans3!!)
-        questionDatabase?.questionDao()?.saveData(question!!)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataAnswer(ans3)
+        appDatabase?.appDao()?.saveDataQuestion(question)
         // cau 31
         ans1 = Answer(95, "Vượt về phía bên phải để đi tiếp.", 31)
         ans2 = Answer(96, "Giảm tốc độ chờ xe container rẽ xong rồi tiếp tục đi.", 31)
@@ -777,10 +774,10 @@ class ListExamActivity : AppCompatActivity(),
             R.drawable.cau31,
             ""
         )
-        answerDatabase?.answerDao()?.saveData(ans1!!)
-        answerDatabase?.answerDao()?.saveData(ans2!!)
-        answerDatabase?.answerDao()?.saveData(ans3!!)
-        questionDatabase?.questionDao()?.saveData(question!!)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataAnswer(ans3)
+        appDatabase?.appDao()?.saveDataQuestion(question)
         // cau 32
         ans1 = Answer(
             98,
@@ -802,10 +799,10 @@ class ListExamActivity : AppCompatActivity(),
             R.drawable.cau32,
             ""
         )
-        answerDatabase?.answerDao()?.saveData(ans1!!)
-        answerDatabase?.answerDao()?.saveData(ans2!!)
-        answerDatabase?.answerDao()?.saveData(ans3!!)
-        questionDatabase?.questionDao()?.saveData(question!!)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataAnswer(ans3)
+        appDatabase?.appDao()?.saveDataQuestion(question)
         // cau 33
         ans1 = Answer(
             101,
@@ -827,10 +824,10 @@ class ListExamActivity : AppCompatActivity(),
             R.drawable.cau33,
             ""
         )
-        answerDatabase?.answerDao()?.saveData(ans1!!)
-        answerDatabase?.answerDao()?.saveData(ans2!!)
-        answerDatabase?.answerDao()?.saveData(ans3!!)
-        questionDatabase?.questionDao()?.saveData(question!!)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataAnswer(ans3)
+        appDatabase?.appDao()?.saveDataQuestion(question)
         // cau 34
         ans1 = Answer(
             104,
@@ -852,10 +849,10 @@ class ListExamActivity : AppCompatActivity(),
             R.drawable.cau34,
             ""
         )
-        answerDatabase?.answerDao()?.saveData(ans1!!)
-        answerDatabase?.answerDao()?.saveData(ans2!!)
-        answerDatabase?.answerDao()?.saveData(ans3!!)
-        questionDatabase?.questionDao()?.saveData(question!!)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataAnswer(ans3)
+        appDatabase?.appDao()?.saveDataQuestion(question)
         // cau 35
         ans1 = Answer(
             107,
@@ -877,10 +874,10 @@ class ListExamActivity : AppCompatActivity(),
             R.drawable.cau35,
             ""
         )
-        answerDatabase?.answerDao()?.saveData(ans1!!)
-        answerDatabase?.answerDao()?.saveData(ans2!!)
-        answerDatabase?.answerDao()?.saveData(ans3!!)
-        questionDatabase?.questionDao()?.saveData(question!!)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataAnswer(ans3)
+        appDatabase?.appDao()?.saveDataQuestion(question)
         // cau 36
         ans1 = Answer(
             110,
@@ -907,11 +904,11 @@ class ListExamActivity : AppCompatActivity(),
             R.drawable.cau36,
             ""
         )
-        answerDatabase?.answerDao()?.saveData(ans1!!)
-        answerDatabase?.answerDao()?.saveData(ans2!!)
-        answerDatabase?.answerDao()?.saveData(ans3!!)
-        answerDatabase?.answerDao()?.saveData(ans4!!)
-        questionDatabase?.questionDao()?.saveData(question!!)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataAnswer(ans3)
+        appDatabase?.appDao()?.saveDataAnswer(ans4)
+        appDatabase?.appDao()?.saveDataQuestion(question)
         // cau 37
         ans1 = Answer(
             114,
@@ -938,11 +935,11 @@ class ListExamActivity : AppCompatActivity(),
             R.drawable.cau37,
             ""
         )
-        answerDatabase?.answerDao()?.saveData(ans1!!)
-        answerDatabase?.answerDao()?.saveData(ans2!!)
-        answerDatabase?.answerDao()?.saveData(ans3!!)
-        answerDatabase?.answerDao()?.saveData(ans4!!)
-        questionDatabase?.questionDao()?.saveData(question!!)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataAnswer(ans3)
+        appDatabase?.appDao()?.saveDataAnswer(ans4)
+        appDatabase?.appDao()?.saveDataQuestion(question)
         // cau 38
         ans1 = Answer(
             118,
@@ -969,11 +966,11 @@ class ListExamActivity : AppCompatActivity(),
             R.drawable.cau38,
             ""
         )
-        answerDatabase?.answerDao()?.saveData(ans1!!)
-        answerDatabase?.answerDao()?.saveData(ans2!!)
-        answerDatabase?.answerDao()?.saveData(ans3!!)
-        answerDatabase?.answerDao()?.saveData(ans4!!)
-        questionDatabase?.questionDao()?.saveData(question!!)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataAnswer(ans3)
+        appDatabase?.appDao()?.saveDataAnswer(ans4)
+        appDatabase?.appDao()?.saveDataQuestion(question)
         // cau 39
         ans1 = Answer(
             122,
@@ -990,9 +987,9 @@ class ListExamActivity : AppCompatActivity(),
             R.drawable.cau39,
             ""
         )
-        answerDatabase?.answerDao()?.saveData(ans1!!)
-        answerDatabase?.answerDao()?.saveData(ans2!!)
-        questionDatabase?.questionDao()?.saveData(question!!)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataQuestion(question)
         // cau 40
         ans1 = Answer(
             124,
@@ -1015,11 +1012,11 @@ class ListExamActivity : AppCompatActivity(),
             R.drawable.cau40,
             ""
         )
-        answerDatabase?.answerDao()?.saveData(ans1!!)
-        answerDatabase?.answerDao()?.saveData(ans2!!)
-        answerDatabase?.answerDao()?.saveData(ans3!!)
-        answerDatabase?.answerDao()?.saveData(ans4!!)
-        questionDatabase?.questionDao()?.saveData(question!!)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataAnswer(ans3)
+        appDatabase?.appDao()?.saveDataAnswer(ans4)
+        appDatabase?.appDao()?.saveDataQuestion(question)
         // cau 41
         ans1 = Answer(
             128,
@@ -1036,9 +1033,9 @@ class ListExamActivity : AppCompatActivity(),
             R.drawable.cau41,
             ""
         )
-        answerDatabase?.answerDao()?.saveData(ans1!!)
-        answerDatabase?.answerDao()?.saveData(ans2!!)
-        questionDatabase?.questionDao()?.saveData(question!!)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataQuestion(question)
         // cau 42
         ans1 = Answer(
             130,
@@ -1055,9 +1052,9 @@ class ListExamActivity : AppCompatActivity(),
             R.drawable.cau42,
             ""
         )
-        answerDatabase?.answerDao()?.saveData(ans1!!)
-        answerDatabase?.answerDao()?.saveData(ans2!!)
-        questionDatabase?.questionDao()?.saveData(question!!)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataQuestion(question)
         // cau 43
         ans1 = Answer(
             132,
@@ -1080,11 +1077,11 @@ class ListExamActivity : AppCompatActivity(),
             R.drawable.cau43,
             ""
         )
-        answerDatabase?.answerDao()?.saveData(ans1!!)
-        answerDatabase?.answerDao()?.saveData(ans2!!)
-        answerDatabase?.answerDao()?.saveData(ans3!!)
-        answerDatabase?.answerDao()?.saveData(ans4!!)
-        questionDatabase?.questionDao()?.saveData(question!!)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataAnswer(ans3)
+        appDatabase?.appDao()?.saveDataAnswer(ans4)
+        appDatabase?.appDao()?.saveDataQuestion(question)
 // cau 44
         ans1 = Answer(
             136,
@@ -1106,10 +1103,10 @@ class ListExamActivity : AppCompatActivity(),
             R.drawable.cau44,
             ""
         )
-        answerDatabase?.answerDao()?.saveData(ans1!!)
-        answerDatabase?.answerDao()?.saveData(ans2!!)
-        answerDatabase?.answerDao()?.saveData(ans3!!)
-        questionDatabase?.questionDao()?.saveData(question!!)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataAnswer(ans3)
+        appDatabase?.appDao()?.saveDataQuestion(question)
 // cau 45
         ans1 = Answer(
             139,
@@ -1132,11 +1129,11 @@ class ListExamActivity : AppCompatActivity(),
             R.drawable.cau45,
             ""
         )
-        answerDatabase?.answerDao()?.saveData(ans1!!)
-        answerDatabase?.answerDao()?.saveData(ans2!!)
-        answerDatabase?.answerDao()?.saveData(ans3!!)
-        answerDatabase?.answerDao()?.saveData(ans4!!)
-        questionDatabase?.questionDao()?.saveData(question!!)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataAnswer(ans3)
+        appDatabase?.appDao()?.saveDataAnswer(ans4)
+        appDatabase?.appDao()?.saveDataQuestion(question)
 // cau 46
         ans1 = Answer(
             143,
@@ -1159,11 +1156,11 @@ class ListExamActivity : AppCompatActivity(),
             R.drawable.cau46,
             ""
         )
-        answerDatabase?.answerDao()?.saveData(ans1!!)
-        answerDatabase?.answerDao()?.saveData(ans2!!)
-        answerDatabase?.answerDao()?.saveData(ans3!!)
-        answerDatabase?.answerDao()?.saveData(ans4!!)
-        questionDatabase?.questionDao()?.saveData(question!!)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataAnswer(ans3)
+        appDatabase?.appDao()?.saveDataAnswer(ans4)
+        appDatabase?.appDao()?.saveDataQuestion(question)
         // cau 47
         ans1 = Answer(
             147,
@@ -1186,11 +1183,11 @@ class ListExamActivity : AppCompatActivity(),
             R.drawable.cau47,
             ""
         )
-        answerDatabase?.answerDao()?.saveData(ans1!!)
-        answerDatabase?.answerDao()?.saveData(ans2!!)
-        answerDatabase?.answerDao()?.saveData(ans3!!)
-        answerDatabase?.answerDao()?.saveData(ans4!!)
-        questionDatabase?.questionDao()?.saveData(question!!)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataAnswer(ans3)
+        appDatabase?.appDao()?.saveDataAnswer(ans4)
+        appDatabase?.appDao()?.saveDataQuestion(question)
         // cau 48
         ans1 = Answer(
             151,
@@ -1213,11 +1210,11 @@ class ListExamActivity : AppCompatActivity(),
             R.drawable.cau48,
             ""
         )
-        answerDatabase?.answerDao()?.saveData(ans1!!)
-        answerDatabase?.answerDao()?.saveData(ans2!!)
-        answerDatabase?.answerDao()?.saveData(ans3!!)
-        answerDatabase?.answerDao()?.saveData(ans4!!)
-        questionDatabase?.questionDao()?.saveData(question!!)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataAnswer(ans3)
+        appDatabase?.appDao()?.saveDataAnswer(ans4)
+        appDatabase?.appDao()?.saveDataQuestion(question)
         // cau 49
         ans1 = Answer(
             155,
@@ -1240,11 +1237,11 @@ class ListExamActivity : AppCompatActivity(),
             R.drawable.cau49,
             ""
         )
-        answerDatabase?.answerDao()?.saveData(ans1!!)
-        answerDatabase?.answerDao()?.saveData(ans2!!)
-        answerDatabase?.answerDao()?.saveData(ans3!!)
-        answerDatabase?.answerDao()?.saveData(ans4!!)
-        questionDatabase?.questionDao()?.saveData(question!!)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataAnswer(ans3)
+        appDatabase?.appDao()?.saveDataAnswer(ans4)
+        appDatabase?.appDao()?.saveDataQuestion(question)
         // cau 50
         ans1 = Answer(
             159,
@@ -1267,11 +1264,11 @@ class ListExamActivity : AppCompatActivity(),
             R.drawable.cau50,
             ""
         )
-        answerDatabase?.answerDao()?.saveData(ans1)
-        answerDatabase?.answerDao()?.saveData(ans2)
-        answerDatabase?.answerDao()?.saveData(ans3)
-        answerDatabase?.answerDao()?.saveData(ans4)
-        questionDatabase?.questionDao()?.saveData(question)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataAnswer(ans3)
+        appDatabase?.appDao()?.saveDataAnswer(ans4)
+        appDatabase?.appDao()?.saveDataQuestion(question)
         // cau 51
         ans1 = Answer(
             163,
@@ -1294,11 +1291,11 @@ class ListExamActivity : AppCompatActivity(),
             R.drawable.cau51,
             ""
         )
-        answerDatabase?.answerDao()?.saveData(ans1)
-        answerDatabase?.answerDao()?.saveData(ans2)
-        answerDatabase?.answerDao()?.saveData(ans3)
-        answerDatabase?.answerDao()?.saveData(ans4)
-        questionDatabase?.questionDao()?.saveData(question)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataAnswer(ans3)
+        appDatabase?.appDao()?.saveDataAnswer(ans4)
+        appDatabase?.appDao()?.saveDataQuestion(question)
 
         //cau 52
         ans1 = Answer(229, "Phải đảm bảo phụ tùng do đúng nhà sản xuất đó cung cấp.", 52)
@@ -1314,10 +1311,10 @@ class ListExamActivity : AppCompatActivity(),
             -1,
             ""
         )
-        answerDatabase?.answerDao()?.saveData(ans1)
-        answerDatabase?.answerDao()?.saveData(ans2)
-        answerDatabase?.answerDao()?.saveData(ans3)
-        questionDatabase?.questionDao()?.saveData(question)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataAnswer(ans3)
+        appDatabase?.appDao()?.saveDataQuestion(question)
         //cau 53
         ans1 = Answer(232, "Không được vượt.", 53)
         ans2 = Answer(233, "Được vượt khi đang đi trên cầu.", 53)
@@ -1336,11 +1333,11 @@ class ListExamActivity : AppCompatActivity(),
             -1,
             ""
         )
-        answerDatabase?.answerDao()?.saveData(ans1)
-        answerDatabase?.answerDao()?.saveData(ans2)
-        answerDatabase?.answerDao()?.saveData(ans3)
-        answerDatabase?.answerDao()?.saveData(ans4)
-        questionDatabase?.questionDao()?.saveData(question)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataAnswer(ans3)
+        appDatabase?.appDao()?.saveDataAnswer(ans4)
+        appDatabase?.appDao()?.saveDataQuestion(question)
 
         // 54
         ans1 = Answer(236, "Xe mô tô 2 bánh có dung tích xi-lanh từ 50 cm3 trở lên.", 54)
@@ -1358,11 +1355,11 @@ class ListExamActivity : AppCompatActivity(),
             ""
         )
 
-        answerDatabase?.answerDao()?.saveData(ans1)
-        answerDatabase?.answerDao()?.saveData(ans2)
-        answerDatabase?.answerDao()?.saveData(ans3)
-        answerDatabase?.answerDao()?.saveData(ans4)
-        questionDatabase?.questionDao()?.saveData(question)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataAnswer(ans3)
+        appDatabase?.appDao()?.saveDataAnswer(ans4)
+        appDatabase?.appDao()?.saveDataQuestion(question)
         //55
         ans1 = Answer(240, "16 Tuổi.", 55)
         ans2 = Answer(241, "18 Tuổi.", 55)
@@ -1376,10 +1373,10 @@ class ListExamActivity : AppCompatActivity(),
             -1,
             ""
         )
-        answerDatabase?.answerDao()?.saveData(ans1)
-        answerDatabase?.answerDao()?.saveData(ans2)
-        answerDatabase?.answerDao()?.saveData(ans3)
-        questionDatabase?.questionDao()?.saveData(question)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataAnswer(ans3)
+        appDatabase?.appDao()?.saveDataQuestion(question)
         //56
         ans1 = Answer(243, "Xe mô tô có dung tích xi-lanh 125 cm3.", 56)
         ans2 = Answer(244, "Xe mô tô có dung tích xi-lanh từ 175 cm3 trở lên.", 56)
@@ -1393,10 +1390,10 @@ class ListExamActivity : AppCompatActivity(),
             -1,
             ""
         )
-        answerDatabase?.answerDao()?.saveData(ans1)
-        answerDatabase?.answerDao()?.saveData(ans2)
-        answerDatabase?.answerDao()?.saveData(ans3)
-        questionDatabase?.questionDao()?.saveData(question)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataAnswer(ans3)
+        appDatabase?.appDao()?.saveDataQuestion(question)
         //57
         ans1 = Answer(246, "Xe mô tô hai bánh có dung tích xi-lanh từ 50 cm3 đến dưới 175 cm3.", 57)
         ans2 = Answer(247, "Xe mô tô ba bánh dùng cho người khuyết tật.", 57)
@@ -1410,10 +1407,10 @@ class ListExamActivity : AppCompatActivity(),
             -1,
             ""
         )
-        answerDatabase?.answerDao()?.saveData(ans1)
-        answerDatabase?.answerDao()?.saveData(ans2)
-        answerDatabase?.answerDao()?.saveData(ans3)
-        questionDatabase?.questionDao()?.saveData(question)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataAnswer(ans3)
+        appDatabase?.appDao()?.saveDataQuestion(question)
         //58
         ans1 = Answer(249, "Người tham gia giao thông ở các hướng phải dừng lại..", 58)
         ans2 = Answer(
@@ -1440,11 +1437,11 @@ class ListExamActivity : AppCompatActivity(),
             R.drawable.cau58,
             ""
         )
-        answerDatabase?.answerDao()?.saveData(ans1)
-        answerDatabase?.answerDao()?.saveData(ans2)
-        answerDatabase?.answerDao()?.saveData(ans3)
-        answerDatabase?.answerDao()?.saveData(ans4)
-        questionDatabase?.questionDao()?.saveData(question)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataAnswer(ans3)
+        appDatabase?.appDao()?.saveDataAnswer(ans4)
+        appDatabase?.appDao()?.saveDataQuestion(question)
         //59
         ans1 = Answer(
             253,
@@ -1475,11 +1472,11 @@ class ListExamActivity : AppCompatActivity(),
             R.drawable.cau59,
             ""
         )
-        answerDatabase?.answerDao()?.saveData(ans1)
-        answerDatabase?.answerDao()?.saveData(ans2)
-        answerDatabase?.answerDao()?.saveData(ans3)
-        answerDatabase?.answerDao()?.saveData(ans4)
-        questionDatabase?.questionDao()?.saveData(question)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataAnswer(ans3)
+        appDatabase?.appDao()?.saveDataAnswer(ans4)
+        appDatabase?.appDao()?.saveDataQuestion(question)
         //60
         ans1 = Answer(257, "Đỏ – Vàng – Xanh.", 60)
         ans2 = Answer(258, "Cam – Vàng – Xanh.", 60)
@@ -1494,11 +1491,11 @@ class ListExamActivity : AppCompatActivity(),
             -1,
             ""
         )
-        answerDatabase?.answerDao()?.saveData(ans1)
-        answerDatabase?.answerDao()?.saveData(ans2)
-        answerDatabase?.answerDao()?.saveData(ans3)
-        answerDatabase?.answerDao()?.saveData(ans4)
-        questionDatabase?.questionDao()?.saveData(question)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataAnswer(ans3)
+        appDatabase?.appDao()?.saveDataAnswer(ans4)
+        appDatabase?.appDao()?.saveDataQuestion(question)
         //61
         ans1 = Answer(261, "Biển báo nguy hiểm.", 61)
         ans2 = Answer(262, "Biển báo cấm.", 61)
@@ -1514,11 +1511,11 @@ class ListExamActivity : AppCompatActivity(),
             ""
         )
 
-        answerDatabase?.answerDao()?.saveData(ans1)
-        answerDatabase?.answerDao()?.saveData(ans2)
-        answerDatabase?.answerDao()?.saveData(ans3)
-        answerDatabase?.answerDao()?.saveData(ans4)
-        questionDatabase?.questionDao()?.saveData(question)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataAnswer(ans3)
+        appDatabase?.appDao()?.saveDataAnswer(ans4)
+        appDatabase?.appDao()?.saveDataQuestion(question)
         //62
         ans1 = Answer(265, " Biển báo nguy hiểm.", 62)
         ans2 = Answer(266, "Biển báo cấm.", 62)
@@ -1533,11 +1530,11 @@ class ListExamActivity : AppCompatActivity(),
             R.drawable.cau62,
             ""
         )
-        answerDatabase?.answerDao()?.saveData(ans1)
-        answerDatabase?.answerDao()?.saveData(ans2)
-        answerDatabase?.answerDao()?.saveData(ans3)
-        answerDatabase?.answerDao()?.saveData(ans4)
-        questionDatabase?.questionDao()?.saveData(question)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataAnswer(ans3)
+        appDatabase?.appDao()?.saveDataAnswer(ans4)
+        appDatabase?.appDao()?.saveDataQuestion(question)
         //63
         ans1 = Answer(269, "Biển báo nguy hiểm.", 63)
         ans2 = Answer(270, "Biển báo cấm.", 63)
@@ -1552,11 +1549,11 @@ class ListExamActivity : AppCompatActivity(),
             R.drawable.cau63,
             ""
         )
-        answerDatabase?.answerDao()?.saveData(ans1)
-        answerDatabase?.answerDao()?.saveData(ans2)
-        answerDatabase?.answerDao()?.saveData(ans3)
-        answerDatabase?.answerDao()?.saveData(ans4)
-        questionDatabase?.questionDao()?.saveData(question)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataAnswer(ans3)
+        appDatabase?.appDao()?.saveDataAnswer(ans4)
+        appDatabase?.appDao()?.saveDataQuestion(question)
         //64
         ans1 = Answer(273, "Biển báo nguy hiểm.", 64)
         ans2 = Answer(274, "Biển báo cấm.", 64)
@@ -1571,11 +1568,11 @@ class ListExamActivity : AppCompatActivity(),
             R.drawable.cau64,
             ""
         )
-        answerDatabase?.answerDao()?.saveData(ans1)
-        answerDatabase?.answerDao()?.saveData(ans2)
-        answerDatabase?.answerDao()?.saveData(ans3)
-        answerDatabase?.answerDao()?.saveData(ans4)
-        questionDatabase?.questionDao()?.saveData(question)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataAnswer(ans3)
+        appDatabase?.appDao()?.saveDataAnswer(ans4)
+        appDatabase?.appDao()?.saveDataQuestion(question)
         //65
         ans1 = Answer(277, "Biển báo hiệu cố định.", 65)
         ans2 = Answer(278, "Báo hiệu tạm thời.", 65)
@@ -1588,9 +1585,9 @@ class ListExamActivity : AppCompatActivity(),
             -1,
             ""
         )
-        answerDatabase?.answerDao()?.saveData(ans1)
-        answerDatabase?.answerDao()?.saveData(ans2)
-        questionDatabase?.questionDao()?.saveData(question)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataQuestion(question)
         //66
         ans1 = Answer(279, "02 Năm.", 66)
         ans2 = Answer(280, "03 Năm.", 66)
@@ -1605,11 +1602,11 @@ class ListExamActivity : AppCompatActivity(),
             -1,
             ""
         )
-        answerDatabase?.answerDao()?.saveData(ans1)
-        answerDatabase?.answerDao()?.saveData(ans2)
-        answerDatabase?.answerDao()?.saveData(ans3)
-        answerDatabase?.answerDao()?.saveData(ans4)
-        questionDatabase?.questionDao()?.saveData(question)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataAnswer(ans3)
+        appDatabase?.appDao()?.saveDataAnswer(ans4)
+        appDatabase?.appDao()?.saveDataQuestion(question)
         //67
         ans1 = Answer(
             283,
@@ -1636,10 +1633,10 @@ class ListExamActivity : AppCompatActivity(),
             -1,
             ""
         )
-        answerDatabase?.answerDao()?.saveData(ans1)
-        answerDatabase?.answerDao()?.saveData(ans2)
-        answerDatabase?.answerDao()?.saveData(ans3)
-        questionDatabase?.questionDao()?.saveData(question)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataAnswer(ans3)
+        appDatabase?.appDao()?.saveDataQuestion(question)
         //68
         ans1 = Answer(
             28311,
@@ -1667,10 +1664,10 @@ class ListExamActivity : AppCompatActivity(),
             ""
         )
 
-        answerDatabase?.answerDao()?.saveData(ans1)
-        answerDatabase?.answerDao()?.saveData(ans2)
-        answerDatabase?.answerDao()?.saveData(ans3)
-        questionDatabase?.questionDao()?.saveData(question)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataAnswer(ans3)
+        appDatabase?.appDao()?.saveDataQuestion(question)
         //69
         ans1 = Answer(
             286,
@@ -1696,10 +1693,10 @@ class ListExamActivity : AppCompatActivity(),
             -1,
             ""
         )
-        answerDatabase?.answerDao()?.saveData(ans1)
-        answerDatabase?.answerDao()?.saveData(ans2)
-        answerDatabase?.answerDao()?.saveData(ans3)
-        questionDatabase?.questionDao()?.saveData(question)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataAnswer(ans3)
+        appDatabase?.appDao()?.saveDataQuestion(question)
         //70
         ans1 = Answer(289, "Phải báo hiệu bằng đèn hoặc còi.", 70)
         ans2 = Answer(290, "Chỉ được báo hiệu bằng còi.", 70)
@@ -1715,11 +1712,11 @@ class ListExamActivity : AppCompatActivity(),
             ""
         )
 
-        answerDatabase?.answerDao()?.saveData(ans1)
-        answerDatabase?.answerDao()?.saveData(ans2)
-        answerDatabase?.answerDao()?.saveData(ans3)
-        answerDatabase?.answerDao()?.saveData(ans4)
-        questionDatabase?.questionDao()?.saveData(question)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataAnswer(ans3)
+        appDatabase?.appDao()?.saveDataAnswer(ans4)
+        appDatabase?.appDao()?.saveDataQuestion(question)
         //71
         ans1 = Answer(
             293,
@@ -1745,10 +1742,10 @@ class ListExamActivity : AppCompatActivity(),
             -1,
             ""
         )
-        answerDatabase?.answerDao()?.saveData(ans1)
-        answerDatabase?.answerDao()?.saveData(ans2)
-        answerDatabase?.answerDao()?.saveData(ans3)
-        questionDatabase?.questionDao()?.saveData(question)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataAnswer(ans3)
+        appDatabase?.appDao()?.saveDataQuestion(question)
         //72
         ans1 = Answer(296, "Quan sát gương, ra tín hiệu, quan sát an toàn và chuyển hướng.", 72)
         ans2 = Answer(
@@ -1766,10 +1763,10 @@ class ListExamActivity : AppCompatActivity(),
             -1,
             ""
         )
-        answerDatabase?.answerDao()?.saveData(ans1)
-        answerDatabase?.answerDao()?.saveData(ans2)
-        answerDatabase?.answerDao()?.saveData(ans3)
-        questionDatabase?.questionDao()?.saveData(question)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataAnswer(ans3)
+        appDatabase?.appDao()?.saveDataQuestion(question)
         //73
         ans1 = Answer(
             299,
@@ -1796,11 +1793,11 @@ class ListExamActivity : AppCompatActivity(),
             -1,
             ""
         )
-        answerDatabase?.answerDao()?.saveData(ans1)
-        answerDatabase?.answerDao()?.saveData(ans2)
-        answerDatabase?.answerDao()?.saveData(ans3)
-        answerDatabase?.answerDao()?.saveData(ans4)
-        questionDatabase?.questionDao()?.saveData(question)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataAnswer(ans3)
+        appDatabase?.appDao()?.saveDataAnswer(ans4)
+        appDatabase?.appDao()?.saveDataQuestion(question)
         //74
         ans1 = Answer(304, "Tiếp tục đi và xe lên dốc phải nhường đường cho mình.", 74)
         ans2 = Answer(305, "Nhường đường cho xe lên dốc.", 74)
@@ -1814,10 +1811,10 @@ class ListExamActivity : AppCompatActivity(),
             -1,
             ""
         )
-        answerDatabase?.answerDao()?.saveData(ans1)
-        answerDatabase?.answerDao()?.saveData(ans2)
-        answerDatabase?.answerDao()?.saveData(ans3)
-        questionDatabase?.questionDao()?.saveData(question)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataAnswer(ans3)
+        appDatabase?.appDao()?.saveDataQuestion(question)
         //75
         ans1 = Answer(307, "Nhường đường cho xe đi ở bên phải mình tới.", 75)
         ans2 = Answer(308, "Nhường đường cho xe đi ở bên trái mình tới.", 75)
@@ -1835,10 +1832,10 @@ class ListExamActivity : AppCompatActivity(),
             -1,
             ""
         )
-        answerDatabase?.answerDao()?.saveData(ans1)
-        answerDatabase?.answerDao()?.saveData(ans2)
-        answerDatabase?.answerDao()?.saveData(ans3)
-        questionDatabase?.questionDao()?.saveData(question)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataAnswer(ans3)
+        appDatabase?.appDao()?.saveDataQuestion(question)
         //76
         ans1 = Answer(310, " Phải nhường đường cho xe đi đến từ bên phải.", 76)
         ans2 = Answer(311, " Xe báo hiệu xin đường trước xe đó được đi trước.", 76)
@@ -1852,10 +1849,10 @@ class ListExamActivity : AppCompatActivity(),
             -1,
             ""
         )
-        answerDatabase?.answerDao()?.saveData(ans1)
-        answerDatabase?.answerDao()?.saveData(ans2)
-        answerDatabase?.answerDao()?.saveData(ans3)
-        questionDatabase?.questionDao()?.saveData(question)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataAnswer(ans3)
+        appDatabase?.appDao()?.saveDataQuestion(question)
         //77
         ans1 = Answer(313, "Chở người bệnh đi cấp cứu; trẻ em dưới 14 tuổi.", 77)
         ans2 = Answer(314, "Áp giải người có hành vi vi phạm pháp luật.", 77)
@@ -1869,10 +1866,10 @@ class ListExamActivity : AppCompatActivity(),
             -1,
             ""
         )
-        answerDatabase?.answerDao()?.saveData(ans1)
-        answerDatabase?.answerDao()?.saveData(ans2)
-        answerDatabase?.answerDao()?.saveData(ans3)
-        questionDatabase?.questionDao()?.saveData(question)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataAnswer(ans3)
+        appDatabase?.appDao()?.saveDataQuestion(question)
         //78
         ans1 = Answer(
             316,
@@ -1898,10 +1895,10 @@ class ListExamActivity : AppCompatActivity(),
             -1,
             ""
         )
-        answerDatabase?.answerDao()?.saveData(ans1)
-        answerDatabase?.answerDao()?.saveData(ans2)
-        answerDatabase?.answerDao()?.saveData(ans3)
-        questionDatabase?.questionDao()?.saveData(question)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataAnswer(ans3)
+        appDatabase?.appDao()?.saveDataQuestion(question)
         //79
         ans1 = Answer(
             319,
@@ -1924,11 +1921,11 @@ class ListExamActivity : AppCompatActivity(),
             -1,
             ""
         )
-        answerDatabase?.answerDao()?.saveData(ans1)
-        answerDatabase?.answerDao()?.saveData(ans2)
-        answerDatabase?.answerDao()?.saveData(ans3)
-        answerDatabase?.answerDao()?.saveData(ans4)
-        questionDatabase?.questionDao()?.saveData(question)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataAnswer(ans3)
+        appDatabase?.appDao()?.saveDataAnswer(ans4)
+        appDatabase?.appDao()?.saveDataQuestion(question)
         //80
         ans1 = Answer(323, "Khi cho xe chạy thẳng.", 80)
         ans2 = Answer(324, "Trước khi thay đổi làn đường.", 80)
@@ -1942,10 +1939,10 @@ class ListExamActivity : AppCompatActivity(),
             -1,
             ""
         )
-        answerDatabase?.answerDao()?.saveData(ans1)
-        answerDatabase?.answerDao()?.saveData(ans2)
-        answerDatabase?.answerDao()?.saveData(ans3)
-        questionDatabase?.questionDao()?.saveData(question)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataAnswer(ans3)
+        appDatabase?.appDao()?.saveDataQuestion(question)
         //81
         ans1 = Answer(326, "Xe bị vượt bất ngờ tăng tốc độ và cố tình không nhường đường.", 81)
         ans2 = Answer(327, "Xe bị vượt giảm tốc độ và nhường đường.", 81)
@@ -1960,11 +1957,11 @@ class ListExamActivity : AppCompatActivity(),
             -1,
             ""
         )
-        answerDatabase?.answerDao()?.saveData(ans1)
-        answerDatabase?.answerDao()?.saveData(ans2)
-        answerDatabase?.answerDao()?.saveData(ans3)
-        answerDatabase?.answerDao()?.saveData(ans4)
-        questionDatabase?.questionDao()?.saveData(question)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataAnswer(ans3)
+        appDatabase?.appDao()?.saveDataAnswer(ans4)
+        appDatabase?.appDao()?.saveDataQuestion(question)
         //82
         ans1 = Answer(
             330,
@@ -1986,10 +1983,10 @@ class ListExamActivity : AppCompatActivity(),
             -1,
             ""
         )
-        answerDatabase?.answerDao()?.saveData(ans1)
-        answerDatabase?.answerDao()?.saveData(ans2)
-        answerDatabase?.answerDao()?.saveData(ans3)
-        questionDatabase?.questionDao()?.saveData(question)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataAnswer(ans3)
+        appDatabase?.appDao()?.saveDataQuestion(question)
         //83
         ans1 = Answer(
             333,
@@ -2015,10 +2012,10 @@ class ListExamActivity : AppCompatActivity(),
             -1,
             ""
         )
-        answerDatabase?.answerDao()?.saveData(ans1)
-        answerDatabase?.answerDao()?.saveData(ans2)
-        answerDatabase?.answerDao()?.saveData(ans3)
-        questionDatabase?.questionDao()?.saveData(question)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataAnswer(ans3)
+        appDatabase?.appDao()?.saveDataQuestion(question)
         //84
         ans1 = Answer(
             336,
@@ -2044,10 +2041,10 @@ class ListExamActivity : AppCompatActivity(),
             -1,
             ""
         )
-        answerDatabase?.answerDao()?.saveData(ans1)
-        answerDatabase?.answerDao()?.saveData(ans2)
-        answerDatabase?.answerDao()?.saveData(ans3)
-        questionDatabase?.questionDao()?.saveData(question)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataAnswer(ans3)
+        appDatabase?.appDao()?.saveDataQuestion(question)
         //85
         ans1 = Answer(
             339,
@@ -2073,10 +2070,10 @@ class ListExamActivity : AppCompatActivity(),
             -1,
             ""
         )
-        answerDatabase?.answerDao()?.saveData(ans1)
-        answerDatabase?.answerDao()?.saveData(ans2)
-        answerDatabase?.answerDao()?.saveData(ans3)
-        questionDatabase?.questionDao()?.saveData(question)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataAnswer(ans3)
+        appDatabase?.appDao()?.saveDataQuestion(question)
         //86
         ans1 = Answer(342, "50 km/h.", 86)
         ans2 = Answer(343, "40 km/h.", 86)
@@ -2090,10 +2087,10 @@ class ListExamActivity : AppCompatActivity(),
             -1,
             ""
         )
-        answerDatabase?.answerDao()?.saveData(ans1)
-        answerDatabase?.answerDao()?.saveData(ans2)
-        answerDatabase?.answerDao()?.saveData(ans3)
-        questionDatabase?.questionDao()?.saveData(question)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataAnswer(ans3)
+        appDatabase?.appDao()?.saveDataQuestion(question)
         //87
         ans1 = Answer(345, "60 km/h.", 87)
         ans2 = Answer(346, "50 km/h.", 87)
@@ -2107,10 +2104,10 @@ class ListExamActivity : AppCompatActivity(),
             -1,
             ""
         )
-        answerDatabase?.answerDao()?.saveData(ans1)
-        answerDatabase?.answerDao()?.saveData(ans2)
-        answerDatabase?.answerDao()?.saveData(ans3)
-        questionDatabase?.questionDao()?.saveData(question)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataAnswer(ans3)
+        appDatabase?.appDao()?.saveDataQuestion(question)
         //88
         ans1 = Answer(348, "60 km/h.", 88)
         ans2 = Answer(349, "50 km/h.", 88)
@@ -2124,10 +2121,10 @@ class ListExamActivity : AppCompatActivity(),
             -1,
             ""
         )
-        answerDatabase?.answerDao()?.saveData(ans1)
-        answerDatabase?.answerDao()?.saveData(ans2)
-        answerDatabase?.answerDao()?.saveData(ans3)
-        questionDatabase?.questionDao()?.saveData(question)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataAnswer(ans3)
+        appDatabase?.appDao()?.saveDataQuestion(question)
         //89
         ans1 = Answer(351, "Ô tô con, ô tô tải, ô tô chở người trên 30 chỗ.", 89)
         ans2 = Answer(352, "Xe gắn máy, xe máy chuyên dung.", 89)
@@ -2141,10 +2138,10 @@ class ListExamActivity : AppCompatActivity(),
             -1,
             ""
         )
-        answerDatabase?.answerDao()?.saveData(ans1)
-        answerDatabase?.answerDao()?.saveData(ans2)
-        answerDatabase?.answerDao()?.saveData(ans3)
-        questionDatabase?.questionDao()?.saveData(question)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataAnswer(ans3)
+        appDatabase?.appDao()?.saveDataQuestion(question)
         //90
         ans1 = Answer(
             354,
@@ -2166,10 +2163,10 @@ class ListExamActivity : AppCompatActivity(),
             -1,
             ""
         )
-        answerDatabase?.answerDao()?.saveData(ans1)
-        answerDatabase?.answerDao()?.saveData(ans2)
-        answerDatabase?.answerDao()?.saveData(ans3)
-        questionDatabase?.questionDao()?.saveData(question)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataAnswer(ans3)
+        appDatabase?.appDao()?.saveDataQuestion(question)
         //91
         ans1 = Answer(
             3541,
@@ -2190,9 +2187,9 @@ class ListExamActivity : AppCompatActivity(),
             R.drawable.cau91,
             ""
         )
-        answerDatabase?.answerDao()?.saveData(ans1)
-        answerDatabase?.answerDao()?.saveData(ans2)
-        questionDatabase?.questionDao()?.saveData(question)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataQuestion(question)
         //92
 
         ans1 = Answer(
@@ -2214,20 +2211,15 @@ class ListExamActivity : AppCompatActivity(),
             R.drawable.cau92,
             ""
         )
-        answerDatabase?.answerDao()?.saveData(ans1)
-        answerDatabase?.answerDao()?.saveData(ans2)
-        questionDatabase?.questionDao()?.saveData(question)
+        appDatabase?.appDao()?.saveDataAnswer(ans1)
+        appDatabase?.appDao()?.saveDataAnswer(ans2)
+        appDatabase?.appDao()?.saveDataQuestion(question)
 
 
     }
 
     private fun initDataBase() {
-        examDatabase = Room.databaseBuilder(this, ExamDatabase::class.java, "ExamDB")
-            .fallbackToDestructiveMigration().build()
-        answerDatabase = Room.databaseBuilder(this, AnswerDatabase::class.java, "AnswerDB")
-            .fallbackToDestructiveMigration().build()
-        questionDatabase = Room.databaseBuilder(this, QuestionDatabase::class.java, "QuestionDB")
-            .fallbackToDestructiveMigration().build()
+        appDatabase = AppDatabase.getDatabase(this)
     }
 
     private fun initRecycleView() {
@@ -2243,7 +2235,6 @@ class ListExamActivity : AppCompatActivity(),
 
     override fun onSwiped(viewHolder: RecyclerView.ViewHolder?, direction: Int, position: Int) {
         if (viewHolder is ListExamAdapter.ViewHolder) {
-            val mItem = viewHolder.mItem
             if (direction != ItemTouchHelper.RIGHT) {
                 mDialog = MaterialDialog(this)
                     .noAutoDismiss()
@@ -2251,11 +2242,20 @@ class ListExamActivity : AppCompatActivity(),
                 mDialog.window?.setDimAmount(0F)
                 mDialog.setCancelable(false)
                 mDialog.btn_AcceptDiaLogConFirm.setOnClickListener() {
-                    mArrayListExam.removeAt(position)
-                    mListExamAdapter?.setList(mArrayListExam)
-                    mDialog.dismiss()
-                    cl_list_exam_activity.alpha = 1F
-                    Toast.makeText(this, "Xóa thành công!", Toast.LENGTH_SHORT).show()
+                    Thread {
+                        appDatabase?.appDao()?.deleteExam(mArrayListExam[position])
+                        runOnUiThread {
+                            mArrayListExam.removeAt(position)
+                            mListExamAdapter?.setList(mArrayListExam)
+                            mDialog.dismiss()
+                            cl_list_exam_activity.alpha = 1F
+                            Toast.makeText(this, "Xóa thành công!", Toast.LENGTH_SHORT).show()
+                            if (mArrayListExam.isEmpty()) {
+                                tv_Suggest.visibility = View.VISIBLE
+                            }
+                        }
+                    }.start()
+
                 }
                 mDialog.btn_CancelDialogConfirm.setOnClickListener {
                     cl_list_exam_activity.alpha = 1F
@@ -2296,7 +2296,6 @@ class ListExamActivity : AppCompatActivity(),
                 mDialog.setCancelable(false)
                 mDialog.tv_TitleOfCustomDialogConfirm.text = "Bạn có muốn tạo một đề thi mới ?"
                 mDialog.btn_AcceptDiaLogConFirm.setOnClickListener() {
-
                     // random 15 ques law
                     var arrLaw = ArrayList<Question>()
                     for (i in 1..15) {
@@ -2331,23 +2330,35 @@ class ListExamActivity : AppCompatActivity(),
                         arrSituations.add(ques)
                     }
                     Thread {
-                        var exam = Exam(mArrayListExam.size, false, 19)
-                        examDatabase?.examDao()?.saveData(exam)
+                        var exam = Exam(mArrayListExam.size + 1, false, 19)
+                        appDatabase?.appDao()?.saveDataExam(exam)
+                        var id = (mArrayListExamWithQues.size + 1) * 10
+                        var eExamWithQuestion: ExamWithQuestion?
                         arrLaw.forEach {
-                            examWithQuestionDatabase?.examWithQuestionDao()
-                                ?.saveData(ExamWithQuestion(-1, it.mID, exam.mID))
+                            eExamWithQuestion = ExamWithQuestion(id++, -1, it.mID, exam.mID)
+                            mArrayListExamWithQues.add(eExamWithQuestion!!)
+                            appDatabase?.appDao()
+                                ?.saveDataEwQ(eExamWithQuestion!!)
                         }
                         arrNoticeBoard.forEach {
-                            examWithQuestionDatabase?.examWithQuestionDao()
-                                ?.saveData(ExamWithQuestion(-1, it.mID, exam.mID))
+                            eExamWithQuestion = ExamWithQuestion(id++, -1, it.mID, exam.mID)
+                            appDatabase?.appDao()
+                                ?.saveDataEwQ(eExamWithQuestion!!)
+                            mArrayListExamWithQues.add(eExamWithQuestion!!)
                         }
                         arrSituations.forEach {
-                            examWithQuestionDatabase?.examWithQuestionDao()
-                                ?.saveData(ExamWithQuestion(-1, it.mID, exam.mID))
+                            eExamWithQuestion = ExamWithQuestion(id++, -1, it.mID, exam.mID)
+                            appDatabase?.appDao()
+                                ?.saveDataEwQ(eExamWithQuestion!!)
+                            mArrayListExamWithQues.add(eExamWithQuestion!!)
                         }
                         runOnUiThread {
                             mArrayListExam.add(exam)
                             mListExamAdapter?.setList(mArrayListExam)
+                            if (mArrayListExam.size == 1) {
+                                rv_listExam.visibility = View.VISIBLE
+                                tv_Suggest.visibility = View.GONE
+                            }
                             mDialog.dismiss()
                             cl_list_exam_activity.alpha = 1F
                             Toast.makeText(this, "Thêm thành công!", Toast.LENGTH_SHORT).show()
@@ -2373,7 +2384,19 @@ class ListExamActivity : AppCompatActivity(),
         mDialog.setCancelable(false)
         mDialog.tv_TitleOfCustomDialogConfirm.text = "Bạn có chắc chắn muốn vào thi ?"
         mDialog.btn_AcceptDiaLogConFirm.setOnClickListener() {
+            val arrEWQ = ArrayList<ExamWithQuestion>()
+            mArrayListExamWithQues.forEach {
+                if (it.mExamId == mItem.mID) {
+                    arrEWQ.add(it)
+                }
+            }
             val intent = Intent(this, DoExamActivity::class.java)
+            val bundle = Bundle()
+            for (i in 0..24) {
+                bundle.putSerializable("CAU_${i}",arrEWQ[i])
+            }
+            intent.putExtras(bundle)
+            intent.flags = Intent.FLAG_ACTIVITY_SINGLE_TOP
             startActivity(intent)
             mDialog.dismiss()
             cl_list_exam_activity.alpha = 1F

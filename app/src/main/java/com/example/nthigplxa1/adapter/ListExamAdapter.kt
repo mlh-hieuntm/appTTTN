@@ -47,7 +47,6 @@ class ListExamAdapter(var mContext: Context, var mListener: ItemListener) :
             holder.mItem?.let {
                 mListener.onItemClick(position, it)
             }
-
         }
         when (position % 8) {
             0 -> holder.clBg.setBackgroundResource(R.drawable.background_custom_four_corner_red)

@@ -6,21 +6,15 @@ import androidx.room.PrimaryKey
 
 
 @Entity
-class Exam {
+data class Exam (
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "Exam_Id")
-    var mID: Int = 0
+    var mID: Int = 0,
 
     @ColumnInfo(name = "Exam_Status")
-    var mIsFinished: Boolean = false
+    var mIsFinished: Boolean = false,
 
     @ColumnInfo(name = "Exam_Time_Remaining")
     var mTimeRemaining: Int = 1140
 
-    constructor()
-    constructor(id: Int, isFinish: Boolean, timeRemaining: Int) {
-        this.mID = id
-        this.mIsFinished = isFinish
-        this.mTimeRemaining = timeRemaining
-    }
-}
+)
