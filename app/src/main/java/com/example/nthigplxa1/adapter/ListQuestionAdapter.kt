@@ -19,7 +19,8 @@ class ListQuestionAdapter(var mContext: Context) :
     private var mArrayListQuestion = ArrayList<Question>()
     private var mArrayListAnswer = ArrayList<Answer>()
     private var mArrayListEWQ = ArrayList<ExamWithQuestion>()
-    private var mArrayAnsSelect = ArrayList<Int>()
+    var mArrayAnsSelect = ArrayList<Int>()
+    var mArrayCorrectAns = ArrayList<Int>()
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val orderQues: TextView = itemView.findViewById(R.id.tv_orderExam)
         val imgContent: ImageView = itemView.findViewById(R.id.img_contentQues)
@@ -39,14 +40,27 @@ class ListQuestionAdapter(var mContext: Context) :
         this.mArrayListQuestion = list
         this.mArrayListAnswer = listAns
         this.mArrayListEWQ = listExamWithQuestion
+        for (i in 0..24) {
+            this.mArrayAnsSelect.add(-1)
+            this.mArrayCorrectAns.add(-2)
+        }
         notifyDataSetChanged()
+    }
+
+    fun getMark(): Int{
+        var mark = 0
+        for (i in 0..24) {
+            if (mArrayAnsSelect[i] == mArrayCorrectAns[i]) {
+                mark++
+            }
+        }
+        return mark
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val layoutInflater = LayoutInflater.from(mContext)
         val homeView: View = layoutInflater.inflate(R.layout.item_list_do_exam, parent, false)
         return ViewHolder(homeView)
-
     }
 
     override fun getItemCount(): Int {
@@ -59,7 +73,7 @@ class ListQuestionAdapter(var mContext: Context) :
         if (mArrayListQuestion[position].mContentImg != -1) {
             holder.imgContent.setImageResource(mArrayListQuestion[position].mContentImg)
         }
-        holder.tvContent.text = mArrayListQuestion[position].mContent
+        holder.tvContent.text = mArrayListQuestion[position].mContent.trim()
         var countText = 1
         holder.tvAns1.visibility = View.GONE
         holder.tvAns2.visibility = View.GONE
@@ -74,7 +88,7 @@ class ListQuestionAdapter(var mContext: Context) :
         } else {
             holder.tvW.visibility = View.INVISIBLE
         }
-        when (position) {
+        when (mArrayAnsSelect[position]) {
             1 -> {
                 holder.tvAns1.setTextColor(ContextCompat.getColor(mContext, R.color.green))
                 holder.tvAns2.setTextColor(ContextCompat.getColor(mContext, R.color.black))
@@ -107,22 +121,34 @@ class ListQuestionAdapter(var mContext: Context) :
                         holder.tvAns1.text = "1, ${it.mContent.trim()}"
                         holder.tvAns1.visibility = View.VISIBLE
                         holder.view1.visibility = View.VISIBLE
+                        if (it.mID == mArrayListQuestion[position].mAnsIdCorrect) {
+                            mArrayCorrectAns.add(position,1)
+                        }
                     }
                     2 -> {
                         holder.tvAns2.text = "2, ${it.mContent.trim()}"
                         holder.tvAns2.visibility = View.VISIBLE
                         holder.view2.visibility = View.VISIBLE
+                        if (it.mID == mArrayListQuestion[position].mAnsIdCorrect) {
+                            mArrayCorrectAns.add(position,2)
+                        }
                     }
                     3 -> {
                         holder.tvAns3.text = "3, ${it.mContent.trim()}"
                         holder.tvAns3.visibility = View.VISIBLE
                         holder.tvAns3.visibility = View.VISIBLE
                         holder.view3.visibility = View.VISIBLE
+                        if (it.mID == mArrayListQuestion[position].mAnsIdCorrect) {
+                            mArrayCorrectAns.add(position,3)
+                        }
                     }
                     4 -> {
                         holder.tvAns4.text = "4, ${it.mContent.trim()}"
                         holder.tvAns4.visibility = View.VISIBLE
                         holder.view4.visibility = View.VISIBLE
+                        if (it.mID == mArrayListQuestion[position].mAnsIdCorrect) {
+                            mArrayCorrectAns.add(position,4)
+                        }
                     }
                 }
                 countText++
@@ -134,6 +160,7 @@ class ListQuestionAdapter(var mContext: Context) :
             holder.tvAns2.setTextColor(ContextCompat.getColor(mContext, R.color.black))
             holder.tvAns3.setTextColor(ContextCompat.getColor(mContext, R.color.black))
             holder.tvAns4.setTextColor(ContextCompat.getColor(mContext, R.color.black))
+            mArrayAnsSelect[position] = 1
 
         }
         holder.tvAns2.setOnClickListener {
@@ -141,18 +168,21 @@ class ListQuestionAdapter(var mContext: Context) :
             holder.tvAns2.setTextColor(ContextCompat.getColor(mContext, R.color.green))
             holder.tvAns3.setTextColor(ContextCompat.getColor(mContext, R.color.black))
             holder.tvAns4.setTextColor(ContextCompat.getColor(mContext, R.color.black))
+            mArrayAnsSelect[position] = 2
         }
         holder.tvAns3.setOnClickListener {
             holder.tvAns1.setTextColor(ContextCompat.getColor(mContext, R.color.black))
             holder.tvAns2.setTextColor(ContextCompat.getColor(mContext, R.color.black))
             holder.tvAns3.setTextColor(ContextCompat.getColor(mContext, R.color.green))
             holder.tvAns4.setTextColor(ContextCompat.getColor(mContext, R.color.black))
+            mArrayAnsSelect[position] = 3
         }
         holder.tvAns4.setOnClickListener {
             holder.tvAns1.setTextColor(ContextCompat.getColor(mContext, R.color.black))
             holder.tvAns2.setTextColor(ContextCompat.getColor(mContext, R.color.black))
             holder.tvAns3.setTextColor(ContextCompat.getColor(mContext, R.color.black))
             holder.tvAns4.setTextColor(ContextCompat.getColor(mContext, R.color.green))
+            mArrayAnsSelect[position] = 4
         }
 
     }

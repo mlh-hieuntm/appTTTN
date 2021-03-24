@@ -36,7 +36,7 @@ class DoExamActivity : AppCompatActivity(), View.OnClickListener {
         val bundle = intent.extras
         if (bundle != null) {
             for (i in 0..24) {
-                mArraylistEWQ.add( bundle.getSerializable("CAU_${i}") as ExamWithQuestion)
+                mArraylistEWQ.add(bundle.getSerializable("CAU_${i}") as ExamWithQuestion)
             }
         }
 
@@ -68,7 +68,7 @@ class DoExamActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun initCountDownTimer() {
-        countDownTimer = object : CountDownTimer(20 * 60000L, 1000L) {
+        countDownTimer = object : CountDownTimer(19 * 60000L, 1000L) {
             override fun onFinish() {
 
             }
@@ -93,8 +93,23 @@ class DoExamActivity : AppCompatActivity(), View.OnClickListener {
                 mDialog.tv_TitleOfCustomDialogConfirm.text = "Bạn có chắc chắn muốn nộp bài?"
                 mDialog.btn_AcceptDiaLogConFirm.setOnClickListener() {
                     mDialog.dismiss()
-                    cl_doExam.alpha = 1F
-                    Toast.makeText(this, "Nộp thành công!", Toast.LENGTH_SHORT).show()
+
+                    var mDialog = MaterialDialog(this)
+                        .noAutoDismiss()
+                        .customView(R.layout.dialog_confirm_delete)
+                    mDialog.window?.setDimAmount(0F)
+                    mDialog.setCancelable(false)
+                    mDialog.tv_TitleOfCustomDialogConfirm.text =
+                        "Số điểm của bạn là ${mListQuestionAdapter?.getMark()}"
+                    mDialog.btn_AcceptDiaLogConFirm.setOnClickListener {
+                        cl_doExam.alpha = 1F
+                        mDialog.dismiss()
+                    }
+                    mDialog.btn_CancelDialogConfirm.setOnClickListener {
+                        cl_doExam.alpha = 1F
+                        mDialog.dismiss()
+                    }
+                    mDialog.show()
                 }
                 mDialog.btn_CancelDialogConfirm.setOnClickListener {
                     cl_doExam.alpha = 1F
