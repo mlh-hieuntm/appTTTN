@@ -3,6 +3,7 @@ package com.example.nthigplxa1.view
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -20,6 +21,7 @@ import com.example.nthigplxa1.adapter.ListExamAdapter
 import com.example.nthigplxa1.adapter.ListExamItemTouchHelper
 import com.example.nthigplxa1.R
 import com.example.nthigplxa1.model.Answer
+import com.example.nthigplxa1.model.Exam
 import com.example.nthigplxa1.model.Question
 import kotlinx.android.synthetic.main.activity_list_exam.*
 import kotlinx.android.synthetic.main.dialog_confirm_delete.*
@@ -37,33 +39,75 @@ class ListExamActivity : AppCompatActivity(),
     private var examDatabase: ExamDatabase? = null
     private var questionDatabase: QuestionDatabase? = null
     private var answerDatabase: AnswerDatabase? = null
-    val arr = ArrayList<Int>()
+    private var mArrayListAns: ArrayList<Answer> = ArrayList()
+    private var mArrayListQues: ArrayList<Question> = ArrayList()
+    private var mArrayListExam: ArrayList<Exam> = ArrayList()
+    private var mArrayListQuesLaw: ArrayList<Question> = ArrayList()
+    private var mArrayListQuesNoticeBoard: ArrayList<Question> = ArrayList()
+    private var mArrayListQuesSituations: ArrayList<Question> = ArrayList()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_list_exam)
         initRecycleView()
         initDataBase()
+        registrationViewListener()
+        checkDbInApp()
+    }
+
+    private fun registrationViewListener() {
         btn_addExam.setOnClickListener(this)
         btn_backListExam.setOnClickListener(this)
+    }
+
+    private fun getAllDB() {
+        answerDatabase?.answerDao()?.readAllData()?.let {
+            mArrayListAns = it as ArrayList<Answer>
+        }
+        questionDatabase?.questionDao()?.readAllData()?.let {
+            mArrayListQues = it as ArrayList<Question>
+        }
+        examDatabase?.examDao()?.readAllData()?.let {
+            mArrayListExam = it as ArrayList<Exam>
+        }
+    }
+
+    private fun checkDbInApp() {
         sharedPreferences = getSharedPreferences("openApp", MODE_PRIVATE)
         val editor = sharedPreferences?.edit()
         val isFirstOpenApp = sharedPreferences?.getBoolean(FIRST_TIME_OPEN_APP, false)
-
         if (!isFirstOpenApp!!) {
             Thread {
                 insertDB()
+                getAllDB()
                 runOnUiThread {
-                    rv_listExam.visibility = View.VISIBLE
-                    cl_progressbar.visibility = View.GONE
+                    setUpFirstState()
                 }
             }.start()
             editor?.putBoolean(FIRST_TIME_OPEN_APP, true)
             editor?.commit()
         } else {
-
+            Thread {
+                getAllDB()
+                runOnUiThread {
+                    setUpFirstState()
+                }
+            }.start()
         }
     }
-
+    
+    private fun setUpFirstState() {
+        mListExamAdapter?.setList(mArrayListExam)
+        rv_listExam.visibility = View.VISIBLE
+        cl_progressbar.visibility = View.GONE
+        mArrayListQues.forEach { 
+            when(it.mTypeQuestion) {
+                typeQuestionNoticeBoard -> mArrayListQuesNoticeBoard.add(it)
+                typeQuestionSituations -> mArrayListQuesSituations.add(it)
+                typeQuestionLaw -> mArrayListQuesLaw.add(it)
+            }
+        }
+    }
+    
     private fun insertDB() {
         var ans1: Answer?
         var ans2: Answer?
@@ -2185,10 +2229,6 @@ class ListExamActivity : AppCompatActivity(),
         )
         helper = ItemTouchHelper(itemTouchHelperCallback)
         helper?.attachToRecyclerView(rv_listExam)
-        for (i in 0..20) {
-            arr.add(i)
-        }
-        mListExamAdapter?.setList(arr)
     }
 
     override fun onSwiped(viewHolder: RecyclerView.ViewHolder?, direction: Int, position: Int) {
@@ -2201,15 +2241,15 @@ class ListExamActivity : AppCompatActivity(),
                 mDialog.window?.setDimAmount(0F)
                 mDialog.setCancelable(false)
                 mDialog.btn_AcceptDiaLogConFirm.setOnClickListener() {
-                    arr.removeAt(position)
-                    mListExamAdapter?.setList(arr)
+                    mArrayListExam.removeAt(position)
+                    mListExamAdapter?.setList(mArrayListExam)
                     mDialog.dismiss()
                     cl_list_exam_activity.alpha = 1F
                     Toast.makeText(this, "Xóa thành công!", Toast.LENGTH_SHORT).show()
                 }
                 mDialog.btn_CancelDialogConfirm.setOnClickListener {
                     cl_list_exam_activity.alpha = 1F
-                    mListExamAdapter?.setList(arr)
+                    mListExamAdapter?.setList(mArrayListExam)
                     mDialog.dismiss()
                 }
                 cl_list_exam_activity.alpha = 0.2F
@@ -2246,11 +2286,47 @@ class ListExamActivity : AppCompatActivity(),
                 mDialog.setCancelable(false)
                 mDialog.tv_TitleOfCustomDialogConfirm.text = "Bạn có muốn tạo một đề thi mới ?"
                 mDialog.btn_AcceptDiaLogConFirm.setOnClickListener() {
-                    arr.add(arr.size)
-                    mListExamAdapter?.setList(arr)
-                    mDialog.dismiss()
-                    cl_list_exam_activity.alpha = 1F
-                    Toast.makeText(this, "Thêm thành công!", Toast.LENGTH_SHORT).show()
+
+                    // random 15 ques law
+                    var arrLaw = ArrayList<Question>()
+                    for (i in 1..15) {
+                        var pos = (0 until this.mArrayListQuesLaw.size).random()
+                        var ques = mArrayListQuesLaw[pos]
+                        while (arrLaw.contains(ques)) {
+                            pos = (0 until this.mArrayListQuesLaw.size).random()
+                            ques = mArrayListQuesLaw[pos]
+                        }
+                        arrLaw.add(ques)
+                    }
+                    // random 5 ques NoticeBoard
+                    var arrNoticeBoard = ArrayList<Question>()
+                    for (i in 1..5) {
+                        var pos = (0 until this.mArrayListQuesNoticeBoard.size).random()
+                        var ques = mArrayListQuesNoticeBoard[pos]
+                        while (arrNoticeBoard.contains(ques)) {
+                            pos = (0 until this.mArrayListQuesNoticeBoard.size).random()
+                            ques = mArrayListQuesNoticeBoard[pos]
+                        }
+                        arrNoticeBoard.add(ques)
+                    }
+                    // random 5 ques law
+                    var arrSituations = ArrayList<Question>()
+                    for (i in 1..5) {
+                        var pos = (0 until this.mArrayListQuesSituations.size).random()
+                        var ques = mArrayListQuesSituations[pos]
+                        while (arrSituations.contains(ques)) {
+                            pos = (0 until this.mArrayListQuesSituations.size).random()
+                            ques = mArrayListQuesSituations[pos]
+                        }
+                        arrSituations.add(ques)
+                    }
+                    Toast.makeText(this, "", Toast.LENGTH_SHORT).show()
+
+//                    arr.add(arr.size)
+//                    mListExamAdapter?.setList(arr)
+//                    mDialog.dismiss()
+//                    cl_list_exam_activity.alpha = 1F
+//                    Toast.makeText(this, "Thêm thành công!", Toast.LENGTH_SHORT).show()
                 }
                 mDialog.btn_CancelDialogConfirm.setOnClickListener {
                     cl_list_exam_activity.alpha = 1F
@@ -2262,7 +2338,7 @@ class ListExamActivity : AppCompatActivity(),
         }
     }
 
-    override fun onItemClick(position: Int, mItem: Int) {
+    override fun onItemClick(position: Int, mItem: Exam) {
         mDialog = MaterialDialog(this)
             .noAutoDismiss()
             .customView(R.layout.dialog_confirm_delete)

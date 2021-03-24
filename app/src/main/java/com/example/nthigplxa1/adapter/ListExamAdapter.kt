@@ -8,11 +8,12 @@ import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.example.nthigplxa1.R
+import com.example.nthigplxa1.model.Exam
 
 class ListExamAdapter(var mContext: Context, var mListener: ItemListener) :
     RecyclerView.Adapter<ListExamAdapter.ViewHolder>() {
 
-    private var mArrayListAbilities = ArrayList<Int>()
+    private var mArrayListAbilities = ArrayList<Exam>()
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val tvNameOfExam: TextView = itemView.findViewById(R.id.tv_nameOfExam)
@@ -20,10 +21,10 @@ class ListExamAdapter(var mContext: Context, var mListener: ItemListener) :
         val clBg: ConstraintLayout = itemView.findViewById(R.id.cl_bg)
         val foregroundView: ConstraintLayout = itemView.findViewById(R.id.foregroundView)
         val textDeleteRight: TextView = itemView.findViewById(R.id.textDeleteRight)
-        var mItem: Int = -1
+        var mItem: Exam? = null
     }
 
-    fun setList(list: ArrayList<Int>) {
+    fun setList(list: ArrayList<Exam>) {
         this.mArrayListAbilities = list
         notifyDataSetChanged()
     }
@@ -43,7 +44,10 @@ class ListExamAdapter(var mContext: Context, var mListener: ItemListener) :
         holder.mItem = mArrayListAbilities[position]
         holder.tvNameOfExam.text = "Đề số ${mArrayListAbilities[position]}"
         holder.tvDo.setOnClickListener {
-            mListener.onItemClick(position, holder.mItem)
+            holder.mItem?.let {
+                mListener.onItemClick(position, it)
+            }
+
         }
         when (position % 8) {
             0 -> holder.clBg.setBackgroundResource(R.drawable.background_custom_four_corner_red)
@@ -60,5 +64,5 @@ class ListExamAdapter(var mContext: Context, var mListener: ItemListener) :
 }
 
 interface ItemListener {
-    fun onItemClick(position: Int, mItem: Int)
+    fun onItemClick(position: Int, mItem: Exam)
 }
