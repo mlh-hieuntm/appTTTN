@@ -71,6 +71,5 @@ dependencies {
 
     // Test helpers
     testImplementation "androidx.room:room-testing:$room_version"
-    debugImplementation 'com.amitshekhar.android:debug-db-encrypt:1.0.6'
     implementation 'com.android.support:multidex:1.0.3'
 }

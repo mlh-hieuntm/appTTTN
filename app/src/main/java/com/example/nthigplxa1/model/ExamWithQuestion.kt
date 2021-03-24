@@ -7,6 +7,7 @@ import androidx.room.PrimaryKey
 @Entity
 class ExamWithQuestion {
     @PrimaryKey(autoGenerate = true)
+    @ColumnInfo(name = "EwQ_Id")
     var mID: Int = 0
 
     @ColumnInfo(name = "ExamWithQuestion_idAnsSelected")
@@ -19,8 +20,7 @@ class ExamWithQuestion {
     var mExamId: Int = -1
 
     constructor()
-    constructor(id: Int, idAnsSelected: Int, quesId: Int, examId: Int) {
-        this.mID = id
+    constructor(idAnsSelected: Int, quesId: Int, examId: Int) {
         this.mIdAnsSelected = idAnsSelected
         this.mQuesId = quesId
         this.mExamId = examId

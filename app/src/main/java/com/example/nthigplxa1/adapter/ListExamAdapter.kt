@@ -42,7 +42,7 @@ class ListExamAdapter(var mContext: Context, var mListener: ItemListener) :
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.mItem = mArrayListAbilities[position]
-        holder.tvNameOfExam.text = "Đề số ${mArrayListAbilities[position]}"
+        holder.tvNameOfExam.text = "Đề số ${mArrayListAbilities[position].mID}"
         holder.tvDo.setOnClickListener {
             holder.mItem?.let {
                 mListener.onItemClick(position, it)

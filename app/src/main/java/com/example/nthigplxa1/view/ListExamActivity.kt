@@ -20,8 +20,10 @@ import com.example.nthigplxa1.adapter.ItemListener
 import com.example.nthigplxa1.adapter.ListExamAdapter
 import com.example.nthigplxa1.adapter.ListExamItemTouchHelper
 import com.example.nthigplxa1.R
+import com.example.nthigplxa1.db.ExamWithQuestionDatabase
 import com.example.nthigplxa1.model.Answer
 import com.example.nthigplxa1.model.Exam
+import com.example.nthigplxa1.model.ExamWithQuestion
 import com.example.nthigplxa1.model.Question
 import kotlinx.android.synthetic.main.activity_list_exam.*
 import kotlinx.android.synthetic.main.dialog_confirm_delete.*
@@ -39,9 +41,11 @@ class ListExamActivity : AppCompatActivity(),
     private var examDatabase: ExamDatabase? = null
     private var questionDatabase: QuestionDatabase? = null
     private var answerDatabase: AnswerDatabase? = null
+    private var examWithQuestionDatabase: ExamWithQuestionDatabase? = null
     private var mArrayListAns: ArrayList<Answer> = ArrayList()
     private var mArrayListQues: ArrayList<Question> = ArrayList()
     private var mArrayListExam: ArrayList<Exam> = ArrayList()
+    private var mArrayListExamWithQues: ArrayList<ExamWithQuestion> = ArrayList()
     private var mArrayListQuesLaw: ArrayList<Question> = ArrayList()
     private var mArrayListQuesNoticeBoard: ArrayList<Question> = ArrayList()
     private var mArrayListQuesSituations: ArrayList<Question> = ArrayList()
@@ -69,6 +73,12 @@ class ListExamActivity : AppCompatActivity(),
         examDatabase?.examDao()?.readAllData()?.let {
             mArrayListExam = it as ArrayList<Exam>
         }
+        examDatabase?.examDao()?.readAllData()?.let {
+            mArrayListExam = it as ArrayList<Exam>
+        }
+//        examWithQuestionDatabase?.examWithQuestionDao()?.readAllData()?.let {
+//            mArrayListExamWithQues = it as ArrayList<ExamWithQuestion>
+//        }
     }
 
     private fun checkDbInApp() {
@@ -94,20 +104,20 @@ class ListExamActivity : AppCompatActivity(),
             }.start()
         }
     }
-    
+
     private fun setUpFirstState() {
         mListExamAdapter?.setList(mArrayListExam)
         rv_listExam.visibility = View.VISIBLE
         cl_progressbar.visibility = View.GONE
-        mArrayListQues.forEach { 
-            when(it.mTypeQuestion) {
+        mArrayListQues.forEach {
+            when (it.mTypeQuestion) {
                 typeQuestionNoticeBoard -> mArrayListQuesNoticeBoard.add(it)
                 typeQuestionSituations -> mArrayListQuesSituations.add(it)
                 typeQuestionLaw -> mArrayListQuesLaw.add(it)
             }
         }
     }
-    
+
     private fun insertDB() {
         var ans1: Answer?
         var ans2: Answer?
@@ -2320,13 +2330,30 @@ class ListExamActivity : AppCompatActivity(),
                         }
                         arrSituations.add(ques)
                     }
-                    Toast.makeText(this, "", Toast.LENGTH_SHORT).show()
+                    Thread {
+                        var exam = Exam(mArrayListExam.size, false, 19)
+                        examDatabase?.examDao()?.saveData(exam)
+                        arrLaw.forEach {
+                            examWithQuestionDatabase?.examWithQuestionDao()
+                                ?.saveData(ExamWithQuestion(-1, it.mID, exam.mID))
+                        }
+                        arrNoticeBoard.forEach {
+                            examWithQuestionDatabase?.examWithQuestionDao()
+                                ?.saveData(ExamWithQuestion(-1, it.mID, exam.mID))
+                        }
+                        arrSituations.forEach {
+                            examWithQuestionDatabase?.examWithQuestionDao()
+                                ?.saveData(ExamWithQuestion(-1, it.mID, exam.mID))
+                        }
+                        runOnUiThread {
+                            mArrayListExam.add(exam)
+                            mListExamAdapter?.setList(mArrayListExam)
+                            mDialog.dismiss()
+                            cl_list_exam_activity.alpha = 1F
+                            Toast.makeText(this, "Thêm thành công!", Toast.LENGTH_SHORT).show()
+                        }
+                    }.start()
 
-//                    arr.add(arr.size)
-//                    mListExamAdapter?.setList(arr)
-//                    mDialog.dismiss()
-//                    cl_list_exam_activity.alpha = 1F
-//                    Toast.makeText(this, "Thêm thành công!", Toast.LENGTH_SHORT).show()
                 }
                 mDialog.btn_CancelDialogConfirm.setOnClickListener {
                     cl_list_exam_activity.alpha = 1F
