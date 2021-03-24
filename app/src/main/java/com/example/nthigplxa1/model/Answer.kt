@@ -1,4 +1,4 @@
-package com.example.nthigplxa1
+package com.example.nthigplxa1.model
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
@@ -15,5 +15,11 @@ class Answer {
 
     @ColumnInfo(name = "Ans_QuesID")
     var mQuestionID: Int = -1
+
+    constructor(ansId: Int, content: String, quesId: Int) {
+        this.mID = ansId
+        this.mContent = content
+        this.mQuestionID = quesId
+    }
 
 }

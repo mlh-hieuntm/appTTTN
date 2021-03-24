@@ -1,4 +1,4 @@
-package com.example.nthigplxa1
+package com.example.nthigplxa1.model
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
@@ -12,17 +12,11 @@ class Question {
     @ColumnInfo(name = "Ques_Id")
     var mID: Int = 0
 
-    @ColumnInfo(name = "Exam_Id")
-    var mExamId: Int = 0
-
     @ColumnInfo(name = "Ques_Type")
     var mTypeQuestion: String = ""
 
     @ColumnInfo(name = "Ques_IsParalysisPoint")
     var mIsParalysisPoint: Boolean = true
-
-    @ColumnInfo(name = "Ques_AnsSelectedId")
-    var mAnsSelectedId: Int = -1
 
     @ColumnInfo(name = "Ques_AnsIdCorrect")
     var mAnsIdCorrect: Int = -1
@@ -30,4 +24,27 @@ class Question {
     @ColumnInfo(name = "Ques_Content")
     var mContent: String = ""
 
+    @ColumnInfo(name = "Ques_Content_Img")
+    var mContentImg: Int = -1
+
+    @ColumnInfo(name = "Ques_Explain")
+    var mExplain: String = ""
+
+    constructor(
+        id: Int,
+        typeQues: String,
+        isParalysisPoint: Boolean,
+        ansIdCorrect: Int,
+        content: String,
+        contentImg: Int,
+        explain: String
+    ) {
+        this.mID = id
+        this.mTypeQuestion = typeQues
+        this.mIsParalysisPoint = isParalysisPoint
+        this.mAnsIdCorrect = ansIdCorrect
+        this.mContent = content
+        this.mContentImg = contentImg
+        this.mExplain = explain
+    }
 }

@@ -1,4 +1,4 @@
-package com.example.nthigplxa1
+package com.example.nthigplxa1.model
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
@@ -16,4 +16,10 @@ class Exam {
 
     @ColumnInfo(name = "Exam_Time_Remaining")
     var mTimeRemaining: Int = 1140
+
+    constructor(id: Int, isFinish: Boolean, timeRemaining: Int) {
+        this.mID = id
+        this.mIsFinished = isFinish
+        this.mTimeRemaining = timeRemaining
+    }
 }
