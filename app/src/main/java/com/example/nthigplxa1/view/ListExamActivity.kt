@@ -3,14 +3,12 @@ package com.example.nthigplxa1.view
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import androidx.room.Room
 import com.afollestad.materialdialogs.MaterialDialog
 import com.afollestad.materialdialogs.customview.customView
 import com.example.nthigplxa1.adapter.ItemListener
@@ -43,6 +41,7 @@ class ListExamActivity : AppCompatActivity(),
     private var mArrayListQuesLaw: ArrayList<Question> = ArrayList()
     private var mArrayListQuesNoticeBoard: ArrayList<Question> = ArrayList()
     private var mArrayListQuesSituations: ArrayList<Question> = ArrayList()
+    private var mArrayListParalysisPoint: ArrayList<Question> = ArrayList()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_list_exam)
@@ -111,6 +110,9 @@ class ListExamActivity : AppCompatActivity(),
                 typeQuestionNoticeBoard -> mArrayListQuesNoticeBoard.add(it)
                 typeQuestionSituations -> mArrayListQuesSituations.add(it)
                 typeQuestionLaw -> mArrayListQuesLaw.add(it)
+            }
+            if (it.mIsParalysisPoint) {
+                mArrayListParalysisPoint.add(it)
             }
         }
     }
@@ -2309,12 +2311,22 @@ class ListExamActivity : AppCompatActivity(),
     }
 
     private fun createExam() {
+        var arrParalysisPoint = ArrayList<Question>()
+        for (i in 1..5) {
+            var pos = (0 until this.mArrayListParalysisPoint.size).random()
+            var ques = mArrayListParalysisPoint[pos]
+            while (arrParalysisPoint.contains(ques)) {
+                pos = (0 until this.mArrayListParalysisPoint.size).random()
+                ques = mArrayListParalysisPoint[pos]
+            }
+            arrParalysisPoint.add(ques)
+        }
         // random 15 ques law
         var arrLaw = ArrayList<Question>()
-        for (i in 1..15) {
+        for (i in 1..10) {
             var pos = (0 until this.mArrayListQuesLaw.size).random()
             var ques = mArrayListQuesLaw[pos]
-            while (arrLaw.contains(ques)) {
+            while (arrLaw.contains(ques) || arrParalysisPoint.contains(ques) || ques.mIsParalysisPoint) {
                 pos = (0 until this.mArrayListQuesLaw.size).random()
                 ques = mArrayListQuesLaw[pos]
             }
@@ -2347,6 +2359,12 @@ class ListExamActivity : AppCompatActivity(),
             appDatabase?.appDao()?.saveDataExam(exam)
             var id = (mArrayListExamWithQues.size + 1) * 10
             var eExamWithQuestion: ExamWithQuestion?
+            arrParalysisPoint.forEach {
+                eExamWithQuestion = ExamWithQuestion(id++, -1, it.mID, exam.mID)
+                mArrayListExamWithQues.add(eExamWithQuestion!!)
+                appDatabase?.appDao()
+                    ?.saveDataEwQ(eExamWithQuestion!!)
+            }
             arrLaw.forEach {
                 eExamWithQuestion = ExamWithQuestion(id++, -1, it.mID, exam.mID)
                 mArrayListExamWithQues.add(eExamWithQuestion!!)
@@ -2397,7 +2415,7 @@ class ListExamActivity : AppCompatActivity(),
             val intent = Intent(this, DoExamActivity::class.java)
             val bundle = Bundle()
             for (i in 0..24) {
-                bundle.putSerializable("CAU_${i}",arrEWQ[i])
+                bundle.putSerializable("CAU_${i}", arrEWQ[i])
             }
             intent.putExtras(bundle)
             intent.flags = Intent.FLAG_ACTIVITY_SINGLE_TOP

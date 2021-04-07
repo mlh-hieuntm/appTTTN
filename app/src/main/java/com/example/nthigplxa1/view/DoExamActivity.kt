@@ -25,7 +25,6 @@ class DoExamActivity : AppCompatActivity(), View.OnClickListener {
     private var mArraylistEWQ: ArrayList<ExamWithQuestion> = ArrayList()
     private var mArrayListQues: ArrayList<Question> = ArrayList()
     private var mArrayListAns: ArrayList<Answer> = ArrayList()
-    val arr = ArrayList<Int>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_do_exam)
@@ -70,7 +69,7 @@ class DoExamActivity : AppCompatActivity(), View.OnClickListener {
     private fun initCountDownTimer() {
         countDownTimer = object : CountDownTimer(19 * 60000L, 1000L) {
             override fun onFinish() {
-
+                endExam()
             }
 
             override fun onTick(p0: Long) {
@@ -80,6 +79,34 @@ class DoExamActivity : AppCompatActivity(), View.OnClickListener {
 
         }
         countDownTimer?.start()
+    }
+
+    private fun endExam(){
+        mDialog.dismiss()
+        var mDialog = MaterialDialog(this)
+            .noAutoDismiss()
+            .customView(R.layout.dialog_confirm_delete)
+        mDialog.window?.setDimAmount(0F)
+        mDialog.setCancelable(false)
+        val mark = mListQuestionAdapter?.getMark()
+        if (mark!! >= 21) {
+            mDialog.tv_TitleOfCustomDialogConfirm.text =
+                "Số điểm của bạn là ${mark}, bạn đã đỗ!"
+        } else {
+            mDialog.tv_TitleOfCustomDialogConfirm.text =
+                "Số điểm của bạn là ${mark}, bạn đã trượt!"
+        }
+        countDownTimer?.cancel()
+        mListQuestionAdapter?.showExplain()
+        mDialog.btn_AcceptDiaLogConFirm.setOnClickListener {
+            cl_doExam.alpha = 1F
+            mDialog.dismiss()
+        }
+        mDialog.btn_CancelDialogConfirm.setOnClickListener {
+            cl_doExam.alpha = 1F
+            mDialog.dismiss()
+        }
+        mDialog.show()
     }
 
     override fun onClick(v: View?) {
@@ -92,31 +119,7 @@ class DoExamActivity : AppCompatActivity(), View.OnClickListener {
                 mDialog.setCancelable(false)
                 mDialog.tv_TitleOfCustomDialogConfirm.text = "Bạn có chắc chắn muốn nộp bài?"
                 mDialog.btn_AcceptDiaLogConFirm.setOnClickListener() {
-                    mDialog.dismiss()
-                    var mDialog = MaterialDialog(this)
-                        .noAutoDismiss()
-                        .customView(R.layout.dialog_confirm_delete)
-                    mDialog.window?.setDimAmount(0F)
-                    mDialog.setCancelable(false)
-                    val mark = mListQuestionAdapter?.getMark()
-                    if (mark!! >= 21) {
-                        mDialog.tv_TitleOfCustomDialogConfirm.text =
-                            "Số điểm của bạn là ${mark}, bạn đã đỗ!"
-                    } else {
-                        mDialog.tv_TitleOfCustomDialogConfirm.text =
-                            "Số điểm của bạn là ${mark}, bạn đã trượt!"
-                    }
-                    countDownTimer?.cancel()
-                    mListQuestionAdapter?.showExplain()
-                    mDialog.btn_AcceptDiaLogConFirm.setOnClickListener {
-                        cl_doExam.alpha = 1F
-                        mDialog.dismiss()
-                    }
-                    mDialog.btn_CancelDialogConfirm.setOnClickListener {
-                        cl_doExam.alpha = 1F
-                        mDialog.dismiss()
-                    }
-                    mDialog.show()
+                   endExam()
                 }
                 mDialog.btn_CancelDialogConfirm.setOnClickListener {
                     cl_doExam.alpha = 1F
