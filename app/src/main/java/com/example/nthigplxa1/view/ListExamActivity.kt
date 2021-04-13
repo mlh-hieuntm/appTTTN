@@ -2216,8 +2216,6 @@ class ListExamActivity : AppCompatActivity(),
         appDatabase?.appDao()?.saveDataAnswer(ans1)
         appDatabase?.appDao()?.saveDataAnswer(ans2)
         appDatabase?.appDao()?.saveDataQuestion(question)
-
-
     }
 
     private fun initDataBase() {

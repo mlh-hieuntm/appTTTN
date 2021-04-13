@@ -37,7 +37,7 @@ class SplashActivity : AppCompatActivity() {
     }
     override fun finish() {
         super.finish()
-        this.startActivity(Intent(this, ListExamActivity::class.java))
+        this.startActivity(Intent(this, HomeActivity::class.java))
         this.overridePendingTransition(0, 0)
     }
 }
