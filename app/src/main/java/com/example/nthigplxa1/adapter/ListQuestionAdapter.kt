@@ -81,7 +81,6 @@ class ListQuestionAdapter(var mContext: Context) :
             holder.imgContent.setImageResource(mArrayListQuestion[position].mContentImg)
         }
         holder.tvContent.text = mArrayListQuestion[position].mContent.trim()
-        var countText = 1
         holder.tvAns1.visibility = View.GONE
         holder.tvAns2.visibility = View.GONE
         holder.tvAns3.visibility = View.GONE
@@ -121,46 +120,6 @@ class ListQuestionAdapter(var mContext: Context) :
                 holder.tvAns2.setTextColor(ContextCompat.getColor(mContext, R.color.black))
                 holder.tvAns3.setTextColor(ContextCompat.getColor(mContext, R.color.black))
                 holder.tvAns4.setTextColor(ContextCompat.getColor(mContext, R.color.green))
-            }
-        }
-        mArrayListAnswer.forEach {
-            if (it.mQuestionID == mArrayListQuestion[position].mID) {
-                when (countText) {
-                    1 -> {
-                        holder.tvAns1.text = "1, ${it.mContent.trim()}"
-                        holder.tvAns1.visibility = View.VISIBLE
-                        holder.view1.visibility = View.VISIBLE
-                        if (it.mID == mArrayListQuestion[position].mAnsIdCorrect) {
-                            mArrayCorrectAns.add(position,1)
-                        }
-                    }
-                    2 -> {
-                        holder.tvAns2.text = "2, ${it.mContent.trim()}"
-                        holder.tvAns2.visibility = View.VISIBLE
-                        holder.view2.visibility = View.VISIBLE
-                        if (it.mID == mArrayListQuestion[position].mAnsIdCorrect) {
-                            mArrayCorrectAns.add(position,2)
-                        }
-                    }
-                    3 -> {
-                        holder.tvAns3.text = "3, ${it.mContent.trim()}"
-                        holder.tvAns3.visibility = View.VISIBLE
-                        holder.tvAns3.visibility = View.VISIBLE
-                        holder.view3.visibility = View.VISIBLE
-                        if (it.mID == mArrayListQuestion[position].mAnsIdCorrect) {
-                            mArrayCorrectAns.add(position,3)
-                        }
-                    }
-                    4 -> {
-                        holder.tvAns4.text = "4, ${it.mContent.trim()}"
-                        holder.tvAns4.visibility = View.VISIBLE
-                        holder.view4.visibility = View.VISIBLE
-                        if (it.mID == mArrayListQuestion[position].mAnsIdCorrect) {
-                            mArrayCorrectAns.add(position,4)
-                        }
-                    }
-                }
-                countText++
             }
         }
 

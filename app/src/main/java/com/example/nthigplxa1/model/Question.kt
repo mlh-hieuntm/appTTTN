@@ -18,9 +18,6 @@ data class Question (
     @ColumnInfo(name = "Ques_IsParalysisPoint")
     var mIsParalysisPoint: Boolean = true,
 
-    @ColumnInfo(name = "Ques_AnsIdCorrect")
-    var mAnsIdCorrect: Int = -1,
-
     @ColumnInfo(name = "Ques_Content")
     var mContent: String = "",
 

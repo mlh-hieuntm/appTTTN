@@ -14,7 +14,9 @@ data class Answer (
     var mContent: String = "",
 
     @ColumnInfo(name = "Ans_QuesID")
-    var mQuestionID: Int = -1
+    var mQuestionID: Int = -1,
 
+    @ColumnInfo(name = "Ans_IsCorrect")
+    var mIsCorrect: Boolean = false
 
 )
