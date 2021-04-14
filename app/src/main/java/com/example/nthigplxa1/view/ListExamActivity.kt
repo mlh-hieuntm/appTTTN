@@ -2277,7 +2277,7 @@ class ListExamActivity : AppCompatActivity(),
                     .customView(R.layout.dialog_confirm_delete)
                 mDialog.window?.setDimAmount(0F)
                 mDialog.setCancelable(false)
-                mDialog.tv_TitleOfCustomDialogConfirm.text = "Bạn có muốn thoát?"
+                mDialog.tv_TitleOfCustomDialogConfirm.text = "Bạn có muốn quay lại?"
                 mDialog.btn_AcceptDiaLogConFirm.setOnClickListener() {
                     this.finish()
                 }
