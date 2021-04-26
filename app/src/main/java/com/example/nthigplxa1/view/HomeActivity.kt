@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.nthigplxa1.BuildConfig
 import com.example.nthigplxa1.R
+import com.example.nthigplxa1.TrafficSignsActivity
 import com.example.nthigplxa1.adapter.ItemHomeListener
 import com.example.nthigplxa1.adapter.ListHomeAdapter
 import com.example.nthigplxa1.model.Home
@@ -48,6 +49,11 @@ class HomeActivity : AppCompatActivity(), ItemHomeListener {
             }
             1 -> {
 
+            }
+            2 -> {
+                val intent = Intent(this, TrafficSignsActivity::class.java)
+                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                startActivity(intent)
             }
             3 -> {
 
