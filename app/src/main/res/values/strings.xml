@@ -1,1404 +1,1443 @@
 <resources>
     <string name="app_name">Ôn thi GPLX A1</string>
     //cau 1
-    <string name="ques_1">Cuộc đua xe chỉ được thực hiện khi nào ?</string>
-    <string name="explain_1">Hành vi đua xe chưa được cơ quan có thẩm quyền cấp phép là sai quy định của pháp luật.</string>
-    <string name="ans_1_1"></string>
-    <string name="ans_1_2"></string>
-    <string name="ans_1_3"></string>
-    <string name="ans_1_4"></string>
+    <string name="ques_1">Người điều khiển phương tiện giao thông đường bộ mà trong cơ thể
+có chất ma túy có bị nghiêm cấm hay không?</string>
+    <string name="explain_1"></string>
+    <string name="ans_1_1">Bị nghiêm cấm</string>
+    <string name="ans_1_2">Không bị nghiêm cấm</string>
+    <string name="ans_1_3">Không bị nghiêm cấm, nếu có chất ma túy ở mức nhẹ, có thể điều khiển
+phương tiện tham gia giao thông.</string>
     //cau 2
-    <string name="ques_2"></string>
-    <string name="explain_2"></string>
-    <string name="ans_2_1"></string>
-    <string name="ans_2_2"></string>
-    <string name="ans_2_3"></string>
-    <string name="ans_2_4"></string>
+    <string name="ques_2">Hành vi điều khiển xe cơ giới chạy quá tốc độ quy định, giành đường, vượt ẩu có bị nghiêm cấm hay không?</string>
+    <string name="explain_2">Điều khiển xe cơ giới chạy quá tốc độ quy định, giành đường, vượt ẩu là hành vi bị nghiêm cấm dựa theo Khoản 11 Điều 8 Luật Giao thông đường bộ 2008.</string>
+    <string name="ans_2_1">Bị nghiêm cấm tùy từng trường hợp</string>
+    <string name="ans_2_2">Không bị nghiêm cấm</string>
+    <string name="ans_2_3">Bị nghiêm cấm.</string>
     //cau 3
-    <string name="ques_3"></string>
-    <string name="explain_3"></string>
-    <string name="ans_3_1"></string>
-    <string name="ans_3_2"></string>
-    <string name="ans_3_3"></string>
-    <string name="ans_3_4"></string>
+    <string name="ques_3">Bạn đang lái xe phía trước có một xe cứu thương đang phát tín hiệu ưu tiên bạn có được phép vượt hay không?</string>
+    <string name="explain_3">Xe cứu thương thuộc diện phương tiện xe ưu tiên, có phát tín hiệu ưu tiên. Bắt buộc các phương tiện khác phải nhường đường và không được vượt. Ngoại trừ các xe theo luật định như: Cứu hỏa, Quân Sự, Công An.</string>
+    <string name="ans_3_1">Không được vượt.</string>
+    <string name="ans_3_2">Được vượt khi đang đi trên cầu.</string>
+    <string name="ans_3_3">Được phép vượt khi đi qua nơi giao nhau có ít phương tiện cùng tham gia giao thông.</string>
+    <string name="ans_3_4">Được vượt khi đảm bảo an toàn.</string>
     //cau 4
-    <string name="ques_4"></string>
+    <string name="ques_4">Ở phần đường dành cho người đi bộ qua đường, trên cầu, đầu cầu,
+đường cao tốc, đường hẹp, đường dốc, tại nơi đường bộ giao nhau cùng mức
+với đường sắt có được quay đầu xe hay không?</string>
     <string name="explain_4"></string>
-    <string name="ans_4_1"></string>
-    <string name="ans_4_2"></string>
-    <string name="ans_4_3"></string>
-    <string name="ans_4_4"></string>
+    <string name="ans_4_1">Được phép</string>
+    <string name="ans_4_2">Không được phép</string>
+    <string name="ans_4_3">Tùy từng trường hợp.</string>
     //cau 5
-    <string name="ques_5"></string>
-    <string name="explain_5"></string>
-    <string name="ans_5_1"></string>
-    <string name="ans_5_2"></string>
-    <string name="ans_5_3"></string>
-    <string name="ans_5_4"></string>
+    <string name="ques_5">Người điều khiển xe mô tô hai bánh, ba bánh, xe gắn máy có được phép sử dụng xe để kéo hoặc đẩy các phương tiện khác khi tham gia giao thông không?</string>
+    <string name="explain_5">Khoản 3, Điều 30 - Luật Giao thông đường bộ năm 2008 quy định người điều khiển xe mô tô hai bánh, xe mô tô ba bánh, xe gắn máy không được thực hiện các hành vi sau: Sử dụng xe để kéo, đẩy xe khác, vật khác, mang, vác và chở vật cồng kềnh</string>
+    <string name="ans_5_1">Được phép</string>
+    <string name="ans_5_2">Nếu phương tiện được kéo, đẩy có khối lượng nhỏ hơn phương tiện của mình</string>
+    <string name="ans_5_3">Tùy trường hợp</string>
+    <string name="ans_5_4">Không được phép.</string>
     //cau 6
-    <string name="ques_6"></string>
-    <string name="explain_6"></string>
-    <string name="ans_6_1"></string>
-    <string name="ans_6_2"></string>
-    <string name="ans_6_3"></string>
-    <string name="ans_6_4"></string>
+    <string name="ques_6">Khi điều khiển xe mô tô hai bánh, xe mô tô ba bánh, xe gắn máy, những hành vi buông cả hai tay; sử dụng xe để kéo, đẩy xe khác, vật khác; sử dụng chân chống của xe quệt xuống đường khi xe đang chạy có được phép không?</string>
+    <string name="explain_6">Tất cả hành vi buông cả hai tay; sử dụng xe để kéo, đẩy xe khác, vật khác; sử dụng chân chống của xe quệt xuống đường khi xe đang chạy là hành động gây mất an toàn giao thông nghiêm trọng.</string>
+    <string name="ans_6_1">Được phép</string>
+    <string name="ans_6_2">Tùy trường hợp</string>
+    <string name="ans_6_3">Không được phép.</string>
     //cau 7
-    <string name="ques_7"></string>
+    <string name="ques_7">Người ngồi trên xe mô tô hai bánh, ba bánh, xe gắn máy khi tham
+gia giao thông có được mang, vác vật cồng kềnh hay không?</string>
     <string name="explain_7"></string>
-    <string name="ans_7_1"></string>
-    <string name="ans_7_2"></string>
-    <string name="ans_7_3"></string>
-    <string name="ans_7_4"></string>
+    <string name="ans_7_1">Được mang, vác tùy trường hợp cụ thể</string>
+    <string name="ans_7_2">Không được mang, vác</string>
+    <string name="ans_7_3">Được mang, vác nhưng phải đảm bảo an toàn</string>
+    <string name="ans_7_4">Được mang, vác tùy theo sức khỏe của bản thân.</string>
     //cau 8
-    <string name="ques_8"></string>
+    <string name="ques_8"> Người ngồi trên xe mô tô hai bánh, xe mô tô ba bánh, xe gắn máy
+khi tham gia giao thông có được bám, kéo hoặc đẩy các phương thiện khác
+không?</string>
     <string name="explain_8"></string>
-    <string name="ans_8_1"></string>
-    <string name="ans_8_2"></string>
-    <string name="ans_8_3"></string>
-    <string name="ans_8_4"></string>
+    <string name="ans_8_1">Được phép</string>
+    <string name="ans_8_2">Được bám trong trường hợp phương tiện của mình bị hỏng</string>
+    <string name="ans_8_3">Được kéo, đẩy trong trường hợp phương tiện khác bị hỏng</string>
+    <string name="ans_8_4">Không được phép.</string>
     //cau 9
-    <string name="ques_9"></string>
+    <string name="ques_9">Người ngồi trên xe mô tô hai bánh, xe mô tô ba bánh, xe gắn máy
+khi tham gia giao thông có được sử dụng ô khi trười mưa hay không?</string>
     <string name="explain_9"></string>
-    <string name="ans_9_1"></string>
-    <string name="ans_9_2"></string>
-    <string name="ans_9_3"></string>
-    <string name="ans_9_4"></string>
+    <string name="ans_9_1">Được sử dụng</string>
+    <string name="ans_9_2">Chỉ người ngồi sau được sử dụng</string>
+    <string name="ans_9_3">Không được sử dụng</string>
+    <string name="ans_9_4">Được sử dụng nếu không có áo mưa.</string>
     //cau 10
-    <string name="ques_10"></string>
+    <string name="ques_10">Người điều khiển xe mô tô hai bánh, xe gắn máy có được đi xe dàn
+hàng ngang; đi xe vào phần đường dành cho người đi bộ và phương tiện
+khác; sử dụng ô, điện thoại di động, thiết bị âm thanh (trừ thiết bị trợ thính)
+hay không?</string>
     <string name="explain_10"></string>
-    <string name="ans_10_1"></string>
-    <string name="ans_10_2"></string>
-    <string name="ans_10_3"></string>
-    <string name="ans_10_4"></string>
+    <string name="ans_10_1">Được phép nhưng phảo đảm bảo an toàn</string>
+    <string name="ans_10_2">Không được phép</string>
+    <string name="ans_10_3">Được phép tùy từng hoàn cảnh, điều kiện cụ thể.</string>
     //cau 11
-    <string name="ques_11"></string>
-    <string name="explain_11"></string>
-    <string name="ans_11_1"></string>
-    <string name="ans_11_2"></string>
-    <string name="ans_11_3"></string>
-    <string name="ans_11_4"></string>
+    <string name="ques_11">Hành vi vận chuyển đồ vật cồng kềnh bằng xe mô tô, xe gắn máy khi tham gia giao thông có được phép hay không?</string>
+    <string name="explain_11">Khoản 3, Điều 30 - Luật Giao thông đường bộ năm 2008 quy định người điều khiển xe mô tô hai bánh, xe mô tô ba bánh, xe gắn máy không được thực hiện các hành vi sau: Sử dụng xe để kéo, đẩy xe khác, vật khác, mang, vác và chở vật cồng kềnh</string>
+    <string name="ans_11_1">Không được vận chuyển</string>
+    <string name="ans_11_2">Chỉ được vận chuyển khi đã chằng buộc cẩn thận</string>
+    <string name="ans_11_3">Chỉ được vận chuyển vật cồng kềnh trên xe máy nếu khoảng cách về nhà ngắn
+hơn 2 km.</string>
     //cau 12
-    <string name="ques_12"></string>
-    <string name="explain_12"></string>
-    <string name="ans_12_1"></string>
-    <string name="ans_12_2"></string>
-    <string name="ans_12_3"></string>
-    <string name="ans_12_4"></string>
+    <string name="ques_12">Hành vi sử dụng xe mô tô để kéo, đẩy xe mô tô khác bị hết xăng đến trạm mua xăng có được phép hay không?</string>
+    <string name="explain_12">Hành vi bám, kéo hoặc đẩy các phương tiện khác; sử dụng mô tô để kéo, đẩy mô tô khác bị hết xăng đến trạm mua xăng cũng không được phép, sẽ gây nguy hiểm cho các phương tiện khác tham gia giao thông là BỊ NGHIÊM CẤM theo luật định.</string>
+    <string name="ans_12_1">Chỉ được kéo nếu đã nhìn thấy trạm xăng</string>
+    <string name="ans_12_2">Chỉ được thực hiện trên đường vắng phương tiện cùng tham gia giao thông</string>
+    <string name="ans_12_3">Không được phép</string>
     //cau 13
-    <string name="ques_13"></string>
+    <string name="ques_13">Khi đang lên dốc người ngồi trên xe mô tô có được kéo theo người
+đang điều khiển xe đạp hay không?</string>
     <string name="explain_13"></string>
-    <string name="ans_13_1"></string>
-    <string name="ans_13_2"></string>
-    <string name="ans_13_3"></string>
-    <string name="ans_13_4"></string>
+    <string name="ans_13_1">Chỉ được phép nếu cả hai đội mũ bảo hiểm</string>
+    <string name="ans_13_2">Không được phép</string>
+    <string name="ans_13_3">Chỉ được phép thực hiện trên đường thật vắng</string>
+    <string name="ans_13_4">Chỉ được phép khi người đi xe đạp đã quá mệt.</string>
     //cau 14
-    <string name="ques_14"></string>
-    <string name="explain_14"></string>
-    <string name="ans_14_1"></string>
-    <string name="ans_14_2"></string>
-    <string name="ans_14_3"></string>
-    <string name="ans_14_4"></string>
+    <string name="ques_14">Theo luật phòng chống tác hại của rượu, bia, đối tượng nào dưới đây bị cấm sử dụng rượu bia khi tham gia giao thông?</string>
+    <string name="explain_14">Người ngồi sau, người đi bộ vẫn có thể sử dụng rượu bia. Trường hợp người điểu khiển phương tiện tham gia giao thông sẽ bị cấm sử dụng. Đây là câu hỏi rất dễ nhầm lẫn, nếu các bạn không đọc kỹ rất dễ bị sai.</string>
+    <string name="ans_14_1">Người điều khiển: Xe ô tô, xe mô tô, xe đạp, xe gắn máy</string>
+    <string name="ans_14_2">Người ngồi phía sau người điều khiển xe cơ giới</string>
+    <string name="ans_14_3">Người đi bộ</string>
+    <string name="ans_14_4">Cả ý 1 và ý 2.</string>
     //cau 15
-    <string name="ques_15"></string>
-    <string name="explain_15"></string>
-    <string name="ans_15_1"></string>
-    <string name="ans_15_2"></string>
-    <string name="ans_15_3"></string>
-    <string name="ans_15_4"></string>
+    <string name="ques_15">Phần của đường bộ đươc sử dụng cho các phương tiện giao thông qua lại là gì?</string>
+    <string name="explain_15">Phần đường xe chạy là phần của đường bộ được sử dụng cho phương tiện giao thông qua lại.</string>
+    <string name="ans_15_1">Phần mặt đường và lề đường.</string>
+    <string name="ans_15_2">Phần đường xe chạy.</string>
+    <string name="ans_15_3">Phần đường xe cơ giới.</string>
     //cau 16
-    <string name="ques_16"></string>
-    <string name="explain_16"></string>
-    <string name="ans_16_1"></string>
-    <string name="ans_16_2"></string>
-    <string name="ans_16_3"></string>
-    <string name="ans_16_4"></string>
+    <string name="ques_16">“Làn đường” là gì?</string>
+    <string name="explain_16">Quy chuẩn kỹ thuật quốc gia QCVN 41:2016/BGTVT về báo hiệu đường bộ: \'Làn đường là một phần của phần đường xe chạy được chia theo chiều dọc của đường, có đủ bề rộng cho xe chạy an toàn. Một phần đường xe chạy có thể có một hoặc nhiều làn đường.'</string>
+    <string name="ans_16_1">Là một phần của phần đường xe chạy được chia theo chiều dọc của đường, sử dụng cho xe chạy</string>
+    <string name="ans_16_2">Là một phần của phần đường xe chạy được chia theo chiều dọc của đường, có bề rộng đủ cho xe chạy an toàn</string>
+    <string name="ans_16_3">Là đường cho xe ô tô chạy, dừng, đỗ an toàn.</string>
     //cau 17
-    <string name="ques_17"></string>
+    <string name="ques_17">Đường mà trên đó phương tiện tham gia giao thông được các
+phương tiện giao thông đến từ hướng khác nhường đường khi qua nơi đường
+giao nhau, được cắm biển báo hiệu đường ưu tiên là loại đường gì?</string>
     <string name="explain_17"></string>
-    <string name="ans_17_1"></string>
-    <string name="ans_17_2"></string>
-    <string name="ans_17_3"></string>
-    <string name="ans_17_4"></string>
+    <string name="ans_17_1">Đường không ưu tiên</string>
+    <string name="ans_17_2">Đường tỉnh lộ</string>
+    <string name="ans_17_3">Đường quốc lộ</string>
+    <string name="ans_17_4">Đường ưu tiên.</string>
     //cau 18
-    <string name="ques_18"></string>
+    <string name="ques_18">Người lái xe được hiểu như thế nào trong các khái niệm dưới đây?</string>
     <string name="explain_18"></string>
-    <string name="ans_18_1"></string>
-    <string name="ans_18_2"></string>
-    <string name="ans_18_3"></string>
-    <string name="ans_18_4"></string>
+    <string name="ans_18_1">Là người điều khiển xe cơ giới</string>
+    <string name="ans_18_2">Là người điều khiển xe thô sơ</string>
+    <string name="ans_18_3">Là người điều khiển xe có súc vật kéo.</string>
     //cau 19
-    <string name="ques_19"></string>
-    <string name="explain_19"></string>
-    <string name="ans_19_1"></string>
-    <string name="ans_19_2"></string>
-    <string name="ans_19_3"></string>
-    <string name="ans_19_4"></string>
+    <string name="ques_19"> Trong các khái niệm dưới đây, “dải phân cách” được hiểu như thế nào là đúng?</string>
+    <string name="explain_19">Dải phân cách là bộ phận của đường để phân chia mặt đường thành hai chiều xe chạy riêng biệt hoặc để phân chia phần đường của xe cơ giới và xe thô sơ.</string>
+    <string name="ans_19_1">Là bộ phận của đường để ngăn cách không cho các loại xe vào những nơi không được phép</string>
+    <string name="ans_19_2">Là bộ phận của đường để phân tách phần đường xe chạy và hành lang an toàn giao thông</string>
+    <string name="ans_19_3">Là bộ phận của đường để phân chia mặt đường thành hai chiều xe chạy riêng biệt hoặc để phân chia phần đường của xe cơ giới và xe thô sơ.</string>
     //cau 20
-    <string name="ques_20"></string>
+    <string name="ques_20"> “Dải phân cách” trên đường bộ gồm những loại nào?</string>
     <string name="explain_20"></string>
-    <string name="ans_20_1"></string>
-    <string name="ans_20_2"></string>
-    <string name="ans_20_3"></string>
-    <string name="ans_20_4"></string>
+    <string name="ans_20_1">Dải phân cách gồm loại cố định và loại di động</string>
+    <string name="ans_20_2">Dải phân cách gồm tường chống ồn, hộ lan cứng và hộ lan mềm</string>
+    <string name="ans_20_3">Dải phân cách gồm giá long môn và biển báo hiệu đường bộ.</string>
     //cau 21
-    <string name="ques_21"></string>
+    <string name="ques_21"> Khái niệm “phương tiện giao thông cơ giới đường bộ” được hiểu thế
+nào là đúng?</string>
     <string name="explain_21"></string>
-    <string name="ans_21_1"></string>
-    <string name="ans_21_2"></string>
-    <string name="ans_21_3"></string>
-    <string name="ans_21_4"></string>
+    <string name="ans_21_1">Gồm xe ô tô, máy kéo, xe mô tô hai bánh, xe mô tô ba bánh, xe gắn máy, xe
+cơ giới dùng cho người khuyết tật và xe máy chuyên dùng</string>
+    <string name="ans_21_2">Gồm xe ô tô; máy kéo; rơ moóc hoặc sơ mi rơ moóc được kéo bởi xe ô tô,
+máy kéo; xe mô tô hai bánh; xe mô tô ba bánh, xe gắn máy (kể cả xe máy
+điện) và các loại xe tương tự.</string>
     //cau 22
-    <string name="ques_22"></string>
+    <string name="ques_22">Khái niệm “phương tiện giao thông thô sơ đường bộ” được hiểu thế
+nào là đúng?</string>
     <string name="explain_22"></string>
-    <string name="ans_22_1"></string>
-    <string name="ans_22_2"></string>
-    <string name="ans_22_3"></string>
-    <string name="ans_22_4"></string>
+    <string name="ans_22_1">Gồm xe đạp (kể cả xe đạp máy, xe đạp điện), xe xích lô, xe lăn dùng cho
+người khuyết tật, xe súc vật kéo và các loại xe tương tự</string>
+    <string name="ans_22_2">Gồm xe đạp (kể cả xe đạp máy, xe đạp điện), xe gắn máy, xe cơ giới dùng
+cho người khuyết tật và xe máy chuyên dùng</string>
+    <string name="ans_22_3">Gồm xe ô tô, máy kéo, rơ moóc hoặc sơ mi rơ moóc được kéo bởi xe ô tô, máy
+kéo.</string>
     //cau 23
-    <string name="ques_23"></string>
-    <string name="explain_23"></string>
-    <string name="ans_23_1"></string>
-    <string name="ans_23_2"></string>
-    <string name="ans_23_3"></string>
-    <string name="ans_23_4"></string>
+    <string name="ques_23">“Phương tiện tham gia giao thông đường bộ” gồm những loại nào?</string>
+    <string name="explain_23">Tại Khoản 17 Điều 3 Luật giao thông đường bộ 2008 có quy định về vấn đề này như sau: \'Phương tiện tham gia giao thông đường bộ gồm phương tiện giao thông đường bộ và xe máy chuyên dùng'.</string>
+    <string name="ans_23_1">Phương tiện giao thông cơ giới đường bộ.</string>
+    <string name="ans_23_2">Phương tiện giao thông thô sơ đường bộ và xe máy chuyên dùng.</string>
+    <string name="ans_23_3">Cả ý 1 và 2.</string>
     //cau 24
-    <string name="ques_24"></string>
-    <string name="explain_24"></string>
-    <string name="ans_24_1"></string>
-    <string name="ans_24_2"></string>
-    <string name="ans_24_3"></string>
-    <string name="ans_24_4"></string>
+    <string name="ques_24">“Người điều khiển phương tiện tham gia giao thông đường bộ” gồm những đối tượng nào dưới đây?</string>
+    <string name="explain_24">Người điều khiển phương tiện giao thông bao gồm xe: cơ giới, thô sơ, xe máy chuyên dùng.</string>
+    <string name="ans_24_1">Người điều khiển xe cơ giới, người điều khiển xe thô sơ</string>
+    <string name="ans_24_2">Người điều khiển xe máy chuyên dùng tham gia giao thông đường bộ.</string>
+    <string name="ans_24_3">Cả ý 1 và ý 2</string>
     //cau 25
-    <string name="ques_25"></string>
+    <string name="ques_25">Khái niệm “người điều khiển giao thông” được hiểu như thế nào là
+đúng?</string>
     <string name="explain_25"></string>
-    <string name="ans_25_1"></string>
-    <string name="ans_25_2"></string>
-    <string name="ans_25_3"></string>
-    <string name="ans_25_4"></string>
+    <string name="ans_25_1">Là người điều khiển phương tiện tham gia giao thông tại nơi thi công, nơi ùn
+tắc giao thông, ở bến phà, tại cầu đường bộ đi chung với đường sắt</string>
+    <string name="ans_25_2">Là cảnh sát giao thông, người được giao nhiệm vụ hướng dẫn giao thông
+tại nơi thi công, nơi ùn tắc giao thông, ở bến phà, tại cầu đường bộ đi chung
+với đường sắt</string>
+    <string name="ans_25_3">Là người tham gia giao thông tại nơi thi công, nơi ùn tắt giao thông, ở bến
+phà, tại cầu đường bộ đi chung với đường sắt</string>
     //cau 26
-    <string name="ques_26"></string>
-    <string name="explain_26"></string>
-    <string name="ans_26_1"></string>
-    <string name="ans_26_2"></string>
-    <string name="ans_26_3"></string>
-    <string name="ans_26_4"></string>
+    <string name="ques_26">“Người tham gia giao thông đường bộ” gồm những đối tượng nào?</string>
+    <string name="explain_26">Người tham gia giao thông gồm: người điều khiển, người sử dụng phương tiện, dẫn dắt súc vật; người đi bộ trên đường bộ.</string>
+    <string name="ans_26_1">Người điều khiển, người sử dụng phương tiện tham giao giao thông đường bộ</string>
+    <string name="ans_26_2">Người điều khiển, dẫn dắt súc vật, người đi bộ trên đường</string>
+    <string name="ans_26_3">Cả ý 1 và ý 2</string>
     //cau 27
-    <string name="ques_27"></string>
+    <string name="ques_27">Khái niệm “đỗ xe” được hiểu như thế nào là đúng?</string>
     <string name="explain_27"></string>
-    <string name="ans_27_1"></string>
-    <string name="ans_27_2"></string>
-    <string name="ans_27_3"></string>
-    <string name="ans_27_4"></string>
+    <string name="ans_27_1">Là trạng thái đứng yên của phương tiện giao thông có giới hạn trong một
+khoảng thời gian cần thiết đủ để cho người lên, xuống phương tiện đó, xếp dỡ
+hàng hóa hoặc thực hiện công việc khác</string>
+    <string name="ans_27_2">Là trạng thái đứng yên của phương tiện giao thông không giới hạn thời
+gian.</string>
     //cau 28
-    <string name="ques_28"></string>
+    <string name="ques_28">Trong các khái niệm dưới đây, khái niệm “dừng xe” được hiểu như
+thế nào là đúng?</string>
     <string name="explain_28"></string>
-    <string name="ans_28_1"></string>
-    <string name="ans_28_2"></string>
-    <string name="ans_28_3"></string>
-    <string name="ans_28_4"></string>
+    <string name="ans_28_1"> Là trạng thái đứng yên của phương tiện giao thông không giới hạn thời gian
+để cho người lên, xuống phương tiện, xếp dỡ hàng hóa hoặc thực hiện công việc
+khác</string>
+    <string name="ans_28_2">Là trạng thái đứng yên tạm thời của phương tiện giao thông trong một
+khoảng thời gian cần thiết đủ để cho người lên, xuống phương tiện, xếp dỡ
+hàng hóa hoặc thực hiện công việc khác</string>
+    <string name="ans_28_3">Là trạng thái đứng yên của phương tiện giao thông không giới hạn thời gian
+giữa 02 lần vận chuyển hàng hóa hoặc hành khách.</string>
     //cau 29
-    <string name="ques_29"></string>
+    <string name="ques_29">Cuộc đua xe chỉ được thực hiện khi nào?</string>
     <string name="explain_29"></string>
-    <string name="ans_29_1"></string>
-    <string name="ans_29_2"></string>
-    <string name="ans_29_3"></string>
-    <string name="ans_29_4"></string>
+    <string name="ans_29_1">Diễn ra trên đường phố không có người qua lại</string>
+    <string name="ans_29_2">Được người dân ủng hộ</string>
+    <string name="ans_29_3">Được cơ quan có thẩm quyền cấp phép</string>
     //cau 30
-    <string name="ques_30"></string>
-    <string name="explain_30"></string>
-    <string name="ans_30_1"></string>
-    <string name="ans_30_2"></string>
-    <string name="ans_30_3"></string>
-    <string name="ans_30_4"></string>
+    <string name="ques_30">Sử dụng rượu, bia khi lái xe, nếu bị phát hiện thì bị xử lý như thế nào?</string>
+    <string name="explain_30">Sử dụng rượu bia khi lái xe sẽ bị xử phạt hành chính hoặc có thể bị xử lý hình sự tùy theo mức độ vi phạm.</string>
+    <string name="ans_30_1">Chỉ bị nhắc nhở.</string>
+    <string name="ans_30_2">Bị xử phạt hành chính hoặc có thể bị xử lý hình sự tùy theo mức độ vi phạm.</string>
+    <string name="ans_30_3">Không bị xử lý hình sự.</string>
     //cau 31
-    <string name="ques_31"></string>
+    <string name="ques_31">Người lái xe sử dụng đèn như thế nào khi lái xe trong khu đô thị và
+đông dân cư vào ban đêm?</string>
     <string name="explain_31"></string>
-    <string name="ans_31_1"></string>
-    <string name="ans_31_2"></string>
-    <string name="ans_31_3"></string>
-    <string name="ans_31_4"></string>
+    <string name="ans_31_1">Bất cứ đèn nào miễn là mắt nhìn rõ phía trước</string>
+    <string name="ans_31_2">Chỉ bật đèn chiếu xa (đèn pha) khi không nhìn rõ đường</string>
+    <string name="ans_31_3">Đèn chiếu xa (đèn pha) khi đường vắng, đèn pha chiếu gần (đèn cốt) khi có
+xe đi ngược chiều.</string>
     //cau 32
-    <string name="ques_32"></string>
+    <string name="ques_32">Khi lái xe trong khu đô thị và đông dân cư trừ các khu vực có biển
+cấm sử dụng còi, người lái xe được sử dụng còi như thế nào trong các trường
+hợp dưới đây?</string>
     <string name="explain_32"></string>
-    <string name="ans_32_1"></string>
-    <string name="ans_32_2"></string>
-    <string name="ans_32_3"></string>
-    <string name="ans_32_4"></string>
+    <string name="ans_32_1">Từ 22 giờ đêm đến 5 giờ sáng</string>
+    <string name="ans_32_2">Từ 5 giờ sáng đến 22 giờ tối</string>
+    <string name="ans_32_3">Từ 23 giờ đêm đến 5 giờ sáng hôm sau.</string>
     //cau 33
-    <string name="ques_33"></string>
+    <string name="ques_33"> Trong trường hợp đặc biệt, để được lắp đặt, sử dụng còi, đèn không
+đúng với thiết kế của nhà sản xuất đối với từng loại xe cơ giới bạn phải đảm
+bảo yêu cầu nào dưới đây?</string>
     <string name="explain_33"></string>
-    <string name="ans_33_1"></string>
-    <string name="ans_33_2"></string>
-    <string name="ans_33_3"></string>
-    <string name="ans_33_4"></string>
+    <string name="ans_33_1">Phải đảm bảo phụ tùng do đúng nhà sản xuất đó cung cấp</string>
+    <string name="ans_33_2">Phải được chấp thuận của cơ quan có thẩm quyền</string>
+    <string name="ans_33_3"> Phải là xe đăng ký và hoạt động tại các khu vực có địa hình phức tạp.</string>
     //cau 34
-    <string name="ques_34"></string>
+    <string name="ques_34"> Bạn đang lái xe phía trước có một xe cảnh sát giao thông không phát
+tín hiệu ưu tiên bạn có được phép vượt hay không?</string>
     <string name="explain_34"></string>
-    <string name="ans_34_1"></string>
-    <string name="ans_34_2"></string>
-    <string name="ans_34_3"></string>
-    <string name="ans_34_4"></string>
+    <string name="ans_34_1">Không được vượt</string>
+    <string name="ans_34_2">Được vượt khi đang đi trên cầu</string>
+    <string name="ans_34_3">Được phép vượt khi qua nơi giao nhau có ít phương tiện cùng tham gia giao
+thông</string>
+    <string name="ans_34_4"> Được phép vượt khi qua nơi giao nhau có ít phương tiện cùng tham gia giao
+thông</string>
     //cau 35
-    <string name="ques_35"></string>
+    <string name="ques_35">Khi điều khiển xe mô tô hai bánh, xe mô tô ba bánh, xe gắn máy,
+những hành vi nào không được phép?</string>
     <string name="explain_35"></string>
-    <string name="ans_35_1"></string>
-    <string name="ans_35_2"></string>
-    <string name="ans_35_3"></string>
-    <string name="ans_35_4"></string>
+    <string name="ans_35_1">Buông cả hai tay; sử dụng xe để kéo, đẩy xe khác, vật khác; sử dụng chân
+chống của xe quệt xuống đường khi xe đang chạy</string>
+    <string name="ans_35_2">Buông một tay; sử dụng xe để chở người hoặc hàng hóa; để chân chạm xuống
+đất khi khởi hành</string>
+    <string name="ans_35_3">Đội mũ bảo hiểm; chạy xe đúng tốc độ quy định và chấp hành đúng quy tắc
+giao thông đường bộ</string>
+    <string name="ans_35_4">Chở người ngồi sau dưới 16 tuổi.</string>
     //cau 36
-    <string name="ques_36"></string>
+    <string name="ques_36">Người đủ 16 tuổi được điều khiển các loại xe nào dưới đây?</string>
     <string name="explain_36"></string>
-    <string name="ans_36_1"></string>
-    <string name="ans_36_2"></string>
-    <string name="ans_36_3"></string>
-    <string name="ans_36_4"></string>
+    <string name="ans_36_1">Xe mô tô 2 bánh có dung tích xi-lanh từ 50 cm3 trở lên</string>
+    <string name="ans_36_2">Xe gắn máy có dung tích xi-lanh dưới 50cm3</string>
+    <string name="ans_36_3">Xe ô tô tải dưới 3.5 tấn; xe chở người đến 9 chỗ ngồi</string>
+    <string name="ans_36_4">Tất cả các ý nêu trên.</string>
     //cau 37
-    <string name="ques_37"></string>
-    <string name="explain_37"></string>
-    <string name="ans_37_1"></string>
-    <string name="ans_37_2"></string>
-    <string name="ans_37_3"></string>
-    <string name="ans_37_4"></string>
+    <string name="ques_37">Người đủ bao nhiêu tuổi trở lên thì được điều khiển xe mô tô hai bánh, xe mô tô ba bánh có dung tích xi lanh từ 50 cm3 trở lên và các loại xe có kết cấu tương tự; xe ô tô tải, máy kéo có trọng tải dưới 3500kg; xe ô tô chở người đến 9 chỗ ngồi?</string>
+    <string name="explain_37">Người đủ trên 18 tuổi được phép điều khiển xe mô tô 2 bánh có dung tích xi lanh từ 50cc đến dưới 175cc và các xe ô tô tải từ 4 - 9 chỗ - trọng tải dưới 3.5 tấn theo quy định.</string>
+    <string name="ans_37_1">16 Tuổi</string>
+    <string name="ans_37_2">18 Tuổi</string>
+    <string name="ans_37_3">17 Tuổi</string>
     //cau 38
-    <string name="ques_38"></string>
+    <string name="ques_38">Người có giấy phép lái xe mô tô hạng A1 không được phép điều
+khiển loại xe nào dưới đây?</string>
     <string name="explain_38"></string>
-    <string name="ans_38_1"></string>
-    <string name="ans_38_2"></string>
-    <string name="ans_38_3"></string>
-    <string name="ans_38_4"></string>
+    <string name="ans_38_1">Xe mô tô có dung tích xi-lanh 125 cm3</string>
+    <string name="ans_38_2">Xe mô tô có dung tích xi-lanh từ 175 cm3 trở lên</string>
+    <string name="ans_38_3">Xe mô tô có dung tích xi-lanh 100 cm3.</string>
     //cau 39
-    <string name="ques_39"></string>
+    <string name="ques_39">Người có giấy phép lái xe mô tô hạng A1 được phép điều khiển các
+loại xe nào dưới đây?</string>
     <string name="explain_39"></string>
-    <string name="ans_39_1"></string>
-    <string name="ans_39_2"></string>
-    <string name="ans_39_3"></string>
-    <string name="ans_39_4"></string>
+    <string name="ans_39_1">Xe mô tô hai bánh có dung tích xi-lanh từ 50 cm3 đến dưới 175 cm3</string>
+    <string name="ans_39_2">Xe mô tô ba bánh dùng cho người khuyết tật</string>
+    <string name="ans_39_3">Cả ý 1 và ý 2.</string>
     //cau 40
-    <string name="ques_40"></string>
+    <string name="ques_40">Khi gặp hiệu lệnh như dưới đây của cảnh sát giao thông thì người
+tham gia giao thông phải đi như thế nào là đúng quy tắc giao thông?</string>
     <string name="explain_40"></string>
-    <string name="ans_40_1"></string>
-    <string name="ans_40_2"></string>
-    <string name="ans_40_3"></string>
-    <string name="ans_40_4"></string>
+    <string name="ans_40_1">Người tham gia giao thông ở các hướng phải dừng lại.</string>
+    <string name="ans_40_2">Người tham gia giao thông ở các hướng được đi theo chiều gậy chỉ của cảnh
+sát giao thông</string>
+    <string name="ans_40_3">Người tham gia giao thông ở phía trước và phía sau người điều khiển được đi
+tất cả các hướng, người tham gia giao thông ở phía bên phải và phía bên trái người
+điều khiển phải dừng lại</string>
+    <string name="ans_40_4">Người tham gia giao thông ở phía trước và phía sau người điều khiển phải
+dừng lại; người tham gia giao thông ở phía bên phải và bên trái người điều
+khiển được đi tất cả các hướng.</string>
     //cau 41
-    <string name="ques_41"></string>
+    <string name="ques_41">Khi gặp hiệu lệnh như dưới đây của cảnh sát giao thông thì người
+tham gia giao thông phải đi như thế nào là đúng quy tắc giao thông?</string>
     <string name="explain_41"></string>
-    <string name="ans_41_1"></string>
-    <string name="ans_41_2"></string>
-    <string name="ans_41_3"></string>
-    <string name="ans_41_4"></string>
+    <string name="ans_41_1">Người tham gia giao thông ở hướng đối diện cảnh sát giao thông được đi, các
+hướng khác cần phải dừng lại</string>
+    <string name="ans_41_2">Người tham gia giao thông được rẽ phải theo chiều mũi tên màu xanh ở bục
+cảnh sát giao thông</string>
+    <string name="ans_41_3">Người tham gia giao thông ở các hướng đều phải dừng lại trừ các xe đã ở
+trong khu vực giao nhau</string>
+    <string name="ans_41_4">Người ở hướng đối diện cảnh sát giao thông phải dừng lại, các hướng khác
+được đi trong đó có bạn.</string>
     //cau 42
-    <string name="ques_42"></string>
+    <string name="ques_42">Theo luật giao thông đường bộ, tín hiệu đèn giao thông gồm 3 màu
+nào dưới đây?</string>
     <string name="explain_42"></string>
-    <string name="ans_42_1"></string>
-    <string name="ans_42_2"></string>
-    <string name="ans_42_3"></string>
-    <string name="ans_42_4"></string>
+    <string name="ans_42_1">Đỏ – Vàng – Xanh</string>
+    <string name="ans_42_2">Cam – Vàng – Xanh</string>
+    <string name="ans_42_3">Vàng – Xanh dương – Xanh lá</string>
+    <string name="ans_42_4">Đỏ – Cam – Xanh.</string>
     //cau 43
-    <string name="ques_43"></string>
+    <string name="ques_43">Biển báo hiệu có dạng hình tròn, viền đỏ, nền trắng, trên nền có hình
+vẽ hoặc chữ số, chữ viết màu đen là loại biển gì dưới đây?</string>
     <string name="explain_43"></string>
-    <string name="ans_43_1"></string>
-    <string name="ans_43_2"></string>
-    <string name="ans_43_3"></string>
-    <string name="ans_43_4"></string>
+    <string name="ans_43_1">Biển báo nguy hiểm</string>
+    <string name="ans_43_2">Biển báo cấm</string>
+    <string name="ans_43_3">Biển báo hiệu lệnh</string>
+    <string name="ans_43_4">Biển báo chỉ dẫn.</string>
     //cau 44
-    <string name="ques_44"></string>
+    <string name="ques_44">Biển báo hiệu có dạng hình tam giác đều, viền đỏ, nền màu vàng, trên
+có hình vẽ màu đen là loại biển gì dưới đây?</string>
     <string name="explain_44"></string>
-    <string name="ans_44_1"></string>
-    <string name="ans_44_2"></string>
-    <string name="ans_44_3"></string>
-    <string name="ans_44_4"></string>
+    <string name="ans_44_1">Biển báo nguy hiểm</string>
+    <string name="ans_44_2">Biển báo cấm</string>
+    <string name="ans_44_3">Biển báo hiệu lệnh</string>
+    <string name="ans_44_4">Biển báo chỉ dẫn.</string>
     //cau 45
-    <string name="ques_45"></string>
-    <string name="explain_45"></string>
-    <string name="ans_45_1"></string>
-    <string name="ans_45_2"></string>
-    <string name="ans_45_3"></string>
-    <string name="ans_45_4"></string>
+    <string name="ques_45">Biển báo hiệu hình tròn có nền xanh lam có hình vẽ màu trắng là loại gì dưới đây?</string>
+    <string name="explain_45">Biển báo hiệu lệnh phải thi hành là loại biển báo hình tròn có nền màu xanh. Nội dung thể hiện bên trong nằm chính giữa và có màu trắng.</string>
+    <string name="ans_45_1">Biển báo nguy hiểm</string>
+    <string name="ans_45_2">Biển báo cấm</string>
+    <string name="ans_45_3">Biển báo hiệu lệnh phải thi hành</string>
+    <string name="ans_45_4">Biển báo chỉ dẫn.</string>
     //cau 46
-    <string name="ques_46"></string>
-    <string name="explain_46"></string>
-    <string name="ans_46_1"></string>
-    <string name="ans_46_2"></string>
-    <string name="ans_46_3"></string>
-    <string name="ans_46_4"></string>
+    <string name="ques_46">Biển báo hiệu hình chữ nhật hoặc hình vuông hoặc hình mũi tên nền xanh lam là loại biển gì dưới đây?</string>
+    <string name="explain_46">Biển chỉ dẫn là nhóm biển hình chữ nhật hoặc hình vuông, nền xanh, hình và chữ màu trắng.</string>
+    <string name="ans_46_1">Biển báo nguy hiểm</string>
+    <string name="ans_46_2">Biển báo cấm</string>
+    <string name="ans_46_3">Biển báo hiệu lệnh phải thi hành</string>
+    <string name="ans_46_4">Biển báo chỉ dẫn.</string>
     //cau 47
-    <string name="ques_47"></string>
+    <string name="ques_47">Tại nơi có biển báo hiệu cố định lại có báo hiệu tạm thời thì người
+tham gia giao thông phải chấp hành hiệu lệnh của báo hiệu nào?</string>
     <string name="explain_47"></string>
-    <string name="ans_47_1"></string>
-    <string name="ans_47_2"></string>
-    <string name="ans_47_3"></string>
-    <string name="ans_47_4"></string>
+    <string name="ans_47_1">Biển báo hiệu cố định</string>
+    <string name="ans_47_2">Báo hiệu tạm thời.</string>
     //cau 48
-    <string name="ques_48"></string>
-    <string name="explain_48"></string>
-    <string name="ans_48_1"></string>
-    <string name="ans_48_2"></string>
-    <string name="ans_48_3"></string>
-    <string name="ans_48_4"></string>
+    <string name="ques_48">Khi sử dụng giấy phép lái xe đã khai báo mất để điều khiển phương tiện cơ giới đường bộ, ngoài việc bị thu hồi giấy phép lái xe, chịu trách nhiệm trước pháp luật, người lái xe không được cấp giấy phép lái xe trong thời gian bao nhiêu năm?</string>
+    <string name="explain_48">Người có hành vi sử dụng giấy phép lái xe đã khai báo mất để điều khiển phương tiện cơ giới đường bộ, có hành vi gian dối khác để được đổi, cấp lại, cấp mới giấy phép lái xe sẽ bị cơ quan quản lý giấy phép lái xe ra quyết định thu hồi giấy phép lái xe, hồ sơ gốc và cập nhật dữ liệu quản lý trên hệ thống. Phải chịu trách nhiệm trước pháp luật và không được cấp giấy phép lái xe trong thời hạn 5 năm kể từ ngày phát hiện vi phạm. Nếu có nhu cầu cấp lại giấy phép lái xe phải học và sát hạch như trường hợp cấp giấy phép lái xe lần đầu.</string>
+    <string name="ans_48_1">02 Năm</string>
+    <string name="ans_48_2">03 Năm</string>
+    <string name="ans_48_3">05 Năm</string>
+    <string name="ans_48_4">04 Năm</string>
     //cau 49
-    <string name="ques_49"></string>
+    <string name="ques_49">Trên đường có nhiều làn đường cho xe đi cùng chiều được phân biệt
+bằng vạch kẻ phân làn đường, người điều khiển phương tiện phải cho xe đi
+như thế nào?</string>
     <string name="explain_49"></string>
-    <string name="ans_49_1"></string>
-    <string name="ans_49_2"></string>
-    <string name="ans_49_3"></string>
-    <string name="ans_49_4"></string>
+    <string name="ans_49_1">Cho xe đi trên bất kỳ làn đường nào hoặc giữa 02 làn đường nếu không có xe
+phía trước; khi cần thiết phải chuyển làn đường, người lái xe phải quan sát xe
+phía trước để đảm bảo an toàn.</string>
+    <string name="ans_49_2">Phải cho xe đi trong một làn đường và chỉ được chuyển làn đường ở
+những nơi cho phép; khi chuyển làn phải có tín hiệu báo trước và phải bảo
+đảm an toàn.</string>
+    <string name="ans_49_3">Phải cho xe đi trong một làn đường, khi cần thiết phải chuyển làn đường,
+người lái xe phải quan sát xe phía trước để bảo đảm an toàn.</string>
     //cau 50
-    <string name="ques_50"></string>
+    <string name="ques_50">Trên đường một chiều có vạch kẻ phân làn đường xe thô sơ và xe cơ
+giới phải đi như thế nào là đúng quy tắc giao thông?</string>
     <string name="explain_50"></string>
-    <string name="ans_50_1"></string>
-    <string name="ans_50_2"></string>
-    <string name="ans_50_3"></string>
-    <string name="ans_50_4"></string>
+    <string name="ans_50_1">Xe thô sơ phải đi trên làn đường bên trái ngoài cùng, xe cơ giới, xe máy
+chuyên dùng đi trên làn đường bên phải.</string>
+    <string name="ans_50_2">Xe thô sơ phải đi trên làn đường bên phải trong cùng; xe cơ giới, xe máy
+chuyên dùng đi trên làn đường bên trái</string>
+    <string name="ans_50_3">Xe thô sơ đi trên làn đường phù hợp không gây cản trở giao thông, xe cơ giới,
+xe máy chuyên dùng đi trên làn đường bên phải.</string>
     //cau 51
-    <string name="ques_51"></string>
-    <string name="explain_51"></string>
-    <string name="ans_51_1"></string>
-    <string name="ans_51_2"></string>
-    <string name="ans_51_3"></string>
-    <string name="ans_51_4"></string>
+    <string name="ques_51">Bạn đang lái xe trong khu vực đô thị từ 22 giờ đến 5 giờ sáng hôm sau và cần vượt một xe khác, bạn cần báo hiệu như thế nào để đảm bảo an toàn giao thông?</string>
+    <string name="explain_51">Điều 14 Luật Giao thông đường bộ 2008; - Nghị định 46 năm 2016 quy định. Vượt xe trong khu vực đô thị từ 22 giờ đến 5 giờ sáng chỉ được báo hiệu bằng đèn.</string>
+    <string name="ans_51_1">Phải báo hiệu bằng đèn hoặc còi</string>
+    <string name="ans_51_2">Chỉ được báo hiệu bằng còi</string>
+    <string name="ans_51_3">Phải báo hiệu bằng cả còi và đèn</string>
+    <string name="ans_51_4">Chỉ được báo hiệu bằng đèn.</string>
     //cau 52
-    <string name="ques_52"></string>
-    <string name="explain_52"></string>
-    <string name="ans_52_1"></string>
-    <string name="ans_52_2"></string>
-    <string name="ans_52_3"></string>
-    <string name="ans_52_4"></string>
+    <string name="ques_52">Khi điều khiển xe chạy trên đường biết có xe sau xin vượt nếu đủ điều kiện an toàn người lái xe phải làm gì?</string>
+    <string name="explain_52">Xử lý cho xe sau vượt: giảm tốc độ và đi về bên phải.</string>
+    <string name="ans_52_1">Tăng tốc độ và ra hiệu cho xe sau vượt, không được gây trở ngại cho xe sau vượt.</string>
+    <string name="ans_52_2">Người điều khiển phương tiện phía trước phải giảm tốc độ, đi sát về bên phải của phần đường xe chạy, cho đến khi xe sau đã vượt qua, không được gây trở ngại cho xe sau vượt.</string>
+    <string name="ans_52_3">Cho xe tránh về bên trái mình và ra hiệu cho xe sau vượt; nếu có chướng ngại vật phía trước hoặc thiếu điều kiện an toàn chưa cho vượt được phải ra hiệu cho xe sau biết; cấm gây trở ngại cho xe xin vượt.</string>
     //cau 53
-    <string name="ques_53"></string>
-    <string name="explain_53"></string>
-    <string name="ans_53_1"></string>
-    <string name="ans_53_2"></string>
-    <string name="ans_53_3"></string>
-    <string name="ans_53_4"></string>
+    <string name="ques_53">Khi muốn chuyển hướng, người lái xe phải thực hiện như thế nào để đảm bảo an toàn giao thông?</string>
+    <string name="explain_53">Khi muốn chuyển hướng sang làn đường khác người điều khiển phương tiện phải quan sát gương, giảm tốc độ, ra tín hiệu chuyển hướng, quan sát an toàn và chuyển hướng. Như vậy mới đảm bảo an toàn cho mình và các phương tiện xung quanh.</string>
+    <string name="ans_53_1">Quan sát gương, ra tín hiệu, quan sát an toàn và chuyển hướng.</string>
+    <string name="ans_53_2">Quan sát gương, giảm tốc độ, ra tín hiệu chuyển hướng, quan sát an toàn và chuyển hướng.</string>
+    <string name="ans_53_3">Quan sát gương, tăng tốc độ, ra tín hiệu và chuyển hướng.</string>
     //cau 54
-    <string name="ques_54"></string>
+    <string name="ques_54">Khi tránh xe đi ngược chiều, các xe phải nhường đường như thế nào
+là đúng quy tắc giao thông?</string>
     <string name="explain_54"></string>
-    <string name="ans_54_1"></string>
-    <string name="ans_54_2"></string>
-    <string name="ans_54_3"></string>
-    <string name="ans_54_4"></string>
+    <string name="ans_54_1">Nơi đường hẹp chỉ đủ cho một xe chạy và có chỗ tránh xe thì xe nào ở gần
+chỗ tránh hơn phải vào vị trí tránh, nhường đường cho xe kia đi</string>
+    <string name="ans_54_2">Xe xuống dốc phải nhường đường cho xe đang lên dốc; xe nào có chướng
+ngại vật phía trước phải nhường đường cho xe không có chướng ngại vật đi trước</string>
+    <string name="ans_54_3">Xe lên dốc phải nhường đường cho xe xuống dốc; xe nào không có chướng
+ngại vật phía trước phải nhường đường cho xe có chướng ngại vật đi trước</string>
+    <string name="ans_54_4">Cả ý 1 và ý 2</string>
     //cau 55
-    <string name="ques_55"></string>
+    <string name="ques_55">Bạn đang lái xe trên đường hẹp, xuống dốc và gặp một xe đang đi
+lên dốc, bạn cần làm gì?</string>
     <string name="explain_55"></string>
-    <string name="ans_55_1"></string>
-    <string name="ans_55_2"></string>
-    <string name="ans_55_3"></string>
-    <string name="ans_55_4"></string>
+    <string name="ans_55_1">Tiếp tục đi và xe lên dốc phải nhường đường cho mình</string>
+    <string name="ans_55_2">Nhường đường cho xe lên dốc</string>
+    <string name="ans_55_3">Chỉ nhường đường khi xe lên dốc nháy đèn.</string>
     //cau 56
-    <string name="ques_56"></string>
+    <string name="ques_56">Tại nơi đường giao nhau, người lái xe đang đi trên đường không ưu
+tiên phải nhường đường như thế nào là đúng quy tắc giao thông?</string>
     <string name="explain_56"></string>
-    <string name="ans_56_1"></string>
-    <string name="ans_56_2"></string>
-    <string name="ans_56_3"></string>
-    <string name="ans_56_4"></string>
+    <string name="ans_56_1">Nhường đường cho xe đi ở bên phải mình tới</string>
+    <string name="ans_56_2">Nhường đường cho xe đi ở bên trái mình tới</string>
+    <string name="ans_56_3">Nhường đường cho xe đi trên đường ưu tiên hoặc đường chính từ bất kỳ
+hướng nào tới.</string>
     //cau 57
-    <string name="ques_57"></string>
+    <string name="ques_57">Tại nơi đường giao nhau không có báo hiệu đi theo vòng xuyến,
+người điều khiển phương tiện phải nhường đường như thế nào là đúng quy
+tắc giao thông?</string>
     <string name="explain_57"></string>
-    <string name="ans_57_1"></string>
-    <string name="ans_57_2"></string>
-    <string name="ans_57_3"></string>
-    <string name="ans_57_4"></string>
+    <string name="ans_57_1">Phải nhường đường cho xe đi đến từ bên phải.</string>
+    <string name="ans_57_2">Xe báo hiệu xin đường trước xe đó được đi trước</string>
+    <string name="ans_57_3">Phải nhường đường cho xe đi đến từ bên trái.</string>
     //cau 58
-    <string name="ques_58"></string>
-    <string name="explain_58"></string>
-    <string name="ans_58_1"></string>
-    <string name="ans_58_2"></string>
-    <string name="ans_58_3"></string>
-    <string name="ans_58_4"></string>
+    <string name="ques_58">Người ngồi trên xe mô tô 2 bánh, xe gắn máy phải đội mũ bảo hiểm có cài quai đúng quy cách khi nào?</string>
+    <string name="explain_58">Khi tham gia giao thông đường bộ bắt buộc phải đội mũ bảo hiểm.</string>
+    <string name="ans_58_1">Khi tham gia giao thông đường bộ</string>
+    <string name="ans_58_2">Chỉ khi đi trên đường chuyên dùng; đường cao tốc</string>
+    <string name="ans_58_3">Khi tham gia giao thông trên đường tỉnh lộ hoặc quốc lộ.</string>
     //cau 59
-    <string name="ques_59"></string>
-    <string name="explain_59"></string>
-    <string name="ans_59_1"></string>
-    <string name="ans_59_2"></string>
-    <string name="ans_59_3"></string>
-    <string name="ans_59_4"></string>
+    <string name="ques_59">Người điều khiển xe mô tô hai bánh, xe gắn máy được phép chở tối đa 2 người trong những trường hợp nào?</string>
+    <string name="explain_59">Người điểu khiển xe mô tô hai bánh, xe gắn máy được phép chở tối đa 2 người khi chở người bị bệnh đi cấp cứu; trẻ em dưới 14 tuổi và áp tải người có hành vi vi phạm pháp luật.</string>
+    <string name="ans_59_1">Chở người bệnh đi cấp cứu; trẻ em dưới 14 tuổi</string>
+    <string name="ans_59_2">Áp giải người có hành vi vi phạm pháp luật</string>
+    <string name="ans_59_3">Cả ý 1 và ý 2.</string>
     //cau 60
-    <string name="ques_60"></string>
+    <string name="ques_60">Người điều khiển xe mô tô hai bánh, xe gắn máy không được thực
+hiện những hành vi nào dưới dây?</string>
     <string name="explain_60"></string>
-    <string name="ans_60_1"></string>
-    <string name="ans_60_2"></string>
-    <string name="ans_60_3"></string>
-    <string name="ans_60_4"></string>
+    <string name="ans_60_1">Đi vào phần đường dành cho người đi bộ và phương tiện khác; sử dụng
+ô, điện thoại di động, thiết bị âm thanh (trừ thiết bị trợ thính), đi xe dàn hàng
+ngang</string>
+    <string name="ans_60_2">Chở 02 người; trong đó, có người bệnh đi cấp cứu hoặc trẻ em dưới 14 tuổi
+hoặc áp giải người có hành vi vi phạm pháp luật</string>
+    <string name="ans_60_3">Điều khiển phương tiện tham gia giao thông trên đường tỉnh lộ hoặc quốc lộ.</string>
     //cau 61
-    <string name="ques_61"></string>
+    <string name="ques_61">Người lái xe phải giảm tốc độ thấp hơn tốc độ tối đa cho phép (có
+thể dừng lại một cách an toàn) trong trường hợp nào dưới đây?</string>
     <string name="explain_61"></string>
-    <string name="ans_61_1"></string>
-    <string name="ans_61_2"></string>
-    <string name="ans_61_3"></string>
-    <string name="ans_61_4"></string>
+    <string name="ans_61_1">Khi có báo hiệu cảnh báo nguy hiểm hoặc có chướng ngại vật trên đường; khi
+chuyển hướng xe chạy hoặc tầm nhìn bị hạn chế; khi qua nơi đường giao nhau,
+nơi đường bộ giao nhau với đường sắt; đường vòng; đường có địa hình quanh co,
+đèo dốc.</string>
+    <string name="ans_61_2">Khi qua cầu, cống hẹp; khi lên gần đỉnh dốc, khi xuống dốc, khi qua trường
+học, khu đông dân cư, khu vực đang thi công trên đường bộ; hiện trường xảy ra
+tai nạn giao thông.</string>
+    <string name="ans_61_3">Khi điều khiển xe vượt xe khác trên đường quốc lộ, đường cao tốc</string>
+    <string name="ans_61_4">Cả ý 1 và ý 2.</string>
     //cau 62
-    <string name="ques_62"></string>
+    <string name="ques_62">Khi điều khiển xe cơ giới, người lái xe phải bật đèn tín hiệu báo rẽ
+trong các trường hợp nào sau đây?</string>
     <string name="explain_62"></string>
-    <string name="ans_62_1"></string>
-    <string name="ans_62_2"></string>
-    <string name="ans_62_3"></string>
-    <string name="ans_62_4"></string>
+    <string name="ans_62_1">Khi cho xe chạy thẳng</string>
+    <string name="ans_62_2">Trước khi thay đổi làn đường</string>
+    <string name="ans_62_3">Sau khi thay đổi làn đường.</string>
     //cau 63
-    <string name="ques_63"></string>
-    <string name="explain_63"></string>
-    <string name="ans_63_1"></string>
-    <string name="ans_63_2"></string>
-    <string name="ans_63_3"></string>
-    <string name="ans_63_4"></string>
+    <string name="ques_63">Trên đoạn đường hai chiều không có giải phân cách giữa, người lái xe không được vượt xe khác trong các trường hợp nào dưới đây?</string>
+    <string name="explain_63">Khi muốn vượt một xe khác, chúng ta phải đảm bảo các yếu tố về an toàn. Trường hợp phát hiện có xe đi ngược chiều và xe đi trước (xe bị vượt) bất ngờ tăng tốc độ chúng ta sẽ không được vượt.</string>
+    <string name="ans_63_1">Xe bị vượt bất ngờ tăng tốc độ và cố tình không nhường đường</string>
+    <string name="ans_63_2">Xe bị vượt giảm tốc độ và nhường đường</string>
+    <string name="ans_63_3">Phát hiện có xe đi ngược chiều</string>
+    <string name="ans_63_4">Cả ý 1 và ý 3.</string>
     //cau 64
-    <string name="ques_64"></string>
+    <string name="ques_64">Tại ngã ba hoặc ngã tư không có đảm bảo an toàn, người lái xe phải
+nhường đường như thế nào là đúng trong các trường hợp dưới đây?</string>
     <string name="explain_64"></string>
-    <string name="ans_64_1"></string>
-    <string name="ans_64_2"></string>
-    <string name="ans_64_3"></string>
-    <string name="ans_64_4"></string>
+    <string name="ans_64_1">Nhường đường cho người đi bộ đang đi trên phần đường dành cho người
+đi bộ sang đường; nhường đường cho xe đi trên đường ưu tiên, đường chính
+từ bất kì hướng nào tới; nhường đường cho xe ưu tiên, xe đi từ bên phải đến</string>
+    <string name="ans_64_2">Nhường đường cho người đi bộ đang đứng chờ đi qua phần đường dành cho
+người đi bộ sang đường; nhường đường cho xe đi trên đường ngược chiều, đường
+nhánh từ bất kỳ hướng nào tới; nhường đường cho xe đi từ bên trái đến</string>
+    <string name="ans_64_3">Không phải nhường đường.</string>
     //cau 65
-    <string name="ques_65"></string>
-    <string name="explain_65"></string>
-    <string name="ans_65_1"></string>
-    <string name="ans_65_2"></string>
-    <string name="ans_65_3"></string>
-    <string name="ans_65_4"></string>
+    <string name="ques_65">Người lái xe mô tô xử lý như thế nào khi cho xe mô tô phía sau vượt?</string>
+    <string name="explain_65">Xử lý cho xe sau vượt: giảm tốc độ và đi về bên phải.</string>
+    <string name="ans_65_1">Nếu đủ điều khiện an toàn, người lái xe phải giảm tốc độ, đi sát về bên phải của phần đường xe chạy cho đến khi xe sau đã vượt qua, không được gây trở ngại đối với xe xin vượt.</string>
+    <string name="ans_65_2">Lái xe vào lề đường bên trái và giảm tốc độ để xe phía sau vượt qua, không được gây trở ngại đối với xe xin vượt</string>
+    <string name="ans_65_3">Nếu đủ điều kiện an toàn, người lái xe phải tăng tốc độ, đi sát về bên phải của phần đường xe chạy cho đến khi xe sau đã vượt qua.</string>
     //cau 66
-    <string name="ques_66"></string>
-    <string name="explain_66"></string>
-    <string name="ans_66_1"></string>
-    <string name="ans_66_2"></string>
-    <string name="ans_66_3"></string>
-    <string name="ans_66_4"></string>
+    <string name="ques_66">Trong các trường hợp dưới đây, để đảm bảo an toàn khi tham gia giao thông, người lái xe mô tô cần thực hiện như thế nào?</string>
+    <string name="explain_66">Để đảm bảo an toàn khi tham gia giao thông, người lái xe mô tô KHÔNG ĐƯỢC PHÉP sử dụng ô, điện thoại di động, thiết bị âm thanh (trừ thiết bị trợ thính). Luôn luôn đội mũ bảo hiểm khi điều khiển phương tiện tham gia giao thông.</string>
+    <string name="ans_66_1">Phải đội mũ bảo hiểm đạt chuẩn, có cài quai đúng quy cách, mặc quần áo gọn gàng; không sử dụng ô, điện thoại di động, thiết bị âm thanh (trừ thiết bị trợ thính)</string>
+    <string name="ans_66_2">Phải đội mũ bảo hiểm khi trời mưa gió hoặc trời quá nắng; có thể sử dụng ô, điện thoại di động thiết bị âm thanh nhưng đảm bảo an toàn.</string>
+    <string name="ans_66_3">Phải đội mũ bảo hiểm khi cảm thấy mất an toàn giao thông hoặc khi chuẩn bị di chuyển quãng đường xa.</string>
     //cau 67
-    <string name="ques_67"></string>
+    <string name="ques_67">Đường bộ trong khu vực đông dân cư gồm những đoạn đường nào
+dưới đây?</string>
     <string name="explain_67"></string>
-    <string name="ans_67_1"></string>
-    <string name="ans_67_2"></string>
-    <string name="ans_67_3"></string>
-    <string name="ans_67_4"></string>
+    <string name="ans_67_1">Là đoạn đường nằm trong khu công nghiệp có đông người và phương tiện
+tham gia giao thông và được xác định cụ thể bằng biển chỉ dẫn địa giới</string>
+    <string name="ans_67_2">Là đoạn đường bộ nằm trong khu vực nội thành phố, nội thị xã, nội thị
+trấn và những đoạn đường có đông dân cư sinh sống sát dọc theo đường, có
+các hoạt động có thể ảnh hưởng đến an toàn giao thông; được xác định bằng
+biển báo hiệu là đường khu đông dân cư.</string>
+    <string name="ans_67_3">Là đoạn đường nằm ngoài khu vực nội thành phố, nội thị xã có đông người
+và phương tiện tham gia giao thông và được xác định cụ thể bằng biển chỉ dẫn
+địa giới</string>
     //cau 68
-    <string name="ques_68"></string>
+    <string name="ques_68">Tốc độ tối đa cho phép đối với xe máy chuyên dùng, xe gắn máy (kể
+cả xe máy điện) và các loại xe tương tự trên đường bộ (trừ đường cao tốc)
+không được vượt quá bao nhiêu km/h?</string>
     <string name="explain_68"></string>
-    <string name="ans_68_1"></string>
-    <string name="ans_68_2"></string>
-    <string name="ans_68_3"></string>
-    <string name="ans_68_4"></string>
+    <string name="ans_68_1">50 km/h</string>
+    <string name="ans_68_2">40 km/h</string>
+    <string name="ans_68_3"> 60 km/h.</string>
     //cau 69
-    <string name="ques_69"></string>
+    <string name="ques_69">Trên đường bộ (trừ đường cao tốc) trong khu vực đông dân cư,
+đường đôi có dải phân cách giữa, xe mô tô hai bánh, ô tô chở người đến 30
+chỗ tham gia giao thông với tốc độ tối đa cho phép là bao nhiêu?</string>
     <string name="explain_69"></string>
-    <string name="ans_69_1"></string>
-    <string name="ans_69_2"></string>
-    <string name="ans_69_3"></string>
-    <string name="ans_69_4"></string>
+    <string name="ans_69_1">60 Km/h</string>
+    <string name="ans_69_2">50 Km/h</string>
+    <string name="ans_69_3">40 Km/h</string>
     //cau 70
-    <string name="ques_70"></string>
+    <string name="ques_70">Trên đường bộ (trừ đường cao tốc) trong khu vực đông dân cư,
+đường hai chiều không có dải phân cách giữa, xe mô tô hai bánh, ô tô chở
+người đến 30 chỗ tham gia giao thông với tốc độ tối đa cho phép là bao nhiêu?</string>
     <string name="explain_70"></string>
-    <string name="ans_70_1"></string>
-    <string name="ans_70_2"></string>
-    <string name="ans_70_3"></string>
-    <string name="ans_70_4"></string>
+    <string name="ans_70_1">60 Km/h</string>
+    <string name="ans_70_2">50 Km/h</string>
+    <string name="ans_70_3">40 Km/h</string>
     //cau 71
-    <string name="ques_71"></string>
+    <string name="ques_71">Trên đường bộ (trừ đường cao tốc) trong khu vực đông dân cư,
+đường hai chiều hoặc đường một chiều có một làn xe cơ giới, loại xe nào dưới
+đây được tham gia giao thông với tốc độ tối đa cho phép là 50 km/h?</string>
     <string name="explain_71"></string>
-    <string name="ans_71_1"></string>
-    <string name="ans_71_2"></string>
-    <string name="ans_71_3"></string>
-    <string name="ans_71_4"></string>
+    <string name="ans_71_1">Ô tô con, ô tô tải, ô tô chở người trên 30 chỗ</string>
+    <string name="ans_71_2">Xe gắn máy, xe máy chuyên dung</string>
+    <string name="ans_71_3">Cả ý 1 và ý 2</string>
     //cau 72
-    <string name="ques_72"></string>
-    <string name="explain_72"></string>
-    <string name="ans_72_1"></string>
-    <string name="ans_72_2"></string>
-    <string name="ans_72_3"></string>
-    <string name="ans_72_4"></string>
+    <string name="ques_72">Khi điều khiển xe chạy với tốc độ dưới 60km/h, để đảm bảo khoảng cách an toàn giữa hai xe, người lái xe phải điều khiển xe như thế nào?</string>
+    <string name="explain_72">Khi điều khiển xe chạy với tốc độ dưới 60 km/h, người lái xe phải chủ động giữ khoảng cách an toàn phù hợp với xe chạy liền trước xe của mình; khoảng cách này tùy thuộc vào mật độ phương tiện, tình hình giao thông thực tế để đảm bảo an toàn giao thông.</string>
+    <string name="ans_72_1">Chủ động giữ khoảng cách an toàn phù hợp với xe chạy liền trước xe của mình</string>
+    <string name="ans_72_2">Đảm bảo khoảng cách an toàn theo mật độ phương tiện, tình hình giao thông thực tế</string>
+    <string name="ans_72_3">Cả ý 1 và ý 2.</string>
     //cau 73
-    <string name="ques_73"></string>
-    <string name="explain_73"></string>
-    <string name="ans_73_1"></string>
-    <string name="ans_73_2"></string>
-    <string name="ans_73_3"></string>
-    <string name="ans_73_4"></string>
+    <string name="ques_73">Người lái xe phải giảm tốc độ thấp hơn tốc độ tối đa cho phép đến mức cần thiết, chú ý quan sát và chuẩn bị sẵn sàng những tình huống có thể xảy ra để phòng ngừa tai nạn trong các trường hợp nào dưới đây?</string>
+    <string name="explain_73">Giảm tốc độ, chú ý quan sát khi thấy biển báo nguy hiểm.</string>
+    <string name="ans_73_1">Gặp biển báo nguy hiển trên đường.</string>
+    <string name="ans_73_2">Gặp biển chỉ dần trên đường</string>
+    <string name="ans_73_3">Gặp biển báo hết mọi lệnh cấm</string>
+    <string name="ans_73_4">Gặp biển báo hết hạn chế tốc độ tối đa cho phép.</string>
     //cau 74
-    <string name="ques_74"></string>
+    <string name="ques_74">Tác dụng của mũ bảo hiểm đối với người ngồi trên xe mô tô hai bánh
+trong trường hợp xảy ra tai nạn giao thông là gì?</string>
     <string name="explain_74"></string>
-    <string name="ans_74_1"></string>
-    <string name="ans_74_2"></string>
-    <string name="ans_74_3"></string>
-    <string name="ans_74_4"></string>
+    <string name="ans_74_1">Để làm đẹp</string>
+    <string name="ans_74_2">Để tránh mưa nắng</string>
+    <string name="ans_74_3">Để giảm thiểu chấn thương vùng đầu</string>
+    <string name="ans_74_4">Để các loại phương tiện khác dễ quan sát.</string>
     //cau 75
-    <string name="ques_75"></string>
+    <string name="ques_75">Tại nơi đường giao nhau, người lái xe đang đi trên đường không ưu
+tiên phải xử lý như thế nào là đúng quy tắc giao thông?</string>
     <string name="explain_75"></string>
-    <string name="ans_75_1"></string>
-    <string name="ans_75_2"></string>
-    <string name="ans_75_3"></string>
-    <string name="ans_75_4"></string>
+    <string name="ans_75_1">Tăng tốc độ qua đường giao nhau để đi trước xe đi trên đường ưu tiên</string>
+    <string name="ans_75_2">Giảm tốc độ qua đường giao nhau để đi trước xe đi trên đường ưu tiên</string>
+    <string name="ans_75_3">Nhường đường cho xe đi trên đường ưu tiên hoặc từ bất kỳ hướng nào
+tới.</string>
     //cau 76
-    <string name="ques_76"></string>
+    <string name="ques_76">Người lái xe phải xử lý như thế nào khi quan sát phía trước thấy
+người đi bộ đang sang đường tại nơi có vạch đường dành cho người đi bộ để
+đảm bảo an toàn?</string>
     <string name="explain_76"></string>
-    <string name="ans_76_1"></string>
-    <string name="ans_76_2"></string>
-    <string name="ans_76_3"></string>
-    <string name="ans_76_4"></string>
+    <string name="ans_76_1">Giảm tốc độ, đi từ từ để vượt qua trước người đi bộ</string>
+    <string name="ans_76_2">Giảm tốc độ, có thể dừng lại nếu cần thiết trước vạch dừng xe để nhường
+đường cho người đi bộ qua đường</string>
+    <string name="ans_76_3">Tăng tốc độ để vượt qua trước người đi bộ.</string>
     //cau 77
-    <string name="ques_77"></string>
+    <string name="ques_77">Tại nơi đường giao nhau, khi đèn điều khiển giao thông có tín hiệu
+màu vàng, người điều khiển giao thông phải chấp hành như thế nào là đúng
+quy tắc giao thông?</string>
     <string name="explain_77"></string>
-    <string name="ans_77_1"></string>
-    <string name="ans_77_2"></string>
-    <string name="ans_77_3"></string>
-    <string name="ans_77_4"></string>
+    <string name="ans_77_1">Phải cho xe dừng lại trước vạch dừng, trường hợp đã đi quá vạch dừng
+hoặc đã quá gần vạch dừng nếu dừng lại thấy nguy hiểm thì được đi tiếp</string>
+    <string name="ans_77_2">Trong trường hợp tín hiệu vàng nhấp nháy là được đi nhưng phải giảm tốc
+độ, chú ý quan sát nhường đường cho người đi bộ qua đường</string>
+    <string name="ans_77_3">Nhanh chóng tăng tốc độ, vượt qua nút giao và chú ý đảm bảo an toàn</string>
+    <string name="ans_77_4">Cả ý 1 và ý 2.</string>
     //cau 78
-    <string name="ques_78"></string>
-    <string name="explain_78"></string>
-    <string name="ans_78_1"></string>
-    <string name="ans_78_2"></string>
-    <string name="ans_78_3"></string>
-    <string name="ans_78_4"></string>
+    <string name="ques_78">Để báo hiệu cho xe phía trước biết xe mô tô của bạn muốn vượt, bạn phải có tín hiệu như thế nào dưới đây?</string>
+    <string name="explain_78">Khi muốn vượt xe phía trước bắt buộc phải có tín hiệu bằng đèn hoặc còi, trường hợp trong khu đông dân cư trong khung giờ từ 22h - 5h bắt buộc phải sử dụng bằng đèn.</string>
+    <string name="ans_78_1">Ra tín hiệu bằng tay rồi cho xe vượt qua</string>
+    <string name="ans_78_2">Tăng ga mạnh để gây sự chú ý rồi cho xe vượt qua</string>
+    <string name="ans_78_3">Bạn phải có tín hiệu bằng đèn hoặc còi.</string>
     //cau 79
-    <string name="ques_79"></string>
-    <string name="explain_79"></string>
-    <string name="ans_79_1"></string>
-    <string name="ans_79_2"></string>
-    <string name="ans_79_3"></string>
-    <string name="ans_79_4"></string>
+    <string name="ques_79">Người điều khiển xe mô tô phải giảm tốc độ và hết sức thận trọng khi qua những đoạn đường nào dưới đây?</string>
+    <string name="explain_79">Giảm tốc độ: Đường ướt, đường hẹp, đường đèo dốc.</string>
+    <string name="ans_79_1">Đường ướt, đường có sỏi cát trên nền đường</string>
+    <string name="ans_79_2">Đường hẹp có nhiều điểm giao cắt từ hai phía</string>
+    <string name="ans_79_3">Đường đèo dốc, vòng liên tục</string>
+    <string name="ans_79_4">Tất cả các ý nêu trên.</string>
     //cau 80
-    <string name="ques_80"></string>
-    <string name="explain_80"></string>
-    <string name="ans_80_1"></string>
-    <string name="ans_80_2"></string>
-    <string name="ans_80_3"></string>
-    <string name="ans_80_4"></string>
+    <string name="ques_80">Khi gặp xe buýt đang dừng đón, trả khách, người điều khiển xe mô tô phải xử lý như thế nào dưới đây để đảm bảo an toàn giao thông?</string>
+    <string name="explain_80">Khi xe buýt đang dừng đón trả khách thì người điều khiển xe mô tô: giảm tốc độ và từ từ vượt qua xe buýt. Không nhất thiết phải dừng lại, nhưng bắt buộc không được tăng tốc vượt ẩu vì rất dễ gây tai nạn.</string>
+    <string name="ans_80_1">Tăng tốc độ nhanh chóng vượt qua bên đỗ</string>
+    <string name="ans_80_2">Giảm tốc độ đến mức an toàn có thể và quan sát người qua đường và từ từ vượt qua xe buýt</string>
+    <string name="ans_80_3">Yêu cầu phải dừng lại phía sau xe buýt chờ xe rời bến mới đi tiếp.</string>
     //cau 81
-    <string name="ques_81"></string>
+    <string name="ques_81">Khái niệm về văn hóa giao thông được hiểu như thế nào là đúng?</string>
     <string name="explain_81"></string>
-    <string name="ans_81_1"></string>
-    <string name="ans_81_2"></string>
-    <string name="ans_81_3"></string>
-    <string name="ans_81_4"></string>
+    <string name="ans_81_1">Là sự hiểu biết và chấp hành nghiêm chỉnh pháp luật về giao thông; là ý thức
+trách nhiệm với cộng đồng khi tham gia giao thông</string>
+    <string name="ans_81_2">Là ứng xử có văn hóa, có tình yêu thương con người trong các tình huống
+không may xảy ra khi tham gia giao thông</string>
+    <string name="ans_81_3">Cả ý 1 và ý 2</string>
     //cau 82
-    <string name="ques_82"></string>
+    <string name="ques_82">Trong các hành vi dưới đây, người lái xe ô tô, mô tô có văn hóa giao
+thông phải ứng xử như thế nào?</string>
     <string name="explain_82"></string>
-    <string name="ans_82_1"></string>
-    <string name="ans_82_2"></string>
-    <string name="ans_82_3"></string>
-    <string name="ans_82_4"></string>
+    <string name="ans_82_1">Điều khiển xe đi bên phải theo chiều đi của mình; đi đúng phần đường,
+làn đường quy đinh; dừng, đỗ xe đúng nơi quy định; đã uống rượu, bia thì
+không lái xe.</string>
+    <string name="ans_82_2">Điều khiển xe đi trên phần đường, làn đường có ít phương tiện giao thông;
+dừng xe, đỗ xe ở nơi thuận tiện hoặc theo yêu cầu của hành khách, của người
+thân.</string>
+    <string name="ans_82_3">Dừng và đỗ xe ở nơi thuận tiện cho việc chuyên chở hành khách và giao nhận
+hàng hóa; sử dụng ít rượu, bia thì có thể lái xe.</string>
     //cau 83
-    <string name="ques_83"></string>
+    <string name="ques_83">Trong các hành vi dưới đây, người lái xe mô tô có văn hóa giao thông
+phải ứng xử như thế nào?</string>
     <string name="explain_83"></string>
-    <string name="ans_83_1"></string>
-    <string name="ans_83_2"></string>
-    <string name="ans_83_3"></string>
-    <string name="ans_83_4"></string>
+    <string name="ans_83_1">Điều khiển xe đi bên phải theo chiều đi của mình, đi đúng phần đường,
+làn đường quy định, đội mũ bảo hiểm đạt chuẩn, cài quai đúng quy cách.</string>
+    <string name="ans_83_2">Điều khiển xe đi trên phần đường, làn đường có ít phương tiện tham gia giao
+thông.</string>
+    <string name="ans_83_3">Điều khiển xe và đội mũ bảo hiểm ở nơi có biển báo bắt buộc đội mũ bảo
+hiểm.</string>
     //cau 84
-    <string name="ques_84"></string>
+    <string name="ques_84">Trên đường đang xảy ra ùn tắc những hành vi nào sau đây là thiếu
+văn hóa khi tham gia giao thông?</string>
     <string name="explain_84"></string>
-    <string name="ans_84_1"></string>
-    <string name="ans_84_2"></string>
-    <string name="ans_84_3"></string>
-    <string name="ans_84_4"></string>
+    <string name="ans_84_1">Bấm còi liên tục thúc giục các phương tiện phía trước nhường đường.</string>
+    <string name="ans_84_2">Đi lên vỉa hè, tận dụng mọi khoảng trống để nhanh chóng thoát khỏi nơi ùn
+tắc.</string>
+    <string name="ans_84_3">Lấn sang trái đường cố gắng vượt lên xe khác.</string>
+    <string name="ans_84_4">Tất cả các ý nêu trên.</string>
     //cau 85
-    <string name="ques_85"></string>
+    <string name="ques_85">Khi xảy ra tai nạn giao thông, có người bị thương nghiêm trọng,
+người lái xe và người có mặt tại hiện trường vụ tai nạn phải thực hiện các
+công việc gì dưới đây?</string>
     <string name="explain_85"></string>
-    <string name="ans_85_1"></string>
-    <string name="ans_85_2"></string>
-    <string name="ans_85_3"></string>
-    <string name="ans_85_4"></string>
+    <string name="ans_85_1">Thực hiện sơ cứu ban đầu trong trường hợp khẩn cấp; thông báo vụ tai
+nạn đến cơ quan thi hành pháp luật.</string>
+    <string name="ans_85_2">Nhanh chóng lái xe gây tai nạn hoặc đi nhờ xe khác ra khỏi hiện trường vụ
+tai nạn.</string>
+    <string name="ans_85_3">Cả ý 1 và ý 2.</string>
     //cau 86
-    <string name="ques_86"></string>
-    <string name="explain_86"></string>
-    <string name="ans_86_1"></string>
-    <string name="ans_86_2"></string>
-    <string name="ans_86_3"></string>
-    <string name="ans_86_4"></string>
+    <string name="ques_86">Khi tránh nhau trên đường hẹp, người lái xe cần phải chú ý những điểm nào để đảm bảo an toàn giao thông?</string>
+    <string name="explain_86">Cả ý 1 và ý 2 đúng. Ý 3 SAI vì tránh nhau không được bật đèn pha mà phải bật đèn cốt.</string>
+    <string name="ans_86_1">Không nên đi cố vào đường hẹp; xe đi ở phía sườn núi nên dừng lại trước để nhường đường; khi dừng xe nhường đường phải đổ ngay ngắn.</string>
+    <string name="ans_86_2">Trong khi tránh nhau không nên đổi số; khi tránh nhau ban đêm phải tắt đèn pha, bật đèn cốt.</string>
+    <string name="ans_86_3">Khi tránh nhau ban đêm, phải thường xuyên bật đèn pha tắt đèn cốt.</string>
+    <string name="ans_86_4">Cả ý 1 và ý 2.</string>
     //cau 87
-    <string name="ques_87"></string>
-    <string name="explain_87"></string>
-    <string name="ans_87_1"></string>
-    <string name="ans_87_2"></string>
-    <string name="ans_87_3"></string>
-    <string name="ans_87_4"></string>
+    <string name="ques_87">Khi quay đầu xe, người lái xe cần phải quan sát và thực hiện các thao tác nào để đảm bảo an toàn giao thông?</string>
+    <string name="explain_87">Quay đầu xe với tốc độ thấp mới đảm bảo được an toàn và có thời gian xử lý các tình huống bất ngờ.</string>
+    <string name="ans_87_1">Quan sát biển báo hiệu để biết nơi được phép quay đầu; quan sát kỹ địa hình nơi chọn để quay đầu; lựa chọn quỹ đạo quay đầu xe cho thích hợp; quay đầu xe với tốc độ thấp; thường xuyên báo tín hiệu để người, các phương tiện xung quanh được biết; nếu quay đầu xe ở nơi nguy hiểm thì đưa đầu xe về phía nguy hiểm, đưa đuôi xe về phía an toàn.</string>
+    <string name="ans_87_2">Quan sát biển báo để biết nơi được phép quay đầu; quan sát kỹ địa hình nơi chọn để quay đầu; lựa chọn quỹ đạo quay đầu xe cho thích hợp; quay đầu xe với tốc độ tối đa; thường xuyên báo tín hiệu để người, các phương tiện xung quanh được biết; nếu quay đầu xe ở nơi nguy hiểm thì đưa đuôi xe về phía nguy hiểm và đầu xe về phía an toàn.</string>
     //cau 88
-    <string name="ques_88"></string>
+    <string name="ques_88">Khi điều khiển xe trên đường vòng người lái xe cần phải làm gì để
+đảm bảo an toàn?</string>
     <string name="explain_88"></string>
-    <string name="ans_88_1"></string>
-    <string name="ans_88_2"></string>
-    <string name="ans_88_3"></string>
-    <string name="ans_88_4"></string>
+    <string name="ans_88_1">Quan sát cẩn thận các chướng ngại vật và báo hiệu bằng còi, đèn; giảm
+tốc độ tới mức cần thiết, về số thấp và thực hiện quay vòng với tốc độ phù
+hợp với bán kính cong của đường vòng.</string>
+    <string name="ans_88_2">Quan sát cẩn thận các chướng ngại vật và báo hiệu bằng còi, đèn; tăng tốc
+nhanh chóng qua đường vòng và giảm tốc độ sau khi qua đường vòng.</string>
     //cau 89
-    <string name="ques_89"></string>
+    <string name="ques_89">Để đạt được hiệu quả phanh cao nhất, người lái xe mô tô phải sử
+dụng các kỹ năng như thế nào dưới đây?</string>
     <string name="explain_89"></string>
-    <string name="ans_89_1"></string>
-    <string name="ans_89_2"></string>
-    <string name="ans_89_3"></string>
-    <string name="ans_89_4"></string>
+    <string name="ans_89_1">Sử dụng phanh trước.</string>
+    <string name="ans_89_2">Sửu dụng phanh sau.</string>
+    <string name="ans_89_3">Giảm hết ga; sử dụng đồng thời cả phanh sau và phanh trước.</string>
     //cau 90
-    <string name="ques_90"></string>
+    <string name="ques_90">Khi đang lái xe mô tô và ô tô, nếu có nhu cầu sử dụng điện thoại để
+nhắn tin hoặc gọi điện, người lái xe phải thực hiện như thế nào trong các tình
+huống dưới đây?</string>
     <string name="explain_90"></string>
-    <string name="ans_90_1"></string>
-    <string name="ans_90_2"></string>
-    <string name="ans_90_3"></string>
-    <string name="ans_90_4"></string>
+    <string name="ans_90_1">Giảm tốc độ để đảm bảo an toàn với xe phía trước và sử dụng điện để thoại
+để liên lạc.</string>
+    <string name="ans_90_2">Giảm tốc độ để dừng xe ở nơi cho phép dừng xe sau đó sử dụng điện thoại
+để liên lạc.</string>
+    <string name="ans_90_3">Tăng tốc độ để cách ra xe phía sau và sử dụng điện thoại để liên lạc.</string>
     //cau 91
-    <string name="ques_91"></string>
-    <string name="explain_91"></string>
-    <string name="ans_91_1"></string>
-    <string name="ans_91_2"></string>
-    <string name="ans_91_3"></string>
-    <string name="ans_91_4"></string>
+    <string name="ques_91">Gương chiếu hậu của xe mô tô hai bánh, có tác dụng gì trong các trường hợp dưới đây?</string>
+    <string name="explain_91">Gương chiếu hậu của xe mô tô có chức năng giúp người điều khiển phương tiện có thể quan sát an toàn phía sau bên phải - trái, trước khi chuyển làn đường.</string>
+    <string name="ans_91_1">Để quan sát an toàn phía bên trái khi chuẩn bị rẽ trái.</string>
+    <string name="ans_91_2">Để quan sát an toàn phía bên phải khi chuẩn bị rẽ phải.</string>
+    <string name="ans_91_3">Để quan sát an toàn phía sau cả bên trái và bên phải trước khi chuyển hướng.</string>
+    <string name="ans_91_4">Để quan sát an toàn phía trước cả bên trái và bên phải trước khi chuyển hướng.</string>
     //cau 92
-    <string name="ques_92"></string>
+    <string name="ques_92">Khi điều khiển xe mô tô quay đầu người lái xe cần thực hiện như thế
+nào để đảm bảo an toàn?</string>
     <string name="explain_92"></string>
-    <string name="ans_92_1"></string>
-    <string name="ans_92_2"></string>
-    <string name="ans_92_3"></string>
-    <string name="ans_92_4"></string>
+    <string name="ans_92_1">Bật tín hiệu báo rẽ trước khi quay đầu, từ từ giảm tốc độ đến mức có thể dừng
+lại.</string>
+    <string name="ans_92_2">Chỉ quay đầu xe tại những nơi được phép quay đầu.</string>
+    <string name="ans_92_3">Quan sát an toàn các phương tiện tới từ phía trước, phía sau, hai bên đồng
+thời nhường đường cho xe từ bên phải và phía trước đi tới.</string>
+    <string name="ans_92_4">Tất cả các ý nêu trên.</string>
     //cau 93
-    <string name="ques_93"></string>
-    <string name="explain_93"></string>
-    <string name="ans_93_1"></string>
-    <string name="ans_93_2"></string>
-    <string name="ans_93_3"></string>
-    <string name="ans_93_4"></string>
+    <string name="ques_93">Tay ga trên xe mô tô hai bánh có tác dụng gì trong các trường hợp dưới đây?</string>
+    <string name="explain_93">Tay ga trên xe mô tô sẽ có tác dụng điều chỉnh tốc độ xe, cho phép xe tiến về phía trước. Không có tác dụng lùi xe.</string>
+    <string name="ans_93_1">Để điều khiển xe chạy về phía trước.</string>
+    <string name="ans_93_2">Để điều tiết công suất động cơ qua đó điều khiển tốc độ của xe.</string>
+    <string name="ans_93_3">Để điều khiển xe chạy lùi.</string>
+    <string name="ans_93_4">Cả ý 1 và ý 2.</string>
     //cau 94
-    <string name="ques_94"></string>
+    <string name="ques_94">Những thói quen nào dưới đây khi điều khiển xe mô tô tay ga tham
+gia giao thông dễ gây tai nạn nguy hiểm?</string>
     <string name="explain_94"></string>
-    <string name="ans_94_1"></string>
-    <string name="ans_94_2"></string>
-    <string name="ans_94_3"></string>
-    <string name="ans_94_4"></string>
+    <string name="ans_94_1">Sử dụng còi.</string>
+    <string name="ans_94_2">Phanh đồng thời cả phanh trước và phanh sau.</string>
+    <string name="ans_94_3">Chỉ sử dụng phanh trước.</string>
     //cau 95
-    <string name="ques_95"></string>
-    <string name="explain_95"></string>
-    <string name="ans_95_1"></string>
-    <string name="ans_95_2"></string>
-    <string name="ans_95_3"></string>
-    <string name="ans_95_4"></string>
+    <string name="ques_95">Để đảm bảo an toàn khi tham gia giao thông, người lái xe lái xe mô tô hai bánh cần điều khiển tay ga như thế nào trong các trường hợp dưới đây?</string>
+    <string name="explain_95">Để đảm bảo an toàn khi tham gia giao thông, người lái xe mô tô hai bánh phải tăng ga từ từ để điều chỉnh tốc độ an toàn và giảm ga thật nhanh nếu thấy không an toàn. Đây là câu hỏi liên quan thực tế, học viên bắt buộc phải nhớ để đi đường sau này.</string>
+    <string name="ans_95_1">Tăng ga thật nhanh, giảm ga từ từ.</string>
+    <string name="ans_95_2">Tăng ga thật nhanh, giảm ga thật nhanh.</string>
+    <string name="ans_95_3">Tăng ga từ từ, giảm ga thật nhanh.</string>
+    <string name="ans_95_4">Tăng ga từ từ, giảm ga từ từ.</string>
     //cau 96
-    <string name="ques_96"></string>
+    <string name="ques_96">Kỹ thuật cơ bản để giữ thăng bằng khi điều khiển xe mô tô đi trên
+đường gồ ghề như thế nào trong các trường hợp dưới đây?</string>
     <string name="explain_96"></string>
-    <string name="ans_96_1"></string>
-    <string name="ans_96_2"></string>
-    <string name="ans_96_3"></string>
-    <string name="ans_96_4"></string>
+    <string name="ans_96_1">Đứng thẳng trên giá gác chân lái sau đó hơi gập đầu gối và khuỷu tay, đi
+chậm để không nẩy quá mạnh.</string>
+    <string name="ans_96_2">Ngồi lùi lại phía sau, tăng ga vượt nhanh qua đoạn đường xóc.</string>
+    <string name="ans_96_3">Ngồi lệch sang bên trái hoặc bên phải để lấy thăng bằng qua đoạn đường gồ
+ghề.</string>
     //cau 97
-    <string name="ques_97"></string>
-    <string name="explain_97"></string>
-    <string name="ans_97_1"></string>
-    <string name="ans_97_2"></string>
-    <string name="ans_97_3"></string>
-    <string name="ans_97_4"></string>
+    <string name="ques_97">Khi điều khiển xe mô tô tay ga xuống đường dốc dài, độ dốc cao, người lái xe cần thực hiện các thao tác nào dưới đây để đảm bảo an toàn?</string>
+    <string name="explain_97">Khi điều khiển xe mô tô tay ga xuống đường dốc dài, độ dốc cao để đảm bảo an toàn người lái xe sẽ cần giữ tay ga ở mức độ phù hợp kết hợp giữa thắng trước và thắng sau để giảm tốc độ khi cần thiết. Tránh việc chỉ sử dụng thắng trước vì rất dễ gây tai nạn.</string>
+    <string name="ans_97_1">Giữ tay ga ở mức độ phù hợp, sử dụng phanh trước và phanh sau để giảm tốc độ.</string>
+    <string name="ans_97_2">Nhả hết tay ga, tắt động cơ, sử dụng phanh trước và phanh sau để giảm tốc độ.</string>
+    <string name="ans_97_3">Sử dụng phanh trước để giảm tốc độ kết hợp với tắt chìa khóa điện của xe.</string>
     //cau 98
-    <string name="ques_98"></string>
-    <string name="explain_98"></string>
-    <string name="ans_98_1"></string>
-    <string name="ans_98_2"></string>
-    <string name="ans_98_3"></string>
-    <string name="ans_98_4"></string>
+    <string name="ques_98">Các phương tiện tham gia giao thông đường bộ (kể cả những xe có quyền ưu tiên) đều phải dừng lại bên phải đường của mình và trước vạch “dừng xe” tại các điểm giao cắt giữa đường bộ và đường sắt khi có báo hiệu dừng nào dưới đây?</string>
+    <string name="explain_98">Tất cả hành động trên đều là cảnh báo bắt buộc các phương tiện phải tuân thủ khi đi đến tuyến đường đường bộ giao nhau với đường sắt.</string>
+    <string name="ans_98_1">Hiệu lệnh của nhân viên gác chắn</string>
+    <string name="ans_98_2">Đèn đỏ sáng nháy, cờ đỏ, biển đỏ</string>
+    <string name="ans_98_3">Còi, chuông kêu, chắn đã đóng</string>
+    <string name="ans_98_4">Tất cả các ý trên.</string>
     //cau 99
-    <string name="ques_99"></string>
+    <string name="ques_99">Tại nơi đường bộ giao nhau cùng mức với đường sắt chỉ có đèn tín
+hiệu hoặc chuông báo hiệu, khi đèn tín hiệu màu đỏ đã bất sáng hoặc có tiếng
+chuông báo hiệu, người tham gia giao thông phải dừng ngay và giữ khoảng
+cách tối thiểu bao nhiêu mét tính từ ray gần nhất?</string>
     <string name="explain_99"></string>
-    <string name="ans_99_1"></string>
-    <string name="ans_99_2"></string>
-    <string name="ans_99_3"></string>
-    <string name="ans_99_4"></string>
+    <string name="ans_99_1">5 mét</string>
+    <string name="ans_99_2">3 mét</string>
+    <string name="ans_99_3">4 mét</string>
     //cau 100
-    <string name="ques_100"></string>
-    <string name="explain_100"></string>
-    <string name="ans_100_1"></string>
-    <string name="ans_100_2"></string>
-    <string name="ans_100_3"></string>
-    <string name="ans_100_4"></string>
+    <string name="ques_100">Người điều khiển phương tiện tham gia giao thông trong hầm đường bộ ngoài việc phải tuân thủ các quy tắc giao thông còn phải thực hiện những quy định nào dưới đây?</string>
+    <string name="explain_100">Trong hầm đường bộ, nghiêm cấm việc quay đầu và lùi xe.</string>
+    <string name="ans_100_1">Xe cơ giới, xe máy chuyên dùng phải bật đèn; xe thô sơ phải bật đèn hoặc có vật phát sáng báo hiệu; chỉ được dừng xe, đỗ xe ở nơi quy định</string>
+    <string name="ans_100_2">Xe cơ giới phải bật đèn ngay cả khi đường hầm sáng; phải cho xe chạy trên một làn đường và chỉ chuyển làn ở nơi được phép; được quay đầu xe, lùi xe khi cần thiết</string>
+    <string name="ans_100_3">Xe máy chuyên dùng phải bật đèn ngay cả khi đường hầm sáng; phải cho xe chạy trên một làn đường và chỉ chuyển làn ở nơi được phép, được quay đầu xe, lui xe khi cần thiết.</string>
     //cau 101
-    <string name="ques_101"></string>
-    <string name="explain_101"></string>
-    <string name="ans_101_1"></string>
-    <string name="ans_101_2"></string>
-    <string name="ans_101_3"></string>
-    <string name="ans_101_4"></string>
+    <string name="ques_101">Biển nào báo hiệu “Đường giao nhau” của các tuyến đường cùng cấp?</string>
+    <string name="explain_101">Biển 1: Biển báo trước sắp đến nơi giao nhau cùng mức của các tuyến đường cùng cấp (không có đường nào ưu tiên). Biển 2: Biển báo giao nhau với đường không ưu tiên. Biển 3: Biển báo giao nhau với đường ưu tiên. Vì vậy chọn Biển 1.</string>
+    <string name="ans_101_1">Biển 1.</string>
+    <string name="ans_101_2">Biển 2.</string>
+    <string name="ans_101_3">Biển 3.</string>
     //cau 102
-    <string name="ques_102"></string>
+    <string name="ques_102">Biển nào báo hiệu “Giao nhau với đường không ưu tiên”?</string>
     <string name="explain_102"></string>
-    <string name="ans_102_1"></string>
-    <string name="ans_102_2"></string>
-    <string name="ans_102_3"></string>
-    <string name="ans_102_4"></string>
+    <string name="ans_102_1">Biển 1.</string>
+    <string name="ans_102_2">Biển 2.</string>
+    <string name="ans_102_3">Biển 3.</string>
+    <string name="ans_102_4">Biển 2 và 3.</string>
     //cau 103
-    <string name="ques_103"></string>
+    <string name="ques_103">Biển nào báo hiệu “Giao nhau với đường ưu tiên”?</string>
     <string name="explain_103"></string>
-    <string name="ans_103_1"></string>
-    <string name="ans_103_2"></string>
-    <string name="ans_103_3"></string>
-    <string name="ans_103_4"></string>
+    <string name="ans_103_1">Biển 1 và 3.</string>
+    <string name="ans_103_2">Biển 2.</string>
+    <string name="ans_103_3">Biển 3.</string>
     //cau 104
-    <string name="ques_104"></string>
+    <string name="ques_104">Biển nào báo hiệu, chỉ dẫn xe đi trên đường này được quyền ưu
+tiên qua nơi giao nhau?</string>
     <string name="explain_104"></string>
-    <string name="ans_104_1"></string>
-    <string name="ans_104_2"></string>
-    <string name="ans_104_3"></string>
-    <string name="ans_104_4"></string>
+    <string name="ans_104_1">Biển 1 và 2.</string>
+    <string name="ans_104_2">Biển 1 và 3.</string>
+    <string name="ans_104_3">Biển 2 và 3.</string>
+    <string name="ans_104_4">Cả ba biển.</string>
     //cau 105
-    <string name="ques_105"></string>
+    <string name="ques_105">Biển nào báo hiệu sắp đến chỗ giao nhau nguy hiểm?</string>
     <string name="explain_105"></string>
-    <string name="ans_105_1"></string>
-    <string name="ans_105_2"></string>
-    <string name="ans_105_3"></string>
-    <string name="ans_105_4"></string>
+    <string name="ans_105_1">Biển 1.</string>
+    <string name="ans_105_2">Biển 1 và 2.</string>
+    <string name="ans_105_3">Biển 2 và 3.</string>
+    <string name="ans_105_4">Cả ba biển.</string>
     //cau 106
-    <string name="ques_106"></string>
+    <string name="ques_106">Biển nào báo hiệu “Giao nhau có tín hiệu đèn”?</string>
     <string name="explain_106"></string>
-    <string name="ans_106_1"></string>
-    <string name="ans_106_2"></string>
-    <string name="ans_106_3"></string>
-    <string name="ans_106_4"></string>
+    <string name="ans_106_1">Biển 1.</string>
+    <string name="ans_106_2">Biển 2.</string>
+    <string name="ans_106_3">Biển 3.</string>
+    <string name="ans_106_4">Cả ba biển.</string>
     //cau 107
-    <string name="ques_107"></string>
+    <string name="ques_107">Biển nào báo hiệu “Giao nhau với đường sắt có rào chắn”?</string>
     <string name="explain_107"></string>
-    <string name="ans_107_1"></string>
-    <string name="ans_107_2"></string>
-    <string name="ans_107_3"></string>
-    <string name="ans_107_4"></string>
+    <string name="ans_107_1">Biển 1.</string>
+    <string name="ans_107_2">Biển 2 và 3.</string>
+    <string name="ans_107_3">Biển 3.</string>
     //cau 108
-    <string name="ques_108"></string>
-    <string name="explain_108"></string>
-    <string name="ans_108_1"></string>
-    <string name="ans_108_2"></string>
-    <string name="ans_108_3"></string>
-    <string name="ans_108_4"></string>
+    <string name="ques_108">Biển nào báo hiệu nguy hiểm giao nhau với đường sắt?</string>
+    <string name="explain_108">Biển 1: Biển báo giao nhau với đường sắt có rào chắn. Biển 2: Biển báo giao nhau với đường hai chiều. Biển 3: Biển báo nơi đường sắt giao vuông góc với đường bộ. Vì vậy chọn Biển 1 và Biển 3.</string>
+    <string name="ans_108_1">Biển 1 và 2.</string>
+    <string name="ans_108_2">Biển 1 và 3.</string>
+    <string name="ans_108_3">Biển 2 và 3.</string>
+    <string name="ans_108_4">Cả ba biển.</string>
     //cau 109
-    <string name="ques_109"></string>
-    <string name="explain_109"></string>
-    <string name="ans_109_1"></string>
-    <string name="ans_109_2"></string>
-    <string name="ans_109_3"></string>
-    <string name="ans_109_4"></string>
+    <string name="ques_109">Biển nào báo hiệu đường sắt giao nhau với đường bộ không có rào chắn?</string>
+    <string name="explain_109">Biển 1 là biển báo nguy hiểm giao nhau với đường sắt có rào chắn. Biển 2 là Biển báo nguy hiểm giao nhau với đường sắt không có rào chắn. Biển 3 là biển báo nguy hiểm đường sắt giao vuông góc với đường bộ.</string>
+    <string name="ans_109_1">Biển 1 và 2.</string>
+    <string name="ans_109_2">Biển 1 và 3.</string>
+    <string name="ans_109_3">Biển 2 và 3.</string>
+    <string name="ans_109_4">Cả ba biển.</string>
     //cau 110
-    <string name="ques_110"></string>
-    <string name="explain_110"></string>
-    <string name="ans_110_1"></string>
-    <string name="ans_110_2"></string>
-    <string name="ans_110_3"></string>
-    <string name="ans_110_4"></string>
+    <string name="ques_110">Biển nào báo hiệu sắp đến chỗ giao nhau giữa đường bộ và đường sắt?</string>
+    <string name="explain_110">Biển 1 là biển báo nguy hiểm giao nhau với đường sắt không có rào chắn. Biển 2 là biển báo giao nhau với đường ưu tiên. Biển 3 là biển báo giao nhau với đường tàu điện.</string>
+    <string name="ans_110_1">Biển 1.</string>
+    <string name="ans_110_2">Biển 2.</string>
+    <string name="ans_110_3">Biển 3.</string>
+    <string name="ans_110_4">Biển 1 và 3.</string>
     //cau 111
-    <string name="ques_111"></string>
+    <string name="ques_111">Biển nào báo hiệu “Đường bị thu hẹp”?</string>
     <string name="explain_111"></string>
-    <string name="ans_111_1"></string>
-    <string name="ans_111_2"></string>
-    <string name="ans_111_3"></string>
-    <string name="ans_111_4"></string>
+    <string name="ans_111_1">Biển 1 và 2.</string>
+    <string name="ans_111_2">Biển 1 và 3.</string>
+    <string name="ans_111_3">Biển 2 và 3.</string>
+    <string name="ans_111_4">Cả ba biển.</string>
     //cau 112
-    <string name="ques_112"></string>
+    <string name="ques_112">Khi gặp biển nào, người lái xe phải giảm tốc độ, chú ý xe đi ngược
+chiều, xe đi ở phía đường bị hẹp phải nhường đường cho xe đi ngược chiều?</string>
     <string name="explain_112"></string>
-    <string name="ans_112_1"></string>
-    <string name="ans_112_2"></string>
-    <string name="ans_112_3"></string>
-    <string name="ans_112_4"></string>
+    <string name="ans_112_1">Biển 1.</string>
+    <string name="ans_112_2">Biển 1 và 3.</string>
+    <string name="ans_112_3">Biển 2 và 3.</string>
+    <string name="ans_112_4">Cả ba biển.</string>
     //cau 113
-    <string name="ques_113"></string>
-    <string name="explain_113"></string>
-    <string name="ans_113_1"></string>
-    <string name="ans_113_2"></string>
-    <string name="ans_113_3"></string>
-    <string name="ans_113_4"></string>
+    <string name="ques_113">Biển nào báo hiệu “Đường đôi”?</string>
+    <string name="explain_113">Biển 1 là biển báo chỉ dẫn ưu tiên qua đường hẹp. Biển 2 là biển báo nguy hiểm báo hiệu đường đôi. Biển 3 là biển báo nguy hiểm báo hiệu hết đường đôi.</string>
+    <string name="ans_113_1">Biển 1.</string>
+    <string name="ans_113_2">Biển 2.</string>
+    <string name="ans_113_3">Biển 3.</string>
     //cau 114
-    <string name="ques_114"></string>
+    <string name="ques_114">Biển nào báo hiệu “Đường đôi”?</string>
     <string name="explain_114"></string>
-    <string name="ans_114_1"></string>
-    <string name="ans_114_2"></string>
-    <string name="ans_114_3"></string>
-    <string name="ans_114_4"></string>
+    <string name="ans_114_1">Biển nào báo hiệu “Đường đôi”?</string>
+    <string name="ans_114_2">Biển 2.</string>
+    <string name="ans_114_3">Biển 3.</string>
     //cau 115
-    <string name="ques_115"></string>
+    <string name="ques_115">Biển nào báo hiệu “Giao nhau với đường hai chiều”?</string>
     <string name="explain_115"></string>
-    <string name="ans_115_1"></string>
-    <string name="ans_115_2"></string>
-    <string name="ans_115_3"></string>
-    <string name="ans_115_4"></string>
+    <string name="ans_115_1">Biển 1.</string>
+    <string name="ans_115_2">Biển 2.</string>
+    <string name="ans_115_3">Biển 3.</string>
     //cau 116
-    <string name="ques_116"></string>
+    <string name="ques_116">Biển nào báo hiệu “Đường hai chiều”?</string>
     <string name="explain_116"></string>
-    <string name="ans_116_1"></string>
-    <string name="ans_116_2"></string>
-    <string name="ans_116_3"></string>
-    <string name="ans_116_4"></string>
+    <string name="ans_116_1">Biển 1.</string>
+    <string name="ans_116_2">Biển 2.</string>
+    <string name="ans_116_3">Biển 3.</string>
     //cau 117
-    <string name="ques_117"></string>
+    <string name="ques_117">Biển nào báo hiệu “Giao nhau với đường hai chiều”?</string>
     <string name="explain_117"></string>
-    <string name="ans_117_1"></string>
-    <string name="ans_117_2"></string>
-    <string name="ans_117_3"></string>
-    <string name="ans_117_4"></string>
+    <string name="ans_117_1">Biển 1.</string>
+    <string name="ans_117_2">Biển 2.</string>
+    <string name="ans_117_3">Biển 3.</string>
     //cau 118
-    <string name="ques_118"></string>
+    <string name="ques_118">Biển nào báo hiệu “Chú ý chướng ngại vật”?</string>
     <string name="explain_118"></string>
-    <string name="ans_118_1"></string>
-    <string name="ans_118_2"></string>
-    <string name="ans_118_3"></string>
-    <string name="ans_118_4"></string>
+    <string name="ans_118_1">Biển 1</string>
+    <string name="ans_118_2">Biển 2 và 3</string>
+    <string name="ans_118_3">Cả ba biển.</string>
     //cau 119
-    <string name="ques_119"></string>
+    <string name="ques_119">Gặp biển nào người tham gia giao thông phải đi chậm và thận trọng
+đề phòng khả năng xuất hiện và di chuyển bất ngờ của trẻ em trên mặt
+đường?</string>
     <string name="explain_119"></string>
-    <string name="ans_119_1"></string>
-    <string name="ans_119_2"></string>
-    <string name="ans_119_3"></string>
-    <string name="ans_119_4"></string>
+    <string name="ans_119_1">Biển 1</string>
+    <string name="ans_119_2">Biển 2</string>
     //cau 120
-    <string name="ques_120"></string>
-    <string name="explain_120"></string>
-    <string name="ans_120_1"></string>
-    <string name="ans_120_2"></string>
-    <string name="ans_120_3"></string>
-    <string name="ans_120_4"></string>
+    <string name="ques_120">Biển nào chỉ dẫn nơi bắt đầu đoạn đường dành cho người đi bộ?</string>
+    <string name="explain_120">Biển 1: Biển báo hiệu sắp đến phần đường cắt ngang dành cho người đi bộ. Biển 2: Biển báo hiệu bắt đầu đoạn đường dành riêng cho người đi bộ. Biển 3: Biển báo hiệu gần đến đoạn đường thường xuyên có trẻ em đi ngang qua. Nên chọn biển 2.</string>
+    <string name="ans_120_1">Biển 1</string>
+    <string name="ans_120_2">Biển 2</string>
+    <string name="ans_120_3">Biển 3.</string>
     //cau 121
-    <string name="ques_121"></string>
-    <string name="explain_121"></string>
-    <string name="ans_121_1"></string>
-    <string name="ans_121_2"></string>
-    <string name="ans_121_3"></string>
-    <string name="ans_121_4"></string>
+    <string name="ques_121">Biển báo này có ý nghĩa gì?</string>
+    <string name="explain_121">Đây là biển báo hiệu đường có gồ giảm tốc phía trước. Còn gọi là biển báo đường không bằng phẳng.</string>
+    <string name="ans_121_1">Báo hiệu đường có ổ gà, lồi lõm.</string>
+    <string name="ans_121_2">Báo hiệu đường có gồ giảm tốc phía trước.</string>
     //cau 122
-    <string name="ques_122"></string>
+    <string name="ques_122">Biển nào dưới đây xe gắn máy được phép đi vào?</string>
     <string name="explain_122"></string>
-    <string name="ans_122_1"></string>
-    <string name="ans_122_2"></string>
-    <string name="ans_122_3"></string>
-    <string name="ans_122_4"></string>
+    <string name="ans_122_1">Biển 1.</string>
+    <string name="ans_122_2">Biển 2.</string>
+    <string name="ans_122_3">Cả hai biển.</string>
     //cau 123
-    <string name="ques_123"></string>
+    <string name="ques_123">Biển nào báo hiệu cấm xe mô tô hai bánh đi vào?</string>
     <string name="explain_123"></string>
-    <string name="ans_123_1"></string>
-    <string name="ans_123_2"></string>
-    <string name="ans_123_3"></string>
-    <string name="ans_123_4"></string>
+    <string name="ans_123_1">Biển 1.</string>
+    <string name="ans_123_2">Biển 2.</string>
+    <string name="ans_123_3">Biển 3.</string>
     //cau 124
-    <string name="ques_124"></string>
+    <string name="ques_124">khi gặp biển nào thì xe mô tô hai bánh được đi vào?</string>
     <string name="explain_124"></string>
-    <string name="ans_124_1"></string>
-    <string name="ans_124_2"></string>
-    <string name="ans_124_3"></string>
-    <string name="ans_124_4"></string>
+    <string name="ans_124_1">Không biển nào.</string>
+    <string name="ans_124_2">Biển 1 và 2.</string>
+    <string name="ans_124_3">Biển 2 và 3.</string>
+    <string name="ans_124_4">Cả 3 biển.</string>
     //cau 125
-    <string name="ques_125"></string>
+    <string name="ques_125">Biển nào cấm quay đầu xe?</string>
     <string name="explain_125"></string>
-    <string name="ans_125_1"></string>
-    <string name="ans_125_2"></string>
-    <string name="ans_125_3"></string>
-    <string name="ans_125_4"></string>
+    <string name="ans_125_1">Biển 1.</string>
+    <string name="ans_125_2">Biển 2.</string>
+    <string name="ans_125_3">Không biển nào.</string>
+    <string name="ans_125_4">Cả hai biển.</string>
     //cau 126
-    <string name="ques_126"></string>
-    <string name="explain_126"></string>
-    <string name="ans_126_1"></string>
-    <string name="ans_126_2"></string>
-    <string name="ans_126_3"></string>
-    <string name="ans_126_4"></string>
+    <string name="ques_126">Biển nào cấm xe rẽ trái?</string>
+    <string name="explain_126">Biển 1 là biển cấm xe rẽ trái. Biển 2 là biển cấm xe quay đầu. Biển báo cấm quay đầu không có giá trị cấm rẽ trái.</string>
+    <string name="ans_126_1">Biển 1.</string>
+    <string name="ans_126_2">Biển 2.</string>
+    <string name="ans_126_3">Cả hai biển.</string>
     //cau 127
-    <string name="ques_127"></string>
-    <string name="explain_127"></string>
-    <string name="ans_127_1"></string>
-    <string name="ans_127_2"></string>
-    <string name="ans_127_3"></string>
-    <string name="ans_127_4"></string>
+    <string name="ques_127">Khi gặp biển nào xe được rẽ trái?</string>
+    <string name="explain_127">Biển 1 là biển cấm xe rẽ trái. Biển 2 là biển cấm xe quay đầu. Biển báo cấm quay đầu không có giá trị cấm rẽ trái.</string>
+    <string name="ans_127_1">Biển 1.</string>
+    <string name="ans_127_2">Biển 2.</string>
+    <string name="ans_127_3">Không biển nào.</string>
     //cau 128
-    <string name="ques_128"></string>
-    <string name="explain_128"></string>
-    <string name="ans_128_1"></string>
-    <string name="ans_128_2"></string>
-    <string name="ans_128_3"></string>
-    <string name="ans_128_4"></string>
+    <string name="ques_128">Biển nào cấm các phương tiện giao thông đường bộ rẽ phải?</string>
+    <string name="explain_128">Biển 1 là biển cấm phương tiện rẽ phải. Biển 2 là Biển báo cấm phương tiện rẽ phải và quay đầu. Biển 3 là biển báo cấm phương tiện XE Ô TÔ rẽ phải và quay đầu.</string>
+    <string name="ans_128_1">Biển 1 và 2.</string>
+    <string name="ans_128_2">Biển 1 và 3.</string>
+    <string name="ans_128_3">Biển 2 và 3.</string>
+    <string name="ans_128_4">Cả ba biển.</string>
     //cau 129
-    <string name="ques_129"></string>
+    <string name="ques_129">Biển nào cấm các phương tiện giao thông đường bộ rẽ trái?</string>
     <string name="explain_129"></string>
-    <string name="ans_129_1"></string>
-    <string name="ans_129_2"></string>
-    <string name="ans_129_3"></string>
-    <string name="ans_129_4"></string>
+    <string name="ans_129_1">Biển 1 và 2.</string>
+    <string name="ans_129_2">Biển 1 và 3.</string>
+    <string name="ans_129_3">Biển 2 và 3.</string>
+    <string name="ans_129_4">Cả ba biển.</string>
     //cau 130
-    <string name="ques_130"></string>
+    <string name="ques_130">Biển nào xe được phép quay đầu nhưng không được rẽ trái?</string>
     <string name="explain_130"></string>
-    <string name="ans_130_1"></string>
-    <string name="ans_130_2"></string>
-    <string name="ans_130_3"></string>
-    <string name="ans_130_4"></string>
+    <string name="ans_130_1">Biển 1.</string>
+    <string name="ans_130_2">Biển 2.</string>
+    <string name="ans_130_3">Cả 2 biển.</string>
     //cau 131
-    <string name="ques_131"></string>
+    <string name="ques_131">Biển nào là biển”Cấm đi ngược chiều”?</string>
     <string name="explain_131"></string>
-    <string name="ans_131_1"></string>
-    <string name="ans_131_2"></string>
-    <string name="ans_131_3"></string>
-    <string name="ans_131_4"></string>
+    <string name="ans_131_1">Biển 1.</string>
+    <string name="ans_131_2">Biển 2.</string>
+    <string name="ans_131_3">Cả ba biển.</string>
     //cau 132
-    <string name="ques_132"></string>
-    <string name="explain_132"></string>
-    <string name="ans_132_1"></string>
-    <string name="ans_132_2"></string>
-    <string name="ans_132_3"></string>
-    <string name="ans_132_4"></string>
+    <string name="ques_132">Biển nào dưới đây các phương tiện không được phép đi vào?</string>
+    <string name="explain_132">Biển 1: Biển báo đường cấm tất cả các loại phương tiện. Biển 2: Biển báo cấm đi ngược chiều. Biển 3: Biển báo cấm đỗ xe. Vì vậy chọn Biển 1 và Biển 2.</string>
+    <string name="ans_132_1">Biển 1.</string>
+    <string name="ans_132_2">Biển 2.</string>
+    <string name="ans_132_3">Biển 1 và 2.</string>
     //cau 133
-    <string name="ques_133"></string>
-    <string name="explain_133"></string>
-    <string name="ans_133_1"></string>
-    <string name="ans_133_2"></string>
-    <string name="ans_133_3"></string>
-    <string name="ans_133_4"></string>
+    <string name="ques_133">Khi gặp biển nào xe ưu tiên theo luật định vẫn phải dừng lại?</string>
+    <string name="explain_133">Biển báo cấm STOP có ý nghĩa bắt buộc đối với các phương tiện xe cơ giới và phương tiện xe thô sơ kể cả các phương tiện xe cơ giới được ưu tiên theo quy định của nhà nước phải dừng lại trước biển báo này hay trước vạch kẻ ngang đường. Người tham gia giao thông chỉ được phép đi tiếp khi có tín hiệu đèn, cờ hay tín hiệu của người điều khiển giao thông cho phép được đi tiếp.</string>
+    <string name="ans_133_1">Biển 1.</string>
+    <string name="ans_133_2">Biển 2.</string>
+    <string name="ans_133_3">Cả ba biển.</string>
     //cau 134
-    <string name="ques_134"></string>
-    <string name="explain_134"></string>
-    <string name="ans_134_1"></string>
-    <string name="ans_134_2"></string>
-    <string name="ans_134_3"></string>
-    <string name="ans_134_4"></string>
+    <string name="ques_134">Biển nào cấm tất cả các loại xe cơ giới và thô sơ đi lại trên đường, trừ xe ưu tiên theo luật định (nếu đường vẫn cho xe chạy được)?</string>
+    <string name="explain_134">Biển 1: Biển đường cấm là biển báo giao thông báo đường cấm tất cả các loại phương tiện (cơ giới và thô sơ) đi lại cả hai hướng, trừ các xe được ưu tiên theo quy định. Biển 2: Biển báo cấm STOP có ý nghĩa bắt buộc đối với các phương tiện xe cơ giới và phương tiện xe thô sơ kể cả các phương tiện xe cơ giới được ưu tiên theo quy định của nhà nước phải dừng lại trước biển báo này hay trước vạch kẻ ngang đường. Người tham gia giao thông chỉ được phép đi tiếp khi có tín hiệu đèn, cờ hay tín hiệu của người điều khiển giao thông cho phép được đi tiếp.</string>
+    <string name="ans_134_1">Biển 1.</string>
+    <string name="ans_134_2">Biển 2.</string>
+    <string name="ans_134_3">Cả hai biển.</string>
     //cau 135
-    <string name="ques_135"></string>
+    <string name="ques_135">Gặp biển nào xe xích lô được phép đi vào?</string>
     <string name="explain_135"></string>
-    <string name="ans_135_1"></string>
-    <string name="ans_135_2"></string>
-    <string name="ans_135_3"></string>
-    <string name="ans_135_4"></string>
+    <string name="ans_135_1">Biển 1.</string>
+    <string name="ans_135_2">Biển 2.</string>
+    <string name="ans_135_3">Biển 3.</string>
+    <string name="ans_135_4">Biển 1 và 2.</string>
     //cau 136
-    <string name="ques_136"></string>
+    <string name="ques_136">Gặp biển nào xe lam, xe xích lô máy được phép đi vào?</string>
     <string name="explain_136"></string>
-    <string name="ans_136_1"></string>
-    <string name="ans_136_2"></string>
-    <string name="ans_136_3"></string>
-    <string name="ans_136_4"></string>
+    <string name="ans_136_1">Biển 1.</string>
+    <string name="ans_136_2">Biển 2.</string>
+    <string name="ans_136_3">Biển 3.</string>
     //cau 137
-    <string name="ques_137"></string>
+    <string name="ques_137">Biển báo này có ý nghĩa như thế nào?</string>
     <string name="explain_137"></string>
-    <string name="ans_137_1"></string>
-    <string name="ans_137_2"></string>
-    <string name="ans_137_3"></string>
-    <string name="ans_137_4"></string>
+    <string name="ans_137_1">Tốc độ tối đa cho phép về ban đêm cho các phương tiện là 70 km/h.</string>
+    <string name="ans_137_2">Tốc độ tối thiểu cho phép về ban đêm cho các phương tiện là 70 km/h.</string>
     //cau 138
-    <string name="ques_138"></string>
+    <string name="ques_138">Chiều dài đoạn đường 500 m từ nơi đặt biển này, người lái xe có
+được phép bấm còi không?</string>
     <string name="explain_138"></string>
-    <string name="ans_138_1"></string>
-    <string name="ans_138_2"></string>
-    <string name="ans_138_3"></string>
-    <string name="ans_138_4"></string>
+    <string name="ans_138_1">Được phép.</string>
+    <string name="ans_138_2">Không được phép.</string>
     //cau 139
-    <string name="ques_139"></string>
-    <string name="explain_139"></string>
-    <string name="ans_139_1"></string>
-    <string name="ans_139_2"></string>
-    <string name="ans_139_3"></string>
-    <string name="ans_139_4"></string>
+    <string name="ques_139">Biển nào xe mô tô hai bánh không được đi vào?</string>
+    <string name="explain_139">Biển 1: Biển báo cấm xe ôtô không cấm xe môtô. Biển 2: Biển báo cấm xe môtô. Biển 3: Biển báo cấm xe tải không cấm xe mô tô. Vì vậy chọn Biển 2.</string>
+    <string name="ans_139_1">Biển 1.</string>
+    <string name="ans_139_2">Biển 2.</string>
+    <string name="ans_139_3">Biển 3.</string>
     //cau 140
-    <string name="ques_140"></string>
+    <string name="ques_140">Biển nào xe mô tô hai bánh được đi vào?</string>
     <string name="explain_140"></string>
-    <string name="ans_140_1"></string>
-    <string name="ans_140_2"></string>
-    <string name="ans_140_3"></string>
-    <string name="ans_140_4"></string>
+    <string name="ans_140_1">Biển 1 và 2.</string>
+    <string name="ans_140_2">Biển 1 và 3.</string>
+    <string name="ans_140_3">Biển 2 và 3.</string>
     //cau 141
-    <string name="ques_141"></string>
-    <string name="explain_141"></string>
-    <string name="ans_141_1"></string>
-    <string name="ans_141_2"></string>
-    <string name="ans_141_3"></string>
-    <string name="ans_141_4"></string>
+    <string name="ques_141">Gặp biển nào người lái xe phải nhường đường cho người đi bộ?</string>
+    <string name="explain_141">Biển 1 là biển cảnh báo dường người đi bộ cắt ngang, bắt buộc các phương tiện phải nhường đường. Biển 2 là biển cấm người đi bộ. Biển 3 là biển báo đường dành cho người đi bộ.</string>
+    <string name="ans_141_1">Biển 1.</string>
+    <string name="ans_141_2">Biển 2.</string>
+    <string name="ans_141_3">Biển 3.</string>
+    <string name="ans_141_4">Biển 1 và 3.</string>
     //cau 142
-    <string name="ques_142"></string>
+    <string name="ques_142">Biển nào chỉ đường dành cho người đi bộ, các loại xe không được
+đi vào khi gặp biển này?</string>
     <string name="explain_142"></string>
-    <string name="ans_142_1"></string>
-    <string name="ans_142_2"></string>
-    <string name="ans_142_3"></string>
-    <string name="ans_142_4"></string>
+    <string name="ans_142_1">Biển 1.</string>
+    <string name="ans_142_2">Biển 1 và 3.</string>
+    <string name="ans_142_3">Biển 3.</string>
+    <string name="ans_142_4">Cả ba biển.</string>
     //cau 143
-    <string name="ques_143"></string>
+    <string name="ques_143">Biển nào báo hiệu “Đường dành cho xe thô sơ”?</string>
     <string name="explain_143"></string>
-    <string name="ans_143_1"></string>
-    <string name="ans_143_2"></string>
-    <string name="ans_143_3"></string>
-    <string name="ans_143_4"></string>
+    <string name="ans_143_1">Biển 1.</string>
+    <string name="ans_143_2">Biển 2.</string>
+    <string name="ans_143_3">Biển 3.</string>
     //cau 144
-    <string name="ques_144"></string>
-    <string name="explain_144"></string>
-    <string name="ans_144_1"></string>
-    <string name="ans_144_2"></string>
-    <string name="ans_144_3"></string>
-    <string name="ans_144_4"></string>
+    <string name="ques_144">Biển nào (đặt trước ngã ba, ngã tư) cho phép xe được rẽ sang hướng khác?</string>
+    <string name="explain_144">Hai biển báo trên đều thuộc biển báo hiệu lệnh bắt buộc phải thi hành. Biển 1 bắt buộc phải đi thẳng, biển 2 chỉ được phép rẽ trái hoặc phải. Khi gặp biển này, các phương tiện không được phép rẽ sang hướng khác.</string>
+    <string name="ans_144_1">Biển 1</string>
+    <string name="ans_144_2">Biển 2</string>
+    <string name="ans_144_3">Không biển nào.</string>
     //cau 145
-    <string name="ques_145"></string>
+    <string name="ques_145">Trong các biển dưới đây biển nào là biển “Hết tốc độ tối đa cho
+phép”?</string>
     <string name="explain_145"></string>
-    <string name="ans_145_1"></string>
-    <string name="ans_145_2"></string>
-    <string name="ans_145_3"></string>
-    <string name="ans_145_4"></string>
+    <string name="ans_145_1">Biển 1</string>
+    <string name="ans_145_2">Biển 2</string>
+    <string name="ans_145_3">Biển 3</string>
+    <string name="ans_145_4">Cả ba biển.</string>
     //cau 146
-    <string name="ques_146"></string>
+    <string name="ques_146">Hiệu lực của biển “Tốc độ tối đa cho phép” hết tác dụng khi gặp
+biển nào dưới đây?</string>
     <string name="explain_146"></string>
-    <string name="ans_146_1"></string>
-    <string name="ans_146_2"></string>
-    <string name="ans_146_3"></string>
-    <string name="ans_146_4"></string>
+    <string name="ans_146_1">Biển 1</string>
+    <string name="ans_146_2">Biển 2</string>
+    <string name="ans_146_3">Biển 3</string>
+    <string name="ans_146_4">Biển 1 và 2.</string>
     //cau 147
-    <string name="ques_147"></string>
+    <string name="ques_147">Trong các biển dưới đây biển nào là biển “ Hết tốc độ tối thiểu”?</string>
     <string name="explain_147"></string>
-    <string name="ans_147_1"></string>
-    <string name="ans_147_2"></string>
-    <string name="ans_147_3"></string>
-    <string name="ans_147_4"></string>
+    <string name="ans_147_1">Biển 1</string>
+    <string name="ans_147_2">Biển 2</string>
+    <string name="ans_147_3">Biển 3</string>
+    <string name="ans_147_4">Cả ba biển.</string>
     //cau 148
-    <string name="ques_148"></string>
-    <string name="explain_148"></string>
-    <string name="ans_148_1"></string>
-    <string name="ans_148_2"></string>
-    <string name="ans_148_3"></string>
-    <string name="ans_148_4"></string>
+    <string name="ques_148">Biển nào dưới đây báo hiệu hết cấm vượt?</string>
+    <string name="explain_148">Biển 1: Hết hạn chế tốc độ tối đa. Biển 2: Hết tất cả lệnh cấm. Biển 3: Hết cấm vượt. Vì vậy chọn biển 2 và biển 3.</string>
+    <string name="ans_148_1">Biển 1</string>
+    <string name="ans_148_2">Biển 2</string>
+    <string name="ans_148_3">Biển 3</string>
+    <string name="ans_148_4">Biển 2 và 3.</string>
     //cau 149
-    <string name="ques_149"></string>
-    <string name="explain_149"></string>
-    <string name="ans_149_1"></string>
-    <string name="ans_149_2"></string>
-    <string name="ans_149_3"></string>
-    <string name="ans_149_4"></string>
+    <string name="ques_149">Trong các biển dưới đây biển nào là biển “Hết mọi lệnh cấm”?</string>
+    <string name="explain_149">Biển 1 là biển báo hết tốc độ tối đa. Biển 2 là biển báo \'hết mọi lệnh cấm'. Biển 3 là biển báo hết tốc độ tối thiểu.</string>
+    <string name="ans_149_1">Biển 1</string>
+    <string name="ans_149_2">Biển 2</string>
+    <string name="ans_149_3">Biển 3</string>
+    <string name="ans_149_4">Cả ba biển.</string>
     //cau 150
-    <string name="ques_150"></string>
+    <string name="ques_150">Biển nào báo hiệu “Nơi đỗ xe cho người tàn tật”?</string>
     <string name="explain_150"></string>
-    <string name="ans_150_1"></string>
-    <string name="ans_150_2"></string>
-    <string name="ans_150_3"></string>
-    <string name="ans_150_4"></string>
+    <string name="ans_150_1">Biển 1</string>
+    <string name="ans_150_2">Biển 2</string>
+    <string name="ans_150_3">Biển 3.</string>
     //cau 151
-    <string name="ques_151"></string>
+    <string name="ques_151">Biển nào cho phép xe rẽ trái?</string>
     <string name="explain_151"></string>
-    <string name="ans_151_1"></string>
-    <string name="ans_151_2"></string>
-    <string name="ans_151_3"></string>
-    <string name="ans_151_4"></string>
+    <string name="ans_151_1">Biển 1.</string>
+    <string name="ans_151_2">Biển 2.</string>
+    <string name="ans_151_3">Không biển nào.</string>
     //cau 152
-    <string name="ques_152"></string>
+    <string name="ques_152">Biển nào xe quay đầu không bị cấm?</string>
     <string name="explain_152"></string>
-    <string name="ans_152_1"></string>
-    <string name="ans_152_2"></string>
-    <string name="ans_152_3"></string>
-    <string name="ans_152_4"></string>
+    <string name="ans_152_1">Biển 1.</string>
+    <string name="ans_152_2">Biển 2.</string>
+    <string name="ans_152_3">Cả 2 biển.</string>
     //cau 153
-    <string name="ques_153"></string>
-    <string name="explain_153"></string>
-    <string name="ans_153_1"></string>
-    <string name="ans_153_2"></string>
-    <string name="ans_153_3"></string>
-    <string name="ans_153_4"></string>
+    <string name="ques_153">Biển báo nào báo hiệu bắt đầu đoạn đường vào phạm vi khu dân cư, các phương tiện tham gia giao thông phải tuân thủ các quy định đi đường được áp dụng ở khu đông dân cư?</string>
+    <string name="explain_153">Biển báo \'bắt đầu khu đông dân cư\' (R.420 - Biển 1) có hiệu lực từ vị trí đặt biển đối với tất cả các tuyến đường trong khu đông dân cư đến vị trí đặt biển báo \'hết khu đông dân cư' (R.421 - Biển 2).</string>
+    <string name="ans_153_1">Biển 1.</string>
+    <string name="ans_153_2">Biển 2.</string>
     //cau 154
-    <string name="ques_154"></string>
+    <string name="ques_154">Biển nào báo hiệu”Hướng đi thẳng phải theo”?</string>
     <string name="explain_154"></string>
-    <string name="ans_154_1"></string>
-    <string name="ans_154_2"></string>
-    <string name="ans_154_3"></string>
-    <string name="ans_154_4"></string>
+    <string name="ans_154_1">Biển 1</string>
+    <string name="ans_154_2">Biển 2.</string>
     //cau 155
-    <string name="ques_155"></string>
+    <string name="ques_155">Biển nào báo hiệu”Đường một chiều”?</string>
     <string name="explain_155"></string>
-    <string name="ans_155_1"></string>
-    <string name="ans_155_2"></string>
-    <string name="ans_155_3"></string>
-    <string name="ans_155_4"></string>
+    <string name="ans_155_1">Biển 1</string>
+    <string name="ans_155_2">Biển 2</string>
+    <string name="ans_155_3">Cả hai biển.</string>
     //cau 156
-    <string name="ques_156"></string>
-    <string name="explain_156"></string>
-    <string name="ans_156_1"></string>
-    <string name="ans_156_2"></string>
-    <string name="ans_156_3"></string>
-    <string name="ans_156_4"></string>
+    <string name="ques_156">Biển nào chỉ dẫn cho người đi bộ sử dụng cầu vượt qua đường?</string>
+    <string name="explain_156">Biển 1 là biển chỉ dẫn cầu vượt qua đường cho người đi bộ. Biển 2 là biển chỉ dẫn hầm chui qua đường cho người đi bộ</string>
+    <string name="ans_156_1">Biển 1</string>
+    <string name="ans_156_2">Biển 2</string>
+    <string name="ans_156_3">Cả 2 biển</string>
+    <string name="ans_156_4">Không biển nào.</string>
     //cau 157
-    <string name="ques_157"></string>
+    <string name="ques_157">Biển nào chỉ dẫn cho người đi bộ sử dụng hầm chui qua đường?</string>
     <string name="explain_157"></string>
-    <string name="ans_157_1"></string>
-    <string name="ans_157_2"></string>
-    <string name="ans_157_3"></string>
-    <string name="ans_157_4"></string>
+    <string name="ans_157_1">Biển 1</string>
+    <string name="ans_157_2">Biển 2</string>
+    <string name="ans_157_3">Cả 2 biển</string>
+    <string name="ans_157_4">Không biển nào.</string>
     //cau 158
-    <string name="ques_158"></string>
+    <string name="ques_158">Gặp biển báo này, người tham gia giao thông phải xử lý như thế
+nào?</string>
     <string name="explain_158"></string>
-    <string name="ans_158_1"></string>
-    <string name="ans_158_2"></string>
-    <string name="ans_158_3"></string>
-    <string name="ans_158_4"></string>
+    <string name="ans_158_1">Dừng xe tại khu vực có trạm Cảnh sát giao thông.</string>
+    <string name="ans_158_2">Tiếp tục lưu thông với tốc độ bình thường</string>
+    <string name="ans_158_3">Phải giảm tốc độ đến mức an toàn và không được vượt khi đi qua khu
+vực này.</string>
     //cau 159
-    <string name="ques_159"></string>
+    <string name="ques_159">Biển số 1 có ý nghĩa gì?</string>
     <string name="explain_159"></string>
-    <string name="ans_159_1"></string>
-    <string name="ans_159_2"></string>
-    <string name="ans_159_3"></string>
-    <string name="ans_159_4"></string>
+    <string name="ans_159_1">Đi thẳng hoặc rẽ trái trên cầu vượt</string>
+    <string name="ans_159_2">Đi thẳng hoặc rẽ phải trên cầu vượt</string>
+    <string name="ans_159_3">Báo hiệu cầu vượt liên thông.</string>
     //cau 160
-    <string name="ques_160"></string>
+    <string name="ques_160">/ Vạch kẻ đường nào dưới đây là vạch phân chia các làn xe cùng
+chiều?</string>
     <string name="explain_160"></string>
-    <string name="ans_160_1"></string>
-    <string name="ans_160_2"></string>
-    <string name="ans_160_3"></string>
-    <string name="ans_160_4"></string>
+    <string name="ans_160_1">Vạch 1</string>
+    <string name="ans_160_2">Vạch 2</string>
+    <string name="ans_160_3">Vạch 3</string>
+    <string name="ans_160_4">Vạch 1 và 2.</string>
     //cau 161
-    <string name="ques_161"></string>
-    <string name="explain_161"></string>
-    <string name="ans_161_1"></string>
-    <string name="ans_161_2"></string>
-    <string name="ans_161_3"></string>
-    <string name="ans_161_4"></string>
+    <string name="ques_161">Vạch kẻ đường nào dưới đây là vạch phân chia hai chiều xe chạy ( vạch tim đường), xe không được lấn làn, không được đè lên vạch?</string>
+    <string name="explain_161">Vạch 1: Vạch phân chia các làn xe cùng chiều, dạng vạch đơn, đứt nứt. Vạch 2: Vạch phân chia hai chiều xe chạy, dạng vạch đơn, nét liền. Vạch 3: Vạch phân chia các làn xe cùng chiều, dạng vạch đơn, nét liền. Vì vậy chọn vạch 2.</string>
+    <string name="ans_161_1">Vạch 1</string>
+    <string name="ans_161_2">Vạch 2</string>
+    <string name="ans_161_3">Vạch 3</string>
+    <string name="ans_161_4">Cả 3 vạch.</string>
     //cau 162
-    <string name="ques_162"></string>
-    <string name="explain_162"></string>
-    <string name="ans_162_1"></string>
-    <string name="ans_162_2"></string>
-    <string name="ans_162_3"></string>
-    <string name="ans_162_4"></string>
+    <string name="ques_162">Vạch kẻ đường nào dưới đây là vạch phân chia hai chiều xe chạy( vạch tim đường)?</string>
+    <string name="explain_162">Vạch 1: Dạng vạch vàng đơn, đứt nét. Dùng để phân chia các làn đường ngược chiều, không có dải phân cách giữa. Xe được phép cắt qua để sử dụng làn ngược chiều từ cả hai phía. Vạch 2: Vạch trắng nét đứt dùng để phân chia các làn xe cùng chiều. Trong trường hợp này, xe được phép thực hiện việc chuyển làn đường qua vạch. Vạch 3: Ý nghĩa tương tự vạch vàng nét đứt, nhưng với nét liền, xe không được lấn làn hoặc đè lên vạch. Vạch này thường sử dụng ở đoạn đường không đảm bảo tầm nhìn vượt xe, nguy cơ tai nạn giao thông đối đầu lớn.</string>
+    <string name="ans_162_1">Vạch 1</string>
+    <string name="ans_162_2">Vạch 2</string>
+    <string name="ans_162_3">Vạch 3</string>
+    <string name="ans_162_4">Vạch 1 và 3.</string>
     //cau 163
-    <string name="ques_163"></string>
-    <string name="explain_163"></string>
-    <string name="ans_163_1"></string>
-    <string name="ans_163_2"></string>
-    <string name="ans_163_3"></string>
-    <string name="ans_163_4"></string>
+    <string name="ques_163">Các vạch dưới đây có tác dụng gì?</string>
+    <string name="explain_163">Vạch 1: Dạng vạch vàng đơn, đứt nét. Dùng để phân chia các làn đường ngược chiều, không có dải phân cách giữa. Xe được phép cắt qua để sử dụng làn ngược chiều từ cả hai phía. Vạch 2: Ý nghĩa tương tự vạch vàng nét đứt, nhưng với nét liền, xe không được lấn làn hoặc đè lên vạch. Vạch này thường sử dụng ở đoạn đường không đảm bảo tầm nhìn vượt xe, nguy cơ tai nạn giao thông đối đầu lớn. Vạch 3: Dùng để phân chia hai chiều xe chạy cho đường có từ 4 làn xe trở lên, không có dải phân cách giữa, xe không được lấn làn, không được đè lên vạch. Vạch này thường sử dụng ở đoạn đường không đảm bảo tầm nhìn vượt xe, nguy cơ tai nạn giao thông đối đầu lớn hoặc ở các vị trí cần thiết khác. Cả 3 vạch trên đều có chức năng phân chia hai chiều xe chạy ngược chiều nhau.</string>
+    <string name="ans_163_1">Phân chia hai chiều xe chạy ngược nhiều nhau</string>
+    <string name="ans_163_2">Phân chia các làn xe chạy cùng chiều nhau.</string>
     //cau 164
-    <string name="ques_164"></string>
+    <string name="ques_164">Khi gặp vạch kẻ đường nào các xe được phép đè vạch?</string>
     <string name="explain_164"></string>
-    <string name="ans_164_1"></string>
-    <string name="ans_164_2"></string>
-    <string name="ans_164_3"></string>
-    <string name="ans_164_4"></string>
+    <string name="ans_164_1">Vạch 1</string>
+    <string name="ans_164_2">Vạch 2</string>
+    <string name="ans_164_3">Vạch 3</string>
+    <string name="ans_164_4">Vạch 1 và vạch 3</string>
     //cau 165
-    <string name="ques_165"></string>
+    <string name="ques_165">Vạch dưới đây có ý nghĩa gì?</string>
     <string name="explain_165"></string>
-    <string name="ans_165_1"></string>
-    <string name="ans_165_2"></string>
-    <string name="ans_165_3"></string>
-    <string name="ans_165_4"></string>
+    <string name="ans_165_1">Vị trí dừng xe của các phương tiện vận tải hành khách công cộng</string>
+    <string name="ans_165_2">Báo cho người điều khiển được dừng phương tiện trong phạm vi phần mặt
+đường có bố trí vạch để tránh ùn tắc giao thông.</string>
+    <string name="ans_165_3">Dùng để xác định vị trí giữa các phương tiện trên đường.</string>
     //cau 166
-    <string name="ques_166"></string>
+    <string name="ques_166">Các xe đi như thế nào là đúng quy tắc giao thông?</string>
     <string name="explain_166"></string>
-    <string name="ans_166_1"></string>
-    <string name="ans_166_2"></string>
-    <string name="ans_166_3"></string>
-    <string name="ans_166_4"></string>
+    <string name="ans_166_1">Các xe phía tay phải và tay trái của người điều khiển được phép đi thẳng</string>
+    <string name="ans_166_2">Cho phép các xe ở mọi hướng được rẽ phải</string>
+    <string name="ans_166_3">Tất cả các xe phải dừng lại trước ngã tư, trừ những xe đã ở trong ngã tư
+được phép tiếp tục đi.</string>
     //cau 167
-    <string name="ques_167"></string>
+    <string name="ques_167">Theo hướng mũi tên, xe nào được phép đi?</string>
     <string name="explain_167"></string>
-    <string name="ans_167_1"></string>
-    <string name="ans_167_2"></string>
-    <string name="ans_167_3"></string>
-    <string name="ans_167_4"></string>
+    <string name="ans_167_1">Mô tô, xe con</string>
+    <string name="ans_167_2">Xe con, xe tải</string>
+    <string name="ans_167_3">Mô tô, xe tải</string>
+    <string name="ans_167_4">Cả ba xe.</string>
     //cau 168
-    <string name="ques_168"></string>
-    <string name="explain_168"></string>
-    <string name="ans_168_1"></string>
-    <string name="ans_168_2"></string>
-    <string name="ans_168_3"></string>
-    <string name="ans_168_4"></string>
+    <string name="ques_168">Trong trường hợp này, thứ tự các xe đi như thế nào là đúng quy tắc giao thông?</string>
+    <string name="explain_168">Vì ở hình trên xuất hiện những xe ưu tiên theo luật định, cho nên những xe ưu tiên được quyền đi trước rồi tới những xe khác. Xét theo quy định thứ tự các xe ưu tiên sẽ là Hỏa (Cứu Hỏa) -> Sự (Quân Sự) -> Công (Công An) -> Thương (Cứu Thương). Vì thế trình tự theo đáp án 2 là chính xác.</string>
+    <string name="ans_168_1">Xe công an, xe quân sự, xe con + mô tô</string>
+    <string name="ans_168_2">Xe quân sự, xe công an, xe con + mô tô</string>
+    <string name="ans_168_3">Xe mô tô + xe con, xe quân sự, xe công an.</string>
     //cau 169
-    <string name="ques_169"></string>
-    <string name="explain_169"></string>
-    <string name="ans_169_1"></string>
-    <string name="ans_169_2"></string>
-    <string name="ans_169_3"></string>
-    <string name="ans_169_4"></string>
+    <string name="ques_169">Xe nào được quyền đi trước trong trường hợp này?</string>
+    <string name="explain_169">Thứ tự xét xe đi trong sa hình: Thứ 1. Xe nào nằm trong giao lộ xe đó được quyền đi trước. Thứ 2. Xe ưu tiên: xe cứu hỏa, xe quân sự, xe công an, xe cứu thương. Thứ 3. Xe ở trên Đường ưu tiên. Thứ 4. Quy tắc bên phải trống ( bên tay phải xe nào trống xe đó đi trước). Thứ 5: Rẽ phải, đi thẳng, rẽ trái. Vì xe cứu thương ở thứ tự thứ 2 nên sẽ đi trước xe mô tô.</string>
+    <string name="ans_169_1">Xe mô tô</string>
+    <string name="ans_169_2">Xe cứu thương.</string>
     //cau 170
-    <string name="ques_170"></string>
-    <string name="explain_170"></string>
-    <string name="ans_170_1"></string>
-    <string name="ans_170_2"></string>
-    <string name="ans_170_3"></string>
-    <string name="ans_170_4"></string>
+    <string name="ques_170">Theo tín hiệu đèn, xe nào được phép đi?</string>
+    <string name="explain_170">Chỉ cần chú ý đèn báo hiệu, chúng ta sẽ thấy đèn xanh ở phía xe khách và xe con được phép đi. Xe mô tô đang đứng ở đèn đỏ nên sẽ phải dừng lại.</string>
+    <string name="ans_170_1">Xe con và xe khách</string>
+    <string name="ans_170_2">Mô tô.</string>
     //cau 171
-    <string name="ques_171"></string>
-    <string name="explain_171"></string>
-    <string name="ans_171_1"></string>
-    <string name="ans_171_2"></string>
-    <string name="ans_171_3"></string>
-    <string name="ans_171_4"></string>
+    <string name="ques_171">Xe nào được quyền đi trước trong trường hợp này?</string>
+    <string name="explain_171">Theo quy tắc giải sa hình, dựa theo nguyên tắc giải sa hình theo hướng đi. Những xe đi theo hướng thẳng, rẽ phải xe đi trước còn xe rẽ sang bên trái sẽ đi sau. Vì thế hình trên, xe mô tô được phép đi trước. Các bạn xem lại video giải sa hình để dễ hình dung hơn.</string>
+    <string name="ans_171_1">Xe con</string>
+    <string name="ans_171_2">Xe mô tô</string>
     //cau 172
-    <string name="ques_172"></string>
-    <string name="explain_172"></string>
-    <string name="ans_172_1"></string>
-    <string name="ans_172_2"></string>
-    <string name="ans_172_3"></string>
-    <string name="ans_172_4"></string>
+    <string name="ques_172">Các xe đi theo hướng mũi tên, xe nào chấp hành đúng quy tắc giao thông?</string>
+    <string name="explain_172">Chú ý kỹ đến đèn báo giao thông, đèn báo màu xanh sẽ được phép đi và đèn báo đỏ bắt buộc phải dừng lại. Chỉ có mỗi xe khách và mô tô là đi đúng quy tắc giao thông. Trường hợp này không áp dụng mẹo thi sa hình liên quan những câu hỏi nào có xe con chúng ta sẽ loại trừ đi đáp án đó.</string>
+    <string name="ans_172_1">Xe tải, mô tô</string>
+    <string name="ans_172_2">Xe khách, mô tô</string>
+    <string name="ans_172_3">Xe tải, xe con</string>
+    <string name="ans_172_4">Mô tô, xe con.</string>
     //cau 173
-    <string name="ques_173"></string>
+    <string name="ques_173">Trong hình dưới đây, xe nào chấp hành đúng quy tắc giao thông?</string>
     <string name="explain_173"></string>
-    <string name="ans_173_1"></string>
-    <string name="ans_173_2"></string>
-    <string name="ans_173_3"></string>
-    <string name="ans_173_4"></string>
+    <string name="ans_173_1">Chỉ xe khách, mô tô</string>
+    <string name="ans_173_2">Tất cả các loại xe trên</string>
+    <string name="ans_173_3">Không xe nào chấp hành đúng quy tắc giao thông.</string>
     //cau 174
-    <string name="ques_174"></string>
-    <string name="explain_174"></string>
-    <string name="ans_174_1"></string>
-    <string name="ans_174_2"></string>
-    <string name="ans_174_3"></string>
-    <string name="ans_174_4"></string>
+    <string name="ques_174">Các xe đi theo hướng mũi tên, xe nào vi phạm quy tắc giao thông?</string>
+    <string name="explain_174">Áp dụng mẹo thi sa hình, những câu hỏi nào có xe con chúng ta sẽ loại trừ đi đáp án đó.</string>
+    <string name="ans_174_1">Xe khách, xe tải, mô tô</string>
+    <string name="ans_174_2">Xe tải, xe con, mô tô</string>
+    <string name="ans_174_3">Xe khách, xe con, mô tô.</string>
     //cau 175
-    <string name="ques_175"></string>
+    <string name="ques_175">Các xe đi theo hướng mũi tên, xe nào vi phạm quy tắc giao thông?</string>
     <string name="explain_175"></string>
-    <string name="ans_175_1"></string>
-    <string name="ans_175_2"></string>
-    <string name="ans_175_3"></string>
-    <string name="ans_175_4"></string>
+    <string name="ans_175_1">Xe con</string>
+    <string name="ans_175_2">Xe tải</string>
+    <string name="ans_175_3">Xe con và xe tải.</string>
     //cau 176
-    <string name="ques_176"></string>
-    <string name="explain_176"></string>
-    <string name="ans_176_1"></string>
-    <string name="ans_176_2"></string>
-    <string name="ans_176_3"></string>
-    <string name="ans_176_4"></string>
+    <string name="ques_176">Các xe đi theo hướng mũi tên xe nào vi phạm quy tắc giao thông?</string>
+    <string name="explain_176">Mũi tên đỏ hướng xe đang di chuyển. Xe con đèn xanh rẽ phải đúng. Xe tải đèn đỏ đi thẳng sai. Xe khách làn đường bắt buộc rẽ trái mà đi thẳng sai. Xe môtô đèn đỏ đi thẳng sai. Chọn xe khách, xe tải, môtô.</string>
+    <string name="ans_176_1">Xe con, xe tải, xe khách</string>
+    <string name="ans_176_2">Xe tải, xe khách, xe mô tô</string>
+    <string name="ans_176_3">Xe khách, xe mô tô, xe con</string>
+    <string name="ans_176_4">Cả bốn xe.</string>
     //cau 177
-    <string name="ques_177"></string>
+    <string name="ques_177">Các xe đi theo hướng mũi tên, xe nào vi phạm quy tắc giao thông?</string>
     <string name="explain_177"></string>
-    <string name="ans_177_1"></string>
-    <string name="ans_177_2"></string>
-    <string name="ans_177_3"></string>
-    <string name="ans_177_4"></string>
+    <string name="ans_177_1">Xe tải, xe con</string>
+    <string name="ans_177_2">Xe khách, xe con</string>
+    <string name="ans_177_3">Xe khách, xe tải.</string>>
     //cau 178
-    <string name="ques_178"></string>
+    <string name="ques_178">Thứ tự các xe đi như thế nào là đúng quy tắc giao thông?</string>
     <string name="explain_178"></string>
-    <string name="ans_178_1"></string>
-    <string name="ans_178_2"></string>
-    <string name="ans_178_3"></string>
-    <string name="ans_178_4"></string>
+    <string name="ans_178_1">Xe tải, xe khách, xe con, mô tô.</string>
+    <string name="ans_178_2">Xe tải, mô tô, xe khách, xe con.</string>
+    <string name="ans_178_3">xe khách, xe tải, xe con, mô tô.</string>
+    <string name="ans_178_4">Mô tô, xe khách, xe tải, xe con.</string>
     //cau 179
-    <string name="ques_179"></string>
+    <string name="ques_179">Xe nào được quyền đi trước trong trường hợp này?</string>
     <string name="explain_179"></string>
-    <string name="ans_179_1"></string>
-    <string name="ans_179_2"></string>
-    <string name="ans_179_3"></string>
-    <string name="ans_179_4"></string>
+    <string name="ans_179_1">Xe mô tô</string>
+    <string name="ans_179_2">Xe con</string>
     //cau 180
-    <string name="ques_180"></string>
-    <string name="explain_180"></string>
-    <string name="ans_180_1"></string>
-    <string name="ans_180_2"></string>
-    <string name="ans_180_3"></string>
-    <string name="ans_180_4"></string>
+    <string name="ques_180">Các xe đi theo thứ tự nào là đúng quy tắc giao thông đường bộ?</string>
+    <string name="explain_180">Trong sa hình chúng ta sẽ chú ý kỹ đến phần biển báo tam giác ngược màu vàng, đây là biển báo giao nhau với đường ưu tiên nên bắt buộc chúng ta sẽ nhường đường (đi sau cùng). Và kèm theo bên dưới có 1 biển báo phụ, chỉ dẫn ưu tiên nhường đường cho xe rẽ trái. Vì thế xe mô tô sẽ được đi trước xe ô tô, và xe của chúng ta sẽ phải đi sau cùng.</string>
+    <string name="ans_180_1">Xe của bạn, mô tô, xe con</string>
+    <string name="ans_180_2">Xe con, xe của bạn, mô tô</string>
+    <string name="ans_180_3">Mô tô, xe con, xe của bạn.</string>
     //cau 181
-    <string name="ques_181"></string>
+    <string name="ques_181">Trong trường hợp này xe nào đỗ vi phạm quy tắc giao thông?</string>
     <string name="explain_181"></string>
-    <string name="ans_181_1"></string>
-    <string name="ans_181_2"></string>
-    <string name="ans_181_3"></string>
-    <string name="ans_181_4"></string>
+    <string name="ans_181_1">Xe tải</string>
+    <string name="ans_181_2">Xe con và mô tô</string>
+    <string name="ans_181_3">Cả ba xe</string>
+    <string name="ans_181_4">Xe con và xe tải.</string>
     //cau 182
-    <string name="ques_182"></string>
+    <string name="ques_182">Xe nào đỗ vi phạm quy tắc giao thông?</string>
     <string name="explain_182"></string>
-    <string name="ans_182_1"></string>
-    <string name="ans_182_2"></string>
-    <string name="ans_182_3"></string>
-    <string name="ans_182_4"></string>
+    <string name="ans_182_1">Cả hai xe</string>
+    <string name="ans_182_2">Không xe nào vi phạm</string>
+    <string name="ans_182_3">Chỉ xe mô tô vi phạm</string>
+    <string name="ans_182_4">Chỉ xe tải vi phạm.</string>
     //cau 183
-    <string name="ques_183"></string>
+    <string name="ques_183">Xe nào đỗ vi phạm quy tắc giao thông?</string>
     <string name="explain_183"></string>
-    <string name="ans_183_1"></string>
-    <string name="ans_183_2"></string>
-    <string name="ans_183_3"></string>
-    <string name="ans_183_4"></string>
+    <string name="ans_183_1">Chỉ mô tô</string>
+    <string name="ans_183_2">Chỉ xe tải</string>
+    <string name="ans_183_3">Cả 3 xe</string>
+    <string name="ans_183_4">Chỉ mô tô và xe tải.</string>
     //cau 184
-    <string name="ques_184"></string>
+    <string name="ques_184">Thứ tự các xe đi như thế nào là đúng quy tắc giao thông?</string>
     <string name="explain_184"></string>
-    <string name="ans_184_1"></string>
-    <string name="ans_184_2"></string>
-    <string name="ans_184_3"></string>
-    <string name="ans_184_4"></string>
+    <string name="ans_184_1">Xe tải, xe con, mô tô</string>
+    <string name="ans_184_2">Xe con, xe tải, mô tô</string>
+    <string name="ans_184_3">Mô tô, xe con, xe tải</string>
+    <string name="ans_184_4">Xe con, mô tô, xe tải.</string>
     //cau 185
-    <string name="ques_185"></string>
-    <string name="explain_185"></string>
-    <string name="ans_185_1"></string>
-    <string name="ans_185_2"></string>
-    <string name="ans_185_3"></string>
-    <string name="ans_185_4"></string>
+    <string name="ques_185">Thứ tự các xe đi như thế nào là đúng quy tắc giao thông?</string>
+    <string name="explain_185">Ở hình trên, chúng ta không thấy các tín hiệu về xe ưu tiên, biển báo nên sẽ giải theo quy tắc xe nào bên phải trống xe đó được đi trước.</string>
+    <string name="ans_185_1">Xe con (A), mô tô, xe con (B), xe đạp</string>
+    <string name="ans_185_2">Xe con (B), xe đạp, mô tô, xe con (A)</string>
+    <string name="ans_185_3">Xe con (A), xe con (B), mô tô + xe đạp</string>
+    <string name="ans_185_4">Mô tô + xe đạp, xe con (A), xe con (B).</string>
     //cau 186
-    <string name="ques_186"></string>
+    <string name="ques_186">Thứ tự các xe đi như thế nào là đúng quy tắc giao thông?</string>
     <string name="explain_186"></string>
-    <string name="ans_186_1"></string>
-    <string name="ans_186_2"></string>
-    <string name="ans_186_3"></string>
-    <string name="ans_186_4"></string>
+    <string name="ans_186_1">Xe khách, xe tải, mô tô, xe con.</string>
+    <string name="ans_186_2">Xe con, xe khách, xe tải, mô tô</string>
+    <string name="ans_186_3">Mô tô, xe tải, xe khách, xe con.</string>
+    <string name="ans_186_4">Mô tô, xe tải, xe con, xe khách.</string>
     //cau 187
-    <string name="ques_187"></string>
+    <string name="ques_187">Theo hướng mũi tên, những hướng nào xe gắn máy đi được?</string>
     <string name="explain_187"></string>
-    <string name="ans_187_1"></string>
-    <string name="ans_187_2"></string>
-    <string name="ans_187_3"></string>
-    <string name="ans_187_4"></string>
+    <string name="ans_187_1">Cả ba hướng</string>
+    <string name="ans_187_2">Chỉ hướng 1 và 3</string>
+    <string name="ans_187_3">Chỉ hướng 1.</string>
     //cau 188
-    <string name="ques_188"></string>
-    <string name="explain_188"></string>
-    <string name="ans_188_1"></string>
-    <string name="ans_188_2"></string>
-    <string name="ans_188_3"></string>
-    <string name="ans_188_4"></string>
+    <string name="ques_188">Theo hướng mũi tên, những hướng nào xe mô tô được phép đi?</string>
+    <string name="explain_188">Trên hình, Hướng 2 có biển báo cấm xe mô tô đi vào. Hướng 1 không có biển cấm. Hướng 3 cấm xe ô tô không cấm xe mô tô. Vì vậy chọn hướng 1 và hướng 3.</string>
+    <string name="ans_188_1">Cả ba hướng</string>
+    <string name="ans_188_2">Hướng 1 và 2</string>
+    <string name="ans_188_3">Hướng 1 và 3</string>
+    <string name="ans_188_4">Hướng 2 và 3.</string>
     //cau 189
-    <string name="ques_189"></string>
+    <string name="ques_189">Trường hợp này xe nào được quyền đi trước?</string>
     <string name="explain_189"></string>
-    <string name="ans_189_1"></string>
-    <string name="ans_189_2"></string>
-    <string name="ans_189_3"></string>
-    <string name="ans_189_4"></string>
+    <string name="ans_189_1">Xe mô tô</string>
+    <string name="ans_189_2">Xe con.</string>
     //cau 190
-    <string name="ques_190"></string>
+    <string name="ques_190">Bạn có được phép vượt xe mô tô phía trước không?</string>
     <string name="explain_190"></string>
-    <string name="ans_190_1"></string>
-    <string name="ans_190_2"></string>
-    <string name="ans_190_3"></string>
-    <string name="ans_190_4"></string>
+    <string name="ans_190_1">Cho phép</string>
+    <string name="ans_190_2">Không được vượt.</string>
     //cau 191
-    <string name="ques_191"></string>
+    <string name="ques_191">Theo tín hiệu đèn của xe cơ giới, xe nào vi phạm quy tắc giao thông?</string>
     <string name="explain_191"></string>
-    <string name="ans_191_1"></string>
-    <string name="ans_191_2"></string>
-    <string name="ans_191_3"></string>
-    <string name="ans_191_4"></string>
+    <string name="ans_191_1">Xe mô tô</string>
+    <string name="ans_191_2">Xe ô tô con</string>
+    <string name="ans_191_3">Không xe nào vi phạm</string>
+    <string name="ans_191_4">Cả hai xe.</string>
     //cau 192
-    <string name="ques_192"></string>
-    <string name="explain_192"></string>
-    <string name="ans_192_1"></string>
-    <string name="ans_192_2"></string>
-    <string name="ans_192_3"></string>
-    <string name="ans_192_4"></string>
+    <string name="ques_192">Xe tải kéo mô tô ba bánh như hình này có đúng quy tắc giao thông không?</string>
+    <string name="explain_192">Trong hình, có biển báo cấm xe kéo nên trường hợp này không đúng quy tắc giao thông</string>
+    <string name="ans_192_1">Đúng</string>
+    <string name="ans_192_2">Không đúng.</string>
     //cau 193
-    <string name="ques_193"></string>
-    <string name="explain_193"></string>
-    <string name="ans_193_1"></string>
-    <string name="ans_193_2"></string>
-    <string name="ans_193_3"></string>
-    <string name="ans_193_4"></string>
+    <string name="ques_193">Trong hình dưới, những xe nào vi phạm quy tắc giao thông?</string>
+    <string name="explain_193">Chú ý kỹ đến biển báo chỉ dẫn, chúng ta sẽ thấy xe mô tô (C) đang đi vào làn của xe mô tô và xe ô tô (E) đang đi vào làn của xe mô tô. Các xe khác đi đúng làn đường.</string>
+    <string name="ans_193_1">Xe con ( E ), mô tô ( C )</string>
+    <string name="ans_193_2">Xe tải ( A ), mô tô ( D )</string>
+    <string name="ans_193_3">Xe khách ( B ), mô tô ( C )</string>
+    <string name="ans_193_4">Xe khách ( B ), mô tô ( D ).</string>
     //cau 194
-    <string name="ques_194"></string>
+    <string name="ques_194">Trong hình dưới những xe nào vi phạm quy tắc giao thông?</string>
     <string name="explain_194"></string>
-    <string name="ans_194_1"></string>
-    <string name="ans_194_2"></string>
-    <string name="ans_194_3"></string>
-    <string name="ans_194_4"></string>
+    <string name="ans_194_1">Xe con (B), mô tô (C)</string>
+    <string name="ans_194_2">Xe con (A), mô tô (C)</string>
+    <string name="ans_194_3">Xe con (E), mô tô (D)</string>
+    <string name="ans_194_4">Tất cả các loại xe trên.</string>
     //cau 195
-    <string name="ques_195"></string>
+    <string name="ques_195">Xe nào vi phạm quy tắc giao thông?</string>
     <string name="explain_195"></string>
-    <string name="ans_195_1"></string>
-    <string name="ans_195_2"></string>
-    <string name="ans_195_3"></string>
-    <string name="ans_195_4"></string>
+    <string name="ans_195_1">Xe khách</string>
+    <string name="ans_195_2">Mô tô</string>
+    <string name="ans_195_3">Xe con</string>
+    <string name="ans_195_4">Xe con và mô tô.</string>
     //cau 196
-    <string name="ques_196"></string>
+    <string name="ques_196">Các xe đi theo thứ nào là đúng quy tắc giao thông đường bộ?</string>
     <string name="explain_196"></string>
-    <string name="ans_196_1"></string>
-    <string name="ans_196_2"></string>
-    <string name="ans_196_3"></string>
-    <string name="ans_196_4"></string>
+    <string name="ans_196_1">Xe của bạn, mô tô, xe con</string>
+    <string name="ans_196_2">Xe con, xe của bạn, mô tô</string>
+    <string name="ans_196_3">Mô tô, xe con, xe của bạn.</string>
     //cau 197
-    <string name="ques_197"></string>
+    <string name="ques_197">Bạn xử lý như thế nào trong trường hợp này?</string>
     <string name="explain_197"></string>
-    <string name="ans_197_1"></string>
-    <string name="ans_197_2"></string>
-    <string name="ans_197_3"></string>
-    <string name="ans_197_4"></string>
+    <string name="ans_197_1">Tăng tốc độ, rẽ phải trước xe tải và xe đạp</string>
+    <string name="ans_197_2">Giảm tốc độ, rẽ phải sau xe tải và xe đạp</string>
+    <string name="ans_197_3">Tăng tốc độ, rẽ phải trước xe đạp.</string>
     //cau 198
-    <string name="ques_198"></string>
+    <string name="ques_198">Xe nào dừng đúng theo quy tắc giao thông?</string>
     <string name="explain_198"></string>
-    <string name="ans_198_1"></string>
-    <string name="ans_198_2"></string>
-    <string name="ans_198_3"></string>
-    <string name="ans_198_4"></string>
+    <string name="ans_198_1">Xe con</string>
+    <string name="ans_198_2">Xe mô tô</string>
+    <string name="ans_198_3">Cả 2 xe đều đúng.</string>
     //cau 199
-    <string name="ques_199"></string>
+    <string name="ques_199">Xe của bạn đang di chuyển gần đến khu vực giao cắt với đường sắt,
+khi rào chắn đang dịch chuyển, bạn điều khiển xe như thế nào là đúng quy
+tắc giao thông?</string>
     <string name="explain_199"></string>
-    <string name="ans_199_1"></string>
-    <string name="ans_199_2"></string>
-    <string name="ans_199_3"></string>
-    <string name="ans_199_4"></string>
+    <string name="ans_199_1">Quan sát nếu thấy không có tàu thì tăng tốc, cho xe vượt qua đường sắt</string>
+    <string name="ans_199_2">Dừng lại trước rào chắn một khoảng cách an toàn</string>
+    <string name="ans_199_3">Ra tín hiệu, yêu cầu người gác chắn tàu kéo chậm Barie để xe bạn qua.</string>
     //cau 200
-    <string name="ques_200"></string>
+    <string name="ques_200">Trong tình huống dưới đây, xe đầu kéo kéo rơ móoc (xe container)
+đang rẽ phải, xe con màu xanh và xe máy phía sau xe container đi như thế
+nào để đảm bảo an toàn?</string>
     <string name="explain_200"></string>
-    <string name="ans_200_1"></string>
-    <string name="ans_200_2"></string>
-    <string name="ans_200_3"></string>
-    <string name="ans_200_4"></string>
+    <string name="ans_200_1">Vượt về phía bên phải để đi tiếp</string>
+    <string name="ans_200_2">Giảm tốc độ chờ xe container rẽ xong rồi tiếp tục đi</string>
+    <string name="ans_200_3">Vượt về phía bên trái để đi tiếp.</string>
 
 </resources>
