@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ÔnThiGPLXA1">
-        <activity android:name=".TrafficSignsActivity"></activity>
+        <activity android:name=".view.TrafficSignsActivity"></activity>
         <activity android:name=".view.HomeActivity" />
         <activity android:name=".view.DoExamActivity" />
         <activity android:name=".view.ListExamActivity" />

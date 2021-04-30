@@ -8,7 +8,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.nthigplxa1.BuildConfig
 import com.example.nthigplxa1.R
-import com.example.nthigplxa1.TrafficSignsActivity
 import com.example.nthigplxa1.adapter.ItemHomeListener
 import com.example.nthigplxa1.adapter.ListHomeAdapter
 import com.example.nthigplxa1.model.Home

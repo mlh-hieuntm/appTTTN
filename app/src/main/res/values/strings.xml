@@ -192,6 +192,7 @@
     <string name="ans_31_1">Bất cứ đèn nào miễn là mắt nhìn rõ phía trước</string>
     <string name="ans_31_2">Chỉ bật đèn chiếu xa (đèn pha) khi không nhìn rõ đường</string>
     <string name="ans_31_3">Đèn chiếu xa (đèn pha) khi đường vắng, đèn pha chiếu gần (đèn cốt) khi có xe đi ngược chiều.</string>
+    <string name="ans_31_4">Đèn chiếu gần (đèn cốt).</string>
     //cau 32
     <string name="ques_32">Khi lái xe trong khu đô thị và đông dân cư trừ các khu vực có biển cấm sử dụng còi, người lái xe được sử dụng còi như thế nào trong các trường hợp dưới đây?</string>
     <string name="explain_32">Chỉ được phép sử dụng còi từ: 5 giờ sáng đến 22 giờ tối trong khu đô thị và đông dân cư.</string>
