@@ -1456,21 +1456,7 @@ class ListExamActivity : AppCompatActivity(),
     override fun onClick(v: View?) {
         when (v?.id) {
             R.id.btn_backListExam -> {
-                mDialog = MaterialDialog(this)
-                    .noAutoDismiss()
-                    .customView(R.layout.dialog_confirm_delete)
-                mDialog.window?.setDimAmount(0F)
-                mDialog.setCancelable(false)
-                mDialog.tv_TitleOfCustomDialogConfirm.text = "Bạn có muốn quay lại?"
-                mDialog.btn_AcceptDiaLogConFirm.setOnClickListener() {
-                    this.finish()
-                }
-                mDialog.btn_CancelDialogConfirm.setOnClickListener {
-                    cl_list_exam_activity.alpha = 1F
-                    mDialog.dismiss()
-                }
-                cl_list_exam_activity.alpha = 0.2F
-                mDialog.show()
+                this.finish()
             }
             R.id.btn_addExam -> {
                 mDialog = MaterialDialog(this)
