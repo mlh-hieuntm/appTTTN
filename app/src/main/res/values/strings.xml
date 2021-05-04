@@ -99,7 +99,7 @@
     <string name="ans_15_3">Phần đường xe cơ giới.</string>
     //cau 16
     <string name="ques_16">“Làn đường” là gì?</string>
-    <string name="explain_16">Quy chuẩn kỹ thuật quốc gia QCVN 41:2016/BGTVT về báo hiệu đường bộ: \'Làn đường là một phần của phần đường xe chạy được chia theo chiều dọc của đường, có đủ bề rộng cho xe chạy an toàn. Một phần đường xe chạy có thể có một hoặc nhiều làn đường.'</string>
+    <string name="explain_16">Quy chuẩn kỹ thuật quốc gia QCVN 41:2016/BGTVT về báo hiệu đường bộ: \'Làn đường là một phần của phần đường xe chạy được chia theo chiều dọc của đường, có đủ bề rộng cho xe chạy an toàn. Một phần đường xe chạy có thể có một hoặc nhiều làn đường.\'</string>
     <string name="ans_16_1">Là một phần của phần đường xe chạy được chia theo chiều dọc của đường, sử dụng cho xe chạy</string>
     <string name="ans_16_2">Là một phần của phần đường xe chạy được chia theo chiều dọc của đường, có bề rộng đủ cho xe chạy an toàn</string>
     <string name="ans_16_3">Là đường cho xe ô tô chạy, dừng, đỗ an toàn.</string>
@@ -135,13 +135,13 @@
     <string name="ans_21_2">Gồm xe ô tô; máy kéo; rơ moóc hoặc sơ mi rơ moóc được kéo bởi xe ô tô, máy kéo; xe mô tô hai bánh; xe mô tô ba bánh, xe gắn máy (kể cả xe máy điện) và các loại xe tương tự.</string>
     //cau 22
     <string name="ques_22">Khái niệm “phương tiện giao thông thô sơ đường bộ” được hiểu thế nào là đúng?</string>
-    <string name="explain_22">Mẹo làm câu PT GT Thô Sơ hoặc PT GT Cơ Giới là tìm đáp án có đoạn \'các loại xe tương tự' để chọn là chắc chắn đúng.</string>
+    <string name="explain_22">Mẹo làm câu PT GT Thô Sơ hoặc PT GT Cơ Giới là tìm đáp án có đoạn \'các loại xe tương tự\' để chọn là chắc chắn đúng.</string>
     <string name="ans_22_1">Gồm xe đạp (kể cả xe đạp máy, xe đạp điện), xe xích lô, xe lăn dùng cho người khuyết tật, xe súc vật kéo và các loại xe tương tự</string>
     <string name="ans_22_2">Gồm xe đạp (kể cả xe đạp máy, xe đạp điện), xe gắn máy, xe cơ giới dùng cho người khuyết tật và xe máy chuyên dùng</string>
     <string name="ans_22_3">Gồm xe ô tô, máy kéo, rơ moóc hoặc sơ mi rơ moóc được kéo bởi xe ô tô, máy kéo.</string>
     //cau 23
     <string name="ques_23">“Phương tiện tham gia giao thông đường bộ” gồm những loại nào?</string>
-    <string name="explain_23">Tại Khoản 17 Điều 3 Luật giao thông đường bộ 2008 có quy định về vấn đề này như sau: \'Phương tiện tham gia giao thông đường bộ gồm phương tiện giao thông đường bộ và xe máy chuyên dùng'.</string>
+    <string name="explain_23">Tại Khoản 17 Điều 3 Luật giao thông đường bộ 2008 có quy định về vấn đề này như sau: \'Phương tiện tham gia giao thông đường bộ gồm phương tiện giao thông đường bộ và xe máy chuyên dùng\'.</string>
     <string name="ans_23_1">Phương tiện giao thông cơ giới đường bộ.</string>
     <string name="ans_23_2">Phương tiện giao thông thô sơ đường bộ và xe máy chuyên dùng.</string>
     <string name="ans_23_3">Cả ý 1 và 2.</string>
@@ -345,7 +345,7 @@
     <string name="ans_54_4">Cả ý 1 và ý 2</string>
     //cau 55
     <string name="ques_55">Bạn đang lái xe trên đường hẹp, xuống dốc và gặp một xe đang đi lên dốc, bạn cần làm gì?</string>
-    <string name="explain_55">Khoản 2, điều 17 Luật giao thông đường bộ quy định: \'Xe xuống dốc phải nhường đường cho xe đang lên dốc'</string>
+    <string name="explain_55">Khoản 2, điều 17 Luật giao thông đường bộ quy định: \'Xe xuống dốc phải nhường đường cho xe đang lên dốc\'</string>
     <string name="ans_55_1">Tiếp tục đi và xe lên dốc phải nhường đường cho mình</string>
     <string name="ans_55_2">Nhường đường cho xe lên dốc</string>
     <string name="ans_55_3">Chỉ nhường đường khi xe lên dốc nháy đèn.</string>
@@ -936,7 +936,7 @@
     <string name="ans_148_4">Biển 2 và 3.</string>
     //cau 149
     <string name="ques_149">Trong các biển dưới đây biển nào là biển “Hết mọi lệnh cấm”?</string>
-    <string name="explain_149">Biển 1 là biển báo hết tốc độ tối đa. Biển 2 là biển báo \'hết mọi lệnh cấm'. Biển 3 là biển báo hết tốc độ tối thiểu.</string>
+    <string name="explain_149">Biển 1 là biển báo hết tốc độ tối đa. Biển 2 là biển báo \'hết mọi lệnh cấm\'. Biển 3 là biển báo hết tốc độ tối thiểu.</string>
     <string name="ans_149_1">Biển 1</string>
     <string name="ans_149_2">Biển 2</string>
     <string name="ans_149_3">Biển 3</string>
@@ -949,7 +949,7 @@
     <string name="ans_150_3">Biển 3.</string>
     //cau 151
     <string name="ques_151">Biển nào cho phép xe rẽ trái?</string>
-    <string name="explain_151">Biển 1: Cấm rẽ trái. Biển 2: Chỉ dẫn \'khu vực quay đầu xe' nên được phép rẽ trái. Chọn biển 2.</string>
+    <string name="explain_151">Biển 1: Cấm rẽ trái. Biển 2: Chỉ dẫn \'khu vực quay đầu xe\' nên được phép rẽ trái. Chọn biển 2.</string>
     <string name="ans_151_1">Biển 1.</string>
     <string name="ans_151_2">Biển 2.</string>
     <string name="ans_151_3">Không biển nào.</string>
@@ -961,7 +961,7 @@
     <string name="ans_152_3">Cả 2 biển.</string>
     //cau 153
     <string name="ques_153">Biển báo nào báo hiệu bắt đầu đoạn đường vào phạm vi khu dân cư, các phương tiện tham gia giao thông phải tuân thủ các quy định đi đường được áp dụng ở khu đông dân cư?</string>
-    <string name="explain_153">Biển báo \'bắt đầu khu đông dân cư\' (R.420 - Biển 1) có hiệu lực từ vị trí đặt biển đối với tất cả các tuyến đường trong khu đông dân cư đến vị trí đặt biển báo \'hết khu đông dân cư' (R.421 - Biển 2).</string>
+    <string name="explain_153">Biển báo \'bắt đầu khu đông dân cư\' (R.420 - Biển 1) có hiệu lực từ vị trí đặt biển đối với tất cả các tuyến đường trong khu đông dân cư đến vị trí đặt biển báo \'hết khu đông dân cư\' (R.421 - Biển 2).</string>
     <string name="ans_153_1">Biển 1.</string>
     <string name="ans_153_2">Biển 2.</string>
     //cau 154

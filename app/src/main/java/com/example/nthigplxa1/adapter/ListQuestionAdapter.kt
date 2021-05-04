@@ -10,18 +10,22 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.nthigplxa1.R
 import com.example.nthigplxa1.model.Answer
+import com.example.nthigplxa1.model.Exam
 import com.example.nthigplxa1.model.ExamWithQuestion
 import com.example.nthigplxa1.model.Question
 
-class ListQuestionAdapter(var mContext: Context) :
+class ListQuestionAdapter(var mContext: Context, var mListener: ItemListener) :
     RecyclerView.Adapter<ListQuestionAdapter.ViewHolder>() {
 
     private var mIsShowExplain = false
     private var mArrayListQuestion = ArrayList<Question>()
     private var mArrayListAnswer = ArrayList<Answer>()
     private var mArrayListEWQ = ArrayList<ExamWithQuestion>()
+    private var mExam = Exam()
     var mArrayAnsSelect = ArrayList<Int>()
-    var mArrayCorrectAns = ArrayList<Int>()
+    var mArrayAnsSelectedID = ArrayList<Int>()
+    var mArrayCorrectAns = ArrayList<Answer>()
+
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val orderQues: TextView = itemView.findViewById(R.id.tv_orderExam)
         val imgContent: ImageView = itemView.findViewById(R.id.img_contentQues)
@@ -30,6 +34,10 @@ class ListQuestionAdapter(var mContext: Context) :
         val tvAns2 = itemView.findViewById<TextView>(R.id.tv_ans2)
         val tvAns3 = itemView.findViewById<TextView>(R.id.tv_ans3)
         val tvAns4 = itemView.findViewById<TextView>(R.id.tv_ans4)
+        val tv1 = itemView.findViewById<TextView>(R.id.tv1)
+        val tv2 = itemView.findViewById<TextView>(R.id.tv2)
+        val tv3 = itemView.findViewById<TextView>(R.id.tv3)
+        val tv4 = itemView.findViewById<TextView>(R.id.tv4)
         val view1 = itemView.findViewById<View>(R.id.underLine1)
         val view2 = itemView.findViewById<View>(R.id.underLine2)
         val view3 = itemView.findViewById<View>(R.id.underLine3)
@@ -38,30 +46,31 @@ class ListQuestionAdapter(var mContext: Context) :
         val tvW = itemView.findViewById<TextView>(R.id.tv_Warning)
     }
 
-    fun setList(list: ArrayList<Question>, listAns: ArrayList<Answer>, listExamWithQuestion: ArrayList<ExamWithQuestion>) {
+    fun setList(
+        list: ArrayList<Question>,
+        listAns: ArrayList<Answer>,
+        listExamWithQuestion: ArrayList<ExamWithQuestion>,
+        listAnsSelectedID: ArrayList<Int>,
+        listAnsCorrect: ArrayList<Answer>,
+        exam: Exam
+    ) {
         this.mArrayListQuestion = list
         this.mArrayListAnswer = listAns
         this.mArrayListEWQ = listExamWithQuestion
-        for (i in 0..24) {
-            this.mArrayAnsSelect.add(-1)
-            this.mArrayCorrectAns.add(-2)
-        }
+        this.mExam = exam
+        this.mArrayAnsSelectedID = listAnsSelectedID
+        this.mArrayCorrectAns = listAnsCorrect
+        notifyDataSetChanged()
+    }
+
+    fun setArrayAnsSelected(pos: Int, arr: ArrayList<Int>) {
+        this.mArrayAnsSelectedID = arr
         notifyDataSetChanged()
     }
 
     fun showExplain() {
         mIsShowExplain = true
         notifyDataSetChanged()
-    }
-
-    fun getMark(): Int{
-        var mark = 0
-        for (i in 0..24) {
-            if (mArrayAnsSelect[i] == mArrayCorrectAns[i]) {
-                mark++
-            }
-        }
-        return mark
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -81,6 +90,7 @@ class ListQuestionAdapter(var mContext: Context) :
             holder.imgContent.setImageResource(mArrayListQuestion[position].mContentImg)
         }
         holder.tvContent.text = mArrayListQuestion[position].mContent.trim()
+        var countText = 1
         holder.tvAns1.visibility = View.GONE
         holder.tvAns2.visibility = View.GONE
         holder.tvAns3.visibility = View.GONE
@@ -91,82 +101,151 @@ class ListQuestionAdapter(var mContext: Context) :
         holder.view4.visibility = View.GONE
         holder.tvExplain.visibility = View.GONE
 
-        if (mArrayListQuestion[position].mIsParalysisPoint) {
+        if (!mArrayListQuestion[position].mIsNotParalysisPoint) {
             holder.tvW.visibility = View.VISIBLE
         } else {
             holder.tvW.visibility = View.INVISIBLE
         }
-        when (mArrayAnsSelect[position]) {
-            1 -> {
-                holder.tvAns1.setTextColor(ContextCompat.getColor(mContext, R.color.green))
-                holder.tvAns2.setTextColor(ContextCompat.getColor(mContext, R.color.black))
-                holder.tvAns3.setTextColor(ContextCompat.getColor(mContext, R.color.black))
-                holder.tvAns4.setTextColor(ContextCompat.getColor(mContext, R.color.black))
-            }
-            2 -> {
-                holder.tvAns1.setTextColor(ContextCompat.getColor(mContext, R.color.black))
-                holder.tvAns2.setTextColor(ContextCompat.getColor(mContext, R.color.green))
-                holder.tvAns3.setTextColor(ContextCompat.getColor(mContext, R.color.black))
-                holder.tvAns4.setTextColor(ContextCompat.getColor(mContext, R.color.black))
-            }
-            3 -> {
-                holder.tvAns1.setTextColor(ContextCompat.getColor(mContext, R.color.black))
-                holder.tvAns2.setTextColor(ContextCompat.getColor(mContext, R.color.black))
-                holder.tvAns3.setTextColor(ContextCompat.getColor(mContext, R.color.green))
-                holder.tvAns4.setTextColor(ContextCompat.getColor(mContext, R.color.black))
-            }
-            4 -> {
-                holder.tvAns1.setTextColor(ContextCompat.getColor(mContext, R.color.black))
-                holder.tvAns2.setTextColor(ContextCompat.getColor(mContext, R.color.black))
-                holder.tvAns3.setTextColor(ContextCompat.getColor(mContext, R.color.black))
-                holder.tvAns4.setTextColor(ContextCompat.getColor(mContext, R.color.green))
-            }
-        }
 
-        if (mIsShowExplain) {
+        if (mIsShowExplain || mExam.mIsFinished) {
             holder.tvExplain.visibility = View.VISIBLE
             holder.tvExplain.text = "Giải thích: ${mArrayListQuestion[position].mExplain}"
         }
+        holder.tvAns1.setTextColor(ContextCompat.getColor(mContext, R.color.black))
+        holder.tvAns2.setTextColor(ContextCompat.getColor(mContext, R.color.black))
+        holder.tvAns3.setTextColor(ContextCompat.getColor(mContext, R.color.black))
+        holder.tvAns4.setTextColor(ContextCompat.getColor(mContext, R.color.black))
+        mArrayListAnswer.forEach {
+            if (it.mQuestionID == mArrayListQuestion[position].mID) {
+                when (countText) {
+                    1 -> {
+                        holder.tvAns1.text = "1, ${it.mContent.trim()}"
+                        holder.tvAns1.visibility = View.VISIBLE
+                        holder.view1.visibility = View.VISIBLE
+                        holder.tv1.text = "${it.mID}"
+                        if (it.mIsCorrect) {
+                            if (mIsShowExplain || mExam.mIsFinished) {
+                                holder.tvAns1.setTextColor(
+                                    ContextCompat.getColor(
+                                        mContext,
+                                        R.color.red
+                                    )
+                                )
+                            }
+                        }
+                        if (it.mID == mArrayAnsSelectedID[position]) {
+                            holder.tvAns1.setTextColor(
+                                ContextCompat.getColor(
+                                    mContext,
+                                    R.color.green
+                                )
+                            )
+                        }
+
+                    }
+                    2 -> {
+                        holder.tvAns2.text = "2, ${it.mContent.trim()}"
+                        holder.tvAns2.visibility = View.VISIBLE
+                        holder.view2.visibility = View.VISIBLE
+                        holder.tv2.text = "${it.mID}"
+                        if (it.mIsCorrect) {
+                            if (mIsShowExplain || mExam.mIsFinished) {
+                                holder.tvAns2.setTextColor(
+                                    ContextCompat.getColor(
+                                        mContext,
+                                        R.color.red
+                                    )
+                                )
+                            }
+                        }
+                        if (it.mID == mArrayAnsSelectedID[position]) {
+                            holder.tvAns2.setTextColor(
+                                ContextCompat.getColor(
+                                    mContext,
+                                    R.color.green
+                                )
+                            )
+                        }
+                    }
+                    3 -> {
+                        holder.tvAns3.text = "3, ${it.mContent.trim()}"
+                        holder.tvAns3.visibility = View.VISIBLE
+                        holder.tvAns3.visibility = View.VISIBLE
+                        holder.view3.visibility = View.VISIBLE
+                        holder.tv3.text = "${it.mID}"
+                        if (it.mIsCorrect) {
+                            if (mIsShowExplain || mExam.mIsFinished) {
+                                holder.tvAns3.setTextColor(
+                                    ContextCompat.getColor(
+                                        mContext,
+                                        R.color.red
+                                    )
+                                )
+                            }
+                        }
+                        if (it.mID == mArrayAnsSelectedID[position]) {
+                            holder.tvAns3.setTextColor(
+                                ContextCompat.getColor(
+                                    mContext,
+                                    R.color.green
+                                )
+                            )
+                        }
+                    }
+                    4 -> {
+                        holder.tvAns4.text = "4, ${it.mContent.trim()}"
+                        holder.tvAns4.visibility = View.VISIBLE
+                        holder.view4.visibility = View.VISIBLE
+                        holder.tv4.text = "${it.mID}"
+                        if (it.mIsCorrect) {
+                            if (mIsShowExplain || mExam.mIsFinished) {
+                                holder.tvAns4.setTextColor(
+                                    ContextCompat.getColor(
+                                        mContext,
+                                        R.color.red
+                                    )
+                                )
+                            }
+                        }
+                        if (it.mID == mArrayAnsSelectedID[position]) {
+                            holder.tvAns4.setTextColor(
+                                ContextCompat.getColor(
+                                    mContext,
+                                    R.color.green
+                                )
+                            )
+                        }
+                    }
+                }
+                countText++
+            }
+        }
 
         holder.tvAns1.setOnClickListener {
-            if (!mIsShowExplain) {
-                holder.tvAns1.setTextColor(ContextCompat.getColor(mContext, R.color.green))
-                holder.tvAns2.setTextColor(ContextCompat.getColor(mContext, R.color.black))
-                holder.tvAns3.setTextColor(ContextCompat.getColor(mContext, R.color.black))
-                holder.tvAns4.setTextColor(ContextCompat.getColor(mContext, R.color.black))
-                mArrayAnsSelect[position] = 1
+            if (!mIsShowExplain && !mExam.mIsFinished) {
+                mListener.onItemClick(position, 0, holder.tv1.text.toString())
             }
-
         }
         holder.tvAns2.setOnClickListener {
-           if (!mIsShowExplain) {
-               holder.tvAns1.setTextColor(ContextCompat.getColor(mContext, R.color.black))
-               holder.tvAns2.setTextColor(ContextCompat.getColor(mContext, R.color.green))
-               holder.tvAns3.setTextColor(ContextCompat.getColor(mContext, R.color.black))
-               holder.tvAns4.setTextColor(ContextCompat.getColor(mContext, R.color.black))
-               mArrayAnsSelect[position] = 2
-           }
+            if (!mIsShowExplain && !mExam.mIsFinished) {
+                mListener.onItemClick(position, 1, holder.tv2.text.toString())
+            }
         }
         holder.tvAns3.setOnClickListener {
-            if (!mIsShowExplain) {
-                holder.tvAns1.setTextColor(ContextCompat.getColor(mContext, R.color.black))
-                holder.tvAns2.setTextColor(ContextCompat.getColor(mContext, R.color.black))
-                holder.tvAns3.setTextColor(ContextCompat.getColor(mContext, R.color.green))
-                holder.tvAns4.setTextColor(ContextCompat.getColor(mContext, R.color.black))
-                mArrayAnsSelect[position] = 3
+            if (!mIsShowExplain && !mExam.mIsFinished) {
+                mListener.onItemClick(position, 2, holder.tv3.text.toString())
             }
         }
         holder.tvAns4.setOnClickListener {
-           if (!mIsShowExplain) {
-               holder.tvAns1.setTextColor(ContextCompat.getColor(mContext, R.color.black))
-               holder.tvAns2.setTextColor(ContextCompat.getColor(mContext, R.color.black))
-               holder.tvAns3.setTextColor(ContextCompat.getColor(mContext, R.color.black))
-               holder.tvAns4.setTextColor(ContextCompat.getColor(mContext, R.color.green))
-               mArrayAnsSelect[position] = 4
-           }
+            if (!mIsShowExplain && !mExam.mIsFinished) {
+                mListener.onItemClick(position, 3, holder.tv4.text.toString())
+            }
         }
 
     }
 
-
+    interface ItemListener {
+        fun onItemClick(position: Int, mItem: Int, mIdAns: String)
+    }
 }
+

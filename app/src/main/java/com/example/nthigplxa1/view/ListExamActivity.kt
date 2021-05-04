@@ -26,6 +26,7 @@ import kotlinx.android.synthetic.main.dialog_confirm_delete.*
 class ListExamActivity : AppCompatActivity(),
     ListExamItemTouchHelper.RecyclerItemTouchHelperListener, View.OnClickListener, ItemListener {
     private val FIRST_TIME_OPEN_APP = "FIRST_TIME_OPEN_APP"
+    private val COUNT_EXAM = "COUNT_EXAM"
     private val typeQuestionLaw = "KHAI_NIEM_VA_QUY_TAC"
     private val typeQuestionNoticeBoard = "BIEN_BAO_DUONG_BO"
     private val typeQuestionSituations = "SA_HINH"
@@ -1368,7 +1369,7 @@ class ListExamActivity : AppCompatActivity(),
                 }
             }.start()
             editor?.putBoolean(FIRST_TIME_OPEN_APP, true)
-            editor?.commit()
+            editor?.apply()
         } else {
             Thread {
                 getAllDB()
@@ -1536,8 +1537,13 @@ class ListExamActivity : AppCompatActivity(),
             arrSituations.add(ques)
         }
         Thread {
-            var exam = Exam(mArrayListExam.size + 1, false, 19)
+            sharedPreferences = getSharedPreferences("countExam", MODE_PRIVATE)
+            val editor = sharedPreferences?.edit()
+            val countExam = sharedPreferences?.getInt(COUNT_EXAM, 1)
+            var exam = Exam(countExam!!, false)
             appDatabase?.appDao()?.saveDataExam(exam)
+            editor?.putInt(COUNT_EXAM, countExam + 1)
+            editor?.apply()
             var id = (mArrayListExamWithQues.size + 1) * 10
             var eExamWithQuestion: ExamWithQuestion?
             arrParalysisPoint.forEach {
@@ -1585,7 +1591,11 @@ class ListExamActivity : AppCompatActivity(),
             .customView(R.layout.dialog_confirm_delete)
         mDialog.window?.setDimAmount(0F)
         mDialog.setCancelable(false)
-        mDialog.tv_TitleOfCustomDialogConfirm.text = "Bạn có chắc chắn muốn vào thi ?"
+        var title = "Bạn có chắc chắn muốn vào thi ?"
+        if (mItem.mIsFinished) {
+            title = "Bạn có chắc chắn muốn vào xem ?"
+        }
+        mDialog.tv_TitleOfCustomDialogConfirm.text = title
         mDialog.btn_AcceptDiaLogConFirm.setOnClickListener() {
             val arrEWQ = ArrayList<ExamWithQuestion>()
             mArrayListExamWithQues.forEach {
@@ -1598,9 +1608,11 @@ class ListExamActivity : AppCompatActivity(),
             for (i in 0..24) {
                 bundle.putSerializable("CAU_${i}", arrEWQ[i])
             }
+            bundle.putSerializable("EXAM", mItem)
             intent.putExtras(bundle)
             intent.flags = Intent.FLAG_ACTIVITY_SINGLE_TOP
             startActivity(intent)
+            this.finish()
             mDialog.dismiss()
             cl_list_exam_activity.alpha = 1F
         }

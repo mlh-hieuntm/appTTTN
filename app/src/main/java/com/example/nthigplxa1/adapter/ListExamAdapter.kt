@@ -13,7 +13,7 @@ import com.example.nthigplxa1.model.Exam
 class ListExamAdapter(var mContext: Context, var mListener: ItemListener) :
     RecyclerView.Adapter<ListExamAdapter.ViewHolder>() {
 
-    private var mArrayListAbilities = ArrayList<Exam>()
+    private var mArrayListExam = ArrayList<Exam>()
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val tvNameOfExam: TextView = itemView.findViewById(R.id.tv_nameOfExam)
@@ -25,7 +25,7 @@ class ListExamAdapter(var mContext: Context, var mListener: ItemListener) :
     }
 
     fun setList(list: ArrayList<Exam>) {
-        this.mArrayListAbilities = list
+        this.mArrayListExam = list
         notifyDataSetChanged()
     }
 
@@ -37,12 +37,15 @@ class ListExamAdapter(var mContext: Context, var mListener: ItemListener) :
     }
 
     override fun getItemCount(): Int {
-        return mArrayListAbilities.size
+        return mArrayListExam.size
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.mItem = mArrayListAbilities[position]
-        holder.tvNameOfExam.text = "Đề số ${mArrayListAbilities[position].mID}"
+        holder.mItem = mArrayListExam[position]
+        if (mArrayListExam[position].mIsFinished) {
+            holder.tvDo.text = "XEM KẾT QUẢ"
+        }
+        holder.tvNameOfExam.text = "Đề số ${mArrayListExam[position].mID}"
         holder.tvDo.setOnClickListener {
             holder.mItem?.let {
                 mListener.onItemClick(position, it)
