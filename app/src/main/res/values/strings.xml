@@ -1550,13 +1550,61 @@
     <string name="name97">Biển số 220 "Dốc lên nguy hiểm"</string>
     <string name="content97">báo trước sắp tới đoạn đường lên dốc nguy hiểm</string>
     //bien 98
-    <string name="name98"></string>
-    <string name="content98"></string>
+    <string name="name98">Biển số 501. "Phạm vi tác dụng của biển"</string>
+    <string name="content98">Để thông báo chiều dài đoạn đường nguy hiểm hoặc cấm hoặc hạn chế bên dưới một số biển báo nguy hiểm, biển báo cấm hoặc hạn chế, chẳng hạn như: Nhiều chỗ ngoặt nguy hiểm liên tiếp; Dốc xuống nguy hiểm...</string>
     //bien 99
-    <string name="name99"></string>
-    <string name="content99"></string>
+    <string name="name99">Biển số 502 "Khoảng cách đến đối tượng báo hiệu"</string>
+    <string name="content99">Bên dưới các loại biển báo nguy hiểm, biển báo cấm, biển hiệu lệnh và chỉ dẫn, thông báo khoảng cách thực tế từ vị trí đặt biển đến đối tượng báo hiệu ở phía trước.</string>
     //bien 100
-    <string name="name100"></string>
-    <string name="content100"></string>
+    <string name="name100">Biển báo 503a: Hướng tác dụng của biển</string>
+    <string name="content100">Các biển số 503(a,b,c) đặt bên dưới các biển báo cấm, biển hiệu lệnh để chỉ hướng tác dụng của biển là hướng vuông góc với chiều đi.</string>
+    //bien 101
+    <string name="name101">Biển báo 503b: Hướng tác dụng của biển</string>
+    <string name="content101">Các biển số 503(a,b,c) đặt bên dưới các biển báo cấm, biển hiệu lệnh để chỉ hướng tác dụng của biển là hướng vuông góc với chiều đi.</string>
+    //bien 102
+    <string name="name102">Biển báo 503c: Hướng tác dụng của biển</string>
+    <string name="content102">Các biển số 503(a,b,c) đặt bên dưới các biển báo cấm, biển hiệu lệnh để chỉ hướng tác dụng của biển là hướng vuông góc với chiều đi.</string>
+    //bien 103
+    <string name="name103">Biển báo 503d: Hướng tác dụng của biển</string>
+    <string name="content103">Các biển số 503(d,e,f) đặt bên dưới biển Cấm quay xe, Cấm dừng đỗ xe… để chỉ hướng tác dụng của biển là hướng song song với chiều đi.</string>
+    //bien 104
+    <string name="name104">Biển báo 503e: Hướng tác dụng của biển</string>
+    <string name="content104">Các biển số 503(d,e,f) đặt bên dưới biển Cấm quay xe, Cấm dừng đỗ xe… để chỉ hướng tác dụng của biển là hướng song song với chiều đi.</string>
+    //bien 105
+    <string name="name105">Biển báo 503f: Hướng tác dụng của biển</string>
+    <string name="content105">Các biển số 503(d,e,f) đặt bên dưới biển Cấm quay xe, Cấm dừng đỗ xe… để chỉ hướng tác dụng của biển là hướng song song với chiều đi.</string>
+    //bien 106
+    <string name="name106">Biển số 504 "Làn đường"</string>
+    <string name="content106">Biển số 504 được đặt bên trên làn đường và dưới các biển báo cấm và biển hiệu lệnh hay bên dưới đèn tín hiệu để chỉ làn đường chịu hiệu lực của biển báo hay đèn tín hiệu.</string>
+    //bien 107
+    <string name="name107">Biển số 505a "Loại xe"</string>
+    <string name="content107">Được đặt bên dưới các biển báo cấm và biển hiệu lệnh hay biển chỉ dẫn để chỉ loại xe chịu hiệu lực của biển báo cấm, biển hiệu lệnh hay biển chỉ dẫn. Tùy theo loại xe chịu hiệu lực mà bố trí hình vẽ cho phù hợp.</string>
+    //bien 108
+    <string name="name108">Biển số 505b "Loại xe hạn chế qua cầu"</string>
+    <string name="content108">Được đặt bên dưới biển báo số 106a “Cấm ôtô tải” để chỉ các loại xe tải chịu hiệu lực của biển báo và trọng lượng lớn nhất cho phép (bao gồm trọng lượng xe và hàng) tương ứng với mỗi loại xe không phụ thuộc vào số lượng trục.</string>
+    //bien 109
+    <string name="name109">Biển số 505(c) "Tải trọng trục hạn chế qua cầu"</string>
+    <string name="content109">Được đặt bên dưới biển báo số 106a “Cấm ôtô tải” để chỉ các loại xe tải có tải  trọng  trục  lớn nhất cho phép tương ứng với mỗi loại  trục (trục đơn, trục kép, trục ba).</string>
+    //bien 110
+    <string name="name110">Biển số 506a "Hướng đường ưu tiên"</string>
+    <string name="content110">Biển số 506a  được đặt bên dưới biển chỉ dẫn số 401 trên đường ưu tiên để chỉ dẫn cho người lái xe trên đường này biết hướng đường ưu tiên ở ngã tư.</string>
+    //bien 111
+    <string name="name111">Biển số 506b "Hướng đường ưu tiên"</string>
+    <string name="content111">Biển số 506b được đặt bên dưới biển số 208 và biển số 122 trên đường không ưu tiên để chỉ dẫn cho người lái xe trên đường này biết hướng đường ưu tiên ở ngã tư.</string>
+    //bien 112
+    <string name="name112">Biển số 507 "Hướng rẽ"</string>
+    <string name="content112">Được sử dụng độc lập để báo trước cho người tham gia giao thông biết chuẩn bị đến chỗ rẽ nguy hiểm và để chỉ hướng rẽ.</string>
+    //bien 113
+    <string name="name113">Biển số 508(a). "Biểu thị thời gian"</string>
+    <string name="content113">Được đặt dưới biển báo cấm hoặc biển hiệu lệnh nhằm quy định phạm vi thời gian hiệu lực của các biển báo cấm, biển hiệu lệnh cho phù hợp yêu cầu.</string>
+    //bien 114
+    <string name="name114">Biển số 508(b). "Biểu thị thời gian"</string>
+    <string name="content114">Được đặt dưới biển báo cấm hoặc biển hiệu lệnh nhằm quy định phạm vi thời gian hiệu lực của các biển báo cấm, biển hiệu lệnh cho phù hợp yêu cầu.</string>
+    //bien 115
+    <string name="name115">Biển số 509a "Thuyết minh biển chính"</string>
+    <string name="content115">Để bổ sung cho biển số 239 "Đường cáp điện ở phía trên", phải đặt biển số 509a "Chiều cao an toàn" bên dưới biển số 239, biển này chỉ rõ chiều cao cho các phương tiện đi qua an toàn.</string>
+    //bien 116
+    <string name="name116">Biển số 509b "Thuyết minh biển chính"</string>
+    <string name="content116">Để bổ sung cho biển số 130 "Cấm dừng, đỗ xe", biển số 131 (a,b,c) "Cấm đỗ xe", phải đặt thêm biển số 509b "Cấm đỗ xe" bên dưới biển số 130, 131 (a,b,c)</string>
 
 </resources>

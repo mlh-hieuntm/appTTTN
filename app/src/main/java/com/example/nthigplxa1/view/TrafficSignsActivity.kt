@@ -73,9 +73,6 @@ class TrafficSignsActivity : AppCompatActivity(), View.OnClickListener,
         arrImg1.clear()
         arrName1.clear()
         arrContent1.clear()
-//        arrImg4.clear()
-//        arrName4.clear()
-//        arrContent4.clear()
         for (i in 97..105) {
             if (i == 103) {
                 continue
@@ -180,6 +177,40 @@ class TrafficSignsActivity : AppCompatActivity(), View.OnClickListener,
             mArrayListTraffic?.add(TrafficBoard(arrImg3[i], arrName3[i], arrContent3[i]))
         }
     }
+
+    private fun initData4() {
+        arrImg4.clear()
+        arrName4.clear()
+        arrContent4.clear()
+        arrImg4.add(getIdentifierDrawable("img501"))
+        arrImg4.add(getIdentifierDrawable("img502"))
+        for (i in 97..102) {
+            arrImg4.add(getIdentifierDrawable("img503${i.toChar()}"))
+        }
+        for (i in 504..509) {
+            when (i) {
+                507, 504 -> {
+                    arrImg4.add(getIdentifierDrawable("img${i}"))
+                }
+                else -> {
+                    arrImg4.add(getIdentifierDrawable("img${i}a"))
+                    arrImg4.add(getIdentifierDrawable("img${i}b"))
+                }
+            }
+            if (i == 505) {
+                arrImg4.add(getIdentifierDrawable("img${i}c"))
+            }
+        }
+        for (i in 98..116) {
+            arrName4.add(resources.getString(getIdentifierString("name${i}")))
+            arrContent4.add(resources.getString(getIdentifierString("content${i}")))
+        }
+        mArrayListTraffic?.clear()
+        for (i in 0..arrImg4.lastIndex) {
+            mArrayListTraffic?.add(TrafficBoard(arrImg4[i], arrName4[i], arrContent4[i]))
+        }
+
+    }
     private fun initTypeTrafficRecycleView() {
         mListTypeAdapter = ListTrafficTypeAdapter(this, this)
         rv_listTrafficType.layoutManager =
@@ -222,8 +253,11 @@ class TrafficSignsActivity : AppCompatActivity(), View.OnClickListener,
             1 -> initData1()
             2 -> initData2()
             3 -> initData3()
-            4 -> initData2()
+            4 -> initData4()
         }
+        rv_listTrafficType.smoothScrollToPosition(position)
         mListAdapter?.setList(mArrayListTraffic!!)
     }
+
+
 }
