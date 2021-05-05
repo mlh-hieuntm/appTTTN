@@ -1258,5 +1258,305 @@
     <string name="ans_200_1">Vượt về phía bên phải để đi tiếp</string>
     <string name="ans_200_2">Giảm tốc độ chờ xe container rẽ xong rồi tiếp tục đi</string>
     <string name="ans_200_3">Vượt về phía bên trái để đi tiếp.</string>
+    //bien 1
+    <string name="name1">Biển báo Đường cấm P.101</string>
+    <string name="content1">Cấm các loại phương tiện di chuyển cả 2 hướng (ngoại trừ xe ưu tiên theo quy định)</string>
+    //bien 2
+    <string name="name2">Biển báo Cấm đi ngược chiều P.102</string>
+    <string name="content2">Cấm các loại phương tiện đi vào chiều đặt biển (ngoại trừ xe ưu tiên theo quy định).</string>
+    //bien 3
+    <string name="name3">Biển báo Cấm xe ô tô P.103a</string>
+    <string name="content3">Cấm các loại xe cơ giới đi vào, trừ xe máy 2 bánh, xe gắn máy và xe ưu tiên theo quy định.</string>
+    //bien 4
+    <string name="name4">Biển báo Cấm xe ô tô P.103b</string>
+    <string name="content4">Cấm các loại xe cơ giới rẽ phải, trừ xe máy 2 bánh, xe gắn máy và xe ưu tiên theo quy định.</string>
+    //bien 5
+    <string name="name5">Biển báo Cấm xe ô tô P.103c</string>
+    <string name="content5">Cấm các loại xe cơ giới rẽ trái, trừ xe máy 2 bánh, xe gắn máy và xe ưu tiên theo quy định.</string>
+    //bien 6
+    <string name="name6">Biển báo Cấm xe máy P.104</string>
+    <string name="content6">Cấm các loại xe máy đi vào (ngoại trừ xe máy được ưu tiên theo quy định). Biển không áp dụng với người dắt xe máy.</string>
+    //bien 7
+    <string name="name7">Biển báo Cấm xe ô tô và xe máy P.105</string>
+    <string name="content7">Cấm các loại xe cơ giới và xe máy đi vào, ngoại trừ xe gắn máy và xe ưu tiên theo quy định.</string>
+    //bien 8
+    <string name="name8">Biển báo Cấm xe tải P.106a</string>
+    <string name="content8">Cấm xe tải, xe máy kéo, các xe máy chuyên dùng đi vào (trừ xe ưu tiên theo quy định).</string>
+    //bien 9
+    <string name="name9">Biển báo Cấm xe tải P.106b</string>
+    <string name="content9">Cấm xe tải có khối lượng chuyên chở lớn hơn giá trị ghi trong biển báo đi vào.</string>
+    //bien 10
+    <string name="name10">Biển báo Cấm xe tải P.106c</string>
+    <string name="content10">Cấm xe tải chở hàng nguy hiểm đi vào.</string>
+    //bien 11
+    <string name="name11">Biển báo Cấm xe khách và xe tải P.107</string>
+    <string name="content11">Cấm các loại xe ô tô chở khách, xe tải, xe máy kéo, xe máy thi công chuyên dụng đi vào (trừ xe ưu tiên theo quy định).</string>
+    //bien 12
+    <string name="name12">Biển báo Cấm xe rơ-mooc P.108</string>
+    <string name="content12">Cấm các loại xe cơ giới kéo rơ-mooc, kể cả xe khách – máy kéo – xe máy kéo theo rơ-mooc đi vào, trừ loại ô tô sơ-mi-rơ-mooc và xe ưu tiên theo quy định.</string>
+    //bien 13
+    <string name="name13">Biển báo Cấm máy kéo P.109</string>
+    <string name="content13">Cấm các loại máy kéo, máy kéo bánh xích/bánh hơi đi vào.</string>
+    //bien 14
+    <string name="name14">Biển báo Cấm xe đạp P.110</string>
+    <string name="content14">Cấm xe đạp đi vào. Không áp dụng cấm người dẫn xe đạp.</string>
+    //bien 15
+    <string name="name15">Biển báo Cấm xe đạp P.110B</string>
+    <string name="content15">Cấm xe đạp thô. Không áp dụng cấm người dẫn xe đạp thô.</string>
+    //bien 16
+    <string name="name16">Biển số 301a " Hướng đi phải theo "</string>
+    <string name="content16">Các xe chỉ được đi thẳng (trừ xe được quyền ưu tiên theo quy định)</string>
+    //bien 17
+    <string name="name17">biển số 301b " Hướng đi phải theo "</string>
+    <string name="content17">các xe chỉ được rẽ phải (trừ xe được quyền ưu tiên theo quy định). Biển này được đặt ở sau nơi đường giao nhau.</string>
+    //bien 18
+    <string name="name18">Biển số 301c " Hướng đi phải theo "</string>
+    <string name="content18">các xe chỉ được rẽ trái (trừ xe được quyền ưu tiên theo quy định). Biển này được đặt ở sau nơi đường giao nhau.</string>
+    //bien 19
+    <string name="name19">Biển số 301d " Hướng đi phải theo "</string>
+    <string name="content19">các xe chỉ được rẽ phải (trừ xe được quyền ưu tiên theo quy định). Biển này được đặt ở trước nơi đường giao nhau, có tác dụng tại nơi giao nhau đằng sau mặt biển.</string>
+    //bien 20
+    <string name="name20">Biển số 301e " Hướng đi phải theo "</string>
+    <string name="content20">các xe chỉ được rẽ trái (trừ xe được quyền ưu tiên theo quy định). Biển này được đặt ở trước nơi đường giao nhau, có tác dụng tại nơi giao nhau đằng sau mặt biển.</string>
+    //bien 21
+    <string name="name21">Biển số 301f " Hướng đi phải theo "</string>
+    <string name="content21">các xe chỉ được đi thẳng và rẽ phải (trừ xe được quyền ưu tiên theo quy định)</string>
+    //bien 22
+    <string name="name22">Biển số 301h " Hướng đi phải theo "</string>
+    <string name="content22">các xe chỉ được đi thẳng và rẽ trái (trừ xe được quyền ưu tiên theo quy định)</string>
+    //bien 23
+    <string name="name23">Biển số 301i " Hướng đi phải theo "</string>
+    <string name="content23">các xe chỉ được rẽ phải và rẽ trái (trừ xe được quyền ưu tiên theo quy định)</string>
+    //bien 24
+    <string name="name24">Biển số 302a "Hướng phải đi vòng chướng ngại vật"</string>
+    <string name="content24">báo các loại xe (cơ giới và thô sơ) hướng đi vòng sang phải để qua một chướng ngại vật</string>
+    //bien 25
+    <string name="name25">Biển số 302b "Hướng phải đi vòng chướng ngại vật"</string>
+    <string name="content25">báo các loại xe (cơ giới và thô sơ) hướng đi vòng sang trái để qua một chướng ngại vật</string>
+    //bien 26
+    <string name="name26">Biển số 303 "Nơi giao nhau chạy theo vòng xuyến"</string>
+    <string name="content26">báo cho các loại xe (thô sơ và cơ giới) phải chạy vòng theo đảo an toàn ở nơi đường giao nhau.</string>
+    //bien 27
+    <string name="name27">Biển số 304 " Đường dành cho xe thô sơ"</string>
+    <string name="content27">báo đường dành cho xe thô sơ (kể cả xe của người tàn tật) và người đi bộ. Biển bắt buộc các loại xe thô sơ (kể cả xe của người tàn tật) và người đi bộ phải dùng đường dành riêng này để đi và cấm các xe cơ giới kể cả xe gắn máy, các xe được ưu tiên theo quy định đi vào đường đã đặt biển này.</string>
+    //bien 28
+    <string name="name28">Biển số 305 "Đường dành cho người đi bộ"</string>
+    <string name="content28">báo đường dành cho người đi bộ. Các loại xe cơ giới và thô sơ kể cả các xe được ưu tiên theo quy định không được phép đi vào đường đã đặt biển này, trừ trường hợp đi cắt ngang qua nhưng phải đảm bảo tuyệt đối an toàn cho người đi bộ.</string>
+    //bien 29
+    <string name="name29">Biển số 306 "Tốc độ tối thiểu cho phép"</string>
+    <string name="content29">báo tốc độ tối thiểu cho phép các xe cơ giới chạy. Biển cấm các loại xe cơ giới chạy với tốc độ nhỏ hơn trị số ghi trên biển.</string>
+    //bien 30
+    <string name="name30">Biển số 307 "Hết hạn chế tốc độ tối thiểu"</string>
+    <string name="content30">báo hết đoạn đường hạn chế tốc độ tối thiểu. Kể từ biển này các xe được phép chạy chậm hơn trị số ghi trên biển nhưng không được gây cản trở các xe khác.</string>
+    //bien 31
+    <string name="name31">Biển số 308a "Tuyến đường cầu vượt cắt qua"</string>
+    <string name="content31">biểu thị phía trước có cầu vượt, xe có thể đi thẳng hoặc theo chỉ dẫn trên hình vẽ để rẽ trái.</string>
+    //bien 32
+    <string name="name32">Biển số 308b "Tuyến đường cầu vượt cắt qua"</string>
+    <string name="content32">biểu thị phía trước có cầu vượt, xe có thể đi thẳng hoặc theo chỉ dẫn trên hình vẽ để rẽ phải</string>
+    //bien 33
+    <string name="name33">Biển số 309 "Ấn còi"</string>
+    <string name="content33"> biểu thị xe cộ đi đến vị trí cắm biển đó thì phải ấn còi.</string>
+    //bien 34
+    <string name="name34">Biển báo 401: Các xe trên trục đường chính được ưu tiên đi trước</string>
+    <string name="content34">Biển chỉ dẫn các xe trên trục đường chính được ưu tiên đi trước</string>
+    //bien 35
+    <string name="name35">Biển báo 402: Hết đoạn đường ưu tiên</string>
+    <string name="content35">Biển này báo hiệu hết đoan đường quy định là ưu tiên. Trên đoan đường tiếp theo, các xe cộ đi đúng với tốc độ quy định trong Luật Giao thông đường bộ, qua nơi giao nhau ưu tiên bên phải.</string>
+    //bien 36
+    <string name="name36">Biển báo 403a: Đường dành cho ôtô</string>
+    <string name="content36">Để chỉ dẫn bắt đầu đường dành cho các loại ô tô đi lại, các loại phương tiện giao thông khác không được phép đi vào đoạn đường có đặt biển này.</string>
+    //bien 37
+    <string name="name37">Biển báo: 403b: Đường dành cho ôtô, xe máy</string>
+    <string name="content37">Để chỉ dẫn bắt đầu đường dành cho các loại ôtô, xe máy (kể cả xe gắn máy) đi lại, các loại phương tiện giao thông khác không được phép đi vào đoạn đường có đặt biển này.</string>
+    //bien 38
+    <string name="name38">Biển báo 404a: Hết đường dành cho ôtô</string>
+    <string name="content38">Đến hết đoạn đường dành cho ô tô đi lại phải đặt biển số 404a "Hết đường dành cho ô tô".</string>
+    //bien 39
+    <string name="name39">Biển báo 404b: Hết đường dành cho ôtô, xe máy</string>
+    <string name="content39">Đến hết đoạn đường dành cho ôtô, xe máy đi lại phải đặt biển số 404b "Hết đường danh cho ôtô, xe máy"</string>
+    //bien 40
+    <string name="name40">Biển báo 405a: Đường cụt</string>
+    <string name="content40">Để chỉ lối rẽ vào đường cụt.</string>
+    //bien 41
+    <string name="name41">Biển báo 405b: Đường cụt</string>
+    <string name="content41">Để chỉ lối rẽ vào đường cụt.</string>
+    //bien 42
+    <string name="name42">Biển báo 405c: Đường cụt</string>
+    <string name="content42">Để chỉ dẫn đường trước mắt là đường cụt</string>
+    //bien 43
+    <string name="name43">Biển báo 406: Được ưu tiên qua đường hẹp</string>
+    <string name="content43">Để chỉ dẫn cho người lái xe cơ giới biết mình có quyền được ưu tiên đi trước trên đoạn đường hẹp khi gặp xe đi ngược chiều. Nếu trên hướng đi ngược chiều có xe (cơ giới hoặc thô sơ) đã đi vào phạm vi đường hẹp thì xe đi theo chiều ưu tiên cũng phải nhường đường .</string>
+    //bien 44
+    <string name="name44">Biển báo 407a: Đường một chiều</string>
+    <string name="content44">Để chỉ dẫn những đoạn đường chạy một chiều đặt sau ngã ba, ngã tư.</string>
+    //bien 45
+    <string name="name45">Biển báo 407b: Đường một chiều</string>
+    <string name="content45">Để chỉ dẫn những đoạn đường chạy một chiều đặt trước ngã ba, ngã tư.</string>
+    //bien 46
+    <string name="name46">Biển báo 407c: Đường một chiều</string>
+    <string name="content46">Để chỉ dẫn những đoạn đường chạy một chiều đặt trước ngã ba, ngã tư.</string>
+    //bien 47
+    <string name="name47">Biển báo 408a: Nơi đỗ xe</string>
+    <string name="content47">Để chỉ dẫn những nơi được phép đỗ xe, những bãi đỗ xe, bến xe v.v... Chiều dài nơi đỗ xe có thể được xác định giới hạn bằng vạch kẻ trên mặt đường hoặc bãi đỗ có hình dáng rõ ràng. Phạm vi quy định đỗ xe sẽ hết hiệu lực 10m trước khi đến ngã ba, ngã tư tiếp theo.</string>
+    //bien 48
+    <string name="name48">Biển báo 408b: Nơi đỗ xe</string>
+    <string name="content48">Để chỉ dẫn những nơi được phép đỗ xe, những bãi đỗ xe, bến xe v.v... Chiều dài nơi đỗ xe có thể được xác định giới hạn bằng vạch kẻ trên mặt đường hoặc bãi đỗ có hình dáng rõ ràng. Phạm vi quy định đỗ xe sẽ hết hiệu lực 10m trước khi đến ngã ba, ngã tư tiếp theo.</string>
+    //bien 49
+    <string name="name49">Biển báo 409: Chỗ quay xe</string>
+    <string name="content49">Để chỉ dẫn vị trí được phép quay đầu xe kiểu chữ U. Biển không cho phép rẽ trái (trừ các xe được quyền ưu tiên theo khoản 2 điều 20 Luật Giao thông đường bộ).</string>
+    //bien 50
+    <string name="name50">Biển báo 410: Khu vực quay xe</string>
+    <string name="content50">Để chỉ dẫn khu vực được phép quay đầu xe kiểu chữ U. Trên biển mô tả cách thức tiến hành quay đầu xe. Biển không cho phép rẽ trái (trừ các xe được quyền ưu tiên theo khoản 2 điều 20 Luật Giao thông đường bộ).</string>
+    //bien 51
+    <string name="name51">Biển báo 411: Hướng đi trên mỗi làn đường theo vạch kẻ đường</string>
+    <string name="content51">Để chỉ dẫn cho người lái xe biết số lượng làn đường trên mặt đường và hướng đi trên mỗi làn đường theo vạch kẻ đường. Biển có tác dụng bắt buộc người lái xe phải giữ đúng hướng đã được chỉ dẫn trên mỗi làn.</string>
+    //bien 52
+    <string name="name52">Biển báo 412: Làn đường dành cho ôtô khách</string>
+    <string name="content52">Để chỉ dẫn cho người lái xe biết có làn đường dành riêng cho ôtô khách (kể cả ôtô buýt, taxi). Biển được đặt ở đầu đường theo hướng đi của ôtô khách. Các loại xe khác không được đi vào làn đường có đặt biển này (trừ các xe có quyền ưu tiên theo điều 20 Luật Giao thông đường bộ).</string>
+    //bien 53
+    <string name="name53">Biển báo 413a: Đường có làn đường dành cho ôtô khách</string>
+    <string name="content53">Để chỉ dẫn cho người lái xe biết đường có làn đường dành riêng cho ôtô khách theo chiều ngược lại. Biển được đặt ở ngã ba, ngã tư đầu đường một chiều mà hướng ngược chiều có ôtô khách được phép chạy.</string>
+    //bien 54
+    <string name="name54">Biển báo 413b: Rẽ ra đường có làn đường dành cho ôtô khách</string>
+    <string name="content54">Để chỉ dẫn cho người lái xe biết ở ngã ba, ngã tư rẽ phải là rẽ ra đường có làn đường dành cho ôtô khách.</string>
+    //bien 55
+    <string name="name55">Biển báo 413c: Rẽ ra đường có làn đường dành cho ôtô khách</string>
+    <string name="content55">Để chỉ dẫn cho người lái xe biết ở ngã ba, ngã tư rẽ trái là rẽ ra đường có làn đường dành cho ôtô khách.</string>
+    //bien 56
+    <string name="name56">Biển báo 414a: Chỉ hướng đường</string>
+    <string name="content56">Đặt ở tất cả các ngã ba, ngã tư đường giao nhau để chỉ dẫn có một khu đông dân cư trên hướng đường đến.</string>
+    //bien 57
+    <string name="name57">Biển báo 414b: Chỉ hướng đường</string>
+    <string name="content57">Đặt ở tất cả các ngã ba, ngã tư đường giao nhau để chỉ dẫn có một khu đông dân cư trên hướng đường đến.</string>
+    //bien 58
+    <string name="name58">Biển báo 414c: Chỉ hướng đường</string>
+    <string name="content58">Đặt ở tất cả các ngã ba đường giao nhau để chỉ dẫn hướng đi, địa danh cần đến và khoảng cách bao xa.</string>
+    //bien 59
+    <string name="name59">Biển báo 414d: Chỉ hướng đường</string>
+    <string name="content59">Đặt ở tất cả các ngã ba, ngã tư đường giao nhau để chỉ dẫn hướng đi, địa danh cần đến và khoảng cách bao xa.</string>
+    //bien 60
+    <string name="name60">Biển số 201a "Chỗ ngoặt nguy hiểm vòng bên trái"</string>
+    <string name="content60">báo trước sắp đến một chỗ ngoặt nguy hiểm phía bên trái</string>
+    //bien 61
+    <string name="name61">Biển số 201b "chỗ ngoặt nguy hiểm vòng bên phải"</string>
+    <string name="content61">báo trước sắp đến một chỗ ngoặt nguy hiểm phía bên phải</string>
+    //bien 62
+    <string name="name62">Biển số 202a "Nhiều chỗ ngoặt nguy hiểm liên tiếp"</string>
+    <string name="content62">báo trước sắp đến nhiều chỗ ngoặt nguy hiểm liên tiếp trong đó chỗ ngoặt đầu tiên hướng vòng bên trái</string>
+    //bien 63
+    <string name="name63">Biển số 202b "Nhiều chỗ ngoặt nguy hiểm liên tiếp"</string>
+    <string name="content63">báo trước sắp đến nhiều chỗ ngoặt nguy hiểm liên tiếp trong đó chỗ ngoặt đầu tiên hướng vòng bên phải</string>
+    //bien 64
+    <string name="name64">Biển số 203a "Đường bị hẹp cả hai bên"</string>
+    <string name="content64">báo trước sắp đến một đoạn đường bị hẹp đột ngột cả hai bên</string>
+    //bien 65
+    <string name="name65">Biển số 203b "Đường bị hẹp về phía trái"</string>
+    <string name="content65">báo trước sắp đến một đoạn đường bị hẹp đột ngột phía bên trái</string>
+    //bien 66
+    <string name="name66">Biển số 203c "Đường bị hẹp về phía phải"</string>
+    <string name="content66">báo trước sắp đến một đoạn đường bị hẹp đột ngột phía bên phải</string>
+    //bien 67
+    <string name="name67">Biển số 204 "Đường hai chiều"</string>
+    <string name="content67">báo trước sắp đến đoạn đường do sửa chữa hoặc có trở ngại ở một phía đường mà phải tổ chức đi lại cho phương tiện cả hai chiều trên phía đường còn lại hoặc để báo trước đoạn đường đôi tạm thời hoặc đoạn đường có chiều xe đi và về đi chung</string>
+    //bien 68
+    <string name="name68">Biển số 205a "Đường giao nhau cùng cấp"</string>
+    <string name="content68">báo trước sắp đến nơi giao nhau cùng mức của các tuyến đường cùng cấp (không có đường nào ưu tiên)  trên cùng một mặt bằng</string>
+    //bien 69
+    <string name="name69">Biển số 205b "Đường giao nhau cùng cấp"</string>
+    <string name="content69">báo trước sắp đến nơi giao nhau cùng mức của các tuyến đường cùng cấp (không có đường nào ưu tiên)  trên cùng một mặt bằng</string>
+    //bien 70
+    <string name="name70">Biển số 205c "Đường giao nhau cùng cấp"</string>
+    <string name="content70">báo trước sắp đến nơi giao nhau cùng mức của các tuyến đường cùng cấp (không có đường nào ưu tiên)  trên cùng một mặt bằng</string>
+    //bien 71
+    <string name="name71">Biển số 205d "Đường giao nhau cùng cấp"</string>
+    <string name="content71">báo trước sắp đến nơi giao nhau cùng mức của các tuyến đường cùng cấp (không có đường nào ưu tiên)  trên cùng một mặt bằng</string>
+    //bien 72
+    <string name="name72">Biển số 205e "Đường giao nhau cùng cấp"</string>
+    <string name="content72">báo trước sắp đến nơi giao nhau cùng mức của các tuyến đường cùng cấp (không có đường nào ưu tiên)  trên cùng một mặt bằng</string>
+    //bien 73
+    <string name="name73">Biển số 206 "Giao nhau chạy theo vòng xuyến"</string>
+    <string name="content73">báo trước nơi giao nhau có bố trí đảo an toàn ở giữa nút giao, các loại xe qua nút giao phải đi vòng xuyến quanh đảo an toàn theo chiều mũi tên.</string>
+    //bien 74
+    <string name="name74">Biển số 207a "Giao nhau với đường không ưu tiên"</string>
+    <string name="content74">báo trước sắp đến nơi giao nhau với đường không ưu tiên</string>
+    //bien 75
+    <string name="name75">Biển số 207b "Giao nhau với đường không ưu tiên"</string>
+    <string name="content75">báo trước sắp đến nơi giao nhau với đường không ưu tiên</string>
+    //bien 76
+    <string name="name76">Biển số 207c "Giao nhau với đường không ưu tiên"</string>
+    <string name="content76">báo trước sắp đến nơi giao nhau với đường không ưu tiên</string>
+    //bien 77
+    <string name="name77">Biển số 207d "Giao nhau với đường không ưu tiên"</string>
+    <string name="content77">báo trước sắp đến nơi giao nhau với đường không ưu tiên</string>
+    //bien 78
+    <string name="name78">Biển số 207e - "Giao nhau với đường không ưu tiên"</string>
+    <string name="content78">báo trước sắp đến nơi giao nhau với đường không ưu tiên</string>
+    //bien 79
+    <string name="name79">Biển số 207f "Giao nhau với đường không ưu tiên"</string>
+    <string name="content79">báo trước sắp đến nơi giao nhau với đường không ưu tiên</string>
+    //bien 80
+    <string name="name80">Biển số 207g "Giao nhau với đường không ưu tiên"</string>
+    <string name="content80">báo trước sắp đến nơi giao nhau với đường không ưu tiên</string>
+    //bien 81
+    <string name="name81">Biển số 207h "Giao nhau với đường không ưu tiên"</string>
+    <string name="content81">báo trước sắp đến nơi giao nhau với đường không ưu tiên</string>
+    //bien 82
+    <string name="name82">Biển số 207i "Giao nhau với đường không ưu tiên"</string>
+    <string name="content82">báo trước sắp đến nơi giao nhau với đường không ưu tiên</string>
+    //bien 83
+    <string name="name83">Biển số 207k "Giao nhau với đường không ưu tiên"</string>
+    <string name="content83">báo trước sắp đến nơi giao nhau với đường không ưu tiên</string>
+    //bien 84
+    <string name="name84">Biển số 208 "Giao nhau với đường ưu tiên"</string>
+    <string name="content84">để báo trước sắp đến nơi giao nhau với đường ưu tiên</string>
+    //bien 85
+    <string name="name85">Biển số 209 "Giao nhau có tín hiệu đèn"</string>
+    <string name="content85">báo trước nơi giao nhau có điều khiển giao thông bằng tín hiệu đèn trong trường hợp người lái xe khó quan sát để kịp thời xử lý</string>
+    //bien 86
+    <string name="name86">Biển số 210 " Giao nhau với đường sắt có rào chắn"</string>
+    <string name="content86">báo trước sắp đến chỗ giao nhau giữa đường bộ và đường sắt có rào chắn kín hay rào chắn nửa kín và có nhân viên ngành đường sắt điều khiển giao thông</string>
+    //bien 87
+    <string name="name87">Biển số 211a "Giao nhau với đường sắt không có rào chắn"</string>
+    <string name="content87">báo trước sắp đến chỗ giao nhau giữa đường bộ và đường sắt không có rào chắn, không có người điều khiển giao thông</string>
+    //bien 88
+    <string name="name88">Biển số 211b "Giao nhau với đường tàu điện"</string>
+    <string name="content88">chỉ nơi đường bộ giao nhau cùng mức với đường tàu điện</string>
+    //bien 89
+    <string name="name89">Biển số 212"Cầu hẹp"</string>
+    <string name="content89">báo trước sắp đến cầu hẹp là loại cầu có chiều rộng phần xe chạy nhỏ hơn hoặc bằng 4,5m</string>
+    //bien 90
+    <string name="name90">Biển số 213 "Cầu tạm"</string>
+    <string name="content90">báo trước sắp đến cầu tạm là loại cầu được làm để sử dụng tạm thời cho xe cộ qua lại</string>
+    //bien 91
+    <string name="name91">Biển số 214 "Cầu quay-cầu cất"</string>
+    <string name="content91">báo phía trước gặp cầu xoay, cầu cất là loại cầu trong từng thời gian có cắt giao thông đường bộ bằng cách quay hoặc nâng nhịp thông thuyền để cho tàu thuyền qua lại</string>
+    //bien 92
+    <string name="name92">Biển số 215 "Kè, vực sâu phía trước"</string>
+    <string name="content92">báo trước sắp tới những vị trí có kè chắn vực sâu, hoặc sông suối đi sát đường, cần đề phòng tình huống nguy hiểm rơi xuống vực sâu hoặc sông su ối (thường có ở những chỗ ngoặt nguy hiểm)</string>
+    //bien 93
+    <string name="name93">Biển số 216 "Đường ngầm"</string>
+    <string name="content93">báo trước những vị trí có đường ngầm (đường tràn) phải đặt biển số 216 "Đường ngầm"</string>
+    //bien 94
+    <string name="name94">Biển số 217 "Bến phà"</string>
+    <string name="content94">báo trước sắp đến bến phà</string>
+    //bien 95
+    <string name="name95">Biển số 218 "Cửa chui"</string>
+    <string name="content95">để báo trước sắp đến đường có cổng chắn ngang, kiểu cổng như đường hầm, cổng thành, cầu vượt đường bộ dạng cầu vòm v.v...</string>
+    //bien 96
+    <string name="name96">Biển số 219 "Dốc xuống nguy hiểm"</string>
+    <string name="content96">báo trước sắp tới đoạn đường xuống dốc nguy hiểm</string>
+    //bien 97
+    <string name="name97">Biển số 220 "Dốc lên nguy hiểm"</string>
+    <string name="content97">báo trước sắp tới đoạn đường lên dốc nguy hiểm</string>
+    //bien 98
+    <string name="name98"></string>
+    <string name="content98"></string>
+    //bien 99
+    <string name="name99"></string>
+    <string name="content99"></string>
+    //bien 100
+    <string name="name100"></string>
+    <string name="content100"></string>
 
 </resources>

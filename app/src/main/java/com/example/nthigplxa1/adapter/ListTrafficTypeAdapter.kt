@@ -1,6 +1,7 @@
 package com.example.nthigplxa1.adapter
 
 import android.content.Context
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,7 +15,7 @@ class ListTrafficTypeAdapter (var mContext: Context, var mListener: ItemListener
     RecyclerView.Adapter<ListTrafficTypeAdapter.ViewHolder>() {
 
     private var mArrayListTrafficType = ArrayList<String>()
-
+    var mIndexSelected = 0
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val tvType: TextView = itemView.findViewById(R.id.tv_typeTraffic)
     }
@@ -22,6 +23,13 @@ class ListTrafficTypeAdapter (var mContext: Context, var mListener: ItemListener
     fun setList(list: ArrayList<String>) {
         this.mArrayListTrafficType = list
         notifyDataSetChanged()
+    }
+
+    fun setIndexSelected(id: Int) {
+        val temp = mIndexSelected
+        mIndexSelected = id
+        notifyItemChanged(temp)
+        notifyItemChanged(mIndexSelected)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -36,6 +44,11 @@ class ListTrafficTypeAdapter (var mContext: Context, var mListener: ItemListener
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        if (position == mIndexSelected) {
+            holder.tvType.setBackgroundResource(R.drawable.background_custom_four_corner_gray)
+        } else {
+            holder.tvType.setBackgroundColor(Color.parseColor("#F2F2F2"))
+        }
         holder.tvType.text = mArrayListTrafficType[position]
         holder.itemView.setOnClickListener {
            this.mListener.onItemClick(position)
