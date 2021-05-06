@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.TipActivity">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_toolbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.1"></androidx.constraintlayout.widget.Guideline>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_toolBar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#F2F2F2"
+        app:layout_constraintBottom_toBottomOf="@id/gl_toolbar"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/btn_backTip"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/ic_baseline_arrow_back_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"></ImageView>
+
+        <TextView
+            android:id="@+id/tv_titleOfListExam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="Mẹo thi kết quả cao"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/btn_backTip"
+            app:layout_constraintLeft_toRightOf="@id/btn_backTip"
+            app:layout_constraintTop_toTopOf="@id/btn_backTip"></TextView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rv_listInformationType"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#F2F2F2"
+        android:padding="3dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/gl_toolbar">
+
+        <TextView
+            android:id="@+id/tvThongTinCacMeo"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/background_custom_four_corner_gray"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="Các mẹo khi thi"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/tvVideo" />
+
+        <TextView
+            android:id="@+id/tvVideo"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="Các video"
+            app:layout_constraintLeft_toRightOf="@id/tvThongTinCacMeo"
+            app:layout_constraintRight_toRightOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="false"
+        android:visibility="gone"
+        android:id="@+id/sv_text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rv_listInformationType">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_titleTip1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Mẹo lý thuyết"
+                android:textColor="@color/black"
+                android:textSize="22dp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_tip1_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Khái niệm và quy tắc"
+                android:textColor="@color/black"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_titleTip1" />
+
+            <TextView
+                android:id="@+id/tip11Content"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:text="@string/tip11"
+                app:layout_constraintLeft_toLeftOf="@id/tv_tip1_1"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_tip1_1" />
+
+            <TextView
+                android:id="@+id/tv_tip2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Hệ thống biển báo"
+                android:textColor="@color/black"
+                app:layout_constraintLeft_toLeftOf="@+id/tv_tip1_1"
+                app:layout_constraintTop_toBottomOf="@+id/tip11Content" />
+
+            <TextView
+                android:id="@+id/tv_content_tip2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:text="@string/tip2"
+                app:layout_constraintLeft_toLeftOf="@id/tv_tip1_1"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_tip2" />
+
+            <TextView
+                android:id="@+id/tv_tip3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Sa hình"
+                android:textColor="@color/black"
+                app:layout_constraintLeft_toLeftOf="@+id/tv_tip1_1"
+                app:layout_constraintTop_toBottomOf="@+id/tv_content_tip2" />
+
+            <TextView
+                android:id="@+id/tv_content_tip3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:text="@string/tip3"
+                app:layout_constraintLeft_toLeftOf="@id/tv_tip1_1"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_tip3" />
+
+            <TextView
+                android:id="@+id/tv_titleTip2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:gravity="center"
+                android:text="Mẹo thực hành"
+                android:textColor="@color/black"
+                android:textSize="22dp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/tv_content_tip3" />
+
+            <TextView
+                android:id="@+id/tv_tip2_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Giới thiệu"
+                android:textColor="@color/black"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_titleTip2" />
+
+            <TextView
+                android:id="@+id/tip12Content"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:text="@string/tipGioiThieu"
+                app:layout_constraintLeft_toLeftOf="@id/tv_tip2_1"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_tip2_1" />
+
+            <TextView
+                android:id="@+id/tv_tip2_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Phần 1: Chạy theo vòng số 8"
+                android:textColor="@color/black"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tip12Content" />
+
+            <TextView
+                android:id="@+id/tip22Content"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:text="@string/tipvongso8"
+                app:layout_constraintLeft_toLeftOf="@id/tv_tip2_1"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_tip2_2" />
+
+            <TextView
+                android:id="@+id/tv_tip2_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Phần 2: Đi vào đường hẹp"
+                android:textColor="@color/black"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tip22Content" />
+
+            <TextView
+                android:id="@+id/tip23Content"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:text="@string/tipdivaoduonghep"
+                app:layout_constraintLeft_toLeftOf="@id/tv_tip2_1"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_tip2_3" />
+
+            <TextView
+                android:id="@+id/tv_tip2_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Phần 3: Chạy đường quanh co"
+                android:textColor="@color/black"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tip23Content" />
+
+            <TextView
+                android:id="@+id/tip24Content"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:text="@string/tipchayduongquanhco"
+                app:layout_constraintLeft_toLeftOf="@id/tv_tip2_1"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_tip2_4" />
+
+            <TextView
+                android:id="@+id/tv_tip2_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Phần 4: Đi qua đường gồ ghề"
+                android:textColor="@color/black"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tip24Content" />
+
+            <TextView
+                android:id="@+id/tip25Content"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:text="@string/tipchayduonggoge"
+                app:layout_constraintLeft_toLeftOf="@id/tv_tip2_1"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_tip2_5" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/tvHuongdanchitiet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="Hướng dẫn chi tiết"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@id/vv_1"
+        app:layout_constraintTop_toBottomOf="@id/rv_listInformationType" />
+
+    <VideoView
+        android:id="@+id/vv_1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/tvCacVideo"
+        app:layout_constraintTop_toBottomOf="@id/tvHuongdanchitiet" />
+
+    <TextView
+        android:id="@+id/tvCacVideo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="Thi thử"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@id/vv_2"
+        app:layout_constraintTop_toBottomOf="@id/vv_1" />
+
+    <VideoView
+        android:id="@+id/vv_2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvCacVideo" />
+</androidx.constraintlayout.widget.ConstraintLayout>

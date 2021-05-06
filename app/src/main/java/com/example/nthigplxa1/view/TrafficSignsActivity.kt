@@ -211,6 +211,7 @@ class TrafficSignsActivity : AppCompatActivity(), View.OnClickListener,
         }
 
     }
+
     private fun initTypeTrafficRecycleView() {
         mListTypeAdapter = ListTrafficTypeAdapter(this, this)
         rv_listTrafficType.layoutManager =

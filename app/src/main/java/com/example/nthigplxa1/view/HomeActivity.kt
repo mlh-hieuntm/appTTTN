@@ -47,7 +47,9 @@ class HomeActivity : AppCompatActivity(), ItemHomeListener {
                 startActivity(intent)
             }
             1 -> {
-
+                val intent = Intent(this, TipActivity::class.java)
+                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                startActivity(intent)
             }
             2 -> {
                 val intent = Intent(this, TrafficSignsActivity::class.java)
