@@ -49,7 +49,8 @@ class DoExamActivity : AppCompatActivity(), View.OnClickListener, ListQuestionAd
 
         if (mExam.mIsFinished) {
             tv_countDownTime.text = "00:00"
-            var res = "Đáp án màu xanh lá cây là đáp án bạn chọn, đáp án màu đỏ là đáp án đúng. Nếu câu trả lời của bạn đúng thì sẽ không hiện đáp án màu đỏ, nếu câu đó bạn không chọn đáp án nào thì sẽ không hiển thị đáp án màu xanh!"
+            var res =
+                "Đáp án màu xanh lá cây là đáp án bạn chọn, đáp án màu đỏ là đáp án đúng. Nếu câu trả lời của bạn đúng thì sẽ không hiện đáp án màu đỏ, nếu câu đó bạn không chọn đáp án nào thì sẽ không hiển thị đáp án màu xanh!"
             val mDialog = MaterialDialog(this)
                 .noAutoDismiss()
                 .customView(R.layout.dialog_confirm_delete)
@@ -196,21 +197,23 @@ class DoExamActivity : AppCompatActivity(), View.OnClickListener, ListQuestionAd
                 confirmBack()
             }
             R.id.btn_submit -> {
-                mDialog = MaterialDialog(this)
-                    .noAutoDismiss()
-                    .customView(R.layout.dialog_confirm_delete)
-                mDialog.window?.setDimAmount(0F)
-                mDialog.setCancelable(false)
-                mDialog.tv_TitleOfCustomDialogConfirm.text = "Bạn có chắc chắn muốn nộp bài?"
-                mDialog.btn_AcceptDiaLogConFirm.setOnClickListener() {
-                    endExam()
+                if (!mExam.mIsFinished) {
+                    mDialog = MaterialDialog(this)
+                        .noAutoDismiss()
+                        .customView(R.layout.dialog_confirm_delete)
+                    mDialog.window?.setDimAmount(0F)
+                    mDialog.setCancelable(false)
+                    mDialog.tv_TitleOfCustomDialogConfirm.text = "Bạn có chắc chắn muốn nộp bài?"
+                    mDialog.btn_AcceptDiaLogConFirm.setOnClickListener() {
+                        endExam()
+                    }
+                    mDialog.btn_CancelDialogConfirm.setOnClickListener {
+                        cl_doExam.alpha = 1F
+                        mDialog.dismiss()
+                    }
+                    cl_doExam.alpha = 0.2F
+                    mDialog.show()
                 }
-                mDialog.btn_CancelDialogConfirm.setOnClickListener {
-                    cl_doExam.alpha = 1F
-                    mDialog.dismiss()
-                }
-                cl_doExam.alpha = 0.2F
-                mDialog.show()
             }
         }
     }
