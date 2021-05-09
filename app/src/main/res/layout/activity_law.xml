@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.HomeActivity">
+    tools:context=".view.LawActivity">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/gl_toolbar"
@@ -22,11 +22,11 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/btn_backListExam"
+            android:id="@+id/btn_backLaw"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:src="@drawable/logo"
+            android:src="@drawable/ic_baseline_arrow_back_24"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -37,22 +37,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:text="ÔN THI BẰNG LÁI XE MÁY"
+            android:text="Luật, xử phạt giao thông"
             android:textColor="@color/black"
             android:textSize="18dp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@id/btn_backListExam"
-            app:layout_constraintLeft_toRightOf="@id/btn_backListExam"
-            app:layout_constraintTop_toTopOf="@id/btn_backListExam"></TextView>
+            app:layout_constraintBottom_toBottomOf="@id/btn_backLaw"
+            app:layout_constraintLeft_toRightOf="@id/btn_backLaw"
+            app:layout_constraintTop_toTopOf="@id/btn_backLaw"></TextView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_listHome"
+        android:id="@+id/rvLaw"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:background="#F2F2F2"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/gl_toolbar" />
-
+        app:layout_constraintTop_toTopOf="@id/gl_toolbar" />
 </androidx.constraintlayout.widget.ConstraintLayout>

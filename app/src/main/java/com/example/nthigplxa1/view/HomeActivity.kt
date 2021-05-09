@@ -57,7 +57,9 @@ class HomeActivity : AppCompatActivity(), ItemHomeListener {
                 startActivity(intent)
             }
             3 -> {
-
+                val intent = Intent(this, LawActivity::class.java)
+                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                startActivity(intent)
             }
             4 -> {
                 val myVersion: String = Build.VERSION.RELEASE

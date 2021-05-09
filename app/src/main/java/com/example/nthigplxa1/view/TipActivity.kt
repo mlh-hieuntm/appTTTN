@@ -15,14 +15,10 @@ class TipActivity : AppCompatActivity(), View.OnClickListener {
         btn_backTip.setOnClickListener(this)
         tvVideo.setOnClickListener(this)
         tvThongTinCacMeo.setOnClickListener(this)
+        tvhuongdanchitiet.setOnClickListener(this)
+        tvthithu.setOnClickListener(this)
         initVideo()
-        tvHuongdanchitiet.visibility = View.GONE
-        vv_1.visibility = View.GONE
-        vv_2.visibility = View.GONE
-        tvCacVideo.visibility = View.GONE
-        sv_text.visibility = View.VISIBLE
-        tvThongTinCacMeo.setBackgroundResource(R.drawable.background_custom_four_corner_gray)
-        tvVideo.setBackgroundColor(Color.parseColor("#F2F2F2"))
+        startState()
     }
 
     private fun initVideo() {
@@ -37,28 +33,41 @@ class TipActivity : AppCompatActivity(), View.OnClickListener {
         vv_2.setMediaController(mediaController2)
     }
 
+    private fun startState() {
+        selectVideo.visibility = View.GONE
+        vv_1.visibility = View.GONE
+        vv_2.visibility = View.GONE
+        sv_text.visibility = View.VISIBLE
+        tvThongTinCacMeo.setBackgroundResource(R.drawable.background_custom_four_corner_gray)
+        tvVideo.setBackgroundColor(Color.parseColor("#F2F2F2"))
+    }
+
     override fun onClick(v: View?) {
         when (v) {
             btn_backTip -> {
                 this.finish()
             }
             tvVideo -> {
+                selectVideo.visibility = View.VISIBLE
                 sv_text.visibility = View.GONE
-                tvHuongdanchitiet.visibility = View.VISIBLE
                 vv_1.visibility = View.VISIBLE
-                vv_2.visibility = View.VISIBLE
-                tvCacVideo.visibility = View.VISIBLE
                 tvVideo.setBackgroundResource(R.drawable.background_custom_four_corner_gray)
                 tvThongTinCacMeo.setBackgroundColor(Color.parseColor("#F2F2F2"))
             }
             tvThongTinCacMeo -> {
-                tvHuongdanchitiet.visibility = View.GONE
-                vv_1.visibility = View.GONE
+                startState()
+            }
+            tvhuongdanchitiet -> {
+                vv_1.visibility = View.VISIBLE
                 vv_2.visibility = View.GONE
-                tvCacVideo.visibility = View.GONE
-                sv_text.visibility = View.VISIBLE
-                tvThongTinCacMeo.setBackgroundResource(R.drawable.background_custom_four_corner_gray)
-                tvVideo.setBackgroundColor(Color.parseColor("#F2F2F2"))
+                tvhuongdanchitiet.setBackgroundResource(R.drawable.background_custom_four_corner_gray)
+                tvthithu.setBackgroundColor(Color.parseColor("#F2F2F2"))
+            }
+            tvthithu -> {
+                vv_1.visibility = View.GONE
+                vv_2.visibility = View.VISIBLE
+                tvthithu.setBackgroundResource(R.drawable.background_custom_four_corner_gray)
+                tvhuongdanchitiet.setBackgroundColor(Color.parseColor("#F2F2F2"))
             }
         }
     }

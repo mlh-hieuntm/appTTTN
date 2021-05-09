@@ -29,6 +29,7 @@ class DoExamActivity : AppCompatActivity(), View.OnClickListener, ListQuestionAd
     private var mArrayListAnsCorrect: ArrayList<Answer> = ArrayList()
     private var mArrayAnsSelectedID: ArrayList<Int> = ArrayList()
     private var mExam = Exam()
+    private var check = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_do_exam)
@@ -47,9 +48,8 @@ class DoExamActivity : AppCompatActivity(), View.OnClickListener, ListQuestionAd
         }
 
         if (mExam.mIsFinished) {
-            btn_submit.visibility = View.GONE
             tv_countDownTime.text = "00:00"
-            var res = "Đáp án màu xanh lá cây là đáp án bạn chọn, đáp án màu đỏ là đáp án đúng. Nếu câu trả lời của bạn đúng thì sẽ không hiện đáp án màu đỏ!"
+            var res = "Đáp án màu xanh lá cây là đáp án bạn chọn, đáp án màu đỏ là đáp án đúng. Nếu câu trả lời của bạn đúng thì sẽ không hiện đáp án màu đỏ, nếu câu đó bạn không chọn đáp án nào thì sẽ không hiển thị đáp án màu xanh!"
             val mDialog = MaterialDialog(this)
                 .noAutoDismiss()
                 .customView(R.layout.dialog_confirm_delete)
@@ -102,6 +102,14 @@ class DoExamActivity : AppCompatActivity(), View.OnClickListener, ListQuestionAd
             mArrayListAnsCorrect,
             mExam
         )
+        if (mExam.mIsFinished) {
+            val res = getMark()
+            if (check || res < 21) {
+                btn_submit.text = "Trượt: $res/25 "
+            } else {
+                btn_submit.text = "Đỗ: $res/25"
+            }
+        }
     }
 
     private fun changeTimeFromIntToString(time: Long): String {
@@ -131,7 +139,7 @@ class DoExamActivity : AppCompatActivity(), View.OnClickListener, ListQuestionAd
             if (mArrayAnsSelectedID[i] == mArrayListAnsCorrect[i].mID) {
                 mark++
             } else if (!mArrayListQues[i].mIsNotParalysisPoint) {
-                return -1
+                check = true
             }
         }
         return mark
@@ -152,12 +160,12 @@ class DoExamActivity : AppCompatActivity(), View.OnClickListener, ListQuestionAd
             res =
                 "Số điểm của bạn là ${mark}, bạn đã đỗ!"
         } else {
-            if (mark == -1) {
+            if (check) {
                 res = "Bạn đã trả lời sai câu điểm liệt!"
             }
         }
         mDialog.tv_TitleOfCustomDialogConfirm.text =
-            "$res Đáp án màu xanh lá cây là đáp án bạn chọn, đáp án màu đỏ là đáp án đúng. Nếu câu trả lời của bạn đúng thì sẽ không hiện đáp án màu đỏ!"
+            "$res Đáp án màu xanh lá cây là đáp án bạn chọn, đáp án màu đỏ là đáp án đúng. Nếu câu trả lời của bạn đúng thì sẽ không hiện đáp án màu đỏ, nếu câu đó bạn không chọn đáp án nào thì sẽ không hiển thị đáp án màu xanh!"
         countDownTimer?.cancel()
         mListQuestionAdapter?.showExplain()
         btn_submit.visibility = View.INVISIBLE

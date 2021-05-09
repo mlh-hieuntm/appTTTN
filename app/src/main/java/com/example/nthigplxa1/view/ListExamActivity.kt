@@ -328,14 +328,14 @@ class ListExamActivity : AppCompatActivity(),
         ans2 = Answer(158, getString(R.string.ans_40_2), 40)
         ans3 = Answer(159, getString(R.string.ans_40_3), 40)
         ans4 = Answer(160, getString(R.string.ans_40_4), 40, true)
-        question = Question(40, typeQuestionLaw, true, getString(R.string.ques_40), -1, getString(R.string.explain_40))
+        question = Question(40, typeQuestionSituations, true, getString(R.string.ques_40), R.drawable.img_40, getString(R.string.explain_40))
         saveDb(ans1, ans2, ans3, ans4, question)
         //cau41
         ans1 = Answer(161, getString(R.string.ans_41_1), 41)
         ans2 = Answer(162, getString(R.string.ans_41_2), 41)
         ans3 = Answer(163, getString(R.string.ans_41_3), 41, true)
         ans4 = Answer(164, getString(R.string.ans_41_4), 41)
-        question = Question(41, typeQuestionLaw, true, getString(R.string.ques_41), -1, getString(R.string.explain_41))
+        question = Question(41, typeQuestionSituations, true, getString(R.string.ques_41), R.drawable.img_41, getString(R.string.explain_41))
         saveDb(ans1, ans2, ans3, ans4, question)
         //cau42
         ans1 = Answer(165, getString(R.string.ans_42_1), 42, true)

@@ -257,6 +257,7 @@ class TrafficSignsActivity : AppCompatActivity(), View.OnClickListener,
             4 -> initData4()
         }
         rv_listTrafficType.smoothScrollToPosition(position)
+        rv_listTraffic.scrollToPosition(0)
         mListAdapter?.setList(mArrayListTraffic!!)
     }
 

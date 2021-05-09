@@ -6,19 +6,18 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.nthigplxa1.R
 import com.example.nthigplxa1.model.TrafficBoard
 
-class ListTrafficAdapter(var mContext: Context) :
-    RecyclerView.Adapter<ListTrafficAdapter.ViewHolder>() {
+class ListLawDetailAdapter(var mContext: Context) :
+    RecyclerView.Adapter<ListLawDetailAdapter.ViewHolder>() {
 
     private var mArrayListTraffic = ArrayList<TrafficBoard>()
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val tvName: TextView = itemView.findViewById(R.id.nameTraffic)
-        val content: TextView = itemView.findViewById(R.id.tv_contentTraffic)
+        val tvName: TextView = itemView.findViewById(R.id.nameDL)
+        val content: TextView = itemView.findViewById(R.id.tv_contentDL)
         val imgTB: ImageView = itemView.findViewById(R.id.img_trafficBoard)
     }
 
@@ -29,7 +28,7 @@ class ListTrafficAdapter(var mContext: Context) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val layoutInflater = LayoutInflater.from(mContext)
-        val homeView: View = layoutInflater.inflate(R.layout.item_traffic_board, parent, false)
+        val homeView: View = layoutInflater.inflate(R.layout.item_detail_law, parent, false)
         return ViewHolder(homeView)
 
     }
@@ -41,8 +40,6 @@ class ListTrafficAdapter(var mContext: Context) :
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.tvName.text = mArrayListTraffic[position].name.capitalize()
         holder.content.text = mArrayListTraffic[position].content.capitalize()
-        holder.content.setTextColor(ContextCompat.getColor(mContext, R.color.red))
-        holder.tvName.setTextColor(ContextCompat.getColor(mContext, R.color.black))
         holder.imgTB.setImageResource(mArrayListTraffic[position].img)
     }
 }
