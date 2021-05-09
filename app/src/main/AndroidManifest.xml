@@ -9,14 +9,30 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ÔnThiGPLXA1">
-        <activity android:name=".view.DetailLawActivity"></activity>
-        <activity android:name=".view.LawActivity" />
-        <activity android:name=".view.TipActivity" />
-        <activity android:name=".view.TrafficSignsActivity" />
-        <activity android:name=".view.HomeActivity" />
-        <activity android:name=".view.DoExamActivity" />
-        <activity android:name=".view.ListExamActivity" />
-        <activity android:name=".view.SplashActivity">
+        <activity
+            android:name=".view.DetailLawActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".view.LawActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.TipActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.TrafficSignsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.HomeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.DoExamActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.ListExamActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.SplashActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

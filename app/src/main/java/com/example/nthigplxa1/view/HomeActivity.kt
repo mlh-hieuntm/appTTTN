@@ -6,12 +6,16 @@ import android.os.Bundle
 import android.text.TextUtils
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.afollestad.materialdialogs.MaterialDialog
+import com.afollestad.materialdialogs.customview.customView
 import com.example.nthigplxa1.BuildConfig
 import com.example.nthigplxa1.R
 import com.example.nthigplxa1.adapter.ItemHomeListener
 import com.example.nthigplxa1.adapter.ListHomeAdapter
 import com.example.nthigplxa1.model.Home
 import kotlinx.android.synthetic.main.activity_home.*
+import kotlinx.android.synthetic.main.activity_list_exam.*
+import kotlinx.android.synthetic.main.dialog_confirm_delete.*
 import java.util.*
 
 class HomeActivity : AppCompatActivity(), ItemHomeListener {
@@ -62,25 +66,38 @@ class HomeActivity : AppCompatActivity(), ItemHomeListener {
                 startActivity(intent)
             }
             4 -> {
-                val myVersion: String = Build.VERSION.RELEASE
-                val sdkVersion: String = BuildConfig.VERSION_NAME
-                val emailIntent = Intent(Intent.ACTION_SEND)
-                emailIntent.putExtra(
-                    Intent.EXTRA_EMAIL,
-                    arrayOf(EMAIL_SUPPORT_FEEDBACK)
-                )
-                emailIntent.putExtra(
-                    Intent.EXTRA_SUBJECT,
-                    "Liên hệ Ứng dụng ôn thi bằng lái xe máy - Android"
-                )
-                emailIntent.putExtra(
-                    Intent.EXTRA_TEXT,
-                    "[Android: $myVersion, tên thiết bị" +
-                            ": ${getDeviceNamePhone()}, phiên bản" +
-                            ": $sdkVersion] \n\n\n"
-                )
-                emailIntent.type = "plain/text"
-                startActivity(emailIntent)
+                val mDialog = MaterialDialog(this)
+                    .noAutoDismiss()
+                    .customView(R.layout.dialog_confirm_delete)
+                mDialog.window?.setDimAmount(0F)
+                mDialog.setCancelable(false)
+                mDialog.tv_TitleOfCustomDialogConfirm.text = "Bạn có muốn gửi một email ?"
+                mDialog.btn_AcceptDiaLogConFirm.setOnClickListener() {
+                    val myVersion: String = Build.VERSION.RELEASE
+                    val sdkVersion: String = BuildConfig.VERSION_NAME
+                    val emailIntent = Intent(Intent.ACTION_SEND)
+                    emailIntent.putExtra(
+                        Intent.EXTRA_EMAIL,
+                        arrayOf(EMAIL_SUPPORT_FEEDBACK)
+                    )
+                    emailIntent.putExtra(
+                        Intent.EXTRA_SUBJECT,
+                        "Liên hệ Ứng dụng ôn thi bằng lái xe máy - Android"
+                    )
+                    emailIntent.putExtra(
+                        Intent.EXTRA_TEXT,
+                        "[Android: $myVersion, tên thiết bị" +
+                                ": ${getDeviceNamePhone()}, phiên bản" +
+                                ": $sdkVersion] \n\n\n"
+                    )
+                    emailIntent.type = "plain/text"
+                    startActivity(emailIntent)
+                    mDialog.dismiss()
+                }
+                mDialog.btn_CancelDialogConfirm.setOnClickListener {
+                    mDialog.dismiss()
+                }
+                mDialog.show()
             }
 
         }
